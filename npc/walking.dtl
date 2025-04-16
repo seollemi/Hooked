@@ -1,0 +1,9 @@
+join character left
+character: Hello there!
+- Hello!
+	character: Im James...
+	character: What do you for a living?
+	- I'm a security guy
+	- Nothing, just passing by
+- (Ignore)
+	Ok bye!

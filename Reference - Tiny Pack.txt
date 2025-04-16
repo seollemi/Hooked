@@ -1,0 +1,28 @@
+Tiny Pack:
+
+1 - Chat (Menu)
+Duration: (02:24)
+BPM: 60
+
+2 - Sunny Day (Day 1)
+Duration: (02:04)
+BPM: 66
+
+3 - Waiting (Night 1)
+Duration: (03:07)
+BPM: 86
+
+4 - Really Good News (Dramatic 1)
+Duration: (02:32)
+BPM: 60
+
+5 - Bye (Dramatic 2)
+Duration: (01:28)
+BPM: 60
+
+
+
+Stingers:
+
+Chapter Complete (Victory 1)
+Bad Answer (Defeat 1)
