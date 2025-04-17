@@ -31,13 +31,13 @@ directories/dch_directory={
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
-"timeline": "res://Dialogic_scenes/timeline.dtl",
+"timeline": "res://Dialogic_scenes/House_dialog.dtl",
 "walking": "res://npc/walking.dtl"
 }
 glossary/default_case_sensitive=true
 variables={}
-layout/style_list=["res://Dialogic_scenes/Textbox_style.tres", "res://Dialogic_scenes/Default.tres"]
-layout/default_style="res://Dialogic_scenes/Textbox_style.tres"
+layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres"]
+layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
