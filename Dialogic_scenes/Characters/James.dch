@@ -1,0 +1,42 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "Textbox_style",
+"suffix": ""
+},
+&"default_portrait": "James_talking",
+&"description": "",
+&"display_name": "James",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"James_no": {
+"export_overrides": {
+"image": ""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, -50),
+"scale": 3.0,
+"scene": "res://Scenes/Portrait_animation/james_portrait_animation.tscn"
+},
+"James_talking": {
+"export_overrides": {
+"image": "\"\""
+},
+"ignore_char_scale": false,
+"mirror": false,
+"offset": Vector2(0, -50),
+"scale": 3.0,
+"scene": "res://Scenes/Portrait_animation/james_portrait_animation.tscn"
+}
+},
+&"scale": 1.0
+}

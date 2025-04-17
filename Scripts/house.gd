@@ -1,15 +1,17 @@
 extends Node2D
 
 func _ready() -> void:
+	Dialogic.start("timeline")
 	if Global.game_first_loadin == true:
 		$Player.position.x = Global.player_start_posx
 		$Player.position.y = Global.player_start_posy
 	else: 
 		$Player.position.x = Global.player_enter_house_posx
 		$Player.position.y = Global.player_enter_house_posy
-	print(Global.current_scene)
+	
 func _process(delta: float) -> void:
 	change_scene()
+
 
 
 func _on_door_outside_body_entered(body: Node2D) -> void:
