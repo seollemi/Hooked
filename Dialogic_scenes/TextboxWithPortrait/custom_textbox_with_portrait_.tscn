@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci2xfvqmb10fp"]
+[gd_scene load_steps=7 format=3 uid="uid://cyt1km2pnhgos"]
 
 [ext_resource type="Script" uid="uid://dcd57qro2fdmw" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
 [ext_resource type="Script" uid="uid://xiwkb6g8x65t" path="res://Dialogic_scenes/TextboxWithPortrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
@@ -67,7 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -7.0
 offset_top = -3.0
-offset_right = 7.0
+offset_right = 28.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -76,12 +76,12 @@ color = Color(0, 0, 0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Anchor/Panel/HBox/PortraitPanel/PortraitBackgroundColor"]
 layout_mode = 0
-offset_left = -9.0
-offset_top = -2.0
-offset_right = 2919.0
-offset_bottom = 2062.0
+offset_left = -191.0
+offset_top = -431.0
+offset_right = 2737.0
+offset_bottom = 1633.0
 rotation = 0.000586838
-scale = Vector2(1.08012, 1.12)
+scale = Vector2(1.20339, 1.19098)
 texture = ExtResource("2_b5bvl")
 stretch_mode = 1
 
@@ -90,7 +90,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 4.0
+offset_left = -8.0
+offset_top = 11.0
+offset_right = -8.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
