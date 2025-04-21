@@ -10,7 +10,7 @@ var player_start_posx = -16.0
 var player_start_posy = -120.0
 
 var game_first_loadin = true
-
+var game_outside_loadin = true
 func finish_changescenes():
 	if transition_scene:
 		transition_scene = false

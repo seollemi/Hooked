@@ -1,0 +1,187 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2hgyf5bvihu3"]
+
+[ext_resource type="Script" uid="uid://kdcb0a2hojag" path="res://Scripts/phone_sequence.gd" id="1_8in5w"]
+[ext_resource type="Texture2D" uid="uid://dymsl856scir0" path="res://world/Phone_cutscene/6A.png" id="1_hkmnb"]
+[ext_resource type="Texture2D" uid="uid://btx05j21q3xv6" path="res://world/Phone_cutscene/Your paragraph text (1).png" id="2_6f74m"]
+[ext_resource type="Texture2D" uid="uid://wh2mkwrue8fq" path="res://world/Phone_cutscene/chae bg.png" id="2_8in5w"]
+[ext_resource type="Texture2D" uid="uid://dr8wg6rerjesw" path="res://world/Phone_cutscene/jd.png" id="3_6f74m"]
+[ext_resource type="AudioStream" uid="uid://hn4sya8mttbw" path="res://world/Phone_cutscene/Notification Sound Effects Copyright Free  1.mp3" id="5_1u40q"]
+
+[sub_resource type="Animation" id="Animation_6f74m"]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChaeBg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(507.5, 268.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("jd:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(507, 154)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TEXT:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(508, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_8in5w"]
+resource_name = "phone_Seq#1"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TEXT:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(507, 90), Vector2(508, 160), Vector2(507, 90)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_intro_dialog"
+}, {
+"args": [],
+"method": &"resume_dialog"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_1u40q")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("jd:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(507, 91), Vector2(507, 154), Vector2(507, 91)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ChaeBg:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(507.5, 268.5), Vector2(507.5, 268.5), Vector2(507, -28.0001)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8in5w"]
+_data = {
+&"RESET": SubResource("Animation_6f74m"),
+&"phone_Seq#1": SubResource("Animation_8in5w")
+}
+
+[node name="Phone_cutscene" type="Node2D"]
+script = ExtResource("1_8in5w")
+
+[node name="TEXT" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(508, 160)
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("2_6f74m")
+
+[node name="jd" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(507, 154)
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("3_6f74m")
+
+[node name="ChaeBg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.376471)
+z_index = -1
+position = Vector2(507.5, 268.5)
+scale = Vector2(0.463259, 0.472172)
+texture = ExtResource("2_8in5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(507, 279)
+texture = ExtResource("1_hkmnb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_8in5w")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(513, 277)
+zoom = Vector2(2.1, 2.1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1u40q")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

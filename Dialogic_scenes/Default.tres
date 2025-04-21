@@ -13,7 +13,9 @@
 
 [sub_resource type="Resource" id="Resource_3i3ek"]
 script = ExtResource("1_rms5e")
-overrides = {}
+overrides = {
+"global_font": "\"res://FONTS/retropix.ttf/retropix.ttf\""
+}
 
 [sub_resource type="Resource" id="Resource_b17ss"]
 script = ExtResource("1_rms5e")
@@ -33,7 +35,13 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_hkrus"]
 script = ExtResource("1_rms5e")
 scene = ExtResource("5_w5ont")
-overrides = {}
+overrides = {
+"name_label_custom_font_size": "18.0",
+"name_label_use_global_font_size": "false",
+"normal_font": "\"res://FONTS/retropix.ttf/retropix.ttf\"",
+"text_size": "20.0",
+"text_use_global_size": "false"
+}
 
 [sub_resource type="Resource" id="Resource_bt8dc"]
 script = ExtResource("1_rms5e")

@@ -22,5 +22,5 @@ func change_scene():
 			"WorldHouse":
 				ChangeScene.change_scene_anim("res://Scenes/WorldHouse.tscn")
 			"outside":
-				ChangeScene.change_scene_anim("res://Scenes/outside.tscn")
+				ChangeScene.change_scene_anim("res://Scenes/outside_v1.tscn")
 		Global.finish_changescenes()

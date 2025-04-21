@@ -1,7 +1,12 @@
 extends Node2D
 
 func _ready() -> void:
-	print(Global.current_scene)	
+	print(Global.current_scene)
+	if Global.game_outside_loadin == false:
+		$Cutscene_trigger/CollisionShape2D.disabled = true
+	else:
+		$Cutscene_trigger/CollisionShape2D.disabled = false
+	
 
 func _process(delta: float) -> void:
 	change_scene()
@@ -20,3 +25,19 @@ func change_scene():
 			"outside":
 				ChangeScene.change_scene_anim("res://Scenes/outside.tscn")
 		Global.finish_changescenes()
+
+
+func _on_cutscene_trigger_body_entered(body: Node2D) -> void:
+	if Global.game_outside_loadin == true:
+		if body is Player:
+			await get_tree().create_timer(0.2).timeout
+			Dialogic.start("phone_seq0")
+			Dialogic.timeline_ended.connect(end_dialog)
+		
+func end_dialog():
+		%AudioStreamPlayer2D.play()
+
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	ChangeScene.change_scene_anim("res://Scenes/Phone_sequence.tscn")

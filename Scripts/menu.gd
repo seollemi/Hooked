@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_play_pressed() -> void:
-	ChangeScene.change_scene_anim("res://Scenes/WorldHouse.tscn")
+	ChangeScene.change_scene_anim("res://opening INtro/IntroOpening.tscn")
 
 
 func _on_options_pressed() -> void:

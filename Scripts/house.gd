@@ -1,6 +1,8 @@
 extends Node2D
 
+
 func _ready() -> void:
+
 	if Global.game_first_loadin == true:
 		$Player.position.x = Global.player_start_posx
 		$Player.position.y = Global.player_start_posy
@@ -12,6 +14,7 @@ func _ready() -> void:
 		
 func _process(delta: float) -> void:
 	change_scene()
+
 
 
 func start_dialog():

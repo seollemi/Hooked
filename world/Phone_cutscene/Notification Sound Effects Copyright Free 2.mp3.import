@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mqfcvow8k5t"
+path="res://.godot/imported/Notification Sound Effects Copyright Free 2.mp3-f708cb9aecd4cf54345556dd95dd6e73.mp3str"
+
+[deps]
+
+source_file="res://world/Phone_cutscene/Notification Sound Effects Copyright Free 2.mp3"
+dest_files=["res://.godot/imported/Notification Sound Effects Copyright Free 2.mp3-f708cb9aecd4cf54345556dd95dd6e73.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
