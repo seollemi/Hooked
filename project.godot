@@ -30,7 +30,7 @@ directories/dch_directory={
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
-"timeline": "res://Dialogic_scenes/House_dialog.dtl",
+"House_dialog": "res://Dialogic_scenes/House_dialog.dtl",
 "walking": "res://npc/walking.dtl"
 }
 glossary/default_case_sensitive=true
