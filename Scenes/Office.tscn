@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 [gd_scene load_steps=20 format=4 uid="uid://7v1n16qg8m82"]
 
 [ext_resource type="Script" uid="uid://d0fqa5tbijo10" path="res://Scripts/office.gd" id="1_t43tj"]
+=======
+[gd_scene load_steps=13 format=4 uid="uid://7v1n16qg8m82"]
+
+[ext_resource type="Script" uid="uid://bpsiccrr35lof" path="res://Scenes/officetoofficelobby.gd" id="1_0d164"]
+>>>>>>> bc6f5ec0f7faa49f4334f1281e232a801f2354ff
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
 [ext_resource type="Texture2D" uid="uid://birefcflxdi7o" path="res://world/office/Room_Builder_Office_16x16.png" id="4_bod3d"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="5_32u8q"]
@@ -3573,6 +3579,7 @@ sources/3 = SubResource("TileSetAtlasSource_ttk34")
 sources/4 = SubResource("TileSetAtlasSource_knk1q")
 sources/5 = SubResource("TileSetAtlasSource_43i68")
 
+<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chwbs"]
 size = Vector2(42, 23)
 
@@ -3619,6 +3626,13 @@ _data = {
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_t43tj")
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnkyl"]
+size = Vector2(20, 29)
+
+[node name="Office" type="Node2D"]
+script = ExtResource("1_0d164")
+>>>>>>> bc6f5ec0f7faa49f4334f1281e232a801f2354ff
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(21, -18)
@@ -3661,6 +3675,7 @@ tile_set = SubResource("TileSet_r1f8t")
 [node name="Player" parent="." instance=ExtResource("5_32u8q")]
 position = Vector2(199, 58)
 
+<<<<<<< HEAD
 [node name="interactable" parent="." instance=ExtResource("7_0u7kn")]
 position = Vector2(748, 256)
 
@@ -3691,3 +3706,13 @@ layer = 3
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("6_0d164")]
 
 [node name="Node" type="Node" parent="."]
+=======
+[node name="Door_to_office" type="Area2D" parent="."]
+position = Vector2(453, 266)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door_to_office"]
+position = Vector2(-6, 3)
+shape = SubResource("RectangleShape2D_gnkyl")
+
+[connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
+>>>>>>> bc6f5ec0f7faa49f4334f1281e232a801f2354ff

@@ -65,3 +65,7 @@ func current_camera():
 		$Inside_camera.enabled = false
 		$Outside_camera.enabled = true
 		
+
+
+func _on_door_to_office_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
