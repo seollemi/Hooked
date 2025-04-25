@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dto8gg73ckj6f"]
+[gd_scene load_steps=16 format=3 uid="uid://dto8gg73ckj6f"]
 
 [ext_resource type="Script" uid="uid://b6vxn3gv6epvq" path="res://Scripts/Player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bqu5j1fte6eu" path="res://Player/character sprites/Bob_16x16.png" id="2_gntrk"]
+[ext_resource type="PackedScene" uid="uid://646eynxd38ta" path="res://interaction_component.tscn" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh050"]
 size = Vector2(29.4202, 7.7034)
@@ -213,3 +214,6 @@ position = Vector2(-71.9208, -40.6621)
 scale = Vector2(5, 5)
 offset = Vector2(350, 225)
 zoom = Vector2(3.075, 3.075)
+
+[node name="InteractionComponent" parent="." instance=ExtResource("3_gntrk")]
+position = Vector2(348.633, 232.355)

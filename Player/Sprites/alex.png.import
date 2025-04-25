@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3glsrdnypni1"
-path="res://.godot/imported/Modern_Exteriors_Complete_Tileset.png-b0efe990076fd543a3f63ca898145183.ctex"
+uid="uid://cqmb50kqsdki1"
+path="res://.godot/imported/alex.png-4915f92ac332668312dc3c0bc1a902ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/paid assets/Modern_Exteriors_Complete_Tileset.png"
-dest_files=["res://.godot/imported/Modern_Exteriors_Complete_Tileset.png-b0efe990076fd543a3f63ca898145183.ctex"]
+source_file="res://Player/Sprites/alex.png"
+dest_files=["res://.godot/imported/alex.png-4915f92ac332668312dc3c0bc1a902ae.ctex"]
 
 [params]
 

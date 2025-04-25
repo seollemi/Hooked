@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://djle87uke85p4"]
+[gd_scene load_steps=25 format=3 uid="uid://djle87uke85p4"]
 
 [ext_resource type="Script" uid="uid://cdoabcgee1150" path="res://Scripts/outsidehouse.gd" id="1_2bdwf"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="1_3t8au"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://l6a7i6bgiqni" path="res://world/house/outside/PNG/spr_structures_exterior.png" id="7_solfd"]
 [ext_resource type="Texture2D" uid="uid://4f17ffj1mxql" path="res://world/stones/Texture/TX Props.png" id="8_07rlx"]
 [ext_resource type="Texture2D" uid="uid://o4smlqblbq54" path="res://world/stones/Texture/TX Tileset Stone Ground.png" id="9_7fphf"]
+[ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="11_07rlx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdc22"]
 texture = ExtResource("3_26kxh")
@@ -3238,6 +3239,11 @@ position = Vector2(3, 217)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_to_city"]
 position = Vector2(-6, 3)
 shape = SubResource("RectangleShape2D_2bdwf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("11_07rlx")]
 
 [connection signal="body_entered" from="Door_inside" to="." method="_on_door_inside_body_entered"]
 [connection signal="body_entered" from="Door_to_city" to="." method="_on_door_to_city_body_entered"]

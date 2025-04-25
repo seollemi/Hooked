@@ -4,6 +4,8 @@ var current_scene = "WorldHouse"
 var next_scene = ""  # NEW: Store target scene name
 var transition_scene = false
 
+var outside_scene : PackedScene = null
+
 var player_enter_house_posx = -149.0
 var player_enter_house_posy = -21.0
 var player_start_posx = -16.0

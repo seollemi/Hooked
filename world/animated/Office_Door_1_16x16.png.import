@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3glsrdnypni1"
-path="res://.godot/imported/Modern_Exteriors_Complete_Tileset.png-b0efe990076fd543a3f63ca898145183.ctex"
+uid="uid://dmx452dhdo8me"
+path="res://.godot/imported/Office_Door_1_16x16.png-c320858863b5d11e780b460fc07fe8bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/paid assets/Modern_Exteriors_Complete_Tileset.png"
-dest_files=["res://.godot/imported/Modern_Exteriors_Complete_Tileset.png-b0efe990076fd543a3f63ca898145183.ctex"]
+source_file="res://world/animated/Office_Door_1_16x16.png"
+dest_files=["res://.godot/imported/Office_Door_1_16x16.png-c320858863b5d11e780b460fc07fe8bd.ctex"]
 
 [params]
 

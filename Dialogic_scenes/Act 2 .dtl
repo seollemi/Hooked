@@ -1,0 +1,26 @@
+James (James_talking): We're locked out. Every shared file’s inaccessible… wait—
+Jordan (Jordan_talking): (leans in, reading)\
+“Your data has been encrypted. Pay 10 BTC within 3 hours or it’s gone forever.”
+James (James_talking):  It’s ransomware. No doubt.
+Jordan (Jordan_talking): Then we’re on the clock. First step\: isolation. Before it spreads further.\
+(Phone buzzes. Jordan answers. It’s CEO Dana Harper.)
+Dana: (voice through speaker)\
+What’s happening? Legal just called. They’re locked out of everything.
+Jordan (Jordan_talking):  We’ve been hit by ransomware. They’re demanding payment in Bitcoin.
+Dana: Can we just pay and be done with it? We can't afford downtime today.
+Jordan (Jordan_talking): There’s no guarantee they’ll return the files, ma’am. Paying might make us a future target. But isolation takes time.
+- 🔌 [Isolate affected systems immediately]
+	James (James_no): I think we should not pay them
+	Jordan (Jordan_talking):  We isolate now. Cut off infected systems, trace the spread, and start restoring from last night’s backup.
+	Dana: (sighs)\
+Fine. Just fix this. And keep me updated every step of the way.
+	James (James_talking): I’m unplugging the affected machines. Starting with the east wing.
+	Jordan (Jordan_talking):  I’ll alert the rest of IT and lock down network access. We’ll identify the ransomware variant and kill it.
+	Dana:  This better never happen again. Understood?
+	James (James_talking): Understood, ma’am.
+	Narrator: ✅ You chose to isolate the affected systems.\
+ 🔐 The ransomware was contained.\
+ 💾 Files were successfully restored from secure backups.\
+ 📉 Downtime was minimized. Future incidents now have a playbook.
+- 💸 [Attempt to pay the ransom]
+	James (James_talking): Ill go get the bitcoin

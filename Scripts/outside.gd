@@ -1,5 +1,8 @@
 extends Node2D
 
+
+
+
 func _ready() -> void:
 	print(Global.current_scene)
 	if Global.game_outside_loadin == false:
@@ -23,7 +26,7 @@ func change_scene():
 			"outsidehouse":
 				ChangeScene.change_scene_anim("res://Scenes/outsidehouse.tscn")
 			"outside":
-				ChangeScene.change_scene_anim("res://Scenes/outside.tscn")
+				ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
 		Global.finish_changescenes()
 
 
@@ -37,7 +40,9 @@ func _on_cutscene_trigger_body_entered(body: Node2D) -> void:
 func end_dialog():
 		%AudioStreamPlayer2D.play()
 
-
-
 func _on_audio_stream_player_2d_finished() -> void:
 	ChangeScene.change_scene_anim("res://Scenes/Phone_sequence.tscn")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	ChangeScene.change_scene_anim("res://Scenes/Office.tscn")

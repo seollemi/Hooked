@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://cpvo61vok166c"]
+[gd_scene load_steps=34 format=4 uid="uid://cpvo61vok166c"]
 
 [ext_resource type="Script" uid="uid://dqfbt036jofoq" path="res://Scripts/house.gd" id="1_eytsq"]
 [ext_resource type="Texture2D" uid="uid://cle5s3xa1fi1" path="res://world/house/Floor.png" id="3_2piwp"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ddk0ne02fi7p1" path="res://world/house/bathroom.png" id="14_p4m8b"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="15_eytsq"]
 [ext_resource type="Texture2D" uid="uid://r3okgnq1uhik" path="res://world/TopDownHouse_FurnitureState2.png" id="15_mbyea"]
+[ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="16_ft7ms"]
+[ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="17_5i8lh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ieno"]
 texture = ExtResource("3_2piwp")
@@ -3229,6 +3231,9 @@ sources/12 = SubResource("TileSetAtlasSource_h808s")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ye86"]
 size = Vector2(21, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5i8lh"]
+radius = 12.0
+
 [node name="house" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_eytsq")
@@ -3292,5 +3297,17 @@ tile_set = SubResource("TileSet_cn7wf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door_outside"]
 position = Vector2(135.5, 203)
 shape = SubResource("RectangleShape2D_8ye86")
+
+[node name="interactable" parent="." instance=ExtResource("16_ft7ms")]
+position = Vector2(135, 191)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_5i8lh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("17_5i8lh")]
 
 [connection signal="body_entered" from="Door_outside" to="." method="_on_door_outside_body_entered"]
