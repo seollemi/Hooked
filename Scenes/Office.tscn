@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://7v1n16qg8m82"]
+[gd_scene load_steps=16 format=4 uid="uid://7v1n16qg8m82"]
 
 [ext_resource type="Script" uid="uid://d0fqa5tbijo10" path="res://Scripts/office.gd" id="1_0d164"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbt3vrhhgoudm" path="res://world/office/Modern_Office_Black_Shadow_32x32.png" id="5_hq38p"]
 [ext_resource type="Texture2D" uid="uid://brc7sdbchhgip" path="res://world/office/Room_Builder_Office_32x32.png" id="6_ei0gw"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="7_gnkyl"]
+[ext_resource type="PackedScene" uid="uid://bge06wcxwk3c2" path="res://Scenes/npc.tscn" id="8_t43tj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8ipj"]
 texture = ExtResource("3_r1f8t")
@@ -3608,6 +3609,7 @@ tile_map_data = PackedByteArray("AAAhABAAAgAKAB4AAAAhABEAAgAKAB8AAAAiABAAAgALAB4
 tile_set = SubResource("TileSet_r1f8t")
 
 [node name="furni3" type="TileMapLayer" parent="TileMap"]
+z_index = 1
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAiABEAAgABAAgAAAAiABIAAgABAAkAAAAlABEAAgABAAgAAAAlABIAAgABAAkAAAAqABEAAgABAAgAAAAqABIAAgABAAkAAAAtABEAAgABAAgAAAAtABIAAgABAAkAAAAtABkAAgAMACsAAAAtABoAAgAMACwAAAAmABkAAgAIACIAAAAmABoAAgAIACMAAAA=")
 tile_set = SubResource("TileSet_r1f8t")
@@ -3635,5 +3637,8 @@ interact_name = "E to open pc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_t43tj")
+
+[node name="npc" parent="." instance=ExtResource("8_t43tj")]
+position = Vector2(511, 166)
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]

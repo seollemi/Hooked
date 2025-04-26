@@ -1,5 +1,5 @@
 extends Node2D
-
+var triggered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,3 +24,12 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Global.next_scene = "office"
 		Global.transition_scene = true
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if not triggered:
+		triggered = true
+		Dialogic.start("emailphishing")
+
+
+		
