@@ -1,0 +1,7 @@
+James: Wait, this doesn’t look like our usual format. Why would the boss send this without context?
+James: This link looks… off.
+James: Something’s wrong. I should double-check this before clicking.
+- Ignore the email
+	<Empty Text Event>
+- Enter login credentials
+	<Empty Text Event>

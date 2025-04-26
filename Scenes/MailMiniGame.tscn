@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvrkcbuo2j3me"]
+
+[ext_resource type="Script" uid="uid://ctsupof1l63pq" path="res://Scripts/mail_inbox.gd" id="1_4r1dr"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_1c4lm"]
+
+[sub_resource type="Theme" id="Theme_iprh5"]
+
+[sub_resource type="Theme" id="Theme_4r1dr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1c4lm"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(83, 53)
+
+[node name="MailPopup" type="Control" parent="."]
+modulate = Color(0.984113, 0.972976, 0.978899, 1)
+layout_mode = 3
+anchors_preset = 0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_iprh5")
+script = ExtResource("1_4r1dr")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MailPopup"]
+modulate = Color(0.980392, 0.976471, 0.964706, 1)
+self_modulate = Color(0.980392, 0.976471, 0.964706, 1)
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 649.0
+scale = Vector2(1.07566, 1.19262)
+theme = SubResource("Theme_4r1dr")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1c4lm")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MailPopup/Panel"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 937.0
+offset_bottom = 464.0
+color = Color(0.91604, 0.899434, 0.850033, 1)
+
+[node name="DesktopColor" type="ColorRect" parent="MailPopup/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0838765
+anchor_top = -0.710307
+anchor_right = 0.035915
+anchor_bottom = -0.693332
+offset_left = 96.6257
+offset_top = 459.279
+offset_right = 895.626
+offset_bottom = 482.279
+color = Color(0.306596, 0.516853, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="MailPopup/Panel"]
+layout_mode = 0
+offset_left = 897.52
+offset_top = 1.44894
+offset_right = 935.52
+offset_bottom = 31.4489
+color = Color(0.81, 0.81, 0.81, 1)
+
+[node name="X" type="Label" parent="MailPopup/Panel/ColorRect2"]
+layout_mode = 0
+offset_left = 12.25
+offset_top = -0.724471
+offset_right = 33.25
+offset_bottom = 43.2755
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1c4lm")
+theme_override_font_sizes/font_size = 35
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MailPopup/Panel"]
+layout_mode = 0
+offset_left = 25.3168
+offset_top = 47.8151
+offset_right = 573.317
+offset_bottom = 170.815
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MailPopup/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1c4lm")
+theme_override_font_sizes/font_size = 50
+text = "Welcome to NovaShield	"
+
+[node name="Body" type="Label" parent="MailPopup/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1c4lm")
+theme_override_font_sizes/font_size = 25
+text = "You’ve received your first assignment. What will you do?"
+
+[node name="OptionButton" type="OptionButton" parent="MailPopup/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Submit" type="Button" parent="MailPopup/Panel"]
+layout_mode = 2
+offset_left = 22.8667
+offset_top = 416.571
+offset_right = 229.867
+offset_bottom = 452.571
+text = "Submit"
+
+[node name="Label_Mai" type="Label" parent="MailPopup/Panel"]
+layout_mode = 0
+offset_left = 4.90002
+offset_top = 2.89788
+offset_right = 46.9
+offset_bottom = 35.8979
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1c4lm")
+theme_override_font_sizes/font_size = 30
+text = "Mail"
+
+[connection signal="gui_input" from="MailPopup/Panel/ColorRect2" to="MailPopup" method="_on_color_rect_2_gui_input"]
+[connection signal="mouse_entered" from="MailPopup/Panel/ColorRect2" to="MailPopup" method="_on_color_rect_2_mouse_entered"]
+[connection signal="mouse_exited" from="MailPopup/Panel/ColorRect2" to="MailPopup" method="_on_color_rect_2_mouse_exited"]

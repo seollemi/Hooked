@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6y10jxpkl7hm"]
+
+[ext_resource type="Script" uid="uid://bune6y8t7bobj" path="res://Scenes/pc.gd" id="1_iouoy"]
+[ext_resource type="Texture2D" uid="uid://1a6ev7vvnn6w" path="res://Image for Pc/Email_notif.png" id="2_xrtsi"]
+[ext_resource type="Texture2D" uid="uid://onkqnrmdoqaf" path="res://Image for Pc/Pixelated Background.jpg" id="3_mp1d0"]
+[ext_resource type="Texture2D" uid="uid://dvxbinwf6f4li" path="res://Image for Pc/Icons.png" id="4_ctixf"]
+[ext_resource type="Texture2D" uid="uid://b71jtqo6cptix" path="res://Image for Pc/Outher pc.png" id="5_txger"]
+
+[sub_resource type="Theme" id="Theme_avr8o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iouoy"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-8, 53)
+scale = Vector2(1.16483, 1.27805)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PC" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 0.87066
+anchor_bottom = 0.751543
+offset_left = -13.0
+offset_top = 34.0
+offset_right = -13.0
+offset_bottom = 34.0
+scale = Vector2(1.16483, 1.27805)
+script = ExtResource("1_iouoy")
+
+[node name="EmailNotifButton" type="TextureButton" parent="CanvasLayer/PC"]
+top_level = true
+layout_mode = 0
+offset_left = 35.0
+offset_top = 304.0
+offset_right = 454.0
+offset_bottom = 475.0
+scale = Vector2(0.575496, 0.488753)
+theme = SubResource("Theme_avr8o")
+texture_normal = ExtResource("2_xrtsi")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PC"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00897308
+anchor_top = -0.0595483
+anchor_right = 1.00399
+anchor_bottom = 1.00411
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mp1d0")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Icons" type="Sprite2D" parent="CanvasLayer/PC/TextureRect"]
+position = Vector2(199.01, 177.024)
+scale = Vector2(0.494122, 0.372999)
+texture = ExtResource("4_ctixf")
+
+[node name="DesktopColor" type="ColorRect" parent="CanvasLayer/PC/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.106742
+anchor_top = 0.0373798
+anchor_right = 0.211207
+anchor_bottom = 0.0539368
+offset_left = 96.6257
+offset_top = 459.279
+offset_right = 895.626
+offset_bottom = 482.279
+color = Color(0.143706, 0.378591, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StartDesktop" type="ColorRect" parent="CanvasLayer/PC/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.108724
+anchor_top = 0.0371567
+anchor_right = -0.0899201
+anchor_bottom = 0.0570237
+offset_left = 96.0721
+offset_top = 458.873
+offset_right = 143.072
+offset_bottom = 481.873
+color = Color(0.0506458, 1, 0.370798, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/PC/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0974665
+anchor_top = 0.0489621
+anchor_right = -0.0974665
+anchor_bottom = 0.0489621
+offset_left = 101.149
+offset_top = 456.67
+offset_right = 139.149
+offset_bottom = 479.67
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PC"]
+layout_mode = 0
+offset_left = -2389.19
+offset_top = -845.82
+offset_right = 3358.81
+offset_bottom = 1486.18
+texture = ExtResource("5_txger")
+
+[node name="Border_blue" type="Panel" parent="."]
+offset_left = 160.0
+offset_top = 85.0
+offset_right = 1020.0
+offset_bottom = 549.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iouoy")

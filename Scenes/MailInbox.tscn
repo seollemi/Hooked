@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=3 uid="uid://civs1gf8astpr"]
+
+[ext_resource type="Script" uid="uid://oueof4bwktfc" path="res://Scenes/mail_inbox.gd" id="1_1ki6e"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_jqjcp"]
+[ext_resource type="Script" uid="uid://c4sihq347pfkl" path="res://Scripts/color_rect_3.gd" id="3_wnfrf"]
+[ext_resource type="FontFile" uid="uid://b4qpxl287je0" path="res://FONTS/GrapeSoda.ttf" id="4_wwp26"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ougbr"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 10.0
+offset_right = -40.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+script = ExtResource("1_1ki6e")
+metadata/_edit_vertical_guides_ = [1633.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 364.0
+offset_top = 118.0
+offset_right = 364.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+color = Color(0.917647, 0.898039, 0.85098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 364.0
+offset_top = 118.0
+offset_right = 363.0
+offset_bottom = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+color = Color(0.305882, 0.517647, 1, 1)
+
+[node name="Border" type="Panel" parent="CanvasLayer"]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 364.0
+offset_top = 118.0
+offset_right = 365.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ougbr")
+
+[node name="Border2" type="Panel" parent="CanvasLayer"]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 373.0
+offset_top = 173.0
+offset_right = 328.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ougbr")
+
+[node name="Label_Mail" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = 125.0
+offset_right = 413.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_jqjcp")
+theme_override_font_sizes/font_size = 30
+text = "Mail"
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 374.0
+offset_top = 230.0
+offset_right = 324.0
+offset_bottom = -327.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.38493, 0.606116)
+color = Color(0.611765, 0.611765, 0.611765, 1)
+script = ExtResource("3_wnfrf")
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect3"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.3915
+offset_top = 21.448
+offset_right = 16514.4
+offset_bottom = 852.448
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("4_wwp26")
+theme_override_font_sizes/font_size = 760
+text = "Subject : Questions  – For New Employee"
+
+[node name="EXIT_RED" type="ColorRect" parent="CanvasLayer"]
+top_level = true
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_left = 775.0
+offset_top = 121.0
+offset_right = -295.848
+offset_bottom = -484.0
+scale = Vector2(0.38493, 0.606116)
+color = Color(0.737255, 0, 0, 1)
+
+[node name="X" type="Label" parent="CanvasLayer/EXIT_RED"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -23.404
+anchor_top = 0.122
+anchor_right = 1.0
+anchor_bottom = 15.712
+offset_left = 1900.9
+offset_top = -0.296447
+offset_right = 774.909
+offset_bottom = -595.486
+scale = Vector2(2.01088, 0.939138)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_jqjcp")
+theme_override_font_sizes/font_size = 35
+text = "X"
+
+[node name="Mail_Act1" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(0.611765, 0.611765, 0.611765, 1)
+offset_left = 374.0
+offset_top = 174.0
+offset_right = 798.0
+offset_bottom = 229.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Mail_Act1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 18.0
+offset_right = 7633.0
+offset_bottom = 378.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wwp26")
+theme_override_font_sizes/font_size = 360
+text = "Subject: URGENT – Login Required for Shared Report"
+
+[connection signal="gui_input" from="CanvasLayer/ColorRect3" to="." method="_on_color_rect_3_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/ColorRect3" to="." method="_on_color_rect_3_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/ColorRect3" to="." method="_on_color_rect_3_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/EXIT_RED" to="." method="_on_exit_red_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/EXIT_RED" to="." method="_on_exit_red_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/EXIT_RED" to="." method="_on_exit_red_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/Mail_Act1" to="." method="_on_mail_act_1_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/Mail_Act1" to="." method="_on_mail_act_1_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Mail_Act1" to="." method="_on_mail_act_1_mouse_exited"]

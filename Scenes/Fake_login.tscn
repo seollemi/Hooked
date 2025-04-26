@@ -1,0 +1,265 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqse1p4ce2og2"]
+
+[ext_resource type="Script" uid="uid://c6d3gj4pjmckc" path="res://Scenes/fake_login.gd" id="1_q1a0s"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_qokv3"]
+[ext_resource type="FontFile" uid="uid://b4qpxl287je0" path="res://FONTS/GrapeSoda.ttf" id="2_q1a0s"]
+[ext_resource type="Texture2D" uid="uid://b4njvv5m74c8p" path="res://Image for Pc/Novashield.png" id="3_456hq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i010i"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fso6c"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyrfh"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg7qr"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qokv3"]
+draw_center = false
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1a0s"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q1a0s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorBlue" type="ColorRect" parent="CanvasLayer"]
+visibility_layer = 8
+offset_left = 160.0
+offset_top = 86.0
+offset_right = 1019.0
+offset_bottom = 126.0
+mouse_filter = 2
+color = Color(0.305882, 0.517647, 1, 1)
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+visibility_layer = 4
+z_index = -1
+offset_left = 160.0
+offset_top = 87.0
+offset_right = 1019.0
+offset_bottom = 548.0
+mouse_filter = 2
+color = Color(0.917647, 0.898039, 0.85098, 1)
+
+[node name="COLOR_X" type="ColorRect" parent="CanvasLayer"]
+z_index = 10
+offset_left = 972.0
+offset_top = 87.0
+offset_right = 1018.0
+offset_bottom = 125.0
+color = Color(0.737255, 0, 0, 1)
+
+[node name="X" type="Label" parent="CanvasLayer/COLOR_X"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 55.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qokv3")
+theme_override_font_sizes/font_size = 35
+text = "X"
+
+[node name="Background Label" type="Label" parent="CanvasLayer"]
+visibility_layer = 4
+offset_left = 212.0
+offset_top = 171.0
+offset_right = 3025.0
+offset_bottom = 3174.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+theme_override_font_sizes/font_size = 1500
+text = "BOSS
+"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 214.0
+offset_top = 235.0
+offset_right = 718.0
+offset_bottom = 258.0
+scale = Vector2(0.05, 0.05)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+theme_override_font_sizes/font_size = 450
+text = "Urgent: Please log in at oncec to view the shared cloud document"
+
+[node name="Fake Login page" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Border" type="Panel" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 297.0
+offset_right = 696.0
+offset_bottom = 461.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i010i")
+
+[node name="Username_Border" type="Panel" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 363.0
+offset_right = 444.0
+offset_bottom = 381.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fso6c")
+
+[node name="Label" type="Label" parent="CanvasLayer/Fake Login page/Username_Border"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -17.0
+offset_right = 63.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+text = "Username"
+
+[node name="Password_border" type="Panel" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 405.0
+offset_right = 444.0
+offset_bottom = 422.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jyrfh")
+
+[node name="Label" type="Label" parent="CanvasLayer/Fake Login page/Password_border"]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 114.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+text = "Password"
+
+[node name="Panel_blue" type="ColorRect" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 298.0
+offset_right = 696.0
+offset_bottom = 318.0
+color = Color(0.305882, 0.517647, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Fake Login page/Panel_blue"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+text = "Nova Shield"
+
+[node name="Nova_Icon" type="TextureRect" parent="CanvasLayer/Fake Login page/Panel_blue"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -16.0
+offset_right = 125.0
+offset_bottom = 38.0
+texture = ExtResource("3_456hq")
+expand_mode = 1
+
+[node name="COLOR_RED_X" type="ColorRect" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 671.0
+offset_top = 299.0
+offset_right = 695.0
+offset_bottom = 317.0
+color = Color(0.737255, 0, 0, 1)
+
+[node name="X" type="Label" parent="CanvasLayer/Fake Login page/COLOR_RED_X"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -3.0
+offset_right = 47.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "X"
+
+[node name="Login" type="ColorRect" parent="CanvasLayer/Fake Login page"]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 430.0
+offset_right = 679.0
+offset_bottom = 453.0
+color = Color(0.305882, 0.517647, 1, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Fake Login page/Login"]
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 23.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fg7qr")
+
+[node name="Label" type="Label" parent="CanvasLayer/Fake Login page/Login"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_q1a0s")
+text = "Login"
+
+[node name="Border_background" type="Panel" parent="CanvasLayer"]
+offset_left = 160.0
+offset_top = 87.0
+offset_right = 1019.0
+offset_bottom = 127.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qokv3")
+
+[node name="Border_blue" type="Panel" parent="CanvasLayer"]
+offset_left = 160.0
+offset_top = 85.0
+offset_right = 1020.0
+offset_bottom = 549.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1a0s")
+
+[connection signal="gui_input" from="CanvasLayer/COLOR_X" to="." method="_on_color_x_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/COLOR_X" to="." method="_on_color_x_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/COLOR_X" to="." method="_on_color_x_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/Fake Login page/COLOR_RED_X" to="." method="_on_color_red_x_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/Fake Login page/COLOR_RED_X" to="." method="_on_color_red_x_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Fake Login page/COLOR_RED_X" to="." method="_on_color_red_x_mouse_exited"]
