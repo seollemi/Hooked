@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://j6pnpmjnhbvg"]
+[gd_scene load_steps=7 format=3 uid="uid://j6pnpmjnhbvg"]
 
 [ext_resource type="Texture2D" uid="uid://hljde2ypqj44" path="res://Player/Sprites/Dana.png" id="1_1gglm"]
+[ext_resource type="Script" uid="uid://bferr0m0vtn1f" path="res://Scripts/character_scripts/dana_portrait_animation.gd" id="1_mbijy"]
 
 [sub_resource type="Animation" id="Animation_v3q5n"]
-resource_name = "Jordan_no"
+resource_name = "Dana_no"
 length = 1.2
 loop_mode = 2
 tracks/0/type = "value"
@@ -20,7 +21,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_5vhb5"]
-resource_name = "Jordan_talking"
+resource_name = "Dana_talking"
 length = 0.9
 loop_mode = 1
 tracks/0/type = "value"
@@ -53,20 +54,23 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_deg2n"]
 _data = {
-&"Jordan_no": SubResource("Animation_v3q5n"),
-&"Jordan_talking": SubResource("Animation_5vhb5"),
+&"Dana_no": SubResource("Animation_v3q5n"),
+&"Dana_talking": SubResource("Animation_5vhb5"),
 &"RESET": SubResource("Animation_qq4k3")
 }
 
 [node name="DanaPortraitAnimation" type="Node2D"]
+script = ExtResource("1_mbijy")
 
 [node name="Dana" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(2, 2)
 texture = ExtResource("1_1gglm")
 hframes = 10
 vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Dana"]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_deg2n")
 }
