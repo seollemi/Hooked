@@ -1,0 +1,24 @@
+[music path="res://sounds/4_Dramatic_1_Master.mp3" fade="0.0" volume="0.0"]
+James: Hey Alex! You look serious—everything okay?
+alex: Yeah, just wanted to warn you. I got a phishing email this morning. It almost fooled me.
+James: What? What kind of email?
+alex: It claimed to be from my bank, saying there was suspicious activity on my account. It asked me to click a link and log in.
+James: Did you click it?
+alex: Nope. The sender’s email was something like securebanknotice56@gmail.com. That was my first red flag.
+James: Okay, so what should I do if I get something like that?
+alex: You have two choices, honestly.
+alex: A. You can click the link and hope it’s real—which is risky and could lead to your info getting stolen.\
+B. Or you can stop, check the sender’s email, hover over any links to see where they really go, and if in doubt, contact the company directly through their actual website or phone number.
+- Choose A
+	[sound path="res://sounds/7_Stinger_Defeat_1_Master.ogg" volume="0.0"]
+	James: A Because it's a reward
+	alex: Dont you see It's a scam?
+	alex: Don't risk on getting your information stolen.
+- Choose B
+	[sound path="res://sounds/6_Stinger_Victory_1_Master.mp3" volume="0.0"]
+	James: Hmm… obviously B sounds safer.
+	alex: Exactly. Phishing emails want you to act fast without thinking. If you pause and verify things first, you’ll stay way safer.
+James: Yeah, makes sense. I’d rather take the time to be sure than deal with a hacked account later.
+alex: Good call. Also, use two-factor authentication whenever you can. Adds another layer of security.
+James: Appreciate the advice, man. I’ll be a lot more careful from now on.
+alex: That’s all I wanted. Stay sharp out there—those fake emails are getting sneaky.

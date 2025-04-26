@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=32 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://diakjyu1rlnxe" path="res://Scenes/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cd4x2e36svtei" path="res://world/office/20_Subway_and_Train_Station_16x16.png" id="5_fbgy8"]
 [ext_resource type="Texture2D" uid="uid://lil167lc6xn8" path="res://world/office/Subway_Busker_3_16x16.png" id="7_8lqcc"]
 [ext_resource type="Texture2D" uid="uid://bld4jgw6qs52" path="res://world/office/Alex_idle_anim_16x16.png" id="8_ibiix"]
+[ext_resource type="Texture2D" uid="uid://ctutupntxun5d" path="res://npc/Alex_phone_16x16.png" id="9_alh1q"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="9_fbgy8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibiix"]
@@ -13500,8 +13501,27 @@ texture = ExtResource("2_8lqcc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3y2kf"]
 texture = ExtResource("8_ibiix")
-0:0/animation_columns = 24
-0:0/animation_speed = 5.0
+18:0/animation_columns = 6
+18:0/animation_speed = 5.0
+18:0/0 = 0
+18:1/animation_columns = 6
+18:1/animation_speed = 5.0
+18:1/0 = 0
+19:0/0 = 0
+19:1/0 = 0
+20:0/0 = 0
+20:1/0 = 0
+21:0/0 = 0
+21:1/0 = 0
+22:0/0 = 0
+22:1/0 = 0
+23:0/0 = 0
+23:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0gwg4"]
+texture = ExtResource("9_alh1q")
+0:0/animation_columns = 9
+0:0/animation_speed = 2.0
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/animation_frame_2/duration = 1.0
@@ -13511,24 +13531,9 @@ texture = ExtResource("8_ibiix")
 0:0/animation_frame_6/duration = 1.0
 0:0/animation_frame_7/duration = 1.0
 0:0/animation_frame_8/duration = 1.0
-0:0/animation_frame_9/duration = 1.0
-0:0/animation_frame_10/duration = 1.0
-0:0/animation_frame_11/duration = 1.0
-0:0/animation_frame_12/duration = 1.0
-0:0/animation_frame_13/duration = 1.0
-0:0/animation_frame_14/duration = 1.0
-0:0/animation_frame_15/duration = 1.0
-0:0/animation_frame_16/duration = 1.0
-0:0/animation_frame_17/duration = 1.0
-0:0/animation_frame_18/duration = 1.0
-0:0/animation_frame_19/duration = 1.0
-0:0/animation_frame_20/duration = 1.0
-0:0/animation_frame_21/duration = 1.0
-0:0/animation_frame_22/duration = 1.0
-0:0/animation_frame_23/duration = 1.0
 0:0/0 = 0
-0:1/animation_columns = 24
-0:1/animation_speed = 5.0
+0:1/animation_columns = 9
+0:1/animation_speed = 2.0
 0:1/animation_frame_0/duration = 1.0
 0:1/animation_frame_1/duration = 1.0
 0:1/animation_frame_2/duration = 1.0
@@ -13538,21 +13543,6 @@ texture = ExtResource("8_ibiix")
 0:1/animation_frame_6/duration = 1.0
 0:1/animation_frame_7/duration = 1.0
 0:1/animation_frame_8/duration = 1.0
-0:1/animation_frame_9/duration = 1.0
-0:1/animation_frame_10/duration = 1.0
-0:1/animation_frame_11/duration = 1.0
-0:1/animation_frame_12/duration = 1.0
-0:1/animation_frame_13/duration = 1.0
-0:1/animation_frame_14/duration = 1.0
-0:1/animation_frame_15/duration = 1.0
-0:1/animation_frame_16/duration = 1.0
-0:1/animation_frame_17/duration = 1.0
-0:1/animation_frame_18/duration = 1.0
-0:1/animation_frame_19/duration = 1.0
-0:1/animation_frame_20/duration = 1.0
-0:1/animation_frame_21/duration = 1.0
-0:1/animation_frame_22/duration = 1.0
-0:1/animation_frame_23/duration = 1.0
 0:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3y2kf"]
@@ -13563,6 +13553,7 @@ sources/3 = SubResource("TileSetAtlasSource_tryux")
 sources/4 = SubResource("TileSetAtlasSource_7or87")
 sources/5 = SubResource("TileSetAtlasSource_02wrx")
 sources/6 = SubResource("TileSetAtlasSource_3y2kf")
+sources/7 = SubResource("TileSetAtlasSource_0gwg4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8glwk"]
 texture = ExtResource("2_02wrx")
@@ -13925,6 +13916,9 @@ sources/0 = SubResource("TileSetAtlasSource_8mlqc")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbgy8"]
 size = Vector2(20, 29)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_alh1q"]
+size = Vector2(64, 57)
+
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
 
@@ -13937,7 +13931,7 @@ tile_set = SubResource("TileSet_alh1q")
 
 [node name="obs" type="TileMapLayer" parent="Node2D"]
 z_index = 2
-tile_map_data = PackedByteArray("AAAUABYAAgAFAIcAAAAUABcAAgAFAIgAAAATABYAAgAEAIcAAAATABcAAgAEAIgAAAAcABYAAgAEAIMAAAAcABcAAgAEAIQAAAAdABYAAgAFAIMAAAAdABcAAgAFAIQAAAAeABYAAgAGAIMAAAAeABcAAgAGAIQAAAAUABoAAwAGABQAAAAUABsAAwAGABUAAAAVABoAAwAFABQAAAAVABsAAwAFABUAAAAWABoAAwAHABQAAAAWABsAAwAHABUAAAAWABcAAwAIABAAAAAWABgAAwAIABEAAAAVABYAAwAHAA8AAAAVABcAAwAHABAAAAAVABgAAwAHABEAAAAWABYAAwAIAA8AAAAhABkABAASAAQAAAAhABoABAASAAUAAAAiABkABAATAAQAAAAiABoABAATAAUAAAAhABsABAASAAQAAAAhABwABAASAAUAAAAiABsABAATAAQAAAAiABwABAATAAUAAAAhAB0ABAASAAQAAAAhAB4ABAASAAUAAAAiAB0ABAATAAQAAAAiAB4ABAATAAUAAAAhAB8ABAAUAAQAAAAhACAABAAUAAUAAAAiAB8ABAAVAAQAAAAiACAABAAVAAUAAAAkABQAAwAHACYAAAAkABUAAwAHACYAAAAkABYAAwAHACYAAAAkABcAAwAHACYAAAAkABgAAwAHACcAAAAnABgAAwAFACcAAAAoABQAAwAHACYAAAAoABUAAwAHACYAAAAoABYAAwAHACYAAAAoABcAAwAGACYAAAAoABgAAwAGACcAAAAkABMAAwACAC4AAAAlABMAAwADAC4AAAAmABMAAwADAC4AAAAnABMAAwAEACUAAAAnABcAAwAFACYAAAAoABMAAwAFACUAAAApABIAAwAIADEAAAApABMAAwAIADIAAAAZABcABQAAAAAAAAAZABgABQAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUABYAAgAFAIcAAAAUABcAAgAFAIgAAAATABYAAgAEAIcAAAATABcAAgAEAIgAAAAcABYAAgAEAIMAAAAcABcAAgAEAIQAAAAdABYAAgAFAIMAAAAdABcAAgAFAIQAAAAeABYAAgAGAIMAAAAeABcAAgAGAIQAAAAUABoAAwAGABQAAAAUABsAAwAGABUAAAAVABoAAwAFABQAAAAVABsAAwAFABUAAAAWABoAAwAHABQAAAAWABsAAwAHABUAAAAWABcAAwAIABAAAAAWABgAAwAIABEAAAAVABYAAwAHAA8AAAAVABcAAwAHABAAAAAVABgAAwAHABEAAAAWABYAAwAIAA8AAAAhABkABAASAAQAAAAhABoABAASAAUAAAAiABkABAATAAQAAAAiABoABAATAAUAAAAhABsABAASAAQAAAAhABwABAASAAUAAAAiABsABAATAAQAAAAiABwABAATAAUAAAAhAB0ABAASAAQAAAAhAB4ABAASAAUAAAAiAB0ABAATAAQAAAAiAB4ABAATAAUAAAAhAB8ABAAUAAQAAAAhACAABAAUAAUAAAAiAB8ABAAVAAQAAAAiACAABAAVAAUAAAAkABQAAwAHACYAAAAkABUAAwAHACYAAAAkABYAAwAHACYAAAAkABcAAwAHACYAAAAkABgAAwAHACcAAAAnABgAAwAFACcAAAAoABQAAwAHACYAAAAoABUAAwAHACYAAAAoABYAAwAHACYAAAAoABcAAwAGACYAAAAoABgAAwAGACcAAAAkABMAAwACAC4AAAAlABMAAwADAC4AAAAmABMAAwADAC4AAAAnABMAAwAEACUAAAAnABcAAwAFACYAAAAoABMAAwAFACUAAAApABIAAwAIADEAAAApABMAAwAIADIAAAAZABcABQAAAAAAAAAZABgABQAAAAEAAAAwABIABwAAAAAAAAAwABMABwAAAAEAAAA=")
 tile_set = SubResource("TileSet_3y2kf")
 
 [node name="walls" type="TileMapLayer" parent="Node2D"]
@@ -13959,4 +13953,12 @@ shape = SubResource("RectangleShape2D_fbgy8")
 [node name="Player" parent="." instance=ExtResource("9_fbgy8")]
 position = Vector2(116, 317)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(763, 351)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21, -19)
+shape = SubResource("RectangleShape2D_alh1q")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

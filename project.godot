@@ -27,10 +27,12 @@ directories/dch_directory={
 "Ava": "res://Scenes/Portrait_animation/Ava.dch",
 "James": "res://Dialogic_scenes/Characters/James.dch",
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
+"alex": "res://npc/alex.dch",
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
 "House_dialog": "res://Dialogic_scenes/House_dialog.dtl",
+"emailphishing": "res://world/office/emailphishing.dtl",
 "walking": "res://npc/walking.dtl"
 }
 glossary/default_case_sensitive=true
