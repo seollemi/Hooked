@@ -249,6 +249,15 @@ offset_bottom = 127.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qokv3")
 
+[node name="Label" type="Label" parent="CanvasLayer/Border_background"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 48.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "MAIL"
+
 [node name="Border_blue" type="Panel" parent="CanvasLayer"]
 offset_left = 160.0
 offset_top = 85.0
