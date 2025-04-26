@@ -29,6 +29,7 @@ directories/dch_directory={
 "James": "res://Dialogic_scenes/Characters/James.dch",
 "Jordan": "res://Dialogic_scenes/Characters/Jordan.dch",
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
+"alex": "res://npc/alex.dch",
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
@@ -38,6 +39,7 @@ directories/dtl_directory={
 "GuardDialogue": "res://opening INtro/GuardDialogue.dtl",
 "HouseDialogue": "res://opening INtro/HouseDialogue.dtl",
 "House_dialog": "res://Dialogic_scenes/House_dialog.dtl",
+<<<<<<< HEAD
 "IntroDialogue": "res://opening INtro/IntroDialogue.dtl",
 "MailInbox_1": "res://Dialogic_scenes/MailInbox_1.dtl",
 "Mail_open": "res://Dialogic_scenes/Mail_open.dtl",
@@ -46,6 +48,9 @@ directories/dtl_directory={
 "phone_seq1": "res://Dialogic_scenes/phone_seq1.dtl",
 "phone_seq2": "res://Dialogic_scenes/phone_seq2.dtl",
 "timeline": "res://Dialogic_scenes/timeline.dtl",
+=======
+"emailphishing": "res://world/office/emailphishing.dtl",
+>>>>>>> 05d28c185533f6916af6a628d2ab32a734a53597
 "walking": "res://npc/walking.dtl"
 }
 glossary/default_case_sensitive=true
