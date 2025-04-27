@@ -64,3 +64,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c5l1v")
 theme_override_font_sizes/font_size = 3000
 text = "Hints"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -258.0
+offset_right = 1163.0
+offset_bottom = 766.0
+texture = ExtResource("1_fgvnb")
