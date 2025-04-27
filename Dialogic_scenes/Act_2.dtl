@@ -1,4 +1,5 @@
 James (James_talking): We're locked out. Every shared file’s inaccessible… wait—
+[signal arg="wna"]
 Jordan (Jordan_talking): (leans in, reading)\
 “Your data has been encrypted. Pay 10 BTC within 3 hours or it’s gone forever.”
 James (James_talking): It’s ransomware. No doubt.
@@ -9,15 +10,18 @@ What’s happening? Legal just called. They’re locked out of everything.
 Jordan (Jordan_talking): We’ve been hit by ransomware. They’re demanding payment in Bitcoin.
 Dana (Dana_talking): Can we just pay and be done with it? We can't afford downtime today.
 Jordan (Jordan_talking): There’s no guarantee they’ll return the files, ma’am. Paying might make us a future target. But isolation takes time.
+Narrator: What should Jordan do?
 - 🔌 [Isolate affected systems immediately]
 	James (James_no): I think we should not pay them
 	Jordan (Jordan_talking): We isolate now. Cut off infected systems, trace the spread, and start restoring from last night’s backup.
 	Dana (Dana_talking): (sighs)\
 Fine. Just fix this. And keep me updated every step of the way.
 	James (James_talking): I’m unplugging the affected machines. Starting with the east wing.
+	[signal arg="shut"]
 	Jordan (Jordan_talking): I’ll alert the rest of IT and lock down network access. We’ll identify the ransomware variant and kill it.
 	Dana (Dana_talking): This better never happen again. Understood?
 	James (James_talking): Understood, ma’am.
+	[signal arg="right_choice"]
 	Narrator: ✅ You chose to isolate the affected systems.\
 🔐 The ransomware was contained.\
 💾 Files were successfully restored from secure backups.\
@@ -39,9 +43,12 @@ We paid — and things are worse! You said this would fix it!
 	James (James_no): Backups are clean, but now we’ll need more time to rebuild everything.
 	Jordan (Jordan_talking): We just bought ourselves more downtime. And painted a target on our backs.\
 (The screen fades to red. A warning flashes\: “ALL SYSTEMS COMPROMISED.”)
+	[signal arg="wrong_choice"]
 	Narrator: ❌ You chose to pay the ransom.\
 ✖️ The attackers never returned your data.\
 ✖️ The ransomware spread to more machines.\
 ✖️ Rebuilding from backups will now take longer.\
 ⚠️ Lesson\: Never trust cybercriminals — isolate first, always.\
 ✅ Hint\: Isolating systems first can help you contain the damage and recover safely using backups.
+	- Replay Act
+		[signal arg="Replay"]

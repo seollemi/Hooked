@@ -33,7 +33,7 @@ directories/dch_directory={
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
-"Act 2 ": "res://Dialogic_scenes/Act 2 .dtl",
+"Act_2": "res://Dialogic_scenes/Act_2.dtl",
 "CollegeDialogue": "res://opening INtro/CollegeDialogue.dtl",
 "Fake_login": "res://Dialogic_scenes/Fake_login.dtl",
 "GuardDialogue": "res://opening INtro/GuardDialogue.dtl",
