@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c30ahwsiaqioh"]
+[gd_scene load_steps=6 format=3 uid="uid://c30ahwsiaqioh"]
 
 [ext_resource type="Texture2D" uid="uid://dy1lunbo7v67i" path="res://MiniGameAssets/background.png" id="1_dlsph"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_m8psw"]
 [ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="3_0pri5"]
+[ext_resource type="PackedScene" uid="uid://bkt4pxa6s7wtp" path="res://MiniGameTscn/passwordstrenght_1.tscn" id="4_m8psw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0er1l"]
 draw_center = false
@@ -20,30 +21,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
 offset_left = -1.0
 offset_top = -373.0
 offset_right = 1153.0
 offset_bottom = 651.0
 texture = ExtResource("1_dlsph")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_left = 105.0
 offset_top = 68.0
 offset_right = 1050.0
 offset_bottom = 583.0
 color = Color(0.572549, 0.47451, 0.341176, 1)
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
+[node name="Panel" type="Panel" parent="CanvasLayer"]
 offset_left = 104.0
 offset_top = 67.0
 offset_right = 1051.0
 offset_bottom = 583.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0er1l")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 347.0
 offset_top = 64.0
@@ -55,8 +56,7 @@ theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 4000
 text = "Hints obtained"
 
-[node name="Hint1" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint1" type="TextureRect" parent="CanvasLayer"]
 offset_left = 164.0
 offset_top = 208.0
 offset_right = 265.0
@@ -64,8 +64,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint2" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint2" type="TextureRect" parent="CanvasLayer"]
 offset_left = 250.0
 offset_top = 208.0
 offset_right = 351.0
@@ -73,8 +72,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint3" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint3" type="TextureRect" parent="CanvasLayer"]
 offset_left = 337.0
 offset_top = 208.0
 offset_right = 438.0
@@ -82,8 +80,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint4" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint4" type="TextureRect" parent="CanvasLayer"]
 offset_left = 423.0
 offset_top = 208.0
 offset_right = 524.0
@@ -91,8 +88,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint5" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint5" type="TextureRect" parent="CanvasLayer"]
 offset_left = 509.0
 offset_top = 208.0
 offset_right = 610.0
@@ -100,8 +96,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint6" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint6" type="TextureRect" parent="CanvasLayer"]
 offset_left = 594.0
 offset_top = 208.0
 offset_right = 695.0
@@ -109,8 +104,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint7" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint7" type="TextureRect" parent="CanvasLayer"]
 offset_left = 680.0
 offset_top = 208.0
 offset_right = 781.0
@@ -118,8 +112,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint8" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint8" type="TextureRect" parent="CanvasLayer"]
 offset_left = 767.0
 offset_top = 208.0
 offset_right = 868.0
@@ -127,8 +120,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="Hint9" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="Hint9" type="TextureRect" parent="CanvasLayer"]
 offset_left = 854.0
 offset_top = 208.0
 offset_right = 955.0
@@ -136,8 +128,7 @@ offset_bottom = 299.0
 texture = ExtResource("3_0pri5")
 expand_mode = 1
 
-[node name="CurrentPassword" type="Label" parent="."]
-layout_mode = 0
+[node name="CurrentPassword" type="Label" parent="CanvasLayer"]
 offset_left = 440.0
 offset_top = 518.0
 offset_right = 21753.0
@@ -148,8 +139,7 @@ theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 4000
 text = "andrewjames"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 273.0
 offset_top = 518.0
 offset_right = 16617.0
@@ -159,3 +149,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 4000
 text = "Password:"
+
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource("4_m8psw")]
+position = Vector2(-94, 80)
