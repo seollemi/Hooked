@@ -6,7 +6,7 @@ func _ready() -> void:
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if not dialog_started:
 		dialog_started = true
-		Dialogic.start("Act 2")
+		Dialogic.start("Act_2")
 		%AudioStreamPlayer2D.play()
 
 func _on_dialogic_signal(argument: String) -> void:
@@ -24,7 +24,7 @@ func _on_dialogic_signal(argument: String) -> void:
 			%AudioStreamPlayer2D.stop()
 			%good_end.play()
 		"Replay":
-			Dialogic.start("Act 2")
+			Dialogic.start("Act_2")
 			%AudioStreamPlayer2D.play()
 
 
