@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
 
 func _ready() -> void:
-	animation = "Idle_up"
+	animation = "idle_up"
 	play()

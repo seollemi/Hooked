@@ -1,18 +1,25 @@
 James: Wait, this doesn’t look like our usual format. Why would the boss send this without context?
 James: This link looks… off.
 James: Something’s wrong. I should double-check this before clicking.
-- Ignore the email
-	Jordan: Good catch! Can you forward it to us? Don’t click anything.
+- Ignore the email | [signal_event="return_to_office"]
+	[signal arg="return_to_office"]
+	[sound path="res://sounds/6_Stinger_Victory_1_Master.mp3" volume="0.0"]
 	James: Hey Jordan, I just got a weird email from the boss.
 	Jordan: We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan: Hey, team! Be on alert. We detected a phishing attempt targeting employees. If you get any unusual login requests, report them ASAP.
 	Jordan: You need to go visit the IT department and report this immediately. The sooner we flag it, the less damage they can do
+	[signal arg="Dialog_IT"]
 - Enter login credentials
-	Jordan: Whoa! Don’t do that! It’s a fake! I know it looks like our boss sent it, but it’s not. These phishing scams copy familiar names to trick you into handing over your login.
+	[signal arg="return_to_office"]
+	[sound path="res://sounds/7_Stinger_Defeat_1_Master.mp3" volume="0.0"]
+	Jordan: Whoa! STOOPP!!!!
+	Jordan: Don’t do that! It’s a fake! I know it looks like our boss sent it, but it’s not. These phishing scams copy familiar names to trick you into handing over your login.
+	James: I didn’t know... I thought it was really from the boss..
 	Jordan: That was a phishing attempt. You almost gave them your password!
-	We’ve seen it before  if you gave them your password, they could’ve accessed company files, impersonated you in emails, or even spread malware across the network. One wrong move, and the whole system could’ve been compromised.
+	Jordan: We’ve seen it before  if you gave them your password, they could’ve accessed company files, impersonated you in emails, or even spread malware across the network. One wrong move, and the whole system could’ve been compromised.
 	James: Oh crap... Thanks for catching that.
 	Jordan: Hey, team! Be on alert. We detected a phishing attempt targeting employees. If you get any unusual login requests, report them ASAP.
 	Jordan: We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan: You need to go visit the IT department and report this immediately. The sooner we flag it, the less damage they can do
+	[signal arg="Dialog_IT"]
 [music fade="0.0" volume="0.0"]

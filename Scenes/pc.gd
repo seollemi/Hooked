@@ -5,16 +5,14 @@ extends Control
 @onready var canvas_layer: CanvasLayer = $".."
 @onready var node_2d: Node2D = $"../.."
 
-
-var dialog_started := false
-var dialog_started1 := false
+\
 
 
 func _ready():
 	email_button.pressed.connect(_on_email_notif_button_pressed)
-	if not dialog_started:
-		dialog_started = true
-		Dialogic.start("pc_start")  
+	if not Global.pc_start_opened:
+		Global.pc_start_opened = true  # Mark it permanently
+		Dialogic.start("pc_start")
 
 func _on_email_notif_button_pressed() -> void:
 	pass # Replace with function body.
@@ -27,6 +25,6 @@ func _on_email_notif_button_pressed() -> void:
 		mail_popup.position = Vector2(320, 180)  # Put it wherever looks centered
 
 	# 🔽 Trigger Dialogic only once
-	if not dialog_started1:
-		dialog_started1 = true
+	if not Global.mail_open_opened:
+		Global.mail_open_opened = true  # Mark it permanently
 		Dialogic.start("Mail_open")

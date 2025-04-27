@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmg6hdeph7oat"]
+
+[ext_resource type="Script" uid="uid://bd4lsgkc84qx3" path="res://hints.gd" id="1_r5ohl"]
+[ext_resource type="Texture2D" uid="uid://47w5s5ut7kby" path="res://MiniGameAssets/00.png" id="2_nqty0"]
+[ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="3_nqty0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg6wn"]
+atlas = ExtResource("2_nqty0")
+region = Rect2(193, 0, 23, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unsr8"]
+atlas = ExtResource("2_nqty0")
+region = Rect2(216, 0, 23, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wf3ay"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg6wn")
+}],
+"loop": true,
+"name": &"Button",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unsr8")
+}],
+"loop": true,
+"name": &"Button_pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg6wn"]
+size = Vector2(17, 14)
+
+[node name="Hints" type="Area2D"]
+script = ExtResource("1_r5ohl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wf3ay")
+animation = &"Button"
+
+[node name="interactable" parent="AnimatedSprite2D" instance=ExtResource("3_nqty0")]
+interact_name = "Press E to Interact"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/interactable"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_xg6wn")

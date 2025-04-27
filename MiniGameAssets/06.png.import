@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r07wrdvmr5ud"
-path="res://.godot/imported/Popmail.png-1a736a9b25d31d6b45080277d99cff4e.ctex"
+uid="uid://dq1tsxsrov5h5"
+path="res://.godot/imported/06.png-24b3321a92fe9b6cc8ef4cac45658ccf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image for Pc/Popmail.png"
-dest_files=["res://.godot/imported/Popmail.png-1a736a9b25d31d6b45080277d99cff4e.ctex"]
+source_file="res://MiniGameAssets/06.png"
+dest_files=["res://.godot/imported/06.png-24b3321a92fe9b6cc8ef4cac45658ccf.ctex"]
 
 [params]
 

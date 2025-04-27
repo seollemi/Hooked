@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://biekxhsae4pgv"]
+
+[ext_resource type="Texture2D" uid="uid://dy1lunbo7v67i" path="res://MiniGameAssets/background.png" id="1_fgvnb"]
+[ext_resource type="Texture2D" uid="uid://8rl6u5wr6vsy" path="res://MiniGameAssets/test.png" id="2_rn7r8"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="3_c5l1v"]
+[ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_74buc"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -11.0
+offset_top = -117.0
+offset_right = -11.0
+offset_bottom = -117.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -258.0
+offset_right = 1163.0
+offset_bottom = 766.0
+texture = ExtResource("1_fgvnb")
+
+[node name="Start" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 605.0
+offset_right = 685.0
+offset_bottom = 709.0
+texture_normal = ExtResource("2_rn7r8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Start"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 35.0
+offset_right = 7142.0
+offset_bottom = 3285.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c5l1v")
+theme_override_font_sizes/font_size = 3000
+text = "Start"
+
+[node name="Hints" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 708.0
+offset_right = 690.0
+offset_bottom = 812.0
+texture_normal = ExtResource("4_74buc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="TextureRect/Hints"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 34.0
+offset_right = 7143.0
+offset_bottom = 3284.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c5l1v")
+theme_override_font_sizes/font_size = 3000
+text = "Hints"
