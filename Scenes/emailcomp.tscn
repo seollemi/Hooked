@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dp878x7y26us5"]
 
-[ext_resource type="Script" path="res://Scripts/email.gd" id="1_fu882"]
-[ext_resource type="Script" uid="uid://d0e0hthguxtv5" path="res://Scenes/emailspawner.gd" id="2_slim0"]
+[ext_resource type="Script" uid="uid://dliacnnlc773f" path="res://Scripts/email.gd" id="1_fu882"]
+[ext_resource type="Script" path="res://Scripts/emailspawner.gd" id="2_slim0"]
 [ext_resource type="PackedScene" uid="uid://brwsaop82ohb2" path="res://Scenes/emails.tscn" id="3_jxd8c"]
 [ext_resource type="Texture2D" uid="uid://b71jtqo6cptix" path="res://Image for Pc/Outher pc.png" id="4_7vyrb"]
 [ext_resource type="Texture2D" uid="uid://x1vxyw1fubo4" path="res://Image for Pc/raw.png" id="5_g8bqi"]

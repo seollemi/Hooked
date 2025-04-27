@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=4 uid="uid://badoc07mii0ks"]
 
-[ext_resource type="Script" uid="uid://diakjyu1rlnxe" path="res://Scenes/officelobby.gd" id="1_6d4fe"]
+[ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
 [ext_resource type="Texture2D" uid="uid://birefcflxdi7o" path="res://world/office/Room_Builder_Office_16x16.png" id="2_02wrx"]
 [ext_resource type="Texture2D" uid="uid://y41qyrsdddrm" path="res://world/office/Subway_Busker_4_16x16.png" id="2_8lqcc"]
