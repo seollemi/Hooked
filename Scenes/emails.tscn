@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://brwsaop82ohb2"]
+
+[ext_resource type="Script" uid="uid://dqfufs64hw8x" path="res://Scenes/password.gd" id="1_l1bxv"]
+
+[node name="Password" type="Node2D"]
+visible = false
+position = Vector2(622, 324)
+script = ExtResource("1_l1bxv")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
