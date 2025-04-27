@@ -27,7 +27,7 @@ var mail_open_opened: bool = false  # interact once only happen 1 time permanent
 var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
-
+var act_1_done: bool = false
 var collected_hints: int = 0  # Start at zero
 
 #NPC MOVEMENT
@@ -35,7 +35,7 @@ var NPC_Office_location = Vector2(463.0, 76.0)
 
 #NPC GLOBAL ONE TIME USED
 var npc_event_done: bool = false
-
+var npc_evnt2_done: bool = false
 
 var game_first_loadin = true
 var game_outside_loadin = true

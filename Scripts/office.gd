@@ -45,3 +45,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 			Vector2(223, 91),
 			Vector2(358, 91)
 		] as Array[Vector2])
+
+
+func _on_act_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

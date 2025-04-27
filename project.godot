@@ -30,13 +30,13 @@ directories/dch_directory={
 "Jordan": "res://Dialogic_scenes/Characters/Jordan.dch",
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
 "alex": "res://npc/alex.dch",
-"character": "res://npc/character.dch"
+"character": "res://npc/character.dch",
+"npc": "res://Dialogic_scenes/Characters/npc.dch"
 }
 directories/dtl_directory={
 "Act_2": "res://Dialogic_scenes/Act_2.dtl",
 "Act_3": "res://Dialogic_scenes/Act_3.dtl",
 "CollegeDialogue": "res://opening INtro/CollegeDialogue.dtl",
-"Dialogic_scenes/emailphishing": "res://Dialogic_scenes/emailphishing.dtl",
 "Fake_login": "res://Dialogic_scenes/Fake_login.dtl",
 "GuardDialogue": "res://opening INtro/GuardDialogue.dtl",
 "HouseDialogue": "res://opening INtro/HouseDialogue.dtl",
@@ -46,8 +46,10 @@ directories/dtl_directory={
 "MailInbox_1": "res://Dialogic_scenes/MailInbox_1.dtl",
 "Mail_open": "res://Dialogic_scenes/Mail_open.dtl",
 "NPC_TALK_ACT1": "res://Dialogic_scenes/NPC_TALK_ACT1.dtl",
+"Npc_act2": "res://Dialogic_scenes/Npc_act2.dtl",
 "Work_Introduction": "res://Dialogic_scenes/Work_Introduction.dtl",
 "emailphishing": "res://world/office/emailphishing.dtl",
+"emailphising": "res://Dialogic_scenes/emailphishing.dtl",
 "password": "res://Dialogic_scenes/password.dtl",
 "pc_start": "res://Dialogic_scenes/pc_start.dtl",
 "phone_seq0": "res://Dialogic_scenes/phone_seq0.dtl",
@@ -58,7 +60,7 @@ directories/dtl_directory={
 }
 glossary/default_case_sensitive=true
 variables={}
-layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres"]
+layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres", "res://Dialogic_scenes/bubble.tres"]
 layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

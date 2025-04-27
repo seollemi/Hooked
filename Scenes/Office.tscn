@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://7v1n16qg8m82"]
+[gd_scene load_steps=20 format=4 uid="uid://7v1n16qg8m82"]
 
 [ext_resource type="Script" uid="uid://cwbiwat53hepk" path="res://Scripts/office.gd" id="1_0d164"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brc7sdbchhgip" path="res://world/office/Room_Builder_Office_32x32.png" id="6_ei0gw"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="7_gnkyl"]
 [ext_resource type="PackedScene" uid="uid://bge06wcxwk3c2" path="res://Scenes/npc.tscn" id="8_t43tj"]
+[ext_resource type="PackedScene" uid="uid://dq4d5snhu28bd" path="res://Scenes/npc2.tscn" id="9_0u7kn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8ipj"]
 texture = ExtResource("3_r1f8t")
@@ -3584,6 +3585,9 @@ size = Vector2(30, 89)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chwbs"]
 size = Vector2(40.2269, 73.1918)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g47s"]
+size = Vector2(50, 27)
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_0d164")
 
@@ -3661,5 +3665,16 @@ scale = Vector2(0.820347, 0.860752)
 position = Vector2(389.469, 234.679)
 shape = SubResource("RectangleShape2D_chwbs")
 
+[node name="npc2" parent="." instance=ExtResource("9_0u7kn")]
+position = Vector2(574, 123)
+
+[node name="act_2" type="Area2D" parent="."]
+position = Vector2(733, 219)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="act_2"]
+position = Vector2(15, -1.5)
+shape = SubResource("RectangleShape2D_3g47s")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="act_2" to="npc2" method="_on_act_2_body_entered"]

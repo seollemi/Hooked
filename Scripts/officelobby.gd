@@ -33,7 +33,7 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not triggered:
 		triggered = true
-		Dialogic.start("emailphising")
+		Dialogic.start("emailphishing")
 		
 func _on_interact():
 	Global.next_scene = "computer"
