@@ -3300,6 +3300,7 @@ shape = SubResource("RectangleShape2D_8ye86")
 
 [node name="interactable" parent="." instance=ExtResource("16_ft7ms")]
 position = Vector2(135, 191)
+interact_name = "E to open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(0, 5)

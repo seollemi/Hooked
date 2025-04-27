@@ -30197,6 +30197,7 @@ layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("13_to4tw")]
 
+[connection signal="body_entered" from="Door_to_outsidehouse" to="." method="_on_door_to_outsidehouse_body_entered"]
 [connection signal="body_entered" from="Cutscene_trigger" to="." method="_on_cutscene_trigger_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

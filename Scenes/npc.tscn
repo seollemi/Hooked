@@ -1,8 +1,8 @@
 [gd_scene load_steps=53 format=3 uid="uid://bge06wcxwk3c2"]
 
 [ext_resource type="Texture2D" uid="uid://bn1x3lcyfvae2" path="res://Player/character sprites/Adam_16x16.png" id="1_acqhf"]
-[ext_resource type="Script" uid="uid://c10421sg1uck6" path="res://Scenes/npc.gd" id="1_g6unj"]
-[ext_resource type="Script" uid="uid://c0u8jry7liwyv" path="res://Scenes/animated_sprite_2d.gd" id="2_xxsvc"]
+[ext_resource type="Script" path="res://Scripts/character_scripts/npc.gd" id="1_g6unj"]
+[ext_resource type="Script" path="res://Scripts/character_scripts/animated_sprite_2d.gd" id="2_xxsvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njxey"]
 atlas = ExtResource("1_acqhf")

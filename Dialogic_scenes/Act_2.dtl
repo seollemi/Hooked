@@ -3,10 +3,8 @@ James (James_talking): We're locked out. Every shared file’s inaccessible… w
 Jordan (Jordan_talking): (leans in, reading)\
 “Your data has been encrypted. Pay 10 BTC within 3 hours or it’s gone forever.”
 James (James_talking): It’s ransomware. No doubt.
-Jordan (Jordan_talking): Then we’re on the clock. First step\: isolation. Before it spreads further.\
-(Phone buzzes. Jordan answers. It’s CEO Dana Harper.)
-Dana (Dana_talking): (voice through speaker)\
-What’s happening? Legal just called. They’re locked out of everything.
+Jordan (Jordan_talking): Then we’re on the clock. First step\: isolation. Before it spreads further.
+Dana (Dana_talking): What’s happening? Legal just called. They’re locked out of everything.
 Jordan (Jordan_talking): We’ve been hit by ransomware. They’re demanding payment in Bitcoin.
 Dana (Dana_talking): Can we just pay and be done with it? We can't afford downtime today.
 Jordan (Jordan_talking): There’s no guarantee they’ll return the files, ma’am. Paying might make us a future target. But isolation takes time.
@@ -14,7 +12,7 @@ Narrator: What should Jordan do?
 - 🔌 [Isolate affected systems immediately]
 	James (James_no): I think we should not pay them
 	Jordan (Jordan_talking): We isolate now. Cut off infected systems, trace the spread, and start restoring from last night’s backup.
-	Dana (Dana_talking): (sighs)\
+	Dana (Dana_no): (sighs)\
 Fine. Just fix this. And keep me updated every step of the way.
 	James (James_talking): I’m unplugging the affected machines. Starting with the east wing.
 	[signal arg="shut"]
@@ -37,12 +35,11 @@ What if they vanish after we send it?
 	James (James_no): Still nothing. No decryption key. More systems are crashing.
 	Jordan (Jordan_talking): (checks logs)\
 It’s spreading again. They lied.
-	Dana (Dana_talking): (furious, calling back)\
+	Dana (Dana_no): (furious)\
 We paid — and things are worse! You said this would fix it!
 	Jordan (Jordan_talking): I should’ve isolated the systems first… They’ve taken our money and escalated the attack.
 	James (James_no): Backups are clean, but now we’ll need more time to rebuild everything.
-	Jordan (Jordan_talking): We just bought ourselves more downtime. And painted a target on our backs.\
-(The screen fades to red. A warning flashes\: “ALL SYSTEMS COMPROMISED.”)
+	Jordan (Jordan_talking): We just bought ourselves more downtime. And painted a target on our backs.
 	[signal arg="wrong_choice"]
 	Narrator: ❌ You chose to pay the ransom.\
 ✖️ The attackers never returned your data.\

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=18 format=3 uid="uid://c4ixo3n12ykh6"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=19 format=3 uid="uid://c4ixo3n12ykh6"]
 
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_7pjou"]
 [ext_resource type="Script" uid="uid://ccxhyua5cr3op" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_fm0gq"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="3_umh70"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_o1scx"]
@@ -12,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_7pjou"]
 script = ExtResource("2_fm0gq")
+scene = ExtResource("1_7pjou")
 overrides = {
 "global_bg_color": "Color(0, 0, 0, 0)",
 "global_font": "\"res://FONTS/retropix.ttf/retropix.ttf\""

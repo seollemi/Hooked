@@ -5,10 +5,14 @@ extends Node2D
 
 func _ready() -> void:
 	print(Global.current_scene)
-	if Global.game_outside_loadin == false:
+	if Global.bridge_cutscene_done == true:
 		$Cutscene_trigger/CollisionShape2D.disabled = true
+		$Player.position.x = Global.player_bridgecutscene_posx
+		$Player.position.y = Global.player_bridgecutscene_posy
 	else:
 		$Cutscene_trigger/CollisionShape2D.disabled = false
+		
+		
 	
 
 func _process(delta: float) -> void:
@@ -45,4 +49,5 @@ func _on_audio_stream_player_2d_finished() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	ChangeScene.change_scene_anim("res://Scenes/Office.tscn")
+	if body is Player:
+		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")

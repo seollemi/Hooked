@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6y10jxpkl7hm"]
 
-[ext_resource type="Script" uid="uid://bd0ebt0kitwj5" path="res://Scenes/pc.gd" id="1_iouoy"]
+[ext_resource type="Script" uid="uid://dmbhjskf5t0fl" path="res://Scripts/pc.gd" id="1_iouoy"]
 [ext_resource type="Texture2D" uid="uid://1a6ev7vvnn6w" path="res://Image for Pc/Email_notif.png" id="2_xrtsi"]
 [ext_resource type="Texture2D" uid="uid://onkqnrmdoqaf" path="res://Image for Pc/Pixelated Background.jpg" id="3_mp1d0"]
 [ext_resource type="Texture2D" uid="uid://dvxbinwf6f4li" path="res://Image for Pc/Icons.png" id="4_ctixf"]

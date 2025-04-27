@@ -34,14 +34,18 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Act_2": "res://Dialogic_scenes/Act_2.dtl",
+"Act_3": "res://Dialogic_scenes/Act_3.dtl",
 "CollegeDialogue": "res://opening INtro/CollegeDialogue.dtl",
 "Fake_login": "res://Dialogic_scenes/Fake_login.dtl",
 "GuardDialogue": "res://opening INtro/GuardDialogue.dtl",
 "HouseDialogue": "res://opening INtro/HouseDialogue.dtl",
 "House_dialog": "res://Dialogic_scenes/House_dialog.dtl",
+"IT_Dialog": "res://Dialogic_scenes/IT_Dialog.dtl",
 "IntroDialogue": "res://opening INtro/IntroDialogue.dtl",
 "MailInbox_1": "res://Dialogic_scenes/MailInbox_1.dtl",
 "Mail_open": "res://Dialogic_scenes/Mail_open.dtl",
+"NPC_TALK_ACT1": "res://Dialogic_scenes/NPC_TALK_ACT1.dtl",
+"Work_Introduction": "res://Dialogic_scenes/Work_Introduction.dtl",
 "emailphishing": "res://world/office/emailphishing.dtl",
 "pc_start": "res://Dialogic_scenes/pc_start.dtl",
 "phone_seq0": "res://Dialogic_scenes/phone_seq0.dtl",

@@ -15,12 +15,12 @@ func _ready() -> void:
 		$Player.position.y = Global.player_enter_house_posy
 func _process(delta: float) -> void:
 	change_scene()
-
+ 
 
 
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
-	Dialogic.start("timeline")
+	Dialogic.start("House_dialog")
 	$Door_outside/CollisionShape2D.disabled = true
 	$interactable/CollisionShape2D.disabled = true
 	
