@@ -16,9 +16,6 @@ func _ready():
 		dialog_started = true
 		Dialogic.start("pc_start")  
 
-
-
-
 func _on_email_notif_button_pressed() -> void:
 	pass # Replace with function body.
 	print("📬 Email clicked!")

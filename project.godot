@@ -29,6 +29,7 @@ directories/dch_directory={
 "James": "res://Dialogic_scenes/Characters/James.dch",
 "Jordan": "res://Dialogic_scenes/Characters/Jordan.dch",
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
+"alex": "res://npc/alex.dch",
 "character": "res://npc/character.dch"
 }
 directories/dtl_directory={
@@ -41,6 +42,7 @@ directories/dtl_directory={
 "IntroDialogue": "res://opening INtro/IntroDialogue.dtl",
 "MailInbox_1": "res://Dialogic_scenes/MailInbox_1.dtl",
 "Mail_open": "res://Dialogic_scenes/Mail_open.dtl",
+"emailphishing": "res://world/office/emailphishing.dtl",
 "pc_start": "res://Dialogic_scenes/pc_start.dtl",
 "phone_seq0": "res://Dialogic_scenes/phone_seq0.dtl",
 "phone_seq1": "res://Dialogic_scenes/phone_seq1.dtl",
