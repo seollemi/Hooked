@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://7v1n16qg8m82"]
+[gd_scene load_steps=18 format=4 uid="uid://7v1n16qg8m82"]
 
 [ext_resource type="Script" uid="uid://d0fqa5tbijo10" path="res://Scripts/office.gd" id="1_0d164"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
@@ -3578,6 +3578,12 @@ size = Vector2(20, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t43tj"]
 size = Vector2(40, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u7kn"]
+size = Vector2(30, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chwbs"]
+size = Vector2(40.2269, 73.1918)
+
 [node name="Office" type="Node2D"]
 script = ExtResource("1_0d164")
 
@@ -3620,9 +3626,6 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAtAA4AAgADAAgAAAAtAA8AAgADAAkAAAAqAA4AAgADAAgAAAAqAA8AAgADAAkAAAAlAA4AAgADAAgAAAAlAA8AAgADAAkAAAAiAA4AAgADAAgAAAAiAA8AAgADAAkAAAA=")
 tile_set = SubResource("TileSet_r1f8t")
 
-[node name="Player" parent="." instance=ExtResource("5_32u8q")]
-position = Vector2(199, 58)
-
 [node name="Door_to_office" type="Area2D" parent="."]
 position = Vector2(453, 266)
 
@@ -3639,6 +3642,24 @@ position = Vector2(10, 0)
 shape = SubResource("RectangleShape2D_t43tj")
 
 [node name="npc" parent="." instance=ExtResource("8_t43tj")]
-position = Vector2(511, 166)
+position = Vector2(511, 170)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(660, 256.5)
+shape = SubResource("RectangleShape2D_0u7kn")
+
+[node name="Player" parent="." instance=ExtResource("5_32u8q")]
+position = Vector2(183, 72)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(181, 68)
+scale = Vector2(0.820347, 0.860752)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(389.469, 234.679)
+shape = SubResource("RectangleShape2D_chwbs")
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
