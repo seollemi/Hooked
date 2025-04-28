@@ -18,6 +18,8 @@ var player_brigde_posy = -248.0
 
 var player_bridgecutscene_posx = 497.0
 var player_bridgecutscene_posy = -248.0
+
+
 #PLAYER EVENT MOVEMENT
 var player_PC_Location = Vector2(463.0, 76.0)
 var teleport_back := false  
@@ -27,18 +29,18 @@ var mail_open_opened: bool = false  # interact once only happen 1 time permanent
 var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
-var act_1_done: bool = false# Start at zero
+var act_1_done: bool = false
 var global_triggered = false
 var global_alex = false
 
+
 #MINI GAME_Password_Global
+var collected_hint_ids: Array = []
 var collected_hints: int = 0 # Start at zero
 var hints_read: int = 0  # counts how many hints have been opened
 var scrolling_background: Node2D = null
 var player_points: int = 0
 var chosen_password_number: int = 1  # default 1 = Andrew
-
-#Fade one tiem
 var has_faded_in: bool = false
 
 func add_points(points_to_add: int) -> void:

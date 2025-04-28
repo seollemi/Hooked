@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_its1m")
 
 [node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 25.0
 offset_right = 910.0
@@ -53,6 +54,7 @@ text = "Birthdays are common knowledge.
 Instead, ask yourself how many months old were you when you first drove a car? First job? First award?"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0
 offset_right = 800.0

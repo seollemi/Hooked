@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_74y0h")
 
 [node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 25.0
 offset_right = 910.0
@@ -53,6 +54,7 @@ text = "words or names can be subtituted for numbers. Like: before = B4fore
 good = 9ood... or the very complex is Bill Gates = Bi11sG8Tes"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0
 offset_right = 800.0

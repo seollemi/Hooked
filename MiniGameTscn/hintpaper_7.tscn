@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_monbg")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 214.0
 offset_top = 25.0
 offset_right = 910.0
@@ -54,6 +55,7 @@ text = "Did you know that the number '1'
 is the most commonly used number in passwords? pick a number with a random meaning!"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0
 offset_right = 800.0
