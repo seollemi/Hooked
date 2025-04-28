@@ -27,8 +27,7 @@ var mail_open_opened: bool = false  # interact once only happen 1 time permanent
 var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
-var act_1_done: bool = false
-var collected_hints: int = 0  # Start at zero
+var act_1_done: bool = false# Start at zero
 var global_triggered = false
 var global_alex = false
 
