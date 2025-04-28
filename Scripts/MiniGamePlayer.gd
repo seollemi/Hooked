@@ -3,11 +3,14 @@ extends CharacterBody2D
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interactable: Area2D = $"../interactable"
 
-
+var can_move: bool = true
 var speed: float = 100.0
 var last_direction: Vector2 = Vector2.DOWN
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		return  # 🔥 STOP all player movement if cinematic playing
+
 	var input_vector = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")

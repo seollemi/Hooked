@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c30ahwsiaqioh"]
+[gd_scene load_steps=7 format=3 uid="uid://c30ahwsiaqioh"]
 
-[ext_resource type="Texture2D" uid="uid://dy1lunbo7v67i" path="res://MiniGameAssets/background.png" id="1_dlsph"]
+[ext_resource type="Script" uid="uid://ct3suhsf0l2fu" path="res://Scripts/MiniGameScripts/canvas_layer.gd" id="1_m8psw"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_m8psw"]
-[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="3_0pri5"]
-[ext_resource type="PackedScene" uid="uid://bkt4pxa6s7wtp" path="res://MiniGameTscn/passwordstrenght_1.tscn" id="4_m8psw"]
+[ext_resource type="PackedScene" uid="uid://dmh30ih717tby" path="res://MiniGameTscn/hint_dark1.tscn" id="3_dlsph"]
+[ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="5_0er1l"]
+[ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="5_0pri5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0er1l"]
 draw_center = false
@@ -22,15 +23,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_m8psw")
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
-offset_left = -1.0
-offset_top = -373.0
-offset_right = 1153.0
-offset_bottom = 651.0
-texture = ExtResource("1_dlsph")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 offset_left = 105.0
 offset_top = 68.0
 offset_right = 1050.0
@@ -56,93 +51,10 @@ theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 4000
 text = "Hints obtained"
 
-[node name="Hint1" type="TextureRect" parent="CanvasLayer"]
-offset_left = 164.0
-offset_top = 208.0
-offset_right = 265.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint2" type="TextureRect" parent="CanvasLayer"]
-offset_left = 250.0
-offset_top = 208.0
-offset_right = 351.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint3" type="TextureRect" parent="CanvasLayer"]
-offset_left = 337.0
-offset_top = 208.0
-offset_right = 438.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint4" type="TextureRect" parent="CanvasLayer"]
-offset_left = 423.0
-offset_top = 208.0
-offset_right = 524.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint5" type="TextureRect" parent="CanvasLayer"]
-offset_left = 509.0
-offset_top = 208.0
-offset_right = 610.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint6" type="TextureRect" parent="CanvasLayer"]
-offset_left = 594.0
-offset_top = 208.0
-offset_right = 695.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint7" type="TextureRect" parent="CanvasLayer"]
-offset_left = 680.0
-offset_top = 208.0
-offset_right = 781.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint8" type="TextureRect" parent="CanvasLayer"]
-offset_left = 767.0
-offset_top = 208.0
-offset_right = 868.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="Hint9" type="TextureRect" parent="CanvasLayer"]
-offset_left = 854.0
-offset_top = 208.0
-offset_right = 955.0
-offset_bottom = 299.0
-texture = ExtResource("3_0pri5")
-expand_mode = 1
-
-[node name="CurrentPassword" type="Label" parent="CanvasLayer"]
-offset_left = 440.0
-offset_top = 518.0
-offset_right = 21753.0
-offset_bottom = 4851.0
-scale = Vector2(0.01, 0.01)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_m8psw")
-theme_override_font_sizes/font_size = 4000
-text = "andrewjames"
-
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 273.0
+offset_left = 135.0
 offset_top = 518.0
-offset_right = 16617.0
+offset_right = 16479.0
 offset_bottom = 4851.0
 scale = Vector2(0.01, 0.01)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -150,5 +62,119 @@ theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 4000
 text = "Password:"
 
-[node name="Node2D" parent="CanvasLayer" instance=ExtResource("4_m8psw")]
-position = Vector2(-94, 80)
+[node name="Hackable" type="Label" parent="CanvasLayer"]
+offset_left = 614.0
+offset_top = 518.0
+offset_right = 16958.0
+offset_bottom = 4851.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m8psw")
+theme_override_font_sizes/font_size = 4000
+text = "Hackable In:"
+
+[node name="Hint1" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = -334.44
+offset_top = -50.216
+offset_right = -335.192
+offset_bottom = -49.848
+
+[node name="Hint2" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = -253.44
+offset_top = -50.216
+offset_right = -254.192
+offset_bottom = -49.848
+
+[node name="Hint3" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = -179.44
+offset_top = -50.216
+offset_right = -180.192
+offset_bottom = -49.848
+
+[node name="Hint4" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = -92.44
+offset_top = -50.216
+offset_right = -92.5525
+offset_bottom = -49.848
+
+[node name="Hint5" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = -6.44
+offset_top = -50.216
+offset_right = -7.19202
+offset_bottom = -49.848
+
+[node name="Hint6" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = 83.56
+offset_top = -50.216
+offset_right = 82.808
+offset_bottom = -49.848
+
+[node name="Hint7" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = 171.56
+offset_top = -50.216
+offset_right = 170.808
+offset_bottom = -49.848
+
+[node name="Hint8" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = 260.56
+offset_top = -50.216
+offset_right = 259.808
+offset_bottom = -49.848
+
+[node name="Hint9" parent="CanvasLayer" instance=ExtResource("3_dlsph")]
+offset_left = 345.56
+offset_top = -50.216
+offset_right = 344.808
+offset_bottom = -49.848
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 122.0
+offset_top = 452.0
+offset_right = 307.0
+offset_bottom = 513.0
+texture_normal = ExtResource("5_0pri5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 21.0
+offset_right = 1147.0
+offset_bottom = 184.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_m8psw")
+theme_override_font_sizes/font_size = 150
+text = "Create a Password"
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer"]
+offset_left = 974.0
+offset_top = 74.0
+offset_right = 1044.0
+offset_bottom = 128.0
+texture_normal = ExtResource("5_0er1l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HackTimeEstimate" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 800.0
+offset_top = 523.0
+offset_right = 4100.0
+offset_bottom = 963.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_m8psw")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="CurrentPassword" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 301.0
+offset_top = 523.0
+offset_right = 3601.0
+offset_bottom = 963.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_m8psw")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj8id56h33rpd"]
+
+[ext_resource type="Script" uid="uid://ccg3klubvujij" path="res://MiniGameAssets/cutscene_after_upgrade.gd" id="1_1idna"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_6fjpx"]
+
+[node name="Cutscene_after_upgrade" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1idna")
+
+[node name="Talk1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 137.0
+offset_right = 5149.0
+offset_bottom = 1307.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0.584314, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_6fjpx")
+theme_override_font_sizes/normal_font_size = 400
+bbcode_enabled = true
+
+[node name="Talk2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 275.0
+offset_right = 5149.0
+offset_bottom = 2105.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0.584314, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_6fjpx")
+theme_override_font_sizes/normal_font_size = 400
+bbcode_enabled = true
+
+[node name="Talk3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 427.0
+offset_right = 5149.0
+offset_bottom = 1597.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0.584314, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_6fjpx")
+theme_override_font_sizes/normal_font_size = 400
+bbcode_enabled = true

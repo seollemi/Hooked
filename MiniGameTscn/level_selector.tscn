@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://blgd1hrs408qj"]
+
+[ext_resource type="Script" uid="uid://tx7sks41m57u" path="res://MiniGameTscn/level_selector.gd" id="1_ds6dl"]
+[ext_resource type="Texture2D" uid="uid://ci36isys3edjw" path="res://MiniGameAssets/level_button.png" id="2_xi6h7"]
+[ext_resource type="Texture2D" uid="uid://d24mkknr3la6m" path="res://MiniGameAssets/level_disabled.png" id="3_c1pyd"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="4_pjjir"]
+[ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="5_ka34w"]
+[ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="6_xi6h7"]
+
+[node name="LevelSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ds6dl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 105.0
+offset_top = 68.0
+offset_right = 1050.0
+offset_bottom = 583.0
+color = Color(0.572549, 0.47451, 0.341176, 1)
+
+[node name="Level1" type="TextureButton" parent="CanvasLayer"]
+offset_left = 221.0
+offset_top = 177.0
+offset_right = 309.0
+offset_bottom = 263.0
+texture_normal = ExtResource("2_xi6h7")
+texture_disabled = ExtResource("3_c1pyd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Level1"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 24.0
+offset_right = 1187.0
+offset_bottom = 4357.0
+scale = Vector2(0.01, 0.01)
+theme_override_fonts/font = ExtResource("4_pjjir")
+theme_override_font_sizes/font_size = 4000
+text = "1"
+
+[node name="Level2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 336.0
+offset_top = 177.0
+offset_right = 424.0
+offset_bottom = 263.0
+texture_normal = ExtResource("2_xi6h7")
+texture_disabled = ExtResource("3_c1pyd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Level2"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 24.0
+offset_right = 1851.0
+offset_bottom = 4357.0
+scale = Vector2(0.01, 0.01)
+theme_override_fonts/font = ExtResource("4_pjjir")
+theme_override_font_sizes/font_size = 4000
+text = "2"
+
+[node name="Level3" type="TextureButton" parent="CanvasLayer"]
+offset_left = 456.0
+offset_top = 177.0
+offset_right = 544.0
+offset_bottom = 263.0
+texture_normal = ExtResource("2_xi6h7")
+texture_disabled = ExtResource("3_c1pyd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label3" type="Label" parent="CanvasLayer/Level3"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 1853.0
+offset_bottom = 4357.0
+scale = Vector2(0.01, 0.01)
+theme_override_fonts/font = ExtResource("4_pjjir")
+theme_override_font_sizes/font_size = 4000
+text = "3"
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer"]
+offset_left = 974.0
+offset_top = 74.0
+offset_right = 1044.0
+offset_bottom = 128.0
+texture_normal = ExtResource("5_ka34w")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TransitionScreen" parent="." instance=ExtResource("6_xi6h7")]
+visible = false

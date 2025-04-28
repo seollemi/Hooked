@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61537rgt0q41"]
+
+[ext_resource type="Script" uid="uid://djkd3jxm0dq36" path="res://MiniGameTscn/backgroundscroll.gd" id="1_hia7l"]
+[ext_resource type="Texture2D" uid="uid://dy1lunbo7v67i" path="res://MiniGameAssets/background.png" id="2_kda2l"]
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_hia7l")
+
+[node name="background" type="TextureRect" parent="Node2D"]
+offset_left = 9.0
+offset_top = 102.0
+offset_right = 1163.0
+offset_bottom = 1126.0
+texture = ExtResource("2_kda2l")
+metadata/_edit_use_anchors_ = true
+
+[node name="background2" type="TextureRect" parent="Node2D"]
+offset_left = 9.0
+offset_top = 102.0
+offset_right = 1163.0
+offset_bottom = 1126.0
+texture = ExtResource("2_kda2l")
+metadata/_edit_use_anchors_ = true
