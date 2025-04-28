@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dp878x7y26us5"]
 
 [ext_resource type="Script" uid="uid://dliacnnlc773f" path="res://Scripts/email.gd" id="1_fu882"]
-[ext_resource type="Script" path="res://Scripts/emailspawner.gd" id="2_slim0"]
+[ext_resource type="Script" uid="uid://d0e0hthguxtv5" path="res://Scripts/emailspawner.gd" id="2_slim0"]
 [ext_resource type="PackedScene" uid="uid://brwsaop82ohb2" path="res://Scenes/emails.tscn" id="3_jxd8c"]
 [ext_resource type="Texture2D" uid="uid://b71jtqo6cptix" path="res://Image for Pc/Outher pc.png" id="4_7vyrb"]
 [ext_resource type="Texture2D" uid="uid://x1vxyw1fubo4" path="res://Image for Pc/raw.png" id="5_g8bqi"]
@@ -20,6 +20,11 @@ cache/0/48/0/descent = 0.0
 cache/0/48/0/underline_position = 0.0
 cache/0/48/0/underline_thickness = 0.0
 cache/0/48/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -33,42 +38,44 @@ script = ExtResource("1_fu882")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PasswordSpawner" type="Node2D" parent="CanvasLayer"]
-position = Vector2(551, 347)
+position = Vector2(518, 329)
 script = ExtResource("2_slim0")
 password_scene = ExtResource("3_jxd8c")
 
 [node name="CurrentPasswordLabel" type="Label" parent="CanvasLayer"]
-offset_left = 446.0
-offset_top = 305.0
-offset_right = 486.0
-offset_bottom = 328.0
+offset_left = 433.0
+offset_top = 325.0
+offset_right = 473.0
+offset_bottom = 348.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_jxd8c")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
 [node name="StrongButton" type="Button" parent="CanvasLayer"]
-offset_left = 592.0
-offset_top = 410.0
-offset_right = 651.0
-offset_bottom = 450.0
+offset_left = 638.0
+offset_top = 411.0
+offset_right = 697.0
+offset_bottom = 451.0
 text = "Strong
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="WeakButton" type="Button" parent="CanvasLayer"]
-offset_left = 460.0
+offset_left = 426.0
 offset_top = 411.0
-offset_right = 511.0
+offset_right = 477.0
 offset_bottom = 451.0
 text = "Weak"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 538.0
-offset_top = 254.0
-offset_right = 578.0
-offset_bottom = 277.0
+offset_left = 454.0
+offset_top = 151.0
+offset_right = 494.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer"]
@@ -148,10 +155,10 @@ expand_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
 z_index = -1
-offset_left = 397.0
-offset_top = 130.0
-offset_right = 719.0
-offset_bottom = 491.0
+offset_left = 340.0
+offset_top = 123.0
+offset_right = 772.0
+offset_bottom = 484.0
 mouse_filter = 2
 texture = ExtResource("7_0n416")
 expand_mode = 1
@@ -172,3 +179,9 @@ offset_top = 488.0
 offset_right = 402.0
 offset_bottom = 511.0
 text = "start"
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="CanvasLayer"]
+
+[node name="WrongSound" type="AudioStreamPlayer" parent="CanvasLayer"]
+
+[connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
