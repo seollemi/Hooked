@@ -5,5 +5,5 @@ extends Node2D
 func create_password():
 	var password_instance = password_scene.instantiate()
 	add_child(password_instance)
-	password_instance.global_position = Vector2(300, 200) # You can set a better position
+	password_instance.global_position = get_viewport().size / 2
 	return password_instance

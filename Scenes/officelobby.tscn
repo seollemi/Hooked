@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=36 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -3879,8 +3879,11 @@ texture = ExtResource("4_6d4fe")
 21:162/0 = 0
 22:162/0 = 0
 23:162/0 = 0
+23:162/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:162/0 = 0
+24:162/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 25:162/0 = 0
+25:162/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:162/0 = 0
 27:162/0 = 0
 28:162/0 = 0
@@ -3927,10 +3930,12 @@ texture = ExtResource("4_6d4fe")
 15:164/0 = 0
 16:164/0 = 0
 18:164/0 = 0
+18:164/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.96767, -8, 8, -8, 8, 8, -1.88852, 8)
 19:164/0 = 0
 20:164/0 = 0
 21:164/0 = 0
 22:164/0 = 0
+22:164/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 2.96767, -8, 1.16908, 8, -8, 8)
 23:164/0 = 0
 24:164/0 = 0
 25:164/0 = 0
@@ -3956,10 +3961,12 @@ texture = ExtResource("4_6d4fe")
 15:165/0 = 0
 16:165/0 = 0
 18:165/0 = 0
+18:165/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.96767, -8, 8, -8, 8, 8, -0.809364, -2.15831)
 19:165/0 = 0
 20:165/0 = 0
 21:165/0 = 0
 22:165/0 = 0
+22:165/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1.16908, -8, -0.629505, -2.15831, -8, 3.95689)
 23:165/0 = 0
 24:165/0 = 0
 25:165/0 = 0
@@ -4580,6 +4587,7 @@ texture = ExtResource("4_6d4fe")
 15:198/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_alh1q"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ibiix")
 sources/1 = SubResource("TileSetAtlasSource_6d4fe")
 sources/2 = SubResource("TileSetAtlasSource_fbgy8")
@@ -13926,6 +13934,8 @@ size = Vector2(20, 26)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq78j"]
 size = Vector2(20, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e0qv"]
+
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
 
@@ -13958,7 +13968,8 @@ position = Vector2(-6, 3)
 shape = SubResource("RectangleShape2D_fbgy8")
 
 [node name="Player" parent="." instance=ExtResource("9_fbgy8")]
-position = Vector2(116, 317)
+z_index = 4
+position = Vector2(114, 317)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(763, 351)
@@ -13982,6 +13993,15 @@ position = Vector2(631, 406)
 position = Vector2(-1, 57.5)
 shape = SubResource("RectangleShape2D_kq78j")
 
+[node name="infodesk" parent="." instance=ExtResource("12_kq78j")]
+position = Vector2(404, 424)
+interact_name = "E to ask"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="infodesk"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_4e0qv")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="interactable" to="." method="_on_interactable_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

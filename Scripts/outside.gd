@@ -51,3 +51,16 @@ func _on_audio_stream_player_2d_finished() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")
+		
+func _on_dialogue_ended(body: Player) -> void:
+	body.can_move = true  # Re-enable movement
+
+# Ensure your global script is autoloaded as "Global"
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body is Player and not Global.npc_mark:
+		Global.npc_mark = true
+		body.can_move = false   # Disable player movement
+		Dialogic.start("intro_cybersecurity")
+		
+		# Connect to Dialogic's signal to re-enable movement after dialogue
+		Dialogic.timeline_ended.connect(_on_dialogue_ended.bind(body))

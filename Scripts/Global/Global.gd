@@ -6,6 +6,14 @@ var transition_scene = false
 var last_player_position: Vector2 = Vector2.ZERO
 var outside_scene : PackedScene = null
 
+#passwordgame to officelobby
+var previous_scene_path: String = ""
+var info_desk= false
+var player_PC1_Location = Vector2(230.0, -78.0)
+func set_previous_scene(scene_path: String, player_location: Vector2):
+	previous_scene_path = scene_path
+	player_PC1_Location = player_location
+	
 #player locations when entering world
 var player_enter_house_posx = -149.0
 var player_enter_house_posy = -21.0
@@ -28,7 +36,7 @@ var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
 var act_1_done: bool = false
-var collected_hints: int = 0  # Start at zero
+ # Start at zero
 var global_triggered = false
 var global_alex = false
 
@@ -55,6 +63,7 @@ var NPC_Office_location = Vector2(463.0, 76.0)
 #NPC GLOBAL ONE TIME USED
 var npc_event_done: bool = false
 var npc_evnt2_done: bool = false
+var npc_mark:bool = false
 
 var game_first_loadin = true
 var game_outside_loadin = true
