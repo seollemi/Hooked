@@ -48,8 +48,8 @@ directories/dtl_directory={
 "NPC_TALK_ACT1": "res://Dialogic_scenes/NPC_TALK_ACT1.dtl",
 "Npc_act2": "res://Dialogic_scenes/Npc_act2.dtl",
 "Work_Introduction": "res://Dialogic_scenes/Work_Introduction.dtl",
-"emailphishing": "res://world/office/emailphishing.dtl",
-"emailphising": "res://Dialogic_scenes/emailphishing.dtl",
+"emailphishing": "res://Dialogic_scenes/emailphishing.dtl",
+"office/emailphishing": "res://world/office/emailphishing.dtl",
 "password": "res://Dialogic_scenes/password.dtl",
 "pc_start": "res://Dialogic_scenes/pc_start.dtl",
 "phone_seq0": "res://Dialogic_scenes/phone_seq0.dtl",
@@ -163,3 +163,4 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

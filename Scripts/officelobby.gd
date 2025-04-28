@@ -1,6 +1,8 @@
 extends Node2D
 @onready var interactable: Area2D = $interactable
-var triggered = false
+
+var global_alex = false
+var triggered= false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,8 +33,8 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if not triggered:
-		triggered = true
+	if not Global.global_alex:
+		Global.global_alex = true
 		Dialogic.start("emailphishing")
 		
 func _on_interact():
@@ -41,6 +43,6 @@ func _on_interact():
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	if not triggered:
-		triggered = true
+	if not Global.global_triggered:
+		Global.global_triggered = true
 		Dialogic.start("password")

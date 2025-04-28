@@ -43,15 +43,9 @@ func _on_mail_act_1_mouse_exited() -> void:
 func _on_color_rect_3_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		print("📬 Email clicked!")
-		var mail_scene = preload("res://Scenes/MailMiniGame.tscn")
-		var mail_popup = mail_scene.instantiate()
-		canvas_layer.add_child(mail_popup)
-
-		if mail_popup is Control:
-			var popup_size = Vector2(640, 360)
-			mail_popup.custom_minimum_size = popup_size
-			mail_popup.size = popup_size  # Force the size now
-			mail_popup.position = (get_viewport().size - popup_size) / 2
+		
+		
+		
 
 
 

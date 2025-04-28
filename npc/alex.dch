@@ -30,7 +30,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": "res://Scenes/Portrait_animation/alex_portait_animation.tscn"
 }
 },

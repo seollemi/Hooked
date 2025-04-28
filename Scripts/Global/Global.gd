@@ -29,6 +29,8 @@ var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
 var act_1_done: bool = false
 var collected_hints: int = 0  # Start at zero
+var global_triggered = false
+var global_alex = false
 
 #NPC MOVEMENT
 var NPC_Office_location = Vector2(463.0, 76.0)

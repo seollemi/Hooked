@@ -13918,7 +13918,7 @@ sources/0 = SubResource("TileSetAtlasSource_8mlqc")
 size = Vector2(20, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alh1q"]
-size = Vector2(46, 51.5)
+size = Vector2(62, 51.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7demk"]
 size = Vector2(20, 26)
@@ -13964,7 +13964,7 @@ position = Vector2(116, 317)
 position = Vector2(763, 351)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(29, -21.75)
+position = Vector2(22, -20.875)
 shape = SubResource("RectangleShape2D_alh1q")
 
 [node name="interactable" parent="." instance=ExtResource("12_kq78j")]

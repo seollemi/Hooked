@@ -160,12 +160,12 @@ scale = Vector2(1.10573, 0.741396)
 texture = ExtResource("5_cvplc")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/PC/TextureRect"]
-visible = false
 position = Vector2(480.342, 255.126)
 scale = Vector2(1.20498, 1.02544)
 texture = ExtResource("6_a2tni")
 
 [node name="phone" type="Sprite2D" parent="CanvasLayer/PC/TextureRect"]
+visible = false
 position = Vector2(853.787, 643.217)
 scale = Vector2(1.10573, 0.741396)
 texture = ExtResource("7_b4wx4")
