@@ -23,9 +23,9 @@ script = ExtResource("2_c5l1v")
 
 [node name="Start" type="TextureButton" parent="CanvasLayer"]
 offset_left = 427.0
-offset_top = 214.0
+offset_top = 170.0
 offset_right = 658.0
-offset_bottom = 318.0
+offset_bottom = 274.0
 texture_normal = ExtResource("2_rn7r8")
 ignore_texture_size = true
 stretch_mode = 0
@@ -44,18 +44,18 @@ text = "Start"
 
 [node name="Hints" type="TextureButton" parent="CanvasLayer"]
 offset_left = 426.0
-offset_top = 320.0
+offset_top = 264.0
 offset_right = 663.0
-offset_bottom = 424.0
+offset_bottom = 368.0
 texture_normal = ExtResource("4_74buc")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label2" type="Label" parent="CanvasLayer/Hints"]
 layout_mode = 0
-offset_left = 82.0
+offset_left = 85.0
 offset_top = 34.0
-offset_right = 7143.0
+offset_right = 7146.0
 offset_bottom = 3284.0
 scale = Vector2(0.01, 0.01)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -63,20 +63,41 @@ theme_override_fonts/font = ExtResource("3_c5l1v")
 theme_override_font_sizes/font_size = 3000
 text = "Hints"
 
+[node name="objective" type="TextureButton" parent="CanvasLayer"]
+offset_left = 426.0
+offset_top = 358.0
+offset_right = 663.0
+offset_bottom = 462.0
+texture_normal = ExtResource("4_74buc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="CanvasLayer/objective"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 34.0
+offset_right = 12322.0
+offset_bottom = 3284.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_c5l1v")
+theme_override_font_sizes/font_size = 3000
+text = "Objective"
+
 [node name="Quit" type="TextureButton" parent="CanvasLayer"]
 offset_left = 429.0
-offset_top = 432.0
+offset_top = 454.0
 offset_right = 662.0
-offset_bottom = 525.0
+offset_bottom = 547.0
 texture_normal = ExtResource("6_c5l1v")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
 offset_left = 510.0
-offset_top = 461.0
+offset_top = 483.0
 offset_right = 7571.0
-offset_bottom = 3711.0
+offset_bottom = 3733.0
 scale = Vector2(0.01, 0.01)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c5l1v")
@@ -84,6 +105,7 @@ theme_override_font_sizes/font_size = 3000
 text = "Exit"
 
 [node name="TransitionScreen" parent="." instance=ExtResource("7_74buc")]
+visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_p8l1m")

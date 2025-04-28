@@ -1,0 +1,147 @@
+[gd_scene load_steps=5 format=3 uid="uid://btoup7io3e8i4"]
+
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_fyk3w"]
+[ext_resource type="Script" uid="uid://cgdu4cnw1500e" path="res://MiniGameTscn/_objective.gd" id="1_qk1ly"]
+[ext_resource type="Texture2D" uid="uid://8rl6u5wr6vsy" path="res://MiniGameAssets/test.png" id="3_ifmqg"]
+[ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="4_ifmqg"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qk1ly")
+
+[node name="HackTimeEstimate2" type="RichTextLabel" parent="."]
+offset_left = 460.0
+offset_top = 24.0
+offset_right = 3300.0
+offset_bottom = 624.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "[wave amp=90 fr] Controls[/wave]"
+
+[node name="w" type="RichTextLabel" parent="."]
+offset_left = 524.0
+offset_top = 85.0
+offset_right = 1134.0
+offset_bottom = 765.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "W ↑"
+
+[node name="a" type="RichTextLabel" parent="."]
+offset_left = 411.0
+offset_top = 149.0
+offset_right = 1261.0
+offset_bottom = 829.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "A ←"
+
+[node name="s" type="RichTextLabel" parent="."]
+offset_left = 523.0
+offset_top = 149.0
+offset_right = 1133.0
+offset_bottom = 829.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "S ↓"
+
+[node name="d" type="RichTextLabel" parent="."]
+offset_left = 620.0
+offset_top = 150.0
+offset_right = 1560.0
+offset_bottom = 830.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "D →"
+
+[node name="d2" type="RichTextLabel" parent="."]
+offset_left = 772.0
+offset_top = 150.0
+offset_right = 3832.0
+offset_bottom = 830.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "E  to interact"
+
+[node name="Objective" type="RichTextLabel" parent="."]
+offset_left = 460.0
+offset_top = 215.0
+offset_right = 3300.0
+offset_bottom = 835.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "[wave amp=90 fr] Objective[/wave]"
+
+[node name="Objective2" type="RichTextLabel" parent="."]
+offset_left = 53.0
+offset_top = 272.0
+offset_right = 10953.0
+offset_bottom = 1862.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "In order to Proceed to the next act you must collect all the hints so you can make a strong enough password to proceed to the next Act of the story."
+
+[node name="Objective3" type="RichTextLabel" parent="."]
+offset_left = 49.0
+offset_top = 442.0
+offset_right = 11139.0
+offset_bottom = 2162.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_fyk3w")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "You must find the [color=blue] Button[/color]. Each [color=blue] Button[/color] provides 1  Hints Once you found all three Hints , return to the Hints tab to upgrade the password and proceed to the next level."
+
+[node name="ContinueButton" type="TextureButton" parent="."]
+offset_left = 897.0
+offset_top = 4.0
+offset_right = 1128.0
+offset_bottom = 108.0
+texture_normal = ExtResource("3_ifmqg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="ContinueButton"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 35.0
+offset_right = 11821.0
+offset_bottom = 3285.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_fyk3w")
+theme_override_font_sizes/font_size = 3000
+text = "Continue?"
+
+[node name="TransitionScreen" parent="." instance=ExtResource("4_ifmqg")]
+visible = false

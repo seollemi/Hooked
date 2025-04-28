@@ -18,13 +18,13 @@ func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	return true
 
 func _continue_typing_sequence() -> void:
-	await type_text(talk_1, "Password Lenght really, matters  Long = Strong")
+	await type_text(talk_1, "passwords with 9 or less characters can be hacked very easily, regardless of how complex you make them.")
 	await get_tree().create_timer(2.0).timeout
 
-	await type_text(talk_2, "Did you know that any password under 8 characters can be hacked in under 24 hours")
+	await type_text(talk_2, "Password Complexity makes a big difference when your password lenght is atleastt 14 characters long.")
 	await get_tree().create_timer(2.0).timeout
 
-	await type_text(talk_3, "Lets see if we can get more hints for Secure password!")
+	await type_text(talk_3, "Let's try to increase lenght and complexity at the same time!")
 	await get_tree().create_timer(2.0).timeout
 
 	await get_tree().create_timer(2.0).timeout  

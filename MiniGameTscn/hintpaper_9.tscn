@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi6accb0tkrmk"]
+
+[ext_resource type="Script" uid="uid://bug1n3qcl3c7a" path="res://MiniGameTscn/hintpaper_9.gd" id="1_74y0h"]
+[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_33222"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_74y0h"]
+[ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="3_dxdd3"]
+
+[node name="Hintpaper_9" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74y0h")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 214.0
+offset_top = 25.0
+offset_right = 910.0
+offset_bottom = 589.0
+tooltip_text = "Picking a reoccuring letter to capitalise can help add complexity, while keeping it easy to remember
+"
+texture = ExtResource("1_33222")
+
+[node name="Label" type="Label" parent="TextureRect6"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 58.0
+offset_right = 22715.0
+offset_bottom = 4391.0
+scale = Vector2(0.01, 0.01)
+tooltip_text = "Picking a reoccuring letter to capitalise can help add complexity, while keeping it easy to remember
+"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_74y0h")
+theme_override_font_sizes/font_size = 4000
+text = "Password Tip :"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect6"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 272.0
+offset_right = 4293.0
+offset_bottom = 3692.0
+scale = Vector2(0.1, 0.1)
+tooltip_text = "Picking a reoccuring letter to capitalise can help add complexity, while keeping it easy to remember
+"
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_74y0h")
+theme_override_font_sizes/normal_font_size = 300
+text = "words or names can be subtituted for numbers. Like: before = B4fore
+good = 9ood... or the very complex is Bill Gates = Bi11sG8Tes"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 743.0
+offset_top = 45.0
+offset_right = 800.0
+offset_bottom = 94.0
+tooltip_text = "Picking a reoccuring letter to capitalise can help add complexity, while keeping it easy to remember
+"
+texture_normal = ExtResource("3_dxdd3")
+ignore_texture_size = true
+stretch_mode = 0
