@@ -31,7 +31,8 @@ directories/dch_directory={
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
 "alex": "res://npc/alex.dch",
 "character": "res://npc/character.dch",
-"npc": "res://Dialogic_scenes/Characters/npc.dch"
+"npc": "res://Dialogic_scenes/Characters/npc.dch",
+"ronnie": "res://Dialogic_scenes/Characters/ronnie.dch"
 }
 directories/dtl_directory={
 "Act_2": "res://Dialogic_scenes/Act_2.dtl",
