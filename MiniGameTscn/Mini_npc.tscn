@@ -1,9 +1,10 @@
-[gd_scene load_steps=42 format=3 uid="uid://cvht4rnmihuxd"]
+[gd_scene load_steps=44 format=3 uid="uid://cvht4rnmihuxd"]
 
 [ext_resource type="Script" uid="uid://bnwqv0kauyory" path="res://Scripts/MiniGamePlayer.gd" id="1_sbpx0"]
 [ext_resource type="Texture2D" uid="uid://b7feo1pmdkkex" path="res://MiniGameAssets/Player.png" id="2_yar5p"]
 [ext_resource type="Script" uid="uid://2yplrwttxhts" path="res://Scripts/Player_camera.gd" id="3_yar5p"]
 [ext_resource type="PackedScene" uid="uid://646eynxd38ta" path="res://interaction_component.tscn" id="4_m7viw"]
+[ext_resource type="Script" uid="uid://7fun8ligr6n5" path="res://MiniGameTscn/label.gd" id="5_2s71c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nri6e"]
 atlas = ExtResource("2_yar5p")
@@ -290,6 +291,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s71c"]
+size = Vector2(9, 6)
+
 [node name="Node2D" type="CharacterBody2D"]
 script = ExtResource("1_sbpx0")
 metadata/_custom_type_script = "uid://b6vxn3gv6epvq"
@@ -308,3 +312,16 @@ metadata/_custom_type_script = "uid://2yplrwttxhts"
 
 [node name="InteractionComponent" parent="." instance=ExtResource("4_m7viw")]
 position = Vector2(467, 274)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 598.0
+offset_top = 154.0
+offset_right = 654.0
+offset_bottom = 177.0
+text = "test"
+script = ExtResource("5_2s71c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(466.5, 276)
+shape = SubResource("RectangleShape2D_2s71c")
+debug_color = Color(0.933756, 0, 0.421898, 0.42)

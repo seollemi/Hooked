@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bmg6hdeph7oat"]
 
-[ext_resource type="Script" uid="uid://bd4lsgkc84qx3" path="res://hints.gd" id="1_r5ohl"]
+[ext_resource type="Script" uid="uid://bd4lsgkc84qx3" path="res://MiniGameTscn/hints.gd" id="1_r5ohl"]
 [ext_resource type="Texture2D" uid="uid://47w5s5ut7kby" path="res://MiniGameAssets/00.png" id="2_nqty0"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="3_nqty0"]
 

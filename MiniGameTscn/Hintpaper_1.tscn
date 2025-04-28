@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://5a0ea0qpmstb"]
+[gd_scene load_steps=5 format=3 uid="uid://5a0ea0qpmstb"]
 
-[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_ubnbw"]
+[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_3gtxr"]
+[ext_resource type="Script" uid="uid://diw3wv7uhkldj" path="res://MiniGameTscn/hintpaper_1.gd" id="1_y4jy5"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_y4jy5"]
+[ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="4_gy8ch"]
 
-[node name="Control" type="Control"]
+[node name="Hintpaper_1" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y4jy5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -16,11 +20,41 @@ offset_left = 214.0
 offset_top = 25.0
 offset_right = 910.0
 offset_bottom = 589.0
-texture = ExtResource("1_ubnbw")
+texture = ExtResource("1_3gtxr")
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 266.0
-offset_top = 118.0
-offset_right = 306.0
-offset_bottom = 141.0
+offset_left = 259.0
+offset_top = 58.0
+offset_right = 22715.0
+offset_bottom = 4391.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y4jy5")
+theme_override_font_sizes/font_size = 4000
+text = "Password Tip :"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 272.0
+offset_right = 4293.0
+offset_bottom = 3692.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_y4jy5")
+theme_override_font_sizes/normal_font_size = 300
+text = "Password Secrurity start with 
+a long password. anything over 14 
+characters can be difficult to hack
+Let's build a long password"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 45.0
+offset_right = 800.0
+offset_bottom = 94.0
+texture_normal = ExtResource("4_gy8ch")
+ignore_texture_size = true
+stretch_mode = 0

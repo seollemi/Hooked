@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://7ftvuxa2mtyt"]
+
+[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_ue6i6"]
+[ext_resource type="Texture2D" uid="uid://bnolcfrnub0np" path="res://MiniGameAssets/paperdark.png" id="2_hl4yw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uryr4"]
+atlas = ExtResource("1_ue6i6")
+region = Rect2(0, 0, 696, 564)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhsms"]
+atlas = ExtResource("2_hl4yw")
+region = Rect2(0, 0, 696, 564)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olu7w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uryr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhsms")
+}],
+"loop": true,
+"name": &"paper1",
+"speed": 5.0
+}]
+
+[node name="hint_dark3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 35)
+scale = Vector2(0.126437, 0.129433)
+sprite_frames = SubResource("SpriteFrames_olu7w")
+animation = &"paper1"

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1rvr1ufqtf2d"]
+
+[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_p4tyy"]
+[ext_resource type="Script" uid="uid://jrai3e0ifv0o" path="res://MiniGameTscn/hintpaper_2.gd" id="1_qt1tx"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_qt1tx"]
+[ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="4_4x5q5"]
+
+[node name="Hintpaper_2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qt1tx")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 25.0
+offset_right = 910.0
+offset_bottom = 589.0
+texture = ExtResource("1_p4tyy")
+
+[node name="Label" type="Label" parent="TextureRect3"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 58.0
+offset_right = 22715.0
+offset_bottom = 4391.0
+scale = Vector2(0.01, 0.01)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_qt1tx")
+theme_override_font_sizes/font_size = 4000
+text = "Password Tip :"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextureRect3"]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 269.0
+offset_right = 4285.0
+offset_bottom = 3689.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_qt1tx")
+theme_override_font_sizes/normal_font_size = 300
+text = "Your password can be an entire 
+sentence, an obscure movie qoute
+or lyrics to a song ? .... you know 
+you have one :D"
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 45.0
+offset_right = 800.0
+offset_bottom = 94.0
+texture_normal = ExtResource("4_4x5q5")
+ignore_texture_size = true
+stretch_mode = 0

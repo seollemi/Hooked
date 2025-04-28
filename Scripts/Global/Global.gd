@@ -21,7 +21,22 @@ var mail_open_opened: bool = false  # interact once only happen 1 time permanent
 var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 
-var collected_hints: int = 0  # Start at zero
+#MINI GAME_Password_Global
+var collected_hints: int = 0 # Start at zero
+var hints_read: int = 0  # counts how many hints have been opened
+var scrolling_background: Node2D = null
+var player_points: int = 0
+var chosen_password_number: int = 1  # default 1 = Andrew
+
+#Fade one tiem
+var has_faded_in: bool = false
+
+func add_points(points_to_add: int) -> void:
+	player_points += points_to_add
+	print("⭐ Points Added: ", points_to_add, " | Total Points: ", player_points)
+
+func reset_points_only() -> void:
+	player_points = 0  
 
 #NPC MOVEMENT
 var NPC_Office_location = Vector2(463.0, 76.0)

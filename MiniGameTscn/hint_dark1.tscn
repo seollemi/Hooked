@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmh30ih717tby"]
+
+[ext_resource type="Texture2D" uid="uid://cyrr4eycg3er" path="res://MiniGameAssets/paper.png" id="1_3ipok"]
+[ext_resource type="Script" uid="uid://bpo7rxsf0jji7" path="res://Scripts/MiniGameScripts/hint_dark_1.gd" id="1_oqf4g"]
+[ext_resource type="Texture2D" uid="uid://bnolcfrnub0np" path="res://MiniGameAssets/paperdark.png" id="2_oqf4g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhsms"]
+atlas = ExtResource("2_oqf4g")
+region = Rect2(0, 0, 696, 564)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ipok"]
+atlas = ExtResource("1_3ipok")
+region = Rect2(0, 0, 696, 564)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8ac5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhsms")
+}],
+"loop": true,
+"name": &"paper_dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ipok")
+}],
+"loop": true,
+"name": &"paper_light",
+"speed": 5.0
+}]
+
+[node name="Hint1" type="TextureButton"]
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = 0.417
+anchor_right = 0.521
+anchor_bottom = 0.526
+offset_left = 0.559937
+offset_top = -0.216003
+offset_right = -0.192017
+offset_bottom = 0.151978
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 39)
+size_flags_horizontal = 4
+script = ExtResource("1_oqf4g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 35)
+scale = Vector2(0.126437, 0.129433)
+sprite_frames = SubResource("SpriteFrames_v8ac5")
+animation = &"paper_dark"
