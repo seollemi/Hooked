@@ -1,5 +1,7 @@
 extends Node2D
+
 @onready var interactable: Area2D = $interactable
+@onready var infodesk: Area2D = $infodesk
 
 var global_alex = false
 var triggered= false
@@ -7,6 +9,9 @@ var triggered= false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interactable.interact = _on_interact
+	infodesk.interact = _on_interact1
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,12 +42,29 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		Global.global_alex = true
 		Dialogic.start("emailphishing")
 		
+func _on_interact1():
+	Dialogic.start("attackers")
+	
+
+
 func _on_interact():
+	Global.set_previous_scene("res://Scenes/officelobby.tscn", $Player.global_position)
+
+
+	# Now transition to the new scene (e.g., computer scene)
 	Global.next_scene = "computer"
 	Global.transition_scene = true
-
-
+	
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if not Global.global_triggered:
 		Global.global_triggered = true
 		Dialogic.start("password")
+
+
+
+
+
+
+func _on_interactable_body_entered(body: Node2D) -> void:
+	Global.previous_scene_path = get_tree().current_scene.scene_file_path
+	get_tree().change_scene_to_file("res://Scenes/pc_game_password.tscn")
