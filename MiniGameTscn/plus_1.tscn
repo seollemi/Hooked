@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c28ebfudgkx7h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4v4y"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"plus_1",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(552, 428)
+scale = Vector2(0.0818965, 0.0868794)
+sprite_frames = SubResource("SpriteFrames_v4v4y")
+animation = &"plus_1"

@@ -20,6 +20,8 @@ func _ready():
 		Dialogic.start("Fake_login")
 
 func _on_dialogic_signal(event_name: String) -> void:
+	if event_name == "Game_enable":
+		Global.mini_game_enable = true
 	if event_name == "return_to_office":
 		Global.teleport_back = true  
 		get_tree().change_scene_to_file("res://Scenes/Office.tscn")

@@ -14,29 +14,51 @@ func _play_interact_sound():
 	audio_player.stream = load("res://sounds/1up 2 - Sound effects Pack 2.mp3")
 	audio_player.play()
 	
+func _show_plus_points(amount: int) -> void:
+	var label = Label.new()
+	label.text = "+" + str(amount)
 
 func _on_interact():
 	if already_collected:
-		return  # 🚫 Stop if already collected
+		return
+	already_collected = true
 
-	already_collected = true  # ✅ Allow interacting normally
-
-	# ✨ Only add hint if less than 6 collected
 	if Global.collected_hints < 9:
 		Global.collected_hints += 1
 
 	animated_sprite_2d.play("Button_pressed")
 	print("🔑 Hint Collected: ", hint_text)
+	Global.hints_read += 1
 
-	# ✨ Points logic based on current score
+	_show_plus_hint()  # 👈 Show +1 Hint
+
+	var points_awarded := 0
+
 	match Global.player_points:
 		0:
-			Global.add_points(30)
+			points_awarded = 30
 		30:
-			Global.add_points(30)
+			points_awarded = 30
 		60:
-			Global.add_points(40)
+			points_awarded = 40
 		_:
-			Global.add_points(0)  # Optional if points are other than 0,30
+			points_awarded = 0
+
+	Global.add_points(points_awarded)
 
 	_play_interact_sound()
+
+
+func _show_plus_hint() -> void:
+	var label = Label.new()
+	label.text = "+1 Hint"
+	label.add_theme_font_size_override("font_size", 24)
+	label.modulate = Color(1, 1, 1, 1)
+	label.global_position = global_position + Vector2(0, -20)
+	get_tree().current_scene.add_child(label)
+
+	var tween = create_tween()
+	tween.tween_property(label, "global_position", label.global_position + Vector2(0, -40), 1.0)
+	tween.parallel().tween_property(label, "modulate:a", 0.0, 1.0)
+	await tween.finished
+	label.queue_free()

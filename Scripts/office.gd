@@ -46,6 +46,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 			Vector2(358, 91)
 		] as Array[Vector2])
 
-
-func _on_act_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+func _on_dialogic_signal(event_name: String) -> void:
+	if event_name == "Game_enable":
+		Global.mini_game_enable = true
+		print("✅ Mini-game is now enabled!")

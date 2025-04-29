@@ -32,6 +32,8 @@ directories/dch_directory={
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
 "alex": "res://npc/alex.dch",
 "character": "res://npc/character.dch",
+"jamie": "res://Dialogic_scenes/Characters/jamie.dch",
+"mark": "res://Dialogic_scenes/Characters/mark.dch",
 "npc": "res://Dialogic_scenes/Characters/npc.dch",
 "ronnie": "res://Dialogic_scenes/Characters/ronnie.dch"
 }
@@ -52,7 +54,10 @@ directories/dtl_directory={
 "NPC_TALK_ACT1": "res://Dialogic_scenes/NPC_TALK_ACT1.dtl",
 "Npc_act2": "res://Dialogic_scenes/Npc_act2.dtl",
 "Work_Introduction": "res://Dialogic_scenes/Work_Introduction.dtl",
+"attacker1": "res://Dialogic_scenes/attacker1.dtl",
+"attackers": "res://Dialogic_scenes/attackers.dtl",
 "emailphishing": "res://Dialogic_scenes/emailphishing.dtl",
+"intro_cybersecurity": "res://Dialogic_scenes/intro_cybersecurity.dtl",
 "office/emailphishing": "res://world/office/emailphishing.dtl",
 "password": "res://Dialogic_scenes/password.dtl",
 "pc_start": "res://Dialogic_scenes/pc_start.dtl",
@@ -112,6 +117,9 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Dialogic_scenes/": "blue",
+"res://MiniGameAssets/": "yellow",
+"res://MiniGameTscn/": "green",
 "res://Scenes/": "green",
 "res://Scripts/": "yellow"
 }

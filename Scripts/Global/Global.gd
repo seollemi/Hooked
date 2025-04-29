@@ -37,12 +37,23 @@ var mail_open_opened: bool = false  # interact once only happen 1 time permanent
 var fakelogin_open_opened: bool = false
 var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
+
+
+#EVENT SCENES TO SWITCH ACTS
+var mini_game_enable: bool = false
+var collected_questions: Array = []
+var introduction_1: bool = false
 var act_1_done: bool = false
+
+
 
  # Start at zero
 var global_triggered = false
 var global_alex = false
 
+
+#####global dialogics
+var dialogue_played: bool = false
 
 #MINI GAME_Password_Global
 var collected_hint_ids: Array = []

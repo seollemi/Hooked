@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfuqdsqqd0xnt"]
+[gd_scene load_steps=12 format=3 uid="uid://bfuqdsqqd0xnt"]
 
 [ext_resource type="Script" uid="uid://sbuufb40xr8t" path="res://MiniGameTscn/mini_game_1.gd" id="1_wlgql"]
 [ext_resource type="Texture2D" uid="uid://b3u5b0dhlqkyn" path="res://MiniGameAssets/37247.png" id="2_fppsf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bmg6hdeph7oat" path="res://MiniGameTscn/hints.tscn" id="5_5a6dd"]
 [ext_resource type="PackedScene" uid="uid://basf3gm2w32eq" path="res://MiniGameTscn/Marker.tscn" id="6_dwwv5"]
 [ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="7_xuktg"]
+[ext_resource type="PackedScene" uid="uid://dmh30ih717tby" path="res://MiniGameTscn/hint_dark1.tscn" id="8_ogmh3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xuktg"]
 texture = ExtResource("2_fppsf")
@@ -102,5 +103,11 @@ position = Vector2(29, -145.5)
 shape = SubResource("RectangleShape2D_ogmh3")
 
 [node name="TransitionScreen" parent="." instance=ExtResource("7_xuktg")]
+
+[node name="Hint10" parent="." instance=ExtResource("8_ogmh3")]
+offset_left = 345.56
+offset_top = -50.216
+offset_right = 344.808
+offset_bottom = -49.848
 
 [connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]

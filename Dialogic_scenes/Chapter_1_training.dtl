@@ -1,4 +1,5 @@
 - Ask about additional information about Cybersecurity
+	[signal arg="Q_1"]
 	James: So, cybersecurity is just using firewalls and antivirus, right?
 	npc: Not exactly, James. Security is much bigger. We use many different controls to protect everything — not just the network.
 	James: Different controls? Like what?
@@ -7,8 +8,8 @@
 	npc: Exactly. If someone steals the physical server, it doesn’t matter how strong your password was.
 	npc: Think of it like a castle. You need walls, guards, rules, and alarm systems — not just one thing."
 	Makes sense. It’s about protecting from every angle, not just hacking.
-	[signal arg="Q_1"]
 - Ask about What is "CIA"
+	[signal arg="Q_2"]
 	James: Everyone keeps saying 'CIA' when talking about security. What does it mean?
 	npc: CIA stands for Confidentiality, Integrity, and Availability — the three main goals of cybersecurity.
 	James: Can you break it down for me?
@@ -20,8 +21,8 @@
 	npc: Other key ideas are non-repudiation — making sure someone can’t deny doing something — and zero trust, where we assume no one is automatically trusted.
 	James: So trust no one?
 	npc: Trust, but verify — every time.
-	[signal arg="Q_2"]
 - Ask about Change Management and Security
+	[signal arg="Q_3"]
 	James: If we already know about a security problem, why can't we just fix it right away?
 	npc: It sounds simple, James. But rushing to fix a problem without a plan can sometimes cause bigger issues.
 	James: Really? Like what?
@@ -40,8 +41,8 @@
 	npc: Perfect comparison. Good change management is slow because it’s careful — but it saves systems, money, and even lives in some cases.
 	James: I get it now. Rushing to fix a problem without a plan can create a bigger disaster
 	npc: Exactly. In cybersecurity, careful changes are safer than quick fixes.
-	[signal arg="Q_3"]
 - ask about how to protect information
+	[signal arg="Q_4"]
 	James: So if I just hide important files in a deep folder, hackers won't find them, right?
 	It’s not that simple, James. Hiding files doesn’t actually protect them. Hackers can scan your whole system and find hidden files easily.
 	James: Then... what really protects information?
@@ -58,6 +59,7 @@
 	Certificates are like digital IDs. They prove a website or a person is trustworthy.
 	James: So encryption protects privacy, signatures protect trust, and certificates prove identity
 	Exactly. That’s why secure websites use HTTPS — the 'S' means the site is encrypted and certified.
-	Wow. It’s more complex than just 'hiding' things.
+	James: Wow. It’s more complex than just 'hiding' things.
 	Exactly. Real protection needs real tools — and real understanding.
-	[signal arg="Q_4"]
+- Exit
+	[end_timeline]

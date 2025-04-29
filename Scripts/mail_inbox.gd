@@ -43,11 +43,11 @@ func _on_mail_act_1_mouse_exited() -> void:
 func _on_color_rect_3_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		print("📬 Email clicked!")
-		
-		
-		
+		get_tree().change_scene_to_file("res://MiniGameTscn/MiniMenu.tscn")
 
-
+func _process(delta: float) -> void:
+	if Global.mini_game_enable == true:
+		$CanvasLayer/ColorRect3.visible = true
 
 func _on_mail_act_1_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
