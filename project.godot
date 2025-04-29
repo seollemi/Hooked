@@ -51,6 +51,7 @@ directories/dtl_directory={
 "IntroDialogue": "res://opening INtro/IntroDialogue.dtl",
 "MailInbox_1": "res://Dialogic_scenes/MailInbox_1.dtl",
 "Mail_open": "res://Dialogic_scenes/Mail_open.dtl",
+"Malware_discussion": "res://Dialogic_scenes/Malware_discussion.dtl",
 "NPC_TALK_ACT1": "res://Dialogic_scenes/NPC_TALK_ACT1.dtl",
 "Npc_act2": "res://Dialogic_scenes/Npc_act2.dtl",
 "Work_Introduction": "res://Dialogic_scenes/Work_Introduction.dtl",

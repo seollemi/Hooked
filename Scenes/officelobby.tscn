@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=40 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -13943,6 +13943,9 @@ size = Vector2(32, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7or87"]
 size = Vector2(32, 30)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y2kf"]
+size = Vector2(20, 129)
+
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
 
@@ -13976,7 +13979,7 @@ shape = SubResource("RectangleShape2D_fbgy8")
 
 [node name="Player" parent="." instance=ExtResource("9_fbgy8")]
 z_index = 4
-position = Vector2(114, 317)
+position = Vector2(114, 315)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(763, 351)
@@ -14024,9 +14027,17 @@ shape = SubResource("RectangleShape2D_7or87")
 visibility_layer = 0
 position = Vector2(404, 522)
 
+[node name="move" type="Area2D" parent="."]
+position = Vector2(629, 409)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move"]
+position = Vector2(0, 54.5)
+shape = SubResource("RectangleShape2D_3y2kf")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="interactable" to="." method="_on_interactable_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Scene_to_Training" to="." method="_on_scene_to_training_body_entered"]
 [connection signal="body_entered" from="Scene_To_Bridge" to="." method="_on_scene_to_bridge_body_entered"]
+[connection signal="body_entered" from="move" to="." method="_on_move_body_entered"]

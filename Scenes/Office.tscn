@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://7v1n16qg8m82"]
+[gd_scene load_steps=21 format=4 uid="uid://7v1n16qg8m82"]
 
-[ext_resource type="Script" uid="uid://cwbiwat53hepk" path="res://Scripts/office.gd" id="1_0d164"]
+[ext_resource type="Script" uid="uid://oahdoc1xqe3v" path="res://Scripts/office.gd" id="1_0d164"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
 [ext_resource type="Texture2D" uid="uid://birefcflxdi7o" path="res://world/office/Room_Builder_Office_16x16.png" id="4_bod3d"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="5_32u8q"]
@@ -3586,7 +3586,10 @@ size = Vector2(30, 89)
 size = Vector2(40.2269, 73.1918)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g47s"]
-size = Vector2(50, 27)
+size = Vector2(45, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_541ak"]
+size = Vector2(49.75, 23.375)
 
 [node name="Office" type="Node2D"]
 script = ExtResource("1_0d164")
@@ -3672,9 +3675,23 @@ position = Vector2(574, 123)
 position = Vector2(733, 219)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="act_2"]
-position = Vector2(15, -1.5)
+position = Vector2(18.5, -4)
 shape = SubResource("RectangleShape2D_3g47s")
+
+[node name="act2_intro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="act2_intro"]
+position = Vector2(701.125, 289.313)
+shape = SubResource("RectangleShape2D_541ak")
+
+[node name="act2_cutscene" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="act2_cutscene"]
+position = Vector2(701.125, 289.313)
+shape = SubResource("RectangleShape2D_541ak")
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="act_2" to="npc2" method="_on_act_2_body_entered"]
+[connection signal="body_entered" from="act2_intro" to="." method="_on_act_2_intro_body_entered"]
+[connection signal="body_entered" from="act2_cutscene" to="." method="_on_act_2_cutscene_body_entered"]

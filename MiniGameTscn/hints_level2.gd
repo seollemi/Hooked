@@ -28,7 +28,6 @@ func _on_interact():
 
 	animated_sprite_2d.play("Button_pressed")
 	print("🔑 Hint Collected: ", hint_text)
-	Global.hints_read += 1
 
 	_show_plus_hint()  # 👈 Show +1 Hint
 

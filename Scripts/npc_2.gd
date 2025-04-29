@@ -39,7 +39,7 @@ func _on_act_2_body_entered(body: Node2D) -> void:
 	if body is Player and not Global.npc_evnt2_done:
 		print("👀 Player entered! Interrupting if necessary and starting Act 2...")
 
-		Global.npc_evnt2_done = true  # Mark event as done
+		Global.npc_evnt2_done = false  # Mark event as done
 
 		# If NPC is still talking, stop the dialog
 		if talking:

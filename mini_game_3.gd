@@ -59,7 +59,7 @@ func _show_marker() -> void:
 	marker.visible = true
 	if marker.has_node("AnimatedSprite2D"):
 		var anim_sprite = marker.get_node("AnimatedSprite2D")
-		anim_sprite.play("loop")
+		anim_sprite.play("marker_1")
 
 # 👇 Level Finish Area2D signal
 func _on_level_finish_body_entered(body: Node2D) -> void:

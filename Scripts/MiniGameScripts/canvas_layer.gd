@@ -155,6 +155,7 @@ func _on_proceed_button_pressed() -> void:
 		print("⛔ Not enough hints yet!")
 		get_tree().change_scene_to_file("res://MiniGameTscn/writeblank.tscn")
 
+	print("Password: ", Global.chosen_password_number, ", Number: ", Global.collected_hints, ", Hints: ", Global.hints_read)	
 
 func _update_button_visibility() -> void: 
 	if Global.chosen_password_number == 4:

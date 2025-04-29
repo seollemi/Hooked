@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="3_xkyv3"]
 
 [node name="hintpaper_7" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

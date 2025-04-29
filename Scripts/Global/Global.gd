@@ -20,6 +20,13 @@ var player_enter_house_posy = -21.0
 var player_start_posx = -16.0
 var player_start_posy = -120.0
 
+
+#player loction officelobby
+var player1_enter_house_posx = 346
+var player1_enter_house_posy = 135
+var player1_start_posx = 346
+var player1_start_posy = 135
+
 #player loc when entering bridge/main city
 var player_bridge_posx = 917.0
 var player_brigde_posy = -248.0

@@ -13,6 +13,7 @@ extends Control
 @onready var wrong_sound: AudioStreamPlayer = $CanvasLayer/WrongSound
 @onready var office_lobby_scene = preload("res://Scenes/officelobby.tscn")
 @onready var exit_button: Button = $CanvasLayer/ExitButton
+@onready var player: Player = $Player
 
 var score = 0
 var game_over = false

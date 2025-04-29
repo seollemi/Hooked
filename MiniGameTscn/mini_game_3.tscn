@@ -111,3 +111,5 @@ position = Vector2(-530, -526)
 
 [node name="TransitionScreen" parent="." instance=ExtResource("9_mwgqc")]
 visible = false
+
+[connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]

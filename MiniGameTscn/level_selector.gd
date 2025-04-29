@@ -53,6 +53,9 @@ func _on_level3_pressed() -> void:
 			var music = get_tree().root.get_node("MusicPlayer")
 			music.stop()
 			music.queue_free()
+		get_tree().change_scene_to_file("res://MiniGameTscn/mini_game_3.tscn")
+	else:
+		print("⛔ You need a Strong password to unlock level 2!")
 
 func _on_level4_pressed() -> void:
 	if Global.chosen_password_number >= 4:
