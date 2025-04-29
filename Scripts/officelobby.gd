@@ -29,6 +29,8 @@ func change_scene():
 				ChangeScene.change_scene_anim("res://Scenes/pc_game_password.tscn")
 			"training":
 				ChangeScene.change_scene_anim("res://Scenes/training.tscn")
+			"bridge":
+				ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
 		Global.finish_changescenes()
 
 #### FUNC FOR TRANSITION TO NEXT SCENE
@@ -72,3 +74,10 @@ func _on_interactable_body_entered(body: Node2D) -> void:
 	Global.previous_scene_path = get_tree().current_scene.scene_file_path
 	get_tree().change_scene_to_file("res://Scenes/pc_game_password.tscn")
 	
+
+
+func _on_scene_to_bridge_body_entered(body: Node2D) -> void:
+	if body is Player:
+		Global.next_scene = "bridge"
+		Global.transition_scene = true
+####

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=39 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ctutupntxun5d" path="res://npc/Alex_phone_16x16.png" id="9_alh1q"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="9_fbgy8"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="12_kq78j"]
+[ext_resource type="PackedScene" uid="uid://s0pm27nivbtg" path="res://Scenes/door.tscn" id="13_7demk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibiix"]
 texture = ExtResource("1_7ovcx")
@@ -13939,6 +13940,9 @@ size = Vector2(20, 127)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tryux"]
 size = Vector2(32, 27)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7or87"]
+size = Vector2(32, 30)
+
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
 
@@ -14010,8 +14014,19 @@ shape = SubResource("RectangleShape2D_4e0qv")
 position = Vector2(752, 542.5)
 shape = SubResource("RectangleShape2D_tryux")
 
+[node name="Scene_To_Bridge" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_To_Bridge"]
+position = Vector2(400, 543)
+shape = SubResource("RectangleShape2D_7or87")
+
+[node name="office_door" parent="." instance=ExtResource("13_7demk")]
+visibility_layer = 0
+position = Vector2(404, 522)
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="interactable" to="." method="_on_interactable_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Scene_to_Training" to="." method="_on_scene_to_training_body_entered"]
+[connection signal="body_entered" from="Scene_To_Bridge" to="." method="_on_scene_to_bridge_body_entered"]
