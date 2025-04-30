@@ -20,6 +20,7 @@ Fine. Just fix this. And keep me updated every step of the way.
 	Dana (Dana_talking): This better never happen again. Understood?
 	James (James_talking): Understood, ma’am.
 	[signal arg="right_choice"]
+	[signal arg="Game_enable"]
 	Narrator: ✅ You chose to isolate the affected systems.\
 🔐 The ransomware was contained.\
 💾 Files were successfully restored from secure backups.\

@@ -167,7 +167,7 @@ func _update_button_visibility() -> void:
 
 
 func _on_continue_pressed() -> void:
-	Global.act_1_done = true
+	Global.act_3_done = true
 	Global.scrolling_background.visible = false
 
 	if get_tree().root.has_node("MusicPlayer"):

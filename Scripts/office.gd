@@ -1,8 +1,7 @@
 extends Node2D
 @onready var player: Player = $Player
-
 @onready var interactable: Area2D = $interactable
-var arg : String = ""  # Declare 'arg' variable to store signal argument
+var arg : String = "" 
 
 func _ready() -> void:
 	interactable.interact = _on_interact
@@ -13,10 +12,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	change_scene()
-	
 	pass
 
-# This method is triggered when the player interacts with the object
 func _on_interact():
 	Global.next_scene = "computer"
 	Global.transition_scene = true
@@ -28,8 +25,6 @@ func start_dialog():
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	$act2_cutscene/CollisionShape2D.disabled = false
-	
-	
 
 func change_scene():
 	if Global.transition_scene:
@@ -58,12 +53,8 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 			Vector2(358, 91)
 		] as Array[Vector2])
 
-
-
-# This method is triggered when the player enters the specific area for the act 2 intro
 func _on_act_2_intro_body_entered(body: Node2D) -> void:
 	start_dialog()  # Start the dialogue
-
 
 func _on_act_2_cutscene_body_entered(body: Node2D) -> void:
 	if body is Player:
@@ -73,8 +64,7 @@ func _on_act_2_cutscene_body_entered(body: Node2D) -> void:
 			Vector2(375, 22),
 			Vector2(451, 22)
 		] as Array[Vector2])
-		
-		
+
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "Game_enable":
 		Global.mini_game_enable = true

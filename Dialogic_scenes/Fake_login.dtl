@@ -3,7 +3,6 @@ James: This link looks… off.
 James: Something’s wrong. I should double-check this before clicking.
 - Ignore the email | [signal_event="return_to_office"]
 	[signal arg="return_to_office"]
-	[signal arg="Game_enable"]
 	[sound path="res://sounds/6_Stinger_Victory_1_Master.mp3" volume="0.0"]
 	James: Hey Jordan, I just got a weird email from the boss.
 	Jordan: We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
@@ -12,7 +11,6 @@ James: Something’s wrong. I should double-check this before clicking.
 	[signal arg="Dialog_IT"]
 - Enter login credentials
 	[signal arg="return_to_office"]
-	[signal arg="Game_enable"]
 	[sound path="res://sounds/7_Stinger_Defeat_1_Master.mp3" volume="0.0"]
 	Jordan: Whoa! STOOPP!!!!
 	Jordan: Don’t do that! It’s a fake! I know it looks like our boss sent it, but it’s not. These phishing scams copy familiar names to trick you into handing over your login.
