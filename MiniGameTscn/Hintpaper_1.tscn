@@ -50,6 +50,7 @@ characters can be difficult to hack
 Let's build a long password"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var hack_time_label: RichTextLabel = $HackTimeEstimate
 @onready var current_password_label: RichTextLabel = $CurrentPassword
 @onready var continue_button: TextureButton = $ContinueButton
+
 func _ready() -> void:
 	_update_password_display()
 	Global.scrolling_background.visible = true
@@ -144,16 +145,16 @@ func _on_quit_pressed() -> void:
 func _on_proceed_button_pressed() -> void:
 	if Global.hints_read == 3 and Global.chosen_password_number == 1:
 		print("✅ Proceeding to Password Upgrade 1!")
-		get_tree().change_scene_to_file("res://MiniGameTscn/passwordupgrade.tscn")
+		get_tree().change_scene_to_file("res://MiniGameAssets/cutscene_after_upgrade.tscn")
 	elif Global.hints_read == 6 and Global.chosen_password_number == 2:
 		print("✅ Proceeding to Password Upgrade 2!")
-		get_tree().change_scene_to_file("res://MiniGameTscn/passwordupgrade_2.tscn")
+		get_tree().change_scene_to_file("res://MiniGameTscn/cutscene_after_upgrade_2.tscn")
 	elif Global.hints_read == 9 and Global.chosen_password_number == 3:
 		print("✅ Proceeding to Password Upgrade 3!")
-		get_tree().change_scene_to_file("res://MiniGameTscn/passwordupgrade_3.tscn")
+		get_tree().change_scene_to_file("res://MiniGameTscn/cutscene_after_upgrade_3.tscn")
 	else:
 		print("⛔ Not enough hints yet!")
-		get_tree().change_scene_to_file("res://MiniGameTscn/writeblank.tscn")
+		get_tree().change_scene_to_file("yessir")
 
 	print("Password: ", Global.chosen_password_number, ", Number: ", Global.collected_hints, ", Hints: ", Global.hints_read)	
 

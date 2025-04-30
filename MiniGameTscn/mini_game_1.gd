@@ -4,8 +4,11 @@ extends Node
 @onready var player: CharacterBody2D = $Node2D
 @onready var player_camera: Camera2D = $Node2D/PlayerCamera
 @onready var marker: Node2D = $Marker
-
+@onready var popup_layer: CanvasLayer = $PopupLayer
+@onready var level_music: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var transition_screen: CanvasLayer = $TransitionScreen
+
+
 
 var sequence_done: bool = false
 var door_position: Vector2
@@ -16,6 +19,7 @@ func _ready() -> void:
 	Global.scrolling_background.visible = false
 	door_position = tile_map.map_to_local(Vector2i(1, -8))
 	Global.reset_points_only()
+	level_music.play()
 
 func _process(delta: float) -> void:
 	if Global.player_points >= 100 and not sequence_done:
@@ -59,15 +63,20 @@ func _show_marker() -> void:
 	marker.visible = true
 	if marker.has_node("AnimatedSprite2D"):
 		var anim_sprite = marker.get_node("AnimatedSprite2D")
-		anim_sprite.play("loop")
+		anim_sprite.play("marker_1")
 
 # 👇 Level Finish Area2D signal
 func _on_level_finish_body_entered(body: Node2D) -> void:
 	if body.name == "Node2D":
+		level_music.stop()
 		print("🎉 Level Complete!")
 		player.can_move = false
 		await _play_victory_sound()
-		get_tree().change_scene_to_file("res://MiniGameTscn/level_selector.tscn")
+		# 👉 Instead of changing scenes directly, show password popup
+		var popup_scene = preload("res://MiniGameTscn/Password_puzzle_1.tscn")
+		var popup = popup_scene.instantiate()
+		var popup_layer = get_tree().current_scene.get_node("PopupLayer")
+		popup_layer.add_child(popup)
 
 func _play_victory_sound() -> void:
 	var audio_player = AudioStreamPlayer.new()

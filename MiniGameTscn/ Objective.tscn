@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_qk1ly")
 
 [node name="HackTimeEstimate2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 24.0
 offset_right = 3300.0
@@ -27,6 +28,7 @@ bbcode_enabled = true
 text = "[wave amp=90 fr] Controls[/wave]"
 
 [node name="w" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 524.0
 offset_top = 85.0
 offset_right = 1134.0
@@ -39,6 +41,7 @@ bbcode_enabled = true
 text = "W ↑"
 
 [node name="a" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 149.0
 offset_right = 1261.0
@@ -51,6 +54,7 @@ bbcode_enabled = true
 text = "A ←"
 
 [node name="s" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 523.0
 offset_top = 149.0
 offset_right = 1133.0
@@ -63,6 +67,7 @@ bbcode_enabled = true
 text = "S ↓"
 
 [node name="d" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 620.0
 offset_top = 150.0
 offset_right = 1560.0
@@ -75,6 +80,7 @@ bbcode_enabled = true
 text = "D →"
 
 [node name="d2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 772.0
 offset_top = 150.0
 offset_right = 3832.0
@@ -87,6 +93,7 @@ bbcode_enabled = true
 text = "E  to interact"
 
 [node name="Objective" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 215.0
 offset_right = 3300.0
@@ -99,6 +106,7 @@ bbcode_enabled = true
 text = "[wave amp=90 fr] Objective[/wave]"
 
 [node name="Objective2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 272.0
 offset_right = 10953.0
@@ -111,6 +119,7 @@ bbcode_enabled = true
 text = "In order to Proceed to the next act you must collect all the hints so you can make a strong enough password to proceed to the next Act of the story."
 
 [node name="Objective3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 49.0
 offset_top = 442.0
 offset_right = 11139.0
@@ -123,6 +132,7 @@ bbcode_enabled = true
 text = "You must find the [color=blue] Button[/color]. Each [color=blue] Button[/color] provides 1  Hints Once you found all three Hints , return to the Hints tab to upgrade the password and proceed to the next level."
 
 [node name="ContinueButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 897.0
 offset_top = 4.0
 offset_right = 1128.0

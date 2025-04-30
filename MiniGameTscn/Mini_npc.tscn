@@ -1,10 +1,30 @@
-[gd_scene load_steps=44 format=3 uid="uid://cvht4rnmihuxd"]
+[gd_scene load_steps=49 format=3 uid="uid://cvht4rnmihuxd"]
 
 [ext_resource type="Script" uid="uid://bnwqv0kauyory" path="res://Scripts/MiniGamePlayer.gd" id="1_sbpx0"]
 [ext_resource type="Texture2D" uid="uid://b7feo1pmdkkex" path="res://MiniGameAssets/Player.png" id="2_yar5p"]
 [ext_resource type="Script" uid="uid://2yplrwttxhts" path="res://Scripts/Player_camera.gd" id="3_yar5p"]
 [ext_resource type="PackedScene" uid="uid://646eynxd38ta" path="res://interaction_component.tscn" id="4_m7viw"]
 [ext_resource type="Script" uid="uid://7fun8ligr6n5" path="res://MiniGameTscn/label.gd" id="5_2s71c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s71c"]
+atlas = ExtResource("2_yar5p")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgs2w"]
+atlas = ExtResource("2_yar5p")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5a8t"]
+atlas = ExtResource("2_yar5p")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmehh"]
+atlas = ExtResource("2_yar5p")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7is6t"]
+atlas = ExtResource("2_yar5p")
+region = Rect2(96, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nri6e"]
 atlas = ExtResource("2_yar5p")
@@ -154,6 +174,65 @@ region = Rect2(160, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2s71c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgs2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5a8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmehh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7is6t")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nri6e")
 }, {
 "duration": 1.0,
@@ -301,7 +380,7 @@ metadata/_custom_type_script = "uid://b6vxn3gv6epvq"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(467, 270)
 sprite_frames = SubResource("SpriteFrames_68nsy")
-animation = &"idle_down"
+animation = &"Death"
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 position = Vector2(467, 269)

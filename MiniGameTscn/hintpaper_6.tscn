@@ -53,6 +53,7 @@ theme_override_font_sizes/normal_font_size = 300
 text = "picking a reccurring letter to capitalise can help add complexity, while keeping it easy to remember."
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

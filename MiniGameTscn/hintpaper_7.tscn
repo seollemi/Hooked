@@ -54,6 +54,7 @@ text = "Did you know that the number '1'
 is the most commonly used number in passwords? pick a number with a random meaning!"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_gtyat")
 
 [node name="Talk1" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 137.0
 offset_right = 7339.0
@@ -24,6 +25,7 @@ theme_override_font_sizes/normal_font_size = 400
 bbcode_enabled = true
 
 [node name="Talk2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 297.0
 offset_right = 7529.0
@@ -35,6 +37,7 @@ theme_override_font_sizes/normal_font_size = 400
 bbcode_enabled = true
 
 [node name="Talk3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 169.0
 offset_top = 452.0
 offset_right = 8279.0

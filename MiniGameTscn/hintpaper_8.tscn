@@ -54,6 +54,7 @@ text = "Birthdays are common knowledge.
 Instead, ask yourself how many months old were you when you first drove a car? First job? First award?"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

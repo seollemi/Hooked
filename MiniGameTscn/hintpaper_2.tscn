@@ -49,7 +49,8 @@ sentence, an obscure movie qoute
 or lyrics to a song ? .... you know 
 you have one :D"
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

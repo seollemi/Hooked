@@ -46,7 +46,8 @@ theme_override_fonts/normal_font = ExtResource("2_k6gqc")
 theme_override_font_sizes/normal_font_size = 300
 text = "Most people choose their password based on something that's their\"favorite\". While the word Zigs,why dont you choose Zag? Pick something you don't like!"
 
-[node name="TextureButton3" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

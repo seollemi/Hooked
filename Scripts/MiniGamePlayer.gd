@@ -41,3 +41,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			anim.play("idle_up")
 			anim.flip_h = false
+func die():
+	can_move = false
+	anim.play("Death")
+	if get_tree().current_scene.has_node("AudioStreamPlayer2D"):
+		var music = get_tree().current_scene.get_node("AudioStreamPlayer2D")
+		music.stop()

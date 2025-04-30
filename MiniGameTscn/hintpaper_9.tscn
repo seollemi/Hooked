@@ -54,6 +54,7 @@ text = "words or names can be subtituted for numbers. Like: before = B4fore
 good = 9ood... or the very complex is Bill Gates = Bi11sG8Tes"
 
 [node name="TextureButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 45.0

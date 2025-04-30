@@ -69,11 +69,17 @@ var hints_read: int = 0  # counts how many hints have been opened
 var scrolling_background: Node2D = null
 var player_points: int = 0
 var chosen_password_number: int = 1  # default 1 = Andrew
-var has_faded_in: bool = false
+var has_faded_in: bool = true
+var mini_level_1: bool = false
+var mini_level_2: bool = false
+var mini_level_3: bool = false
+var show_button_after_hint := false
+var last_hint_opened := 0
 
 func add_points(points_to_add: int) -> void:
 	player_points += points_to_add
 	print("⭐ Points Added: ", points_to_add, " | Total Points: ", player_points)
+
 
 func reset_points_only() -> void:
 	player_points = 0
