@@ -116,7 +116,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_fyk3w")
 theme_override_font_sizes/normal_font_size = 500
 bbcode_enabled = true
-text = "In order to Proceed to the next act you must collect all the hints so you can make a strong enough password to proceed to the next Act of the story."
+text = "You must collect all the [color=orange]hints[/color]. To proceed to the story, you need to collect every [color=orange]hint[/color]."
 
 [node name="Objective3" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -129,7 +129,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("1_fyk3w")
 theme_override_font_sizes/normal_font_size = 500
 bbcode_enabled = true
-text = "You must find the [color=blue] Button[/color]. Each [color=blue] Button[/color] provides 1  Hints Once you found all three Hints , return to the Hints tab to upgrade the password and proceed to the next level."
+text = "You must find the [color=blue] Button[/color]. Each [color=blue] Button[/color] provides [color=orange]1 Hint[/color] Once you found all three Hints , return to the [color=Green]Hints tab [/color] Interact with all of the hints to unlock the next level"
 
 [node name="ContinueButton" type="TextureButton" parent="."]
 layout_mode = 0

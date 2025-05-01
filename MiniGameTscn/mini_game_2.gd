@@ -22,8 +22,12 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Global.player_points >= 100 and not sequence_done:
+		if popup_layer.get_child_count() > 0:
+			return  # ⛔ Wait until all popups are closed
+
 		sequence_done = true
 		await _cinematic_door_sequence()
+
 
 func _cinematic_door_sequence() -> void:
 	player.can_move = false  # Freeze player movement

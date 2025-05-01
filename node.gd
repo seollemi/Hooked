@@ -21,11 +21,20 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Global.player_points >= 100 and not sequence_done:
+		if popup_layer.get_child_count() > 0:
+			return  # ⛔ Wait until all popups are closed
+
 		sequence_done = true
 		await _cinematic_door_sequence()
 
 func _cinematic_door_sequence() -> void:
-	player.can_move = false  # Freeze player movement
+	player.can_move = false
+
+	# ✅ Pause if any popup is active in PopupLayer
+	for child in popup_layer.get_children():
+		if child.has_signal("popup_closed"):
+			await child.popup_closed
+			break  # Only wait for one, then move on
 
 	original_camera_position = player_camera.global_position
 	await _move_camera_to(door_position)
@@ -40,6 +49,7 @@ func _cinematic_door_sequence() -> void:
 
 	await _move_camera_to(original_camera_position)
 	player.can_move = true
+
 
 func _move_camera_to(target_position: Vector2) -> void:
 	var tween = create_tween()

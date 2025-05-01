@@ -8,8 +8,6 @@ extends Node
 @onready var level_music: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var transition_screen: CanvasLayer = $TransitionScreen
 
-
-
 var sequence_done: bool = false
 var door_position: Vector2
 var original_camera_position: Vector2
@@ -23,6 +21,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Global.player_points >= 100 and not sequence_done:
+		if popup_layer.get_child_count() > 0:
+			return  # ⛔ Wait until all popups are closed
+
 		sequence_done = true
 		await _cinematic_door_sequence()
 
