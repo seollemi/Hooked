@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://cpvo61vok166c"]
+[gd_scene load_steps=35 format=4 uid="uid://cpvo61vok166c"]
 
 [ext_resource type="Script" uid="uid://dqfbt036jofoq" path="res://Scripts/house.gd" id="1_eytsq"]
 [ext_resource type="Texture2D" uid="uid://cle5s3xa1fi1" path="res://world/house/Floor.png" id="3_2piwp"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://r3okgnq1uhik" path="res://world/TopDownHouse_FurnitureState2.png" id="15_mbyea"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="16_ft7ms"]
 [ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="17_5i8lh"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="18_ibgkm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ieno"]
 texture = ExtResource("3_2piwp")
@@ -3310,5 +3311,10 @@ shape = SubResource("CircleShape2D_5i8lh")
 layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("17_5i8lh")]
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+script = ExtResource("18_ibgkm")
+quest_name = "Act 1 "
+quest_stages = Array[String](["Go outside", "Go to main city", "Go to the office"])
 
 [connection signal="body_entered" from="Door_outside" to="." method="_on_door_outside_body_entered"]

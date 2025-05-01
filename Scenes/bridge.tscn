@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://nna3j176mn66"]
+[gd_scene load_steps=41 format=4 uid="uid://nna3j176mn66"]
 
 [ext_resource type="Texture2D" uid="uid://dntkub8i7o5in" path="res://world/bridge/1_Terrains_and_Fences_16x16.png" id="1_aa2wk"]
 [ext_resource type="Script" uid="uid://dep7r3rhfspsg" path="res://Scripts/outside.gd" id="1_dgpy2"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="13_to4tw"]
 [ext_resource type="PackedScene" uid="uid://s0pm27nivbtg" path="res://Scenes/door.tscn" id="14_vld22"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="15_dcb0v"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="17_dxtfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fgab"]
 texture = ExtResource("1_aa2wk")
@@ -30795,6 +30796,12 @@ position = Vector2(295, 155)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_dcb0v")
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+script = ExtResource("17_dxtfm")
+quest_name = "Act 1 "
+quest_statuss = 1
+quest_stages = Array[String](["Go to the office", "Go to Jaime at the information desk"])
 
 [connection signal="body_entered" from="Door_to_outsidehouse" to="." method="_on_door_to_outsidehouse_body_entered"]
 [connection signal="body_entered" from="Cutscene_trigger" to="." method="_on_cutscene_trigger_body_entered"]

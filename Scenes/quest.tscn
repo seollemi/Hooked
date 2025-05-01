@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bjcdjqnq0q2kb"]
+
+[node name="Quest" type="Node"]
+
+[node name="Questbox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="bg" type="Panel" parent="Questbox"]
+anchors_preset = -1
+anchor_right = 0.0564236
+anchor_bottom = 0.112654
+offset_right = 293.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Questbox"]
+offset_top = 2.0
+offset_right = 121.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 25
+text = "Quest Log"
+
+[node name="QuestTitle" type="RichTextLabel" parent="Questbox"]
+offset_left = 19.0
+offset_top = 36.0
+offset_right = 338.0
+offset_bottom = 61.0
+bbcode_enabled = true
+text = "Quest Title"
+
+[node name="QuestDescription" type="RichTextLabel" parent="Questbox"]
+offset_left = 29.0
+offset_top = 60.0
+offset_right = 347.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Quest Description
+"
+tab_size = 0

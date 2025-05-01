@@ -2,6 +2,7 @@ extends Node2D
 
 
 var cutscene_played := false
+@onready var quest_hehe: Quest_hehe = $Quest_hehe
 
 
 func _ready() -> void:
@@ -68,6 +69,8 @@ func _on_phone_sequence_finished():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe.reach_goal()
 		
 func _on_dialogue_ended(body: Player) -> void:
 	body.can_move = true  # Re-enable movement

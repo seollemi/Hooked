@@ -54,6 +54,10 @@ var act_2_done: bool = false
 var act_3_done:bool = false
 var act2_cutscene_done := false
 
+#Quest Global progression 
+var quest_stage_index = 0
+var quest_status = 0  # Use QuestManager.QuestStatus enum values
+
 
  # Start at zero
 var global_triggered = false

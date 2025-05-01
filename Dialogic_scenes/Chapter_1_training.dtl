@@ -1,45 +1,45 @@
 - Ask about additional information about Cybersecurity
 	[signal arg="Q_1"]
-	James: So, cybersecurity is just using firewalls and antivirus, right?
+	James (James_talking): So, cybersecurity is just using firewalls and antivirus, right?
 	npc: Not exactly, James. Security is much bigger. We use many different controls to protect everything — not just the network.
-	James: Different controls? Like what?
+	James (James_talking): Different controls? Like what?
 	npc: There are four main types. Technical controls, like firewalls and encryption. Managerial controls, like written security policies. Operational controls, like training employees. And physical controls, like locked doors and security cameras.
-	James: Wait... locking a server room door counts as cybersecurity?
+	James (James_talking): Wait... locking a server room door counts as cybersecurity?
 	npc: Exactly. If someone steals the physical server, it doesn’t matter how strong your password was.
 	npc: Think of it like a castle. You need walls, guards, rules, and alarm systems — not just one thing."
 	Makes sense. It’s about protecting from every angle, not just hacking.
 - Ask about What is "CIA"
 	[signal arg="Q_2"]
-	James: Everyone keeps saying 'CIA' when talking about security. What does it mean?
+	James (James_talking): Everyone keeps saying 'CIA' when talking about security. What does it mean?
 	npc: CIA stands for Confidentiality, Integrity, and Availability — the three main goals of cybersecurity.
-	James: Can you break it down for me?
+	James (James_talking): Can you break it down for me?
 	npc: Sure. Confidentiality means keeping information private. Like making sure your messages aren’t read by strangers.
 	npc: Integrity means making sure data isn’t changed without permission. If a hacker alters your report, you can't trust it anymore.
 	npc: Availability means you can access your data when you need it. If your files are locked by ransomware, they’re unavailable.
-	James: So if even one of those fails, security is broken?
+	James (James_talking): So if even one of those fails, security is broken?
 	npc: Exactly. You could lose money, trust, or even lives, depending on the system.
 	npc: Other key ideas are non-repudiation — making sure someone can’t deny doing something — and zero trust, where we assume no one is automatically trusted.
-	James: So trust no one?
+	James (James_talking): So trust no one?
 	npc: Trust, but verify — every time.
 - Ask about Change Management and Security
 	[signal arg="Q_3"]
-	James: If we already know about a security problem, why can't we just fix it right away?
+	James (James_talking): If we already know about a security problem, why can't we just fix it right away?
 	npc: It sounds simple, James. But rushing to fix a problem without a plan can sometimes cause bigger issues.
-	James: Really? Like what?
+	James (James_talking): Really? Like what?
 	npc: Imagine patching a system without testing it first. It might fix one problem... but crash an important program that hundreds of people depend on
 	npc: Or the patch could conflict with other software — causing errors, downtime, or even exposing new security holes
-	James: So fixing one thing could accidentally break something else?
+	James (James_talking): So fixing one thing could accidentally break something else?
 	npc: Exactly. That’s why we use something called change management. It’s a careful process to handle updates and changes safely.
-	James: What happens during change management?
+	James (James_talking): What happens during change management?
 	npc: First, we document the change — writing down exactly what will be changed and why. Then we review it with other experts to check for risks.
 	npc: After that, we test the change in a safe, isolated environment — not on the live systems yet.
-	James: Like a practice run?
+	James (James_talking): Like a practice run?
 	npc: Exactly. If it works safely during the test, only then do we schedule it to happen on the real systems — often during low-traffic times.
-	James: And if something goes wrong, what then?
+	James (James_talking): And if something goes wrong, what then?
 	npc: We always have a backup plan. If a change fails, we can roll everything back to the way it was.
-	James: So it’s like doing surgery — you don't just cut without thinking. You plan, test your tools, and have backup ready
+	James (James_talking): So it’s like doing surgery — you don't just cut without thinking. You plan, test your tools, and have backup ready
 	npc: Perfect comparison. Good change management is slow because it’s careful — but it saves systems, money, and even lives in some cases.
-	James: I get it now. Rushing to fix a problem without a plan can create a bigger disaster
+	James (James_talking): I get it now. Rushing to fix a problem without a plan can create a bigger disaster
 	npc: Exactly. In cybersecurity, careful changes are safer than quick fixes.
 - ask about how to protect information
 	[signal arg="Q_4"]

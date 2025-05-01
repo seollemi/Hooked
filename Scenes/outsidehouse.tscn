@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://djle87uke85p4"]
+[gd_scene load_steps=26 format=3 uid="uid://djle87uke85p4"]
 
 [ext_resource type="Script" uid="uid://cdoabcgee1150" path="res://Scripts/outsidehouse.gd" id="1_2bdwf"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="1_3t8au"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://4f17ffj1mxql" path="res://world/stones/Texture/TX Props.png" id="8_07rlx"]
 [ext_resource type="Texture2D" uid="uid://o4smlqblbq54" path="res://world/stones/Texture/TX Tileset Stone Ground.png" id="9_7fphf"]
 [ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="11_07rlx"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="12_7fphf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdc22"]
 texture = ExtResource("3_26kxh")
@@ -3244,6 +3245,12 @@ shape = SubResource("RectangleShape2D_2bdwf")
 layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("11_07rlx")]
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+script = ExtResource("12_7fphf")
+quest_name = "Act 1 "
+quest_statuss = 1
+quest_stages = Array[String](["Go to main city", "Go to the office"])
 
 [connection signal="body_entered" from="Door_inside" to="." method="_on_door_inside_body_entered"]
 [connection signal="body_entered" from="Door_to_city" to="." method="_on_door_to_city_body_entered"]
