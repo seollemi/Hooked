@@ -4,11 +4,14 @@ extends Node2D
 @onready var interactable: Area2D = $interactable
 
 func _ready() -> void:
+
 	interactable.interact = _on_interact
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func _on_interact() -> void:
 	Dialogic.start("Chapter_1_training")
+	
+
 
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name in ["Q_1", "Q_2", "Q_3", "Q_4"]:
@@ -25,11 +28,12 @@ func _collect_question(question_name: String) -> void:
 	   "Q_4" in Global.collected_questions:
 		Global.introduction_1 = true
 		print("🎉 All questions answered! Introduction_1 is now TRUE.")
-		
+
 
 func _process(delta: float) -> void:
 	change_scene()
 	
+
 func change_scene():
 	if Global.transition_scene:
 		match Global.next_scene:

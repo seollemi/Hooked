@@ -60,7 +60,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body is Player and not Global.npc_mark:
 		Global.npc_mark = true
 		body.can_move = false   # Disable player movement
-		Dialogic.start("intro_cybersecurity")
+		Dialogic.start("act1")
 		
 		# Connect to Dialogic's signal to re-enable movement after dialogue
 		Dialogic.timeline_ended.connect(_on_dialogue_ended.bind(body))

@@ -51,6 +51,7 @@ var mini_game_enable: bool = false
 var collected_questions: Array = []
 var introduction_1: bool = false
 var act_1_done: bool = false
+var act_2_done: bool = false
 
 
 
