@@ -14,8 +14,11 @@ I mean, imagine if someone leaked your school’s entire student database online
 - “Who’s usually behind these cyber attacks?”
 	James: “Who’s usually behind these cyber attacks?”
 	mark (Mark_talking): "Funny thing—there isn’t just one type of attacker.\
-Some are just bored teens trying to break stuff for fun. Others? Full-on criminal groups, insiders who got fired, or activists trying to make a statement. And then there are state-sponsored ones—basically hackers working for governments.
+Some are just bored teens trying to break stuff for fun. Others? Full-on criminal groups, insiders who got fired, or activists trying to make a statement. A phisher tries to trick people into revealing sensitive information—like usernames, passwords, or credit card numbers—by pretending to be a trustworthy entity, often through fake emails or websites. And then there are state-sponsored ones—basically hackers working for governments.
 	mark (Mark_talking): Each one has different motives, different targets. That’s what makes it tricky—you’re not always defending against the same type of threat."
+	mark (Mark_talking): Black hats break into systems illegally for personal gain — stealing data, spreading malware, or causing damage. They don't have permission, and their goal is usually profit, revenge, or just causing chaos.
+	mark (Mark_talking): White hats are the good guys. They’re ethical hackers who are hired to find vulnerabilities before black hats do. They work legally, often for companies, to help secure networks.
+	mark (Mark_talking): Gray hats are in between. They might hack without permission, but they usually don’t intend harm. They sometimes inform the organization about the flaw they found — but since they didn’t have permission, it’s still illegal.
 	jump 
 - “Is cyberwarfare actually real?”
 	James (James_talking): “Is cyberwarfare actually real?”
