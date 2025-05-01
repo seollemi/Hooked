@@ -146,6 +146,6 @@ func _physics_process(delta: float) -> void:
 
 func current_camera() -> void:
 	if Global.current_scene == "WorldHouse":
-		$Outside_camera.enabled = true
+		$Outside_camera.enableded = true
 	elif Global.current_scene == "outsidehouse":
 		$Outside_camera.enabled = true

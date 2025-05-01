@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://crdh17ghs3wtn" path="res://sounds/slow-2021-10-19_-_Funny_Bit_-_www.FesliyanStudios.com (1).mp3" id="13_2wyrx"]
 [ext_resource type="PackedScene" uid="uid://b54t43uh24p83" path="res://MiniGameTscn/hintpaper_3.tscn" id="13_y5j04"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wunvc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wyrx"]
 texture = ExtResource("2_fppsf")
 margins = Vector2i(3, 0)
 separation = Vector2i(0, 3)
@@ -118,7 +118,7 @@ separation = Vector2i(0, 3)
 
 [sub_resource type="TileSet" id="TileSet_w2uqs"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wunvc")
+sources/0 = SubResource("TileSetAtlasSource_2wyrx")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogmh3"]
 size = Vector2(66, 35)

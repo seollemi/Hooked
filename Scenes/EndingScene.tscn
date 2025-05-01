@@ -1,0 +1,133 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4q6tt2vmjdlm"]
+
+[ext_resource type="Texture2D" uid="uid://bsna5m54rslis" path="res://Scenes/credit_Scene/Starry_night_Layer_8.png" id="1_7tl4w"]
+[ext_resource type="Script" uid="uid://baot55a8vwbff" path="res://Scenes/ending_scene.gd" id="1_kor8y"]
+[ext_resource type="Texture2D" uid="uid://bmqcbqheh6e5i" path="res://Scenes/credit_Scene/Starry_night_Layer_7.png" id="2_kor8y"]
+[ext_resource type="PackedScene" uid="uid://cs52i4uk8ubd2" path="res://Scenes/Ending_mini_game/galaxy.tscn" id="3_7fjcg"]
+[ext_resource type="Texture2D" uid="uid://bdswyyqcxmvqe" path="res://Scenes/credit_Scene/Starry_night_Layer_6.png" id="3_n7acb"]
+[ext_resource type="Texture2D" uid="uid://dsm6t2w0y5d4k" path="res://Scenes/credit_Scene/Starry_night_Layer_5.png" id="4_7fjcg"]
+[ext_resource type="PackedScene" uid="uid://nmck4qk8ha3l" path="res://Scenes/credit_Scene/black_hole.tscn" id="4_270h4"]
+[ext_resource type="Texture2D" uid="uid://ddk6vcqxqk32" path="res://Scenes/credit_Scene/Starry_night_Layer_4.png" id="5_270h4"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="5_ybuc8"]
+[ext_resource type="Texture2D" uid="uid://gmagf12jwcxb" path="res://Scenes/credit_Scene/Starry_night_Layer_3.png" id="6_ybuc8"]
+[ext_resource type="Texture2D" uid="uid://dfvul2u2l4jv7" path="res://Scenes/credit_Scene/Starry_night_Layer_2.png" id="7_2spg8"]
+[ext_resource type="Texture2D" uid="uid://dxdvtqs7s7nhj" path="res://Scenes/credit_Scene/Starry_night_Layer_1.png" id="8_fnoky"]
+[ext_resource type="AudioStream" uid="uid://egt8ivg5f3tp" path="res://sounds/CREDITS SCREENS.mp3" id="13_ybuc8"]
+[ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="14_2spg8"]
+
+[node name="parralexscene" type="Node2D"]
+position = Vector2(583, 326)
+script = ExtResource("1_kor8y")
+
+[node name="background" type="ParallaxBackground" parent="."]
+scale = Vector2(0.695291, 0.674551)
+transform = Transform2D(0.695291, 0, 0, 0.674551, 0, 0)
+scroll_offset = Vector2(646, 294)
+
+[node name="background" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/background"]
+texture = ExtResource("1_7tl4w")
+centered = false
+
+[node name="Node2D" parent="background/background/Sprite2D" instance=ExtResource("3_7fjcg")]
+position = Vector2(562.354, -269.809)
+
+[node name="Node2D2" parent="background/background/Sprite2D" instance=ExtResource("4_270h4")]
+position = Vector2(-54.6534, 154.177)
+
+[node name="ColorRect" type="ColorRect" parent="background/background/Sprite2D"]
+modulate = Color(1, 1, 1, 0.490196)
+offset_left = -367.0
+offset_top = -256.0
+offset_right = 2674.0
+offset_bottom = 1775.0
+color = Color(0, 0, 0, 1)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="background"]
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer2"]
+texture = ExtResource("2_kor8y")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer3"]
+texture = ExtResource("3_n7acb")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer4"]
+texture = ExtResource("4_7fjcg")
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer5"]
+texture = ExtResource("5_270h4")
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(2.5, 2.5)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer6"]
+texture = ExtResource("6_ybuc8")
+centered = false
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer7"]
+texture = ExtResource("7_2spg8")
+centered = false
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="background"]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(2560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background/ParallaxLayer8"]
+texture = ExtResource("8_fnoky")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(129, 133)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 708.0
+offset_top = -101.0
+offset_right = 1154.0
+offset_bottom = 1055.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ybuc8")
+theme_override_font_sizes/font_size = 40
+text = "Game Created By: Arthur Cruz
+Special Thanks:
+ - Cute ka
+ - Love you too
+ - pag nakita mo to kc 
+ - Joke lng negro
+
+© 2025 All Rights Reserved"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ybuc8")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("14_2spg8")]

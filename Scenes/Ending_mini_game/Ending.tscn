@@ -1,0 +1,312 @@
+[gd_scene load_steps=10 format=3 uid="uid://dpwdt1yi7r53d"]
+
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_5vcl3"]
+[ext_resource type="Script" uid="uid://dlhj2bcs1vf1x" path="res://Scenes/Ending_mini_game/ending.gd" id="1_tbrel"]
+[ext_resource type="PackedScene" uid="uid://nhum3k0wr5wa" path="res://Scenes/Ending_mini_game/earth.tscn" id="3_ql6hd"]
+[ext_resource type="PackedScene" uid="uid://cs52i4uk8ubd2" path="res://Scenes/Ending_mini_game/galaxy.tscn" id="4_f0aam"]
+[ext_resource type="PackedScene" uid="uid://qxy8xgj8r1pl" path="res://Scenes/Ending_mini_game/star.tscn" id="5_f0aam"]
+[ext_resource type="AudioStream" uid="uid://8x2liyxs73ai" path="res://sounds/8-bit-powerup-6768.mp3" id="6_m1l7b"]
+[ext_resource type="AudioStream" uid="uid://c84x671m17idj" path="res://sounds/kick-hard-8-bit-103746.mp3" id="7_qkx6l"]
+[ext_resource type="AudioStream" uid="uid://dfikxv4t70w0k" path="res://sounds/Slower_Version-2022-07-13_-_Our_Hopes_And_Dreams_-_www.FesliyanStudios.com.mp3" id="8_qkx6l"]
+[ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="9_kwc5j"]
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tbrel")
+
+[node name="Q_1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_5" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_5" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_6" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_6" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_7" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_7" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_8" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_8" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_9" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_9" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="Q_10" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 117.0
+offset_right = 3618.0
+offset_bottom = 557.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="U_10" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 165.0
+offset_right = 3645.0
+offset_bottom = 605.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_5vcl3")
+theme_override_font_sizes/normal_font_size = 300
+bbcode_enabled = true
+
+[node name="B1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 381.0
+offset_right = 315.0
+offset_bottom = 570.0
+theme_override_font_sizes/normal_font_size = 20
+text = "test"
+
+[node name="B2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 381.0
+offset_right = 614.0
+offset_bottom = 578.0
+theme_override_font_sizes/normal_font_size = 20
+text = "test"
+
+[node name="B3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 381.0
+offset_right = 908.0
+offset_bottom = 582.0
+theme_override_font_sizes/normal_font_size = 20
+text = "test"
+
+[node name="B4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 924.0
+offset_top = 381.0
+offset_right = 1145.0
+offset_bottom = 602.0
+theme_override_font_sizes/normal_font_size = 20
+text = "test"
+
+[node name="Earth" parent="." instance=ExtResource("3_ql6hd")]
+position = Vector2(433, -369)
+
+[node name="Galaxy" parent="." instance=ExtResource("4_f0aam")]
+position = Vector2(-1031, -547)
+
+[node name="Star" parent="." instance=ExtResource("5_f0aam")]
+position = Vector2(158, -374)
+
+[node name="AudioPlayerCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m1l7b")
+
+[node name="AudioPlayerWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qkx6l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qkx6l")
+
+[node name="TransitionScreen" parent="." instance=ExtResource("9_kwc5j")]
