@@ -4,6 +4,23 @@ James: Good to meet you, Jordan. Honestly, I have no idea where to even start.
 Jordan: That’s normal. First rule around here — ask questions. No one expects you to know everything on Day One.
 James: Good to hear. I was worried I'd mess something up
 Jordan: Messing up is half the job. Learning from it is the other half. Come on
+James: Anything you else you need to ask?
+- Jordan, I saw that we’re on alert. What’s going on?
+	Jordan: Nothing yet. But things are moving. Thought it’d be a good time to review a few things — especially if you’ll be on the front line.
+	James: Front line? 
+	Jordan: We’ve been seeing phishing attempts disguised as internal memos. Some contain ransomware. If you don’t recognize it, it could cost us access to the entire system.
+	James: So phishing is just fake emails?
+	Jordan: Not just. They’re designed to make you panic. "Your account will be locked." "Urgent update required." That kind of language. Click the wrong link, download the wrong file… boom.
+	James: And ransomware locks your stuff, right?
+	Jordan: Exactly. It encrypts your files and demands payment — usually in cryptocurrency. The moment it's active, you lose control unless you're ready to contain it.
+	James: What about signs something's already infected?
+	Jordan: Slower system performance, strange logins, missing files… or sometimes, no signs at all until it's too late.
+	James: How do these things usually get in?
+	Jordan: Via social engineering mostly. But also through weak passwords, outdated software, and open vulnerabilities. That’s why patching and awareness are part of defense.
+	James: Alright, so… don’t trust links, scan attachments, and stay paranoid.
+	Jordan: Good instincts. One more thing — if a system starts behaving oddly, isolate it fast. Containment buys you time.
+	James: Got it. So what’s next?
+	Jordan: We should prepare soon — just in case something like this ever happens. Knowing what to look for might be the difference between stopping it and losing everything.
 Jordan: You're actually assigned to that desk over there — bottom far right corner. You’ll be next to me. Good spot — less noise, more coffee let me know if you need anything.
 James: Thanks. I really appreciate it
 [signal arg="Finished_dialogic_1"]

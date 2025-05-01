@@ -36,16 +36,15 @@ func _on_dialogic_signal_event(event_name: String) -> void:
 			Dialogic.signal_event.disconnect(_on_dialogic_signal_event)
 
 func _on_act_2_body_entered(body: Node2D) -> void:
-	if body is Player and not Global.npc_evnt2_done:
+	if body is Player and not Global.npc_evnt2_done and not Global.act_2_done:
 		print("👀 Player entered! Interrupting if necessary and starting Act 2...")
 
-		Global.npc_evnt2_done = false  # Mark event as done
-
+		Global.npc_evnt2_done = true  # ✅ mark event as done
 		# If NPC is still talking, stop the dialog
 		if talking:
 			dialog_was_interrupted = true
 			talking = false
-			Dialogic.end_timeline()  # Safely stop Dialogic conversation if possible
+			Dialogic.end_timeline()
 
 		# Immediately change scene to Act 2
 		ChangeScene.change_scene_anim("res://Scenes/Act2_story.tscn")

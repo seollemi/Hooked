@@ -21,6 +21,7 @@ Fine. Just fix this. And keep me updated every step of the way.
 	James (James_talking): Understood, ma’am.
 	[signal arg="right_choice"]
 	[signal arg="Game_enable"]
+	[signal arg="act_2_done"]
 	Narrator: ✅ You chose to isolate the affected systems.\
 🔐 The ransomware was contained.\
 💾 Files were successfully restored from secure backups.\

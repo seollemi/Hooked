@@ -193,5 +193,5 @@ stream = ExtResource("14_qaprl")
 
 [connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]
 [connection signal="body_entered" from="obstacle" to="." method="_on_obstacle_body_entered"]
-[connection signal="body_entered" from="obstacle2" to="." method="_on_obstacle_2_body_entered"]
 [connection signal="body_entered" from="obstacle2" to="." method="_on_obstacle_body_entered"]
+[connection signal="body_entered" from="obstacle2" to="." method="_on_obstacle_2_body_entered"]

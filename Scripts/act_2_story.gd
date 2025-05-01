@@ -32,8 +32,10 @@ func _on_dialogic_signal(argument: String) -> void:
 			Dialogic.start("Act_2")
 			$TextureRect/red.visible = false
 			%AudioStreamPlayer2D.play()
-
+		"act_2_done":
+			Global.act_2_done = true
 func _on_dialogic_end():
+	Global.teleport_back = true
+	Global.player_PC_Location = Vector2(450, 22)
 	ChangeScene.change_scene_anim("res://Scenes/Office.tscn")
-
  

@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 class_name Player
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -19,16 +18,16 @@ func cutscene_move(path: Array[Vector2]) -> void:
 	is_cutscene_active = true
 	_run_cutscene(path)
 
+
 func _run_cutscene(path: Array[Vector2]) -> void:
 	var current_position = global_position
 
 	for target_position in path:
-		# Calculate move direction
 		var direction = (target_position - current_position).normalized()
 		direction.x = round(direction.x)
 		direction.y = round(direction.y)
 
-		# Play correct walking animation based on direction
+		# Play running animation
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
 				if animation_player.current_animation != "RIGHT_RUNNING":
@@ -48,24 +47,22 @@ func _run_cutscene(path: Array[Vector2]) -> void:
 					animation_player.play("UP_RUNNING")
 				last_direction = Vector2.UP
 
-		# Tween to next point
 		var distance = current_position.distance_to(target_position)
 		var duration = distance / cutscene_move_speed
 
 		var tween = create_tween()
 		tween.tween_property(self, "global_position", target_position, duration)
-		
-		await tween.finished  # Fully wait for movement to complete
+		await tween.finished
+
 		current_position = target_position
 
-	# After moving through all points
 	_on_cutscene_move_finished()
+
 
 func _on_cutscene_move_finished() -> void:
 	can_move = true
 	is_cutscene_active = false
 
-	# Play correct idle animation based on last facing direction
 	var idle_animation = {
 		Vector2.RIGHT: "idle_RIGHT",
 		Vector2.LEFT: "idle_LEFT",
@@ -76,17 +73,29 @@ func _on_cutscene_move_finished() -> void:
 	if animation_player.current_animation != idle_animation:
 		animation_player.play(idle_animation)
 
+
 func _ready() -> void:
 	if Global.teleport_back:
 		global_position = Global.player_PC_Location
 		Global.teleport_back = false
 
+
 func _physics_process(delta: float) -> void:
 	if is_cutscene_active:
 		move_and_slide()
-		return  # Skip normal movement/animation if in cutscene
+		return
 
 	if not can_move:
+		var idle_animation = {
+			Vector2.RIGHT: "idle_RIGHT",
+			Vector2.LEFT: "idle_LEFT",
+			Vector2.UP: "idle_UP",
+			Vector2.DOWN: "idle_DOWN"
+		}.get(last_direction, "idle_DOWN")
+
+		if animation_player.current_animation != idle_animation:
+			animation_player.play(idle_animation)
+
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -101,7 +110,6 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 		velocity = velocity.move_toward(direction * move_speed, acceleration * delta)
 
-		# Play running animation based on input direction
 		if abs(direction.x) > abs(direction.y):
 			if direction.x > 0:
 				if animation_player.current_animation != "RIGHT_RUNNING":
@@ -123,7 +131,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
-		# Play idle animation if not moving
 		var idle_animation = {
 			Vector2.RIGHT: "idle_RIGHT",
 			Vector2.LEFT: "idle_LEFT",
@@ -136,10 +143,9 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+
 func current_camera() -> void:
 	if Global.current_scene == "WorldHouse":
-		#$Inside_camera.enabled = true
 		$Outside_camera.enabled = true
 	elif Global.current_scene == "outsidehouse":
-		#$Inside_camera.enabled = false
 		$Outside_camera.enabled = true

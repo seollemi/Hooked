@@ -3,14 +3,17 @@ James: This link looks… off.
 James: Something’s wrong. I should double-check this before clicking.
 - Ignore the email | [signal_event="return_to_office"]
 	[signal arg="return_to_office"]
+	[signal arg="act_1_done"]
 	[sound path="res://sounds/6_Stinger_Victory_1_Master.mp3" volume="0.0"]
 	James: Hey Jordan, I just got a weird email from the boss.
 	Jordan: We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan: Hey, team! Be on alert. We detected a phishing attempt targeting employees. If you get any unusual login requests, report them ASAP.
 	Jordan: Good catch, James. I'll send this to the IT department and report it right away. The sooner they flag it, the less damage the attackers can do.
 	[signal arg="Dialog_IT"]
+	[signal arg="Game_enable"]
 - Enter login credentials
 	[signal arg="return_to_office"]
+	[signal arg="act_1_done"]
 	[sound path="res://sounds/7_Stinger_Defeat_1_Master.mp3" volume="0.0"]
 	Jordan: Whoa! STOOPP!!!!
 	Jordan: Don’t do that! It’s a fake! I know it looks like our boss sent it, but it’s not. These phishing scams copy familiar names to trick you into handing over your login.
@@ -21,5 +24,6 @@ James: Something’s wrong. I should double-check this before clicking.
 	Jordan: Hey, team! Be on alert. We detected a phishing attempt targeting employees. If you get any unusual login requests, report them ASAP.
 	Jordan: We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan: I'll send this to the IT department and report it right away. The sooner they flag it, the less damage the attackers can do
+	[signal arg="Game_enable"]
 	[signal arg="Dialog_IT"]
 [music fade="0.0" volume="0.0"]

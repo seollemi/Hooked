@@ -23,5 +23,8 @@ func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "Game_enable":
 		Global.mini_game_enable = true
 	if event_name == "return_to_office":
-		Global.teleport_back = true  
+		Global.teleport_back = true
+		Global.player_PC_Location = Vector2(464, 75)
 		get_tree().change_scene_to_file("res://Scenes/Office.tscn")
+	if event_name == "act_1_done":
+		Global.act_1_done = true

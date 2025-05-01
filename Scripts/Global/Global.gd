@@ -48,11 +48,11 @@ var bridge_cutscene_done: bool = false
 #EVENT SCENES TO SWITCH ACTS
 var mini_game_enable: bool = false
 var collected_questions: Array = []
-var introduction_1: bool = false
+var introduction_1: bool = true
 var act_1_done: bool = false
 var act_2_done: bool = false
 var act_3_done:bool = false
-
+var act2_cutscene_done := false
 
 
  # Start at zero

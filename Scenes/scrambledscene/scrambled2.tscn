@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_6xb72")
 
 [node name="OutputLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 414.0
 offset_top = 204.0
 offset_right = 661.0
@@ -21,6 +22,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 98.0
 offset_top = 57.0
 offset_right = 1305.0
@@ -31,6 +33,7 @@ text = " About making the rules. Like deciding who gets
 access to what, and how we deal with security problems.\""
 
 [node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 476.0
 offset_top = 524.0
 offset_right = 651.0
@@ -39,6 +42,7 @@ text = "Submit"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 z_index = -3
+layout_mode = 0
 offset_left = -334.0
 offset_top = -181.0
 offset_right = 1510.0
@@ -47,6 +51,7 @@ mouse_filter = 2
 texture = ExtResource("1_am33r")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 427.0
 offset_right = 1001.0

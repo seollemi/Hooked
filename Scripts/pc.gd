@@ -28,3 +28,8 @@ func _on_email_notif_button_pressed() -> void:
 	if not Global.mail_open_opened:
 		Global.mail_open_opened = true  # Mark it permanently
 		Dialogic.start("Mail_open")
+
+func _unhandled_input(event: InputEvent) -> void:
+	Global.teleport_back = true  
+	if event.is_action_pressed("exitscrambled"):  # Make sure "BACK" is defined in InputMap as Escape
+		get_tree().change_scene_to_file("res://Scenes/Office.tscn")  # Replace with actual path
