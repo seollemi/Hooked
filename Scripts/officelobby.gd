@@ -3,6 +3,7 @@ extends Node2D
 @onready var interactable: Area2D = $interactable
 @onready var infodesk: Area2D = $infodesk
 @onready var player: Player = $Player
+@onready var act_1: Area2D = $act1
 
 var global_alex = false
 var triggered= false
@@ -11,8 +12,25 @@ var triggered= false
 func _ready() -> void:
 	interactable.interact = _on_interact
 	infodesk.interact = _on_interact1
+	act_1.interact = _on_interact2
+
 	$move/CollisionShape2D.disabled=true
 	
+	if Global.introduction_1==true:
+		$act1/CollisionShape2D.disabled=false
+		
+	else:
+		$act1/CollisionShape2D.disabled=true
+	
+	
+	
+	if Global.act_2_done== true:
+		$Area2D2/CollisionShape2D.disabled =false
+		$move/CollisionShape2D.disabled =false
+	else:
+		
+		$Area2D2/CollisionShape2D.disabled =true
+		$move/CollisionShape2D.disabled =true
 
 
 func start_dialog():
@@ -68,8 +86,11 @@ func _on_interact1():
 	Dialogic.start("attackers")
 	
 
-
+func _on_interact2() -> void:
+	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled.tscn")
+	
 func _on_interact():
+	
 	Global.set_previous_scene("res://Scenes/officelobby.tscn", $Player.global_position)
 
 
@@ -77,8 +98,14 @@ func _on_interact():
 	Global.transition_scene = true
 	
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
+
+	
+
+		
 	if not Global.global_triggered:
 		Global.global_triggered = true
+		
+		
 	if body is Player:
 		body.cutscene_move([
 			Vector2(346, 206),

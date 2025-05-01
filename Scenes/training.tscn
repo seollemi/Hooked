@@ -2322,7 +2322,7 @@ position = Vector2(734, 456)
 shape = SubResource("RectangleShape2D_fl8xy")
 
 [node name="Player" parent="." instance=ExtResource("7_tcugj")]
-position = Vector2(523, 148)
+position = Vector2(522, 156)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -2
