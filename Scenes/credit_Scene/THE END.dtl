@@ -1,0 +1,8 @@
+- Sleep
+	Are you sure u want to sleep This will be the final Scene
+	- yes
+		[signal arg="End"]
+	- no
+		[end_timeline]
+- exit
+	[end_timeline]

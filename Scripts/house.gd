@@ -3,11 +3,13 @@ extends Node2D
 
 @onready var interactable: Area2D = $interactable
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
-
+@onready var interactable_end_: Area2D = $"interactable_End'"
 
 func _ready() -> void:
-	
+	interactable_end_.interact = _on_interact1
 	interactable.interact = _on_interact
+	if not Dialogic.signal_event.is_connected(_on_dialogic_signal):
+		Dialogic.signal_event.connect(_on_dialogic_signal)
 	if Global.game_first_loadin == true:
 		$Player.position.x = Global.player_start_posx
 		$Player.position.y = Global.player_start_posy
@@ -15,10 +17,14 @@ func _ready() -> void:
 	else: 
 		$Player.position.x = Global.player_enter_house_posx
 		$Player.position.y = Global.player_enter_house_posy
+		
 func _process(delta: float) -> void:
 	change_scene()
  
-
+	if Global.act_3_done==true:
+		$"interactable_End'"/CollisionShape2D.disabled=false
+	else:
+		$"interactable_End'"/CollisionShape2D.disabled=true
 
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -50,3 +56,15 @@ func change_scene():
 			ChangeScene.change_scene_anim("res://Scenes/outsidehouse.tscn")
 			Global.game_first_loadin = false
 			Global.finish_changescenes()
+	
+
+
+func _on_interact1():
+	Dialogic.start("THE END")
+
+func _on_dialogic_signal(End: String) -> void:
+	print("📨 Received signal:", End)
+
+	if Global.act_3_done == true:
+		get_tree().change_scene_to_file("res://Scenes/Ending_mini_game/Ending.tscn")
+		print("✅ Mini-game is now enabled!")

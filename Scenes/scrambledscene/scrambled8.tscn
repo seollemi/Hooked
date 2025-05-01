@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cke7nqcdrpxnh"]
+[gd_scene load_steps=5 format=3 uid="uid://daewpfvru41wb"]
 
-[ext_resource type="Script" uid="uid://d2marb2uuiyyf" path="res://Scripts/scrambled_8.gd" id="1_s4h3f"]
+[ext_resource type="Script" path="res://Scripts/scrambled_8.gd" id="1_s4h3f"]
 [ext_resource type="Texture2D" uid="uid://dg8et5c0cxylc" path="res://MiniGameAssets/scrambled.webp" id="2_vo6xq"]
 [ext_resource type="AudioStream" uid="uid://cot11mwo1k4ib" path="res://sounds/boss.mp3" id="3_oedq2"]
 [ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_conhy"]
