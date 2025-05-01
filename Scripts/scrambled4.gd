@@ -1,17 +1,22 @@
 extends Control
 
-var scrambled_letters = ["D", "A", "T", "A"]
-var correct_word = "DATA"
+@onready var label: Label = $Label
+
+var scrambled_letters = ["P", "H", "I", "S", "H", "E", "R"]
+var correct_word = "PHISHER"
 var selected_word = ""
 var pressed_buttons: Array[Button] = []
 var letter_buttons: Array[Button] = []
-@onready var exit_confirm_dialog: ConfirmationDialog = $ExitConfirmDialog
-
+@onready var exit_confirm_dialog = $ExitConfirmDialog  # Adjust the path as needed
 # Declare the buttons and output label
+
 var button_1: Button
 var button_2: Button
 var button_3: Button
 var button_4: Button
+var button_5: Button
+var button_6: Button
+var button_7: Button
 var submit_button: Button
 var output_label: Label
 var music_player: AudioStreamPlayer  # Declare the music player
@@ -19,7 +24,6 @@ var music_player: AudioStreamPlayer  # Declare the music player
 func _ready():
 	$Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$Label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	# Shuffle letters first
 	scrambled_letters.shuffle()
 	
 	# Assign buttons from the scene
@@ -29,13 +33,17 @@ func _ready():
 	button_2 = $HBoxContainer/Button2
 	button_3 = $HBoxContainer/Button3
 	button_4 = $HBoxContainer/Button4
-
+	button_5 = $HBoxContainer/Button5
+	button_6 = $HBoxContainer/Button6
+	button_7 = $HBoxContainer/Button7
+	
+	
 	submit_button = $SubmitButton
 	output_label = $OutputLabel
 	music_player = $MusicPlayer  # Assign the music player node
 
 	# Ensure all buttons exist and are properly assigned
-	var buttons = [button_1, button_2, button_3, button_4]
+	var buttons = [button_1, button_2, button_3, button_4, button_5, button_6, button_7]
 	var button_index = 0
 
 	# Assign letters to the buttons if the buttons are valid
@@ -65,7 +73,7 @@ func _on_SubmitButton_pressed():
 	if selected_word == correct_word:
 		output_label.text = "Correct! Word: " + selected_word
 		# Change to another scene when the answer is correct
-		get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled3.tscn")
+		get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled5.tscn")
 	else:
 		output_label.text = "Incorrect. Try again!"
 		_reset_and_shuffle()
@@ -85,6 +93,7 @@ func _reset_and_shuffle():
 			btn.disabled = false
 
 	output_label.text = ""
+
 func _unhandled_input(event):
 	# Handle Backspace to delete last letter
 	if event.is_action_pressed("BACK") and selected_word.length() > 0:
@@ -97,6 +106,10 @@ func _unhandled_input(event):
 	# Handle Escape to show confirmation dialog
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
+
+
+
+
 func _on_exit_confirm_dialog_confirmed() -> void:
 	# Replace with your actual scene path
 	var scene = load("res://Scenes/training.tscn")

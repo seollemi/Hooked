@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://qpkuwd0c4rbn"]
+[gd_scene load_steps=5 format=3 uid="uid://cdpxljx5sws13"]
 
-[ext_resource type="Script" uid="uid://chqtm28viifet" path="res://Scripts/scrambled.gd" id="1_0jfle"]
-[ext_resource type="Texture2D" uid="uid://dg8et5c0cxylc" path="res://MiniGameAssets/scrambled.webp" id="2_xju60"]
-[ext_resource type="AudioStream" uid="uid://cot11mwo1k4ib" path="res://sounds/boss.mp3" id="3_xju60"]
-[ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_b00yp"]
+[ext_resource type="Script" uid="uid://b5v1n4xmqx0gl" path="res://Scripts/scrambled_5.gd" id="1_0mg31"]
+[ext_resource type="Texture2D" uid="uid://dg8et5c0cxylc" path="res://MiniGameAssets/scrambled.webp" id="2_cqxts"]
+[ext_resource type="AudioStream" uid="uid://cot11mwo1k4ib" path="res://sounds/boss.mp3" id="3_hx1su"]
+[ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_rk7yf"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_0jfle")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0mg31")
 
 [node name="OutputLabel" type="Label" parent="."]
 layout_mode = 1
@@ -19,29 +21,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 415.0
-offset_top = 200.0
-offset_right = 676.0
-offset_bottom = 299.0
+offset_left = -141.0
+offset_top = -100.0
+offset_right = 153.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 30
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = -27.0
 offset_top = 37.0
 offset_right = 1180.0
 offset_bottom = 184.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
-text = " It’s about building defenses around systems, 
-protecting data, and making sure people don’t fall 
+text = "means keeping information private. Like making sure 
+your messages aren’t read by strangers.
 for scams or leaks."
 
 [node name="SubmitButton" type="Button" parent="."]
-layout_mode = 2
+layout_mode = 0
 offset_left = 476.0
 offset_top = 524.0
 offset_right = 651.0
@@ -56,10 +58,10 @@ offset_top = -181.0
 offset_right = 1510.0
 offset_bottom = 933.0
 mouse_filter = 2
-texture = ExtResource("2_xju60")
+texture = ExtResource("2_cqxts")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_xju60")
+stream = ExtResource("3_hx1su")
 volume_db = -2.15
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -70,19 +72,19 @@ offset_top = 190.0
 offset_right = 740.0
 offset_bottom = 313.0
 mouse_filter = 2
-texture = ExtResource("4_b00yp")
+texture = ExtResource("4_rk7yf")
 expand_mode = 1
 
 [node name="ExitConfirmDialog" type="ConfirmationDialog" parent="."]
+auto_translate_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 423.0
-offset_right = 1067.0
-offset_bottom = 463.0
-theme_override_constants/separation = 16
-alignment = 1
+offset_left = 83.0
+offset_top = 447.0
+offset_right = 1079.0
+offset_bottom = 487.0
+theme_override_constants/separation = 11
 
 [node name="Button1" type="Button" parent="HBoxContainer"]
 layout_mode = 2
@@ -136,5 +138,10 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
-[connection signal="confirmed" from="ExitConfirmDialog" to="." method="_on_exit_confirm_dialog_confirmed"]
+[node name="Button14" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button15" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

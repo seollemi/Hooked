@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=42 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -13927,7 +13927,7 @@ sources/0 = SubResource("TileSetAtlasSource_8mlqc")
 size = Vector2(20, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alh1q"]
-size = Vector2(62, 51.75)
+size = Vector2(15, 37.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7demk"]
 size = Vector2(20, 26)
@@ -13948,6 +13948,9 @@ size = Vector2(20, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8glwk"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gwg4"]
+size = Vector2(31, 16)
+
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
 
@@ -13960,7 +13963,7 @@ tile_set = SubResource("TileSet_alh1q")
 
 [node name="obs" type="TileMapLayer" parent="Node2D"]
 z_index = 2
-tile_map_data = PackedByteArray("AAAUABYAAgAFAIcAAAAUABcAAgAFAIgAAAATABYAAgAEAIcAAAATABcAAgAEAIgAAAAcABYAAgAEAIMAAAAcABcAAgAEAIQAAAAdABYAAgAFAIMAAAAdABcAAgAFAIQAAAAeABYAAgAGAIMAAAAeABcAAgAGAIQAAAAUABoAAwAGABQAAAAUABsAAwAGABUAAAAVABoAAwAFABQAAAAVABsAAwAFABUAAAAWABoAAwAHABQAAAAWABsAAwAHABUAAAAWABcAAwAIABAAAAAWABgAAwAIABEAAAAVABYAAwAHAA8AAAAVABcAAwAHABAAAAAVABgAAwAHABEAAAAWABYAAwAIAA8AAAAhABkABAASAAQAAAAhABoABAASAAUAAAAiABkABAATAAQAAAAiABoABAATAAUAAAAhABsABAASAAQAAAAhABwABAASAAUAAAAiABsABAATAAQAAAAiABwABAATAAUAAAAhAB0ABAASAAQAAAAhAB4ABAASAAUAAAAiAB0ABAATAAQAAAAiAB4ABAATAAUAAAAhAB8ABAAUAAQAAAAhACAABAAUAAUAAAAiAB8ABAAVAAQAAAAiACAABAAVAAUAAAAkABQAAwAHACYAAAAkABUAAwAHACYAAAAkABYAAwAHACYAAAAkABcAAwAHACYAAAAkABgAAwAHACcAAAAnABgAAwAFACcAAAAoABQAAwAHACYAAAAoABUAAwAHACYAAAAoABYAAwAHACYAAAAoABcAAwAGACYAAAAoABgAAwAGACcAAAAkABMAAwACAC4AAAAlABMAAwADAC4AAAAmABMAAwADAC4AAAAnABMAAwAEACUAAAAnABcAAwAFACYAAAAoABMAAwAFACUAAAApABIAAwAIADEAAAApABMAAwAIADIAAAAZABcABQAAAAAAAAAZABgABQAAAAEAAAAwABIABwAAAAAAAAAwABMABwAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUABYAAgAFAIcAAAAUABcAAgAFAIgAAAATABYAAgAEAIcAAAATABcAAgAEAIgAAAAcABYAAgAEAIMAAAAcABcAAgAEAIQAAAAdABYAAgAFAIMAAAAdABcAAgAFAIQAAAAeABYAAgAGAIMAAAAeABcAAgAGAIQAAAAUABoAAwAGABQAAAAUABsAAwAGABUAAAAVABoAAwAFABQAAAAVABsAAwAFABUAAAAWABoAAwAHABQAAAAWABsAAwAHABUAAAAWABcAAwAIABAAAAAWABgAAwAIABEAAAAVABYAAwAHAA8AAAAVABcAAwAHABAAAAAVABgAAwAHABEAAAAWABYAAwAIAA8AAAAhABkABAASAAQAAAAhABoABAASAAUAAAAiABkABAATAAQAAAAiABoABAATAAUAAAAhABsABAASAAQAAAAhABwABAASAAUAAAAiABsABAATAAQAAAAiABwABAATAAUAAAAhAB0ABAASAAQAAAAhAB4ABAASAAUAAAAiAB0ABAATAAQAAAAiAB4ABAATAAUAAAAhAB8ABAAUAAQAAAAhACAABAAUAAUAAAAiAB8ABAAVAAQAAAAiACAABAAVAAUAAAAkABQAAwAHACYAAAAkABUAAwAHACYAAAAkABYAAwAHACYAAAAkABcAAwAHACYAAAAkABgAAwAHACcAAAAnABgAAwAFACcAAAAoABQAAwAHACYAAAAoABUAAwAHACYAAAAoABYAAwAHACYAAAAoABcAAwAGACYAAAAoABgAAwAGACcAAAAkABMAAwACAC4AAAAlABMAAwADAC4AAAAmABMAAwADAC4AAAAnABMAAwAEACUAAAAnABcAAwAFACYAAAAoABMAAwAFACUAAAApABIAAwAIADEAAAApABMAAwAIADIAAAAZABcABQAAAAAAAAAZABgABQAAAAEAAAAuABIABwAAAAAAAAAuABMABwAAAAEAAAA=")
 tile_set = SubResource("TileSet_3y2kf")
 
 [node name="walls" type="TileMapLayer" parent="Node2D"]
@@ -13981,15 +13984,14 @@ shape = SubResource("RectangleShape2D_fbgy8")
 
 [node name="Player" parent="." instance=ExtResource("9_fbgy8")]
 z_index = 4
-position = Vector2(114, 315)
+position = Vector2(114, 309)
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(763, 351)
+position = Vector2(807, 321)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(22, -20.875)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_alh1q")
-disabled = true
 
 [node name="interactable" parent="." instance=ExtResource("12_kq78j")]
 position = Vector2(632, 339)
@@ -14045,6 +14047,13 @@ interact_name = "Press E to interact"
 position = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_8glwk")
 
+[node name="minigame_done" type="Area2D" parent="."]
+position = Vector2(599, 386)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_done"]
+position = Vector2(7.5, 2)
+shape = SubResource("RectangleShape2D_0gwg4")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="interactable" to="." method="_on_interactable_body_entered"]
@@ -14052,3 +14061,4 @@ shape = SubResource("RectangleShape2D_8glwk")
 [connection signal="body_entered" from="Scene_to_Training" to="." method="_on_scene_to_training_body_entered"]
 [connection signal="body_entered" from="Scene_To_Bridge" to="." method="_on_scene_to_bridge_body_entered"]
 [connection signal="body_entered" from="move" to="." method="_on_move_body_entered"]
+[connection signal="body_entered" from="minigame_done" to="." method="_on_minigame_done_body_entered"]

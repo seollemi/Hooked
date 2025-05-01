@@ -14,6 +14,7 @@ extends Control
 @onready var office_lobby_scene = preload("res://Scenes/officelobby.tscn")
 @onready var exit_button: Button = $CanvasLayer/ExitButton
 @onready var player: Player = $Player
+@onready var win_timer: Timer = $CanvasLayer/WinTimer
 
 var score = 0
 var game_over = false
@@ -32,6 +33,12 @@ func _ready():
 	exit_button.visible = false  # Hide exit button at the start
 	score_label.text = "Score: %d" % score
 	spawn_password()
+	
+	if Global.teleport_back:
+		var player = $Player  # Adjust node path as needed
+		if player:
+			player.position = Global.player_PC_Location
+			Global.teleport_back = false  # Reset the flag
 
 func spawn_password():
 	current_password = password_spawner.create_password()
@@ -70,9 +77,9 @@ func check_password_clicked(guessed_strong: bool):
 			win_label.visible = true
 			strong_button.disabled = true
 			weak_button.disabled = true
-			retry_button.visible = true  # Show retry button on game over
-			exit_button.visible = true  
 			win_sound.play()
+			Global.minigame_done = true
+			win_timer.start()
 
 		else:
 			spawn_password()
@@ -83,13 +90,14 @@ func _on_retry_button_pressed():
 
 
 func _on_exit_button_pressed() -> void:
-	var player = $Player  # Reference the player node
+	Global.teleport_back = true
+	Global.player_PC_Location = Vector2(345, 135)
 
-	# Check if the player node is valid before accessing its position
-	if player:
-		Global.set_previous_scene("res://Scenes/officelobby.tscn", player.player_position)
-	else:
-		print("Player node not found!")
-
-	# Transition to the next scene (use the file path directly)
+	# Go back to the desired scene (e.g., training.tscn)
+	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")
+	
+	
+func _on_win_timer_timeout() -> void:
+	Global.teleport_back = true
+	Global.player_PC_Location = Vector2(345, 135)
 	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")

@@ -58,6 +58,7 @@ directories/dtl_directory={
 "attacker1": "res://Dialogic_scenes/attacker1.dtl",
 "attackers": "res://Dialogic_scenes/attackers.dtl",
 "emailphishing": "res://Dialogic_scenes/emailphishing.dtl",
+"instruction_alex": "res://Dialogic_scenes/instruction_alex.dtl",
 "intro_cybersecurity": "res://Dialogic_scenes/intro_cybersecurity.dtl",
 "office/emailphishing": "res://world/office/emailphishing.dtl",
 "password": "res://Dialogic_scenes/password.dtl",
@@ -65,6 +66,7 @@ directories/dtl_directory={
 "phone_seq0": "res://Dialogic_scenes/phone_seq0.dtl",
 "phone_seq1": "res://Dialogic_scenes/phone_seq1.dtl",
 "phone_seq2": "res://Dialogic_scenes/phone_seq2.dtl",
+"ronnie_thanks": "res://Dialogic_scenes/ronnie_thanks.dtl",
 "timeline": "res://Dialogic_scenes/timeline.dtl",
 "walking": "res://npc/walking.dtl"
 }

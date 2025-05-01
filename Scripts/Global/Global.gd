@@ -48,11 +48,12 @@ var bridge_cutscene_done: bool = false
 #EVENT SCENES TO SWITCH ACTS
 var mini_game_enable: bool = false
 var collected_questions: Array = []
-var introduction_1: bool = true
+var introduction_1: bool = false
 var act_1_done: bool = false
 var act_2_done: bool = false
 var act_3_done:bool = false
 var act2_cutscene_done := false
+var minigame_done:bool = false
 
 #Quest Global progression 
 var quest_stage_index = 0

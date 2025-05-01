@@ -44,5 +44,6 @@ func change_scene():
 		
 func _on_scene_to_office_body_entered(body: Node2D) -> void:
 	if body is Player:
+		Global.player_PC_Location = Vector2(466, 311)  # Example position
 		Global.next_scene = "officelobby"
 		Global.transition_scene = true
