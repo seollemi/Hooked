@@ -1,14 +1,13 @@
 extends Node2D
 
 
+var cutscene_played := false
 
 
 func _ready() -> void:
 	print(Global.current_scene)
 	if Global.bridge_cutscene_done == true:
 		$Cutscene_trigger/CollisionShape2D.disabled = true
-		$Player.position.x = Global.player_bridgecutscene_posx
-		$Player.position.y = Global.player_bridgecutscene_posy
 	else:
 		$Cutscene_trigger/CollisionShape2D.disabled = false
 		
@@ -37,15 +36,33 @@ func change_scene():
 func _on_cutscene_trigger_body_entered(body: Node2D) -> void:
 	if Global.game_outside_loadin == true:
 		if body is Player:
-			await get_tree().create_timer(0.2).timeout
-			Dialogic.start("phone_seq0")
-			Dialogic.timeline_ended.connect(end_dialog)
+			$Player.can_move = false
+			%AudioStreamPlayer2D.play()
+
+
 		
-func end_dialog():
-		%AudioStreamPlayer2D.play()
 
 func _on_audio_stream_player_2d_finished() -> void:
-	ChangeScene.change_scene_anim("res://Scenes/Phone_sequence.tscn")
+	if cutscene_played:
+		return  # Prevent triggering it again
+	
+	cutscene_played = true  # Mark as played
+
+	var phone_sequence_scene = preload("res://Scenes/Phone_sequence.tscn")
+	var phone_sequence_instance = phone_sequence_scene.instantiate()
+
+	# Get player camera position and offset
+	var player_camera = $Player.get_node("Outside_camera")
+	var camera_position = player_camera.global_position
+	var offset = Vector2(50, -50)  # Adjust this as needed
+	phone_sequence_instance.global_position = camera_position + offset
+	phone_sequence_instance.sequence_finished.connect(_on_phone_sequence_finished)
+	add_child(phone_sequence_instance)
+	phone_sequence_instance.z_index = 100 
+	
+func _on_phone_sequence_finished():
+	$Player.can_move = true
+	Global.bridge_cutscene_done = true
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

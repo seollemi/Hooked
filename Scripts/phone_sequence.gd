@@ -1,6 +1,8 @@
 extends Node2D
 
+signal sequence_finished
 func _ready() -> void:
+	$Node2D/Camera2D.enabled = true  # Activate this camera
 	%AnimationPlayer.play("phone_Seq#1")
 	
 
@@ -10,18 +12,18 @@ func start_intro_dialog():
 	%AnimationPlayer.pause()
 
 func _on_dialogic_signal(argument: String) -> void:
-	if argument == "pause_here":
-		%AnimationPlayer.play()
-	elif argument == "pause_here1":
+	if argument == "pause_here1":
 		%AnimationPlayer.play()
 	
 
-func resume_dialog():
-	Dialogic.start("phone_seq2")
-	%AnimationPlayer.pause()
+#func resume_dialog():
+	#Dialogic.start("phone_seq0")
+	#%AnimationPlayer.pause()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	Global.game_outside_loadin = false
 	Global.bridge_cutscene_done = true
-	ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
+	emit_signal("sequence_finished")
+	queue_free()
+	#ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")

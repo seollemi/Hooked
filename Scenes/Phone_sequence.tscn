@@ -16,7 +16,7 @@ length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ChaeBg:position")
+tracks/0/path = NodePath("Node2D/ChaeBg:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +28,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("jd:position")
+tracks/1/path = NodePath("Node2D/jd:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("TEXT:position")
+tracks/2/path = NodePath("Node2D/TEXT:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,11 +52,11 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_8in5w"]
 resource_name = "phone_Seq#1"
-length = 5.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -68,7 +68,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TEXT:position")
+tracks/1/path = NodePath("Node2D/TEXT:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,20 +84,17 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"start_intro_dialog"
-}, {
-"args": [],
-"method": &"resume_dialog"
 }]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/3/path = NodePath("Node2D/AudioStreamPlayer2D:stream")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -108,8 +105,8 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/enabled = false
+tracks/4/path = NodePath("Node2D/AudioStreamPlayer2D:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -121,7 +118,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("jd:position")
+tracks/5/path = NodePath("Node2D/jd:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -133,14 +130,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ChaeBg:position")
+tracks/6/path = NodePath("Node2D/ChaeBg:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 4, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(507.5, 268.5), Vector2(507.5, 268.5), Vector2(507, -28.0001)]
+"values": [Vector2(507.5, 268.5), Vector2(507.5, 268.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8in5w"]
@@ -152,51 +149,64 @@ _data = {
 [node name="Phone_cutscene" type="Node2D"]
 script = ExtResource("1_8in5w")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("5_1u40q")
+
+[node name="Panel" type="Panel" parent="Node2D"]
+unique_name_in_owner = true
+visible = false
 z_index = -5
-offset_right = 1154.0
-offset_bottom = 647.0
+offset_left = 417.0
+offset_top = 118.0
+offset_right = 599.0
+offset_bottom = 446.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_uhpum")
 
-[node name="TEXT" type="Sprite2D" parent="."]
+[node name="TEXT" type="Sprite2D" parent="Node2D"]
+unique_name_in_owner = true
 texture_filter = 2
 position = Vector2(508, 160)
 scale = Vector2(0.345, 0.345)
 texture = ExtResource("2_6f74m")
 
-[node name="jd" type="Sprite2D" parent="."]
+[node name="jd" type="Sprite2D" parent="Node2D"]
+unique_name_in_owner = true
+visible = false
 texture_filter = 2
 position = Vector2(507, 154)
 scale = Vector2(0.345, 0.345)
 texture = ExtResource("3_6f74m")
 
-[node name="ChaeBg" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.376471)
+[node name="ChaeBg" type="Sprite2D" parent="Node2D"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.909804)
 z_index = -1
 position = Vector2(507.5, 268.5)
 scale = Vector2(0.463259, 0.472172)
 texture = ExtResource("2_8in5w")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+unique_name_in_owner = true
 position = Vector2(507, 279)
 texture = ExtResource("1_hkmnb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 unique_name_in_owner = true
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_8in5w")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(513, 277)
-zoom = Vector2(2.1, 2.1)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_1u40q")
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(506, 278)
+enabled = false
+zoom = Vector2(7.39, 2.045)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("7_uhpum")]
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

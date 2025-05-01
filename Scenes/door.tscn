@@ -58,7 +58,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6xrn"]
-radius = 40.1956
+radius = 34.2607
 
 [node name="office_door" type="Area2D"]
 z_index = -1
