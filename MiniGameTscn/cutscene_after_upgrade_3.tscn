@@ -12,6 +12,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3byw0")
 
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1157.0
+offset_bottom = 653.0
+
 [node name="Talk1" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 169.0
