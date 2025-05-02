@@ -121,3 +121,10 @@ size_flags_horizontal = 3
 [node name="Button9" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="ShuffleButton" type="Button" parent="."]
+offset_left = 92.0
+offset_top = 528.0
+offset_right = 215.0
+offset_bottom = 579.0
+text = "Shuffle"

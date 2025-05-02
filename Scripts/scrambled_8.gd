@@ -1,5 +1,5 @@
 extends Control
-
+var shuffle_button: Button
 var change_letters = ["C", "H", "A", "N", "G", "E"]
 var management_letters = ["M", "A", "N", "A", "G", "E", "M", "E", "N", "T"]
 var scrambled_letters = change_letters + management_letters
@@ -88,7 +88,10 @@ func _ready():
 	if music_player:
 		music_player.play()
 
-
+	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
+	
+	if shuffle_button:
+		shuffle_button.pressed.connect(_on_ShuffleButton_pressed)
 func _on_LetterButton_pressed(button: Button):
 	if button:  # Check if button is not null
 		selected_word += button.text
@@ -169,3 +172,8 @@ func _on_exit_confirm_dialog_confirmed() -> void:
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
 		player.position = Vector2(471, 252)
+func _on_ShuffleButton_pressed() -> void:
+	shuffle_button.disabled = true
+	_reset_and_shuffle()
+	await get_tree().create_timer(0.5).timeout
+	shuffle_button.disabled = false

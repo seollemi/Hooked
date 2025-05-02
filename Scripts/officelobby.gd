@@ -146,7 +146,7 @@ func _on_interact2() -> void:
 			quest_hehe.reach_goal()
 			quest_hehe.QuestStatus.reach_goal
 			quest_hehe.finish_quest()
-	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled.tscn")
+	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled_instruction.tscn")
 		
 func _on_interact():
 	if Global.act_3_done:

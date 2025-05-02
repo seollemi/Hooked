@@ -16,12 +16,19 @@ extends Control
 @onready var player: Player = $Player
 @onready var win_timer: Timer = $CanvasLayer/WinTimer
 @onready var audio_stream_player: AudioStreamPlayer = $CanvasLayer/AudioStreamPlayer
+@onready var defeatsound: AudioStreamPlayer = $defeatsound
+
 
 var score = 0
 var game_over = false
 var current_password = null
 
 func _ready():
+
+	$CanvasLayer/CurrentPasswordLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	$CanvasLayer/CurrentPasswordLabel.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	$CanvasLayer/ScoreLabel.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	$CanvasLayer/ScoreLabel.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	exit_button.visible = false
 	retry_button.set_anchors_preset(Control.PRESET_CENTER)
 	strong_button.pressed.connect(_on_strong_button_pressed)
@@ -67,12 +74,15 @@ func check_password_clicked(guessed_strong: bool):
 		score_label.text = "Score: %d" % score
 
 		if score < 0:
+			defeatsound.play()
 			game_over = true
 			game_over_label.visible = true
 			retry_button.visible = true  # Show retry button on game over
 			exit_button.visible = true   # Show exit button on game over
 			strong_button.disabled = true
 			weak_button.disabled = true
+			current_password_label.visible = false
+			audio_stream_player.stop()
 
 		elif score >= 10:
 			game_over = true
@@ -82,7 +92,8 @@ func check_password_clicked(guessed_strong: bool):
 			win_sound.play()
 			Global.minigame_done = true
 			win_timer.start()
-
+			current_password_label.visible = false  # Hide the password label on win
+			audio_stream_player.stop()
 		else:
 			spawn_password()
 

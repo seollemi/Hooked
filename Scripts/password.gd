@@ -5,7 +5,6 @@ extends Node2D
 var is_strong = false
 var text = ""
 
-
 static var strong_passwords = [
 	"$uperSecure123", "P@ssw0rd2024", "M1ghtyLock!", "Xy7$gT#8nF", 
 	"B3tter$ecurity", "DragonF1re_2025", "StrongP@ss!", "Saf3tyF1rst#",
@@ -21,20 +20,23 @@ static var weak_passwords = [
 
 func _ready():
 	randomize()
-	
-	if strong_passwords.size() == 0 and weak_passwords.size() == 0:
+
+	var available_strong = strong_passwords.filter(func(p): return !(p in Passwordtracker.used_passwords))
+	var available_weak = weak_passwords.filter(func(p): return !(p in Passwordtracker.used_passwords))
+
+	if available_strong.size() == 0 and available_weak.size() == 0:
 		label.text = "No more passwords!"
 		return
 
-	if randi() % 2 == 0 and strong_passwords.size() > 0:
+	if randi() % 2 == 0 and available_strong.size() > 0:
 		is_strong = true
-		var index = randi() % strong_passwords.size()
-		text = strong_passwords[index]
-		strong_passwords.remove_at(index)  # Proper way to remove by index
-	elif weak_passwords.size() > 0:
+		var index = randi() % available_strong.size()
+		text = available_strong[index]
+	elif available_weak.size() > 0:
 		is_strong = false
-		var index = randi() % weak_passwords.size()
-		text = weak_passwords[index]
-		weak_passwords.remove_at(index)  # Proper way to remove by index
+		var index = randi() % available_weak.size()
+		text = available_weak[index]
 
+	# Add the selected password to the used list
+	Passwordtracker.used_passwords.append(text)
 	label.text = text

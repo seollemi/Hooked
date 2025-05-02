@@ -22,6 +22,7 @@ var player_start_posx = -16.0
 var player_start_posy = -120.0
 
 
+
 #player loction officelobby
 var player1_enter_house_posx = 346
 var player1_enter_house_posy = 135

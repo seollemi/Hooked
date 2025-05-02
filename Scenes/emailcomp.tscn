@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dp878x7y26us5"]
+[gd_scene load_steps=12 format=3 uid="uid://dp878x7y26us5"]
 
 [ext_resource type="Script" uid="uid://dliacnnlc773f" path="res://Scripts/email.gd" id="1_fu882"]
 [ext_resource type="Script" uid="uid://d0e0hthguxtv5" path="res://Scripts/emailspawner.gd" id="2_slim0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://clbbf8mna1jt1" path="res://Image for Pc/password.png" id="7_0n416"]
 [ext_resource type="AudioStream" uid="uid://c6dkpsnbo8egm" path="res://sounds/6_Stinger_Victory_1_Master.mp3" id="8_0n416"]
 [ext_resource type="AudioStream" uid="uid://cot11mwo1k4ib" path="res://sounds/boss.mp3" id="9_br1ai"]
+[ext_resource type="AudioStream" uid="uid://bhkjg3mfjrlsi" path="res://sounds/7_Stinger_Defeat_1_Master.mp3" id="10_whtxt"]
 
 [sub_resource type="FontFile" id="FontFile_jxd8c"]
 cache/0/16/0/ascent = 0.0
@@ -26,6 +27,41 @@ cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
 cache/0/40/0/underline_thickness = 0.0
 cache/0/40/0/scale = 1.0
+cache/0/39/0/ascent = 0.0
+cache/0/39/0/descent = 0.0
+cache/0/39/0/underline_position = 0.0
+cache/0/39/0/underline_thickness = 0.0
+cache/0/39/0/scale = 1.0
+cache/0/38/0/ascent = 0.0
+cache/0/38/0/descent = 0.0
+cache/0/38/0/underline_position = 0.0
+cache/0/38/0/underline_thickness = 0.0
+cache/0/38/0/scale = 1.0
+cache/0/37/0/ascent = 0.0
+cache/0/37/0/descent = 0.0
+cache/0/37/0/underline_position = 0.0
+cache/0/37/0/underline_thickness = 0.0
+cache/0/37/0/scale = 1.0
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -44,13 +80,18 @@ script = ExtResource("2_slim0")
 password_scene = ExtResource("3_jxd8c")
 
 [node name="CurrentPasswordLabel" type="Label" parent="CanvasLayer"]
-offset_left = 433.0
-offset_top = 325.0
-offset_right = 473.0
-offset_bottom = 348.0
+anchors_preset = -1
+anchor_left = -0.0590278
+anchor_top = -0.0895062
+anchor_right = 0.236979
+offset_left = 434.0
+offset_top = 337.0
+offset_right = 474.0
+offset_bottom = 360.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_jxd8c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 33
 metadata/_edit_use_anchors_ = true
 
 [node name="StrongButton" type="Button" parent="CanvasLayer"]
@@ -71,29 +112,34 @@ text = "Weak"
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 454.0
-offset_top = 151.0
-offset_right = 494.0
-offset_bottom = 220.0
+anchors_preset = -1
+anchor_left = -0.0694444
+anchor_right = 0.225694
+offset_left = 445.0
+offset_top = 161.0
+offset_right = 485.0
+offset_bottom = 230.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="GameOverLabel" type="Label" parent="CanvasLayer"]
-offset_left = 510.0
-offset_top = 228.0
-offset_right = 597.0
-offset_bottom = 251.0
+offset_left = 411.0
+offset_top = 279.0
+offset_right = 698.0
+offset_bottom = 352.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 53
 text = "Game Over"
 metadata/_edit_use_anchors_ = true
 
 [node name="WinLabel" type="Label" parent="CanvasLayer"]
-offset_left = 519.0
-offset_top = 230.0
-offset_right = 587.0
-offset_bottom = 253.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
+offset_left = 445.0
+offset_top = 281.0
+offset_right = 669.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(1.51612e-06, 0.653202, 5.77569e-07, 1)
+theme_override_font_sizes/font_size = 53
 text = "You Win!"
 
 [node name="RetryButton" type="Button" parent="CanvasLayer"]
@@ -191,6 +237,9 @@ stream = ExtResource("9_br1ai")
 [node name="WinTimer" type="Timer" parent="CanvasLayer"]
 wait_time = 5.0
 one_shot = true
+
+[node name="defeatsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_whtxt")
 
 [connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/WinTimer" to="." method="_on_win_timer_timeout"]

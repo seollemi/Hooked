@@ -1,5 +1,5 @@
 extends Control
-
+var shuffle_button: Button
 var scrambled_letters = ["C", "Y", "B", "E", "R", "S", "E", "C", "U", "R", "I", "T", "Y"]
 var correct_word = "CYBERSECURITY"
 var selected_word = ""
@@ -48,6 +48,10 @@ func _ready():
 	submit_button = $SubmitButton
 	output_label = $OutputLabel
 	music_player = $MusicPlayer  # Assign the music player node
+	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
+	
+	if shuffle_button:
+		shuffle_button.pressed.connect(_on_ShuffleButton_pressed)
 
 	# Ensure all buttons exist and are properly assigned
 	var buttons = [button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9
@@ -130,3 +134,13 @@ func _on_exit_confirm_dialog_confirmed() -> void:
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
 		player.position = Vector2(471, 252)
+
+
+
+
+
+func _on_ShuffleButton_pressed() -> void:
+	shuffle_button.disabled = true
+	_reset_and_shuffle()
+	await get_tree().create_timer(0.5).timeout
+	shuffle_button.disabled = false
