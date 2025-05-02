@@ -7,7 +7,7 @@ label Dialog_Choice
 	James (James_talking): Wait... locking a server room door counts as cybersecurity?
 	npc: Exactly. If someone steals the physical server, it doesn’t matter how strong your password was.
 	npc: Think of it like a castle. You need walls, guards, rules, and alarm systems — not just one thing."
-	Makes sense. It’s about protecting from every angle, not just hacking.
+	James (James_talking): Makes sense. It’s about protecting from every angle, not just hacking.
 	[signal arg="Q_1"]
 	jump Dialog_Choice
 - Ask about What is "CIA"

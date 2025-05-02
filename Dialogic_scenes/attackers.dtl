@@ -2,43 +2,43 @@ jamie (jamie_talking): There have been so many influential cyberattacks and viru
 Which one do you want to hear about?
 - Tell me about early viruses like the "ILOVEYOU" virus.
 	James (James_talking): Tell me about early viruses like the "ILOVEYOU" virus.
-	jamie: "Ah, the ILOVEYOU virus from 2000 — one of the most destructive ever!\
+	jamie (jamie_talking): "Ah, the ILOVEYOU virus from 2000 — one of the most destructive ever!\
 It was a simple email with the subject line 'I LOVE YOU.' When people opened the attached file, the virus would overwrite files and send itself to everyone in the victim’s email contacts.
-	jamie: It caused around $10 billion in damages worldwide!"
-	James: "That’s insane! It was so simple but so powerful!"
-	jamie: "Exactly — it taught the world that humans, not just technology, are often the weakest link."
+	jamie (jamie_talking): It caused around $10 billion in damages worldwide!"
+	James (James_talking): "That’s insane! It was so simple but so powerful!"
+	jamie (jamie_talking): "Exactly — it taught the world that humans, not just technology, are often the weakest link."
 	jump 
 - Tell me about ransomware attacks like "WannaCry."
 	James (James_talking): Tell me about ransomware attacks like "WannaCry."
-	jamie: "WannaCry in 2017 was pure chaos. It used a Windows vulnerability to spread super fast. Once infected, computers were locked up — people had to pay a ransom in Bitcoin to unlock them."
+	jamie (jamie_talking): "WannaCry in 2017 was pure chaos. It used a Windows vulnerability to spread super fast. Once infected, computers were locked up — people had to pay a ransom in Bitcoin to unlock them."
 	James (James_talking): "And hospitals were hit too, right?"
-	jamie: "Yeah. Hospitals in the UK had to cancel surgeries because of it. It showed how cyberattacks could risk real human lives."
+	jamie (jamie_talking): "Yeah. Hospitals in the UK had to cancel surgeries because of it. It showed how cyberattacks could risk real human lives."
 	jump 
 - Tell me about cyberattacks targeting companies, like Sony or Equifax.
-	James: Tell me about cyberattacks targeting companies, like Sony or Equifax.
-	jamie: "Alright, corporate hacks.\
+	James (James_talking): Tell me about cyberattacks targeting companies, like Sony or Equifax.
+	jamie (jamie_talking): "Alright, corporate hacks.\
 First, the Sony Pictures hack in 2014 — hackers stole confidential emails, movies, and employee info. It was political, linked to a movie mocking North Korea."
 	James (James_talking): "Whoa, so even Hollywood isn’t safe?"
-	jamie: "Not at all. Then there’s the Equifax breach in 2017 — where hackers stole private info of 147 million Americans. Names, Social Security numbers... everything."
+	jamie (jamie_talking): "Not at all. Then there’s the Equifax breach in 2017 — where hackers stole private info of 147 million Americans. Names, Social Security numbers... everything."
 	James (James_talking): "That's terrifying!"
 	jump 
 - Tell me about cyberweapons like "Stuxnet."
 	James (James_talking): Tell me about cyberweapons like "Stuxnet."
-	jamie: "Now for the real spy movie stuff\: Stuxnet.\
+	jamie (jamie_talking): "Now for the real spy movie stuff\: Stuxnet.\
 It was discovered in 2010 and targeted Iran’s nuclear facilities. Instead of stealing data, it sabotaged physical equipment — damaging nuclear centrifuges."
 	James (James_talking): "Cyberattacks can cause real-world destruction?"
-	jamie: "Exactly. Stuxnet changed the entire idea of cyber warfare — no more just stealing data, but attacking critical infrastructure."
+	jamie (jamie_talking): "Exactly. Stuxnet changed the entire idea of cyber warfare — no more just stealing data, but attacking critical infrastructure."
 	jump 
 - Ask where to go
-	James: Uh... excuse me. Where am I supposed to go
-	jamie: Welcome, James. You're Scheduled for a Information Security Meeting
-	jamie: Head down this hallway, take a right, and look for the room with the blue door.
+	James (James_talking): Uh... excuse me. Where am I supposed to go
+	jamie (jamie_talking): Welcome, James. You're Scheduled for a Information Security Meeting
+	jamie (jamie_talking): Head down this hallway, take a right, and look for the room with the blue door.
 - Im done listening for now
 	James (James_talking): "Wow, Jamie... I had no idea there were so many cyberattacks, and that even simple viruses could cause billions of dollars in damage."
-	jamie: "Yep. It’s crazy, right? Each attack taught the cybersecurity world a painful lesson — about vulnerabilities, human error, and even politics."
+	jamie (jamie_talking): "Yep. It’s crazy, right? Each attack taught the cybersecurity world a painful lesson — about vulnerabilities, human error, and even politics."
 	James (James_talking): "It’s not just about computers, is it? Cyberattacks affect real people, companies, even entire countries."
-	jamie: "Exactly. Cybersecurity isn’t just technical — it’s personal, economic, and political. Every year, attacks get more advanced, and defenses have to keep evolving."
+	jamie (jamie_talking): "Exactly. Cybersecurity isn’t just technical — it’s personal, economic, and political. Every year, attacks get more advanced, and defenses have to keep evolving."
 	James (James_talking): "I guess learning about past cyberattacks is like studying history — you need to know the past to defend the future."
-	jamie: "Couldn’t have said it better! 💻🛡️\
+	jamie (jamie_talking): "Couldn’t have said it better! 💻🛡️\
 And who knows? Maybe one day you’ll be the one stopping the next big attack."
-	James: "Yeah... or at least I’ll know not to open an email saying 'I LOVE YOU' from a stranger!"
+	James (James_talking): "Yeah... or at least I’ll know not to open an email saying 'I LOVE YOU' from a stranger!"
