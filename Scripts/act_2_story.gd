@@ -4,6 +4,7 @@ var dialog_started := false
 @onready var restoring_label = $TextureRect/black/anim_text
 @onready var bad_end = $TextureRect/red/bad_end
 func _ready() -> void:
+	MusicManager.music.stop()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_dialogic_end)
 	if not dialog_started:
@@ -35,6 +36,7 @@ func _on_dialogic_signal(argument: String) -> void:
 		"act_2_done":
 			Global.act_2_done = true
 func _on_dialogic_end():
+	MusicManager.music.play()
 	Global.teleport_back = true
 	Global.player_PC_Location = Vector2(450, 22)
 	ChangeScene.change_scene_anim("res://Scenes/Office.tscn")

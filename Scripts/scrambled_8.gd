@@ -10,7 +10,6 @@ var letter_buttons: Array[Button] = []
 
 @onready var exit_confirm_dialog = $ExitConfirmDialog  # Adjust the path as needed
 
-# Declare the buttons and output label
 var button_1: Button
 var button_2: Button
 var button_3: Button
@@ -27,10 +26,10 @@ var button_13: Button
 var button_14: Button
 var button_15: Button
 var button_16: Button
-
 var submit_button: Button
 var output_label: Label
 var music_player: AudioStreamPlayer  # Declare the music player
+
 
 func _ready():
 	# Shuffle both groups independently
@@ -109,7 +108,8 @@ func _on_SubmitButton_pressed():
 		get_tree().root.add_child(new_scene)
 		get_tree().current_scene.queue_free()
 		get_tree().current_scene = new_scene
-
+		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+		MusicManager.music.play()
 		# Move the player or object to (471, 252)
 		var player = new_scene.get_node("Player")  # Update path if needed
 		if player:
@@ -117,7 +117,7 @@ func _on_SubmitButton_pressed():
 	else:
 		output_label.text = "Incorrect. Try again!"
 		_reset_and_shuffle()
-
+		
 
 func _reset_and_shuffle():
 	selected_word = ""
@@ -149,23 +149,20 @@ func _unhandled_input(event):
 		if pressed_buttons.size() > 0:
 			var last_button = pressed_buttons.pop_back()
 			last_button.disabled = false
-
-	# Handle Escape to show confirmation dialog
+			MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+			MusicManager.music.play()
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
 
-
-
-
 func _on_exit_confirm_dialog_confirmed() -> void:
-	# Replace with your actual scene path
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+	MusicManager.music.play()
 	var scene = load("res://Scenes/officelobby.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene = new_scene
-
-	# Move the player or object to (471, 252)
+	
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
 		player.position = Vector2(471, 252)

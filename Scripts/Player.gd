@@ -18,7 +18,6 @@ func cutscene_move(path: Array[Vector2]) -> void:
 	is_cutscene_active = true
 	_run_cutscene(path)
 
-
 func _run_cutscene(path: Array[Vector2]) -> void:
 	var current_position = global_position
 
@@ -57,6 +56,11 @@ func _run_cutscene(path: Array[Vector2]) -> void:
 		current_position = target_position
 
 	_on_cutscene_move_finished()
+
+
+func set_can_move(value: bool) -> void:
+	can_move = value
+	print("⚙️ set_can_move called:", value)
 
 
 func _on_cutscene_move_finished() -> void:

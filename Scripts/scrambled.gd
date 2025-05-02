@@ -22,10 +22,10 @@ var button_12: Button
 var button_13: Button
 var submit_button: Button
 var output_label: Label
-var music_player: AudioStreamPlayer  # Declare the music player
+var music_player: AudioStreamPlayer 
 
 func _ready():
-	# Shuffle letters first
+	MusicManager.music.stop()
 	scrambled_letters.shuffle()
 	$Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$Label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -119,7 +119,7 @@ func _unhandled_input(event):
 
 
 func _on_exit_confirm_dialog_confirmed() -> void:
-	# Replace with your actual scene path
+	MusicManager.music.play()
 	var scene = load("res://Scenes/training.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)

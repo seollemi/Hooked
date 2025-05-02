@@ -86,8 +86,6 @@ func _on_timeline_ended():
 		# Existing timeline logic (like for password dialog)
 		$move/CollisionShape2D.disabled = false
 	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	change_scene()
 
@@ -120,9 +118,6 @@ func _on_scene_to_training_body_entered(body: Node2D) -> void:
 		Global.next_scene = "training"
 		Global.transition_scene = true
 ####
-
-
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not Global.act_1_done and body is Player:
@@ -190,13 +185,9 @@ func _on_move_body_entered(body: Node2D) -> void:
 
 func _on_minigame_done_body_entered(body: Node2D) -> void:
 	if body is Player and Global.minigame_done and not Global.act3minigame_done:
+		MusicManager.music.play()
 		Dialogic.start("ronnie_thanks")
 		awaiting_act3_done = true
-
-
-	
-
-
 
 func _on_password_body_entered(body: Node2D) -> void:
 	if body is Player and Global.act_3_done:
@@ -209,6 +200,8 @@ func _on_password_body_entered(body: Node2D) -> void:
 		
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "done":
+		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+		MusicManager.music.play()
 		player.cutscene_move([
 			Vector2(317, 208),
 			Vector2(319, 137),

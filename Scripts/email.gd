@@ -22,6 +22,7 @@ var game_over = false
 var current_password = null
 
 func _ready():
+	MusicManager.music.stop()
 	exit_button.visible = false
 	retry_button.set_anchors_preset(Control.PRESET_CENTER)
 	strong_button.pressed.connect(_on_strong_button_pressed)
@@ -95,7 +96,7 @@ func _on_exit_button_pressed() -> void:
 	Global.teleport_back = true
 	Global.player_PC_Location = Vector2(345, 135)
 
-	# Go back to the desired scene (e.g., training.tscn)
+	MusicManager.music.play()
 	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")
 	
 	
@@ -103,3 +104,4 @@ func _on_win_timer_timeout() -> void:
 	Global.teleport_back = true
 	Global.player_PC_Location = Vector2(345, 135)
 	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")
+	MusicManager.music.play()
