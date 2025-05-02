@@ -44,6 +44,7 @@ directories/dtl_directory={
 " Chapter 5 Threat Actors and Motivations": "res://Dialogic_scenes/ Chapter 5 Threat Actors and Motivations.dtl",
 "Act_2": "res://Dialogic_scenes/Act_2.dtl",
 "Act_3": "res://Dialogic_scenes/Act_3.dtl",
+"Chapter 5 Threat Actors and Motivations": "res://Dialogic_scenes/Chapter 5 Threat Actors and Motivations.dtl",
 "Chapter_1_training": "res://Dialogic_scenes/Chapter_1_training.dtl",
 "CollegeDialogue": "res://opening INtro/CollegeDialogue.dtl",
 "Fake_login": "res://Dialogic_scenes/Fake_login.dtl",
