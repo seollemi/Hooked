@@ -10,6 +10,7 @@ size = Vector2(29.4202, 7.7034)
 [sub_resource type="Animation" id="Animation_u3lg7"]
 resource_name = "DOWN_RUNNING"
 length = 0.55
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,6 +27,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_k5pq2"]
 resource_name = "LEFT_RUNNING"
 length = 0.55
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,6 +76,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_0u4hv"]
 resource_name = "UP_RUNNING"
 length = 0.55
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -89,6 +92,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ngt04"]
 resource_name = "idle left_Right_UP_DOWN"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -104,6 +108,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_8tsxc"]
 resource_name = "idle_DOWN"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -119,6 +124,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_8cekv"]
 resource_name = "idle_LEFT"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -134,6 +140,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_aihk7"]
 resource_name = "idle_RIGHT"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -149,6 +156,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_lursv"]
 resource_name = "idle_UP"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

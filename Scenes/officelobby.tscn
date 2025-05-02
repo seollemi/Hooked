@@ -13934,9 +13934,6 @@ size = Vector2(15, 37.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7demk"]
 size = Vector2(20, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq78j"]
-size = Vector2(20, 127)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e0qv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tryux"]
@@ -13952,6 +13949,9 @@ size = Vector2(20, 129)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gwg4"]
 size = Vector2(31, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tryux"]
+radius = 29.4109
 
 [node name="Officelobby" type="Node2D"]
 script = ExtResource("1_6d4fe")
@@ -13986,7 +13986,7 @@ shape = SubResource("RectangleShape2D_fbgy8")
 
 [node name="Player" parent="." instance=ExtResource("9_fbgy8")]
 z_index = 4
-position = Vector2(114, 309)
+position = Vector2(489, 207)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(807, 321)
@@ -14002,13 +14002,6 @@ interact_name = "Press E to open pc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
 position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_7demk")
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(631, 406)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(-1, 57.5)
-shape = SubResource("RectangleShape2D_kq78j")
 
 [node name="infodesk" parent="." instance=ExtResource("12_kq78j")]
 position = Vector2(404, 424)
@@ -14072,11 +14065,18 @@ quest_name = "Act 2"
 quest_stages = Array[String](["Go to the office type shi"])
 metadata/_custom_type_script = "uid://6hy1frth2fjb"
 
+[node name="password" type="Area2D" parent="."]
+position = Vector2(784, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="password"]
+position = Vector2(6, -16)
+shape = SubResource("CircleShape2D_tryux")
+
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="interactable" to="." method="_on_interactable_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Scene_to_Training" to="." method="_on_scene_to_training_body_entered"]
 [connection signal="body_entered" from="Scene_To_Bridge" to="." method="_on_scene_to_bridge_body_entered"]
 [connection signal="body_entered" from="move" to="." method="_on_move_body_entered"]
 [connection signal="body_entered" from="minigame_done" to="." method="_on_minigame_done_body_entered"]
+[connection signal="body_entered" from="password" to="." method="_on_password_body_entered"]

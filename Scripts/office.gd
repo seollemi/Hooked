@@ -62,6 +62,8 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Global.next_scene = "officelobby"
 		Global.transition_scene = true
+		Global.teleport_back = true
+		Global.player_PC_Location = Vector2(525, 120)
 
 # ✅ Another area-triggered cutscene
 func _on_area_2d_2_body_entered(body: Node2D) -> void:

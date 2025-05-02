@@ -12,8 +12,11 @@ func _ready() -> void:
 	else:
 		$Cutscene_trigger/CollisionShape2D.disabled = false
 		
+	if Global.act_1_done==true:
+		$Area2D2/CollisionShape2D.disabled=true
 		
-	
+	else:
+		$Area2D2/CollisionShape2D.disabled=false
 
 func _process(delta: float) -> void:
 	change_scene()
@@ -69,6 +72,8 @@ func _on_phone_sequence_finished():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")
+		Global.teleport_back = true
+		Global.player_PC_Location = Vector2(117, 314)
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe.reach_goal()
 		
