@@ -24,6 +24,7 @@ var correct_answer = "scams"
 var current_question = 0
 
 func _ready():
+	MusicManager.music.stop()
 	earth_sprite.play("default")
 	galaxy_sprite.play("default")
 	star_sprite.play("default")

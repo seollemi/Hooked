@@ -3,6 +3,7 @@ extends Node2D
 @onready var interact_label: Label = $"Interact Range/Interact Label"
 var current_interaction := []
 var can_interact := true
+@onready var player: Player = $".."
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:

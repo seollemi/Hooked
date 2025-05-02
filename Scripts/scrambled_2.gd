@@ -17,6 +17,7 @@ var output_label: Label
 var music_player: AudioStreamPlayer  # Declare the music player
 
 func _ready():
+	
 	$Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$Label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	# Shuffle letters first
@@ -90,19 +91,18 @@ func _reset_and_shuffle():
 
 	output_label.text = ""
 func _unhandled_input(event):
-	# Handle Backspace to delete last letter
+	MusicManager.music.play()
 	if event.is_action_pressed("BACK") and selected_word.length() > 0:
 		selected_word = selected_word.substr(0, selected_word.length() - 1)
 		output_label.text = selected_word
 		if pressed_buttons.size() > 0:
 			var last_button = pressed_buttons.pop_back()
 			last_button.disabled = false
-
 	# Handle Escape to show confirmation dialog
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
 func _on_exit_confirm_dialog_confirmed() -> void:
-	# Replace with your actual scene path
+	MusicManager.music.play()
 	var scene = load("res://Scenes/training.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)

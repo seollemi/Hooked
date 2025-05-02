@@ -8,6 +8,7 @@ extends Control
 var music_node_path: NodePath = "/root/MusicPlayer"  # 🛠 Global path for music
 
 func _ready() -> void:
+	MusicManager.music.stop()
 	start.pressed.connect(_on_start_pressed)
 	hints.pressed.connect(_on_hints_pressed)
 	quit.pressed.connect(_on_quit_pressed)
@@ -37,6 +38,6 @@ func _on_quit_pressed() -> void:
 		music.stop()
 		music.queue_free()
 	get_tree().change_scene_to_file("res://Scenes/Office.tscn")
-
+	MusicManager.music.play()
 func _on_objective_pressed() -> void:
 	get_tree().change_scene_to_file("res://MiniGameTscn/objective_menu.tscn")

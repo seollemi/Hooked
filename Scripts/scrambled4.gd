@@ -115,7 +115,7 @@ func _unhandled_input(event):
 
 
 func _on_exit_confirm_dialog_confirmed() -> void:
-	# Replace with your actual scene path
+	MusicManager.music.play()
 	var scene = load("res://Scenes/training.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)

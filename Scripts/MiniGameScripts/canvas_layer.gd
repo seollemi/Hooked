@@ -169,10 +169,11 @@ func _update_button_visibility() -> void:
 func _on_continue_pressed() -> void:
 	Global.act_3_done = true
 	Global.scrolling_background.visible = false
-
+	
 	if get_tree().root.has_node("MusicPlayer"):
 		var music = get_tree().root.get_node("MusicPlayer")
 		music.stop()
 		music.queue_free()
-
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+	MusicManager.music.play()
 	get_tree().change_scene_to_file("res://Scenes/Office.tscn")
