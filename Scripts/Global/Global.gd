@@ -7,6 +7,7 @@ var last_player_position: Vector2 = Vector2.ZERO
 var outside_scene : PackedScene = null
 
 #passwordgame to officelobby
+var ronnie_password:bool = false
 var previous_scene_path: String = ""
 var info_desk= false
 var player_PC1_Location = Vector2(230.0, -78.0)
@@ -54,7 +55,7 @@ var act_2_done: bool = false
 var act_3_done:bool = false
 var act2_cutscene_done := false
 var minigame_done:bool = false
-
+var act3minigame_done:bool =false
 var act_1_seen = false
 var act_2_seen = false
 var act_3_seen = false

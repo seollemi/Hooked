@@ -189,7 +189,7 @@ text = "start"
 stream = ExtResource("9_br1ai")
 
 [node name="WinTimer" type="Timer" parent="CanvasLayer"]
-wait_time = 2.0
+wait_time = 5.0
 one_shot = true
 
 [connection signal="pressed" from="CanvasLayer/ExitButton" to="." method="_on_exit_button_pressed"]

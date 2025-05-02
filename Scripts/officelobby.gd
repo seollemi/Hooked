@@ -7,13 +7,17 @@ extends Node2D
 @onready var minigame_done: Area2D = $minigame_done
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var act_2_quest: Quest_hehe = $"Act 2 quest"
+@onready var move: Area2D = $move
 
 @onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 var global_alex = false
 var triggered= false
+var awaiting_act3_done := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.timeline_ended.connect(_on_timeline_ended)  # Add this line
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	interactable.interact = _on_interact
 	infodesk.interact = _on_interact1
 	act_1.interact = _on_interact2
@@ -41,20 +45,26 @@ func _ready() -> void:
 		$minigame_done/CollisionShape2D.disabled=false
 	else:
 		$minigame_done/CollisionShape2D.disabled=true
+		$Area2D/CollisionShape2D.disabled=true
 	
 	if Global.minigame_done==true:
 		$minigame_done/CollisionShape2D.disabled=false
 	else:
 		$minigame_done/CollisionShape2D.disabled=true
+		
+
 	if Global.act_3_done== true:
-		$Area2D2/CollisionShape2D.disabled =false
+		
 		$move/CollisionShape2D.disabled =false
 		$interactable/CollisionShape2D.disabled=false
+		$password/CollisionShape2D.disabled=false
 		
 	else:
 		$interactable/CollisionShape2D.disabled=true
-		$Area2D2/CollisionShape2D.disabled =true
+		$password/CollisionShape2D.disabled=true
 		$move/CollisionShape2D.disabled =true
+		
+
 
 
 func start_dialog():
@@ -62,9 +72,19 @@ func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("password")
 	player.can_move = false	
+
 func _on_timeline_ended():
 	Dialogic.timeline_ended.disconnect(_on_timeline_ended)
 	$move/CollisionShape2D.disabled = false
+	if awaiting_act3_done:
+		awaiting_act3_done = false
+		Global.act3minigame_done = true
+
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
+	else:
+		# Existing timeline logic (like for password dialog)
+		$move/CollisionShape2D.disabled = false
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -106,15 +126,15 @@ func _on_scene_to_training_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not Global.act_1_done and body is Player:
-
-		
-		
 		Dialogic.start("instruction_alex")
 		body.cutscene_move([
 			Vector2(477, 113),
 		] as Array[Vector2])
 	else:
 		Global.global_alex = true
+		
+		
+
 
 		
 func _on_interact1():
@@ -143,11 +163,6 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 		Global.global_triggered = true
 		
 		
-	if body is Player and Global.act_3_done:
-		body.cutscene_move([
-			Vector2(346, 206),
-		] as Array[Vector2])
-		start_dialog()
 
 func _on_interactable_body_entered(body: Node2D) -> void:
 	if Global.act_3_done == true :
@@ -162,18 +177,40 @@ func _on_scene_to_bridge_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Global.next_scene = "bridge"
 		Global.transition_scene = true
+		Global.teleport_back = true
+		Global.player_PC_Location = Vector2(-69, -63)
 ####
 
 
 func _on_move_body_entered(body: Node2D) -> void:
-	if body is Player and Global.act_3_done:
-		body.cutscene_move([
-			Vector2(317, 208),
-			Vector2(319, 137),
-			Vector2(346, 135),
-	])
+	pass
+
+	
 
 
 func _on_minigame_done_body_entered(body: Node2D) -> void:
-	if body is Player and Global.minigame_done:
+	if body is Player and Global.minigame_done and not Global.act3minigame_done:
 		Dialogic.start("ronnie_thanks")
+		awaiting_act3_done = true
+
+
+	
+
+
+
+func _on_password_body_entered(body: Node2D) -> void:
+	if body is Player and Global.act_3_done:
+		body.cutscene_move([
+			Vector2(496, 122),
+			Vector2(489, 207),
+			Vector2(346, 205)
+		] as Array[Vector2])
+		start_dialog()
+		
+func _on_dialogic_signal(event_name: String) -> void:
+	if event_name == "done":
+		player.cutscene_move([
+			Vector2(317, 208),
+			Vector2(319, 137),
+			Vector2(346, 135),
+		] as Array[Vector2])

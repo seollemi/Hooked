@@ -15,6 +15,7 @@ extends Control
 @onready var exit_button: Button = $CanvasLayer/ExitButton
 @onready var player: Player = $Player
 @onready var win_timer: Timer = $CanvasLayer/WinTimer
+@onready var audio_stream_player: AudioStreamPlayer = $CanvasLayer/AudioStreamPlayer
 
 var score = 0
 var game_over = false
@@ -33,13 +34,14 @@ func _ready():
 	exit_button.visible = false  # Hide exit button at the start
 	score_label.text = "Score: %d" % score
 	spawn_password()
-	
+	audio_stream_player.play()
 	if Global.teleport_back:
 		var player = $Player  # Adjust node path as needed
 		if player:
 			player.position = Global.player_PC_Location
 			Global.teleport_back = false  # Reset the flag
-
+			
+	
 func spawn_password():
 	current_password = password_spawner.create_password()
 	current_password_label.text = current_password.text
