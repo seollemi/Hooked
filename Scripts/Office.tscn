@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://7v1n16qg8m82"]
 
-[ext_resource type="Script" uid="uid://cwbiwat53hepk" path="res://Scripts/office.gd" id="1_0d164"]
+[ext_resource type="Script" uid="uid://oahdoc1xqe3v" path="res://Scripts/office.gd" id="1_0d164"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="3_r1f8t"]
 [ext_resource type="Texture2D" uid="uid://birefcflxdi7o" path="res://world/office/Room_Builder_Office_16x16.png" id="4_bod3d"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="5_32u8q"]

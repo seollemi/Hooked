@@ -11,8 +11,6 @@ func _ready() -> void:
 func _on_interact() -> void:
 	Dialogic.start("Chapter_1_training")
 	
-
-
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name in ["Q_1", "Q_2", "Q_3", "Q_4"]:
 		_collect_question(event_name)
@@ -47,7 +45,7 @@ func change_scene():
 		
 func _on_scene_to_office_body_entered(body: Node2D) -> void:
 	if body is Player:
-		Global.player_PC_Location = Vector2(466, 311)  # Example position
+		Global.player_PC_Location = Vector2(466, 311)
 		Global.next_scene = "officelobby"
 		Global.transition_scene = true
 			

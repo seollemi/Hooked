@@ -22,6 +22,7 @@ Global="*res://Scripts/Global/Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Background_scroll="*res://MiniGameTscn/Backgrond_scroll.tscn"
 Qbox="*res://Scenes/quest.tscn"
+MusicManager="*res://music_manager.gd"
 
 [dialogic]
 

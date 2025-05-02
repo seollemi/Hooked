@@ -1,12 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc1ylcuspakqx"]
+[gd_scene load_steps=6 format=3 uid="uid://dc1ylcuspakqx"]
 
 [ext_resource type="Script" uid="uid://rpaykwif0tdi" path="res://Scripts/options_menu.gd" id="1_ihwhp"]
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_nmwxr"]
+[ext_resource type="PackedScene" uid="uid://dawyhcygw5iha" path="res://VolumeSlider.tscn" id="3_dtnex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxu4m"]
 bg_color = Color(0.168, 0.6, 0.456, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihwhp"]
-bg_color = Color(0.94902, 0.647059, 0.498039, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcri3"]
 bg_color = Color(0.94902, 0.647059, 0.498039, 1)
@@ -50,23 +49,28 @@ offset_bottom = 35.0
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ihwhp")
-text = "Volume
-"
+theme_override_fonts/font = ExtResource("2_nmwxr")
+theme_override_font_sizes/font_size = 60
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="master" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_dtnex")]
 layout_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+offset_left = 391.0
+offset_top = 242.0
+offset_right = 745.0
+offset_bottom = 311.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_kcri3")
 text = "Back
 "
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -3,7 +3,15 @@ extends Node2D
 
 func _ready() -> void:
 	print(Global.current_scene)
+	
+	if not MusicManager.music.playing:
+		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")  # Replace with your file
+		MusicManager.music.volume_db = -40  # Start quiet (mute is around -80 dB)
+		MusicManager.music.play()
 
+		var tween = get_tree().create_tween()
+		tween.tween_property(MusicManager.music, "volume_db", 0, 2.5)  # Fade in to normal volume in 2.5s
+	
 func _process(delta: float) -> void:
 	change_scene()
 

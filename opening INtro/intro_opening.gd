@@ -60,6 +60,11 @@ func run_intro_sequence() -> void:
 	# ✅ Final fade out
 	anim.play("fade_out")
 	await anim.animation_finished
+	
+	var tween1 = get_tree().create_tween()
+	tween1.tween_property(MusicManager.music, "volume_db", -80, 2.0)  
+	await tween1.finished
+	MusicManager.music.stop()
 
 	# ✅ Scene change to WorldHouse
 	get_tree().change_scene_to_file("res://Scenes/WorldHouse.tscn")

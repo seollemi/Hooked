@@ -75,7 +75,7 @@ func _process(delta: float) -> void:
 func change_scene():
 	if Global.transition_scene:
 		match Global.next_scene:
-			"outside":
+			"outside":		
 				ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
 			"office":
 				ChangeScene.change_scene_anim("res://Scenes/office.tscn")

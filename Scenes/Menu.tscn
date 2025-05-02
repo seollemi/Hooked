@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dom5lhwd31uci"]
+[gd_scene load_steps=8 format=3 uid="uid://dom5lhwd31uci"]
 
 [ext_resource type="Script" uid="uid://df2xny172d82j" path="res://Scripts/menu.gd" id="1_uubjt"]
 [ext_resource type="FontFile" uid="uid://b4qpxl287je0" path="res://FONTS/GrapeSoda.ttf" id="2_5yleq"]
+[ext_resource type="AudioStream" uid="uid://b0bwfbei4bss1" path="res://sounds/1_Menu_Master.mp3" id="3_syfuq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
 bg_color = Color(0.168, 0.6, 0.456, 1)
@@ -111,6 +112,9 @@ theme_override_fonts/font = ExtResource("2_5yleq")
 theme_override_font_sizes/font_size = 100
 text = "HOOKED"
 horizontal_alignment = 1
+
+[node name="Menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_syfuq")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CONTINUE" to="." method="_on_play_pressed"]

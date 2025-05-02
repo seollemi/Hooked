@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dawyhcygw5iha"]
+
+[ext_resource type="Script" uid="uid://kmdxjul5d7vv" path="res://node_2d.gd" id="1_rac06"]
+
+[node name="Volume" type="HSlider"]
+offset_left = 312.0
+offset_top = 235.0
+offset_right = 320.0
+offset_bottom = 251.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_rac06")

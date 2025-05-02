@@ -131,3 +131,4 @@ Special Thanks:
 stream = ExtResource("13_ybuc8")
 
 [node name="TransitionScreen" parent="." instance=ExtResource("14_2spg8")]
+visible = false
