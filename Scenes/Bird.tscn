@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgvn8gb4rkbbp"]
+
+[ext_resource type="Texture2D" uid="uid://drm6usx483nqs" path="res://world/animated/Beach_Seagull_Idle_Right_16x16.png" id="1_rpcp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_806kn"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2sqn"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6djdu"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okd8w"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tto85"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo1os"]
+atlas = ExtResource("1_rpcp7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjpud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_806kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2sqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6djdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okd8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tto85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo1os")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gjpud")
+frame_progress = 0.280127
