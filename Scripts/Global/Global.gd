@@ -55,10 +55,15 @@ var act_3_done:bool = false
 var act2_cutscene_done := false
 var minigame_done:bool = false
 
+var act_1_seen = false
+var act_2_seen = false
+var act_3_seen = false
+
 #Quest Global progression 
 var quest_stage_index = 0
 var quest_status = 0  # Use QuestManager.QuestStatus enum values
 
+var Star_pos = Vector2(601, 367)
 
  # Start at zero
 var global_triggered = false

@@ -1,11 +1,13 @@
-[gd_scene load_steps=18 format=4 uid="uid://cl4ehyo1tg4qn"]
+[gd_scene load_steps=20 format=4 uid="uid://cl4ehyo1tg4qn"]
 
 [ext_resource type="Script" uid="uid://cct7igckji1c0" path="res://Scenes/training.gd" id="1_61lvs"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_mpd5x"]
 [ext_resource type="Texture2D" uid="uid://birefcflxdi7o" path="res://world/office/Room_Builder_Office_16x16.png" id="2_ged4j"]
 [ext_resource type="PackedScene" uid="uid://dhhwgipsak3bk" path="res://Scenes/training_npc.tscn" id="5_ged4j"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="6_hjy04"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="7_hjy04"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="7_tcugj"]
+[ext_resource type="PackedScene" uid="uid://co3u003u4qd06" path="res://Scenes/Star_marker.tscn" id="8_tcugj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl8xy"]
 size = Vector2(17, 12.5)
@@ -2354,5 +2356,15 @@ tile_set = SubResource("TileSet_1u3a2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene_to_office"]
 position = Vector2(809, 317)
 shape = SubResource("RectangleShape2D_61lvs")
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+position = Vector2(0, -1)
+script = ExtResource("7_hjy04")
+quest_name = "Act 1 "
+quest_statuss = 1
+quest_stages = Array[String](["Go talk to the marked npc", "Go to the marked pc"])
+
+[node name="StarMarker" parent="." instance=ExtResource("8_tcugj")]
+position = Vector2(724, 430)
 
 [connection signal="body_entered" from="Scene_to_office" to="." method="_on_scene_to_office_body_entered"]

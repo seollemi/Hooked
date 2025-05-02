@@ -5,7 +5,10 @@ extends Node2D
 @onready var player: Player = $Player
 @onready var act_1: Area2D = $act1
 @onready var minigame_done: Area2D = $minigame_done
+@onready var quest_hehe: Quest_hehe = $Quest_hehe
+@onready var act_2_quest: Quest_hehe = $"Act 2 quest"
 
+@onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 var global_alex = false
 var triggered= false
 
@@ -14,21 +17,27 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	infodesk.interact = _on_interact1
 	act_1.interact = _on_interact2
-	
+	if Global.introduction_1 == true:
+		$StarMarker.position = Vector2(601,367)
 	if Global.player_PC_Location != null:
 		var player = $Player  # Update the path to your Player node
 		if player:
 			player.position = Global.player_PC_Location
 			
 	$move/CollisionShape2D.disabled=true
+	if (Global.act_1_done and not Global.act_1_seen):
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
 	
 	if Global.introduction_1==true:
 		$act1/CollisionShape2D.disabled=false
-		
+		$StarMarker.position = Vector2(840,322)
 	else:
 		$act1/CollisionShape2D.disabled=true
 	
 	if Global.act_1_done==true:
+		act_2_quest.start_quest()
+		
 		$minigame_done/CollisionShape2D.disabled=false
 	else:
 		$minigame_done/CollisionShape2D.disabled=true
@@ -86,6 +95,8 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 
 func _on_scene_to_training_body_entered(body: Node2D) -> void:
 	if body is Player:
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe.reach_goal()
 		Global.next_scene = "training"
 		Global.transition_scene = true
 ####
@@ -111,6 +122,10 @@ func _on_interact1():
 	
 
 func _on_interact2() -> void:
+	if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe.reach_goal()
+			quest_hehe.QuestStatus.reach_goal
+			quest_hehe.finish_quest()
 	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled.tscn")
 		
 func _on_interact():

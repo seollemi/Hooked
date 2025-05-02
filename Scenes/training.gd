@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var interactable: Area2D = $interactable
 
 func _ready() -> void:
@@ -27,6 +27,9 @@ func _collect_question(question_name: String) -> void:
 	   "Q_3" in Global.collected_questions and \
 	   "Q_4" in Global.collected_questions:
 		Global.introduction_1 = true
+		$StarMarker.visible = false
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe.reach_goal()
 		print("🎉 All questions answered! Introduction_1 is now TRUE.")
 
 
@@ -34,7 +37,7 @@ func _process(delta: float) -> void:
 	change_scene()
 	
 
-func change_scene():
+func change_scene():		
 	if Global.transition_scene:
 		match Global.next_scene:
 			"officelobby":
@@ -47,3 +50,5 @@ func _on_scene_to_office_body_entered(body: Node2D) -> void:
 		Global.player_PC_Location = Vector2(466, 311)  # Example position
 		Global.next_scene = "officelobby"
 		Global.transition_scene = true
+			
+			

@@ -30801,7 +30801,7 @@ shape = SubResource("RectangleShape2D_dcb0v")
 script = ExtResource("17_dxtfm")
 quest_name = "Act 1 "
 quest_statuss = 1
-quest_stages = Array[String](["Go to the office", "Go to Jaime at the information desk"])
+quest_stages = Array[String](["Go to the office", "Go to the training room"])
 
 [connection signal="body_entered" from="Door_to_outsidehouse" to="." method="_on_door_to_outsidehouse_body_entered"]
 [connection signal="body_entered" from="Cutscene_trigger" to="." method="_on_cutscene_trigger_body_entered"]

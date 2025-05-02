@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=44 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="9_fbgy8"]
 [ext_resource type="PackedScene" uid="uid://cmk2vye1repn1" path="res://interactions/interactable.tscn" id="12_kq78j"]
 [ext_resource type="PackedScene" uid="uid://s0pm27nivbtg" path="res://Scenes/door.tscn" id="13_7demk"]
+[ext_resource type="PackedScene" uid="uid://co3u003u4qd06" path="res://Scenes/Star_marker.tscn" id="14_4e0qv"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="15_tryux"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibiix"]
 texture = ExtResource("1_7ovcx")
@@ -14053,6 +14055,22 @@ position = Vector2(599, 386)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="minigame_done"]
 position = Vector2(7.5, 2)
 shape = SubResource("RectangleShape2D_0gwg4")
+
+[node name="StarMarker" parent="." instance=ExtResource("14_4e0qv")]
+position = Vector2(752, 523)
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+position = Vector2(0, -1)
+script = ExtResource("15_tryux")
+quest_name = "Act 1 "
+quest_statuss = 1
+quest_stages = Array[String](["Go to the training room", "Go talk to the marked npc"])
+
+[node name="Act 2 quest" type="Node2D" parent="."]
+script = ExtResource("15_tryux")
+quest_name = "Act 2"
+quest_stages = Array[String](["Go to the office type shi"])
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
