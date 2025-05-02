@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_bxnxi")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -22.0
 offset_top = 202.0
 offset_right = 1185.0
@@ -25,6 +26,7 @@ correct word formed from the scrambled letters. Make sure the
 word you choose makes sense based on the question."
 
 [node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 472.0
 offset_top = 469.0
 offset_right = 647.0
@@ -33,6 +35,7 @@ text = "Proceed"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 z_index = -3
+layout_mode = 0
 offset_left = -334.0
 offset_top = -181.0
 offset_right = 1510.0

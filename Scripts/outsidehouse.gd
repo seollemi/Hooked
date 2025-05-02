@@ -2,6 +2,7 @@ extends Node2D
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 
 func _ready() -> void:
+	
 	print(Global.current_scene)
 	
 	if not MusicManager.music.playing:

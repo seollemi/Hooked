@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://djle87uke85p4"]
+[gd_scene load_steps=32 format=3 uid="uid://djle87uke85p4"]
 
 [ext_resource type="Script" uid="uid://cdoabcgee1150" path="res://Scripts/outsidehouse.gd" id="1_2bdwf"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="1_3t8au"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c156wh6eksau3" path="res://world/animated/Sea_Water_Tileset_16x16.png" id="10_wvmft"]
 [ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="11_07rlx"]
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="12_7fphf"]
+[ext_resource type="PackedScene" uid="uid://pbtd21tkdv7q" path="res://MiniGameTscn/pause_volume.tscn" id="14_wvmft"]
 [ext_resource type="PackedScene" uid="uid://cgvn8gb4rkbbp" path="res://Scenes/Bird.tscn" id="15_l6087"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdc22"]
@@ -4433,7 +4434,8 @@ shape = SubResource("RectangleShape2D_2bdwf")
 layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("11_07rlx")]
-visible = false
+
+[node name="Volume" parent="CanvasLayer" instance=ExtResource("14_wvmft")]
 
 [node name="Quest_hehe" type="Node2D" parent="."]
 script = ExtResource("12_7fphf")
@@ -4442,7 +4444,7 @@ quest_statuss = 1
 quest_stages = Array[String](["Go to main city", "Go to the office"])
 
 [node name="bird" parent="." instance=ExtResource("15_l6087")]
-position = Vector2(12, 254)
+position = Vector2(-217, 155)
 
 [connection signal="body_entered" from="Door_inside" to="." method="_on_door_inside_body_entered"]
 [connection signal="body_entered" from="Door_to_city" to="." method="_on_door_to_city_body_entered"]

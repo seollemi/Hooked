@@ -21,6 +21,7 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	infodesk.interact = _on_interact1
 	act_1.interact = _on_interact2
+	Dialogic.timeline_ended.connect(_on_dialog_ended)
 	if Global.introduction_1 == true:
 		$StarMarker.position = Vector2(601,367)
 	if Global.player_PC_Location != null:
@@ -128,13 +129,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	else:
 		Global.global_alex = true
 		
-		
 
-
-		
 func _on_interact1():
 	Dialogic.start("attackers")
-	
+	var player = get_node("Player")
+	player.set_can_move(false)
+func _on_dialog_ended() -> void:
+	var player = get_node("Player")  # Or get_tree().get_root().get_node("Path/To/Player")
+	player.set_can_move(true)
 
 func _on_interact2() -> void:
 	if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:

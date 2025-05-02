@@ -7,10 +7,18 @@ func _ready() -> void:
 
 	interactable.interact = _on_interact
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.timeline_ended.connect(_on_dialog_ended)
+	
 
 func _on_interact() -> void:
+	var player = get_node("Player")
+	player.set_can_move(false)
 	Dialogic.start("Chapter_1_training")
 	
+func _on_dialog_ended() -> void:
+	var player = get_node("Player")
+	player.set_can_move(true)
+
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name in ["Q_1", "Q_2", "Q_3", "Q_4"]:
 		_collect_question(event_name)

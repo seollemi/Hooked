@@ -48,12 +48,14 @@ animations = [{
 "texture": SubResource("AtlasTexture_qo1os")
 }],
 "loop": true,
-"name": &"default",
+"name": &"default_1",
 "speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(222, 112)
 sprite_frames = SubResource("SpriteFrames_gjpud")
-frame_progress = 0.280127
+animation = &"default_1"
+frame_progress = 0.331528

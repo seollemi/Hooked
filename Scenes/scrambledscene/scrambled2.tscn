@@ -101,10 +101,12 @@ expand_mode = 1
 auto_translate_mode = 1
 
 [node name="ShuffleButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 92.0
 offset_top = 528.0
 offset_right = 215.0
 offset_bottom = 579.0
 text = "Shuffle"
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xwnsd")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://pbtd21tkdv7q"]
+
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_ukuug"]
+[ext_resource type="Script" uid="uid://b5ic5xes6nqsk" path="res://MiniGameTscn/pause_volume.gd" id="1_v2sng"]
+[ext_resource type="PackedScene" uid="uid://dawyhcygw5iha" path="res://VolumeSlider.tscn" id="2_v2sng"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2sng")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.258824, 0.258824, 0.258824, 0.776471)
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -120.5
+offset_right = 84.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 8
+
+[node name="Label" type="Label" parent="GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ukuug")
+theme_override_font_sizes/font_size = 60
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit to main menu" type="Button" parent="."]
+layout_mode = 2
+offset_left = 492.0
+offset_top = 435.0
+offset_right = 660.0
+offset_bottom = 471.0
+theme_override_fonts/font = ExtResource("1_ukuug")
+theme_override_font_sizes/font_size = 25
+text = "Back"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 404.0
+offset_top = 276.5
+offset_right = 750.0
+offset_bottom = 341.5
+theme_override_fonts/font = ExtResource("1_ukuug")
+theme_override_font_sizes/font_size = 60
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume" parent="." instance=ExtResource("2_v2sng")]
+layout_mode = 2
+offset_left = 402.0
+offset_top = 358.0
+offset_right = 745.0
+offset_bottom = 374.0
+
+[connection signal="pressed" from="Quit to main menu" to="." method="_on_quit_to_main_menu_pressed"]

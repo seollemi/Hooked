@@ -155,6 +155,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ShuffleButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 92.0
 offset_top = 528.0
 offset_right = 215.0

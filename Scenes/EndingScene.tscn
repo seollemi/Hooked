@@ -107,9 +107,9 @@ position = Vector2(129, 133)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_left = 708.0
-offset_top = -101.0
-offset_right = 1154.0
-offset_bottom = 1055.0
+offset_top = -70.0
+offset_right = 1673.0
+offset_bottom = 1086.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -118,17 +118,81 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_ybuc8")
 theme_override_font_sizes/font_size = 40
-text = "Game Created By: Arthur Cruz
-Special Thanks:
- - Cute ka
- - Love you too
- - pag nakita mo to kc 
- - Joke lng negro
+text = "Game Created By:
+M5 Team
 
-© 2025 All Rights Reserved"
+Special Thanks to:
+Our Advisor
+itch.io creators:
+BDragon1727
+Elthen's Pixel Art Shop
+Deep-Fold
+Background:
+https://shiroze.itch.io/starry-night-parallax-background
+"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_ybuc8")
+[node name="ScrollContainer2" type="ScrollContainer" parent="."]
+offset_left = 1712.0
+offset_top = -70.0
+offset_right = 2677.0
+offset_bottom = 1086.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ybuc8")
+theme_override_font_sizes/font_size = 40
+text = "Spcial Thanks for assets:
+https://limezu.itch.io/
+
+Sounds:
+Funny Bit - by David Renda
+Boss Time - by David Renda
+Visual Novel Music Pack // Tiny Pack by Rest! - Itch.io
+8 bits Sound effect - By Pixabay
+Painful Memories - by Steve Oxen
+Our Hopes And Dreams - by Steve Oxen
+
+"
+
+[node name="Label" type="Label" parent="ScrollContainer2/VBoxContainer/Label"]
+layout_mode = 0
+theme_override_fonts/font = ExtResource("5_ybuc8")
+theme_override_font_sizes/font_size = 40
+text = "Spcial Thanks for assets:
+https://limezu.itch.io/
+
+Sounds:
+Funny Bit - by David Renda
+Boss Time - by David Renda
+Visual Novel Music Pack // Tiny Pack by Rest! - Itch.io
+8 bits Sound effect - By Pixabay
+Painful Memories - by Steve Oxen
+Our Hopes And Dreams - by Steve Oxen
+
+"
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="."]
+offset_left = 2586.0
+offset_top = -70.0
+offset_right = 3551.0
+offset_bottom = 1086.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_ybuc8")
+theme_override_font_sizes/font_size = 40
+text = "Spcial Thanks for:
+Dialogic
+
+"
 
 [node name="TransitionScreen" parent="." instance=ExtResource("14_2spg8")]
-visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ybuc8")
