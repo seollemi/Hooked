@@ -119,7 +119,7 @@ func _on_SubmitButton_pressed():
 	if Global.act_1_done == true and Global.act_1_seen == false: 
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
-	if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe.reach_goal()
 			quest_hehe.QuestStatus.reach_goal
 			quest_hehe.finish_quest()

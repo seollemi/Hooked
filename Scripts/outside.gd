@@ -7,7 +7,7 @@ var cutscene_played := false
 
 
 func _ready() -> void:
-	$Area2D/CollisionShape2D.disabled = true
+	$Area2D/CollisionShape2D.disabled = false
 	if quest_hehe.should_show_quest_ui():
 		Qbox.get_node("Questbox").visible = true
 	print("Loaded quest name: ", Global.current_quest_name)
