@@ -1,8 +1,9 @@
-[gd_scene load_steps=53 format=3 uid="uid://dq4d5snhu28bd"]
+[gd_scene load_steps=54 format=3 uid="uid://dq4d5snhu28bd"]
 
 [ext_resource type="Script" uid="uid://d1mq1pg4hyebk" path="res://Scripts/npc_2.gd" id="1_lqs13"]
 [ext_resource type="Texture2D" uid="uid://bn1x3lcyfvae2" path="res://Player/character sprites/Adam_16x16.png" id="2_74ajd"]
 [ext_resource type="Script" uid="uid://yvffmoravl61" path="res://Scripts/npc_2_anim.gd" id="3_lqs13"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="4_74ajd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njxey"]
 atlas = ExtResource("2_74ajd")
@@ -402,3 +403,19 @@ animation = &"idle_right"
 frame = 3
 frame_progress = 0.561891
 script = ExtResource("3_lqs13")
+
+[node name="Act 2 quest" type="Node2D" parent="."]
+script = ExtResource("4_74ajd")
+quest_name = "Act 2"
+quest_descrip = "Go talk to Jordan"
+reached_goal_text = "Go to npc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
+[node name="Act 2 quest2" type="Node2D" parent="."]
+script = ExtResource("4_74ajd")
+quest_name = "Act 2"
+quest_descrip = "Go to npc"
+reached_goal_text = "Go to your pc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"

@@ -3697,7 +3697,30 @@ shape = SubResource("RectangleShape2D_541ak")
 script = ExtResource("10_chwbs")
 quest_name = "Act 2"
 quest_descrip = "Go talk to Jordan"
+reached_goal_text = "Go to pc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
+[node name="Act 2 quest2" type="Node2D" parent="."]
+script = ExtResource("10_chwbs")
+quest_name = "Act 2"
+quest_descrip = "Go to pc"
 reached_goal_text = "Go to your pc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
+[node name="Act 3 quest" type="Node2D" parent="."]
+script = ExtResource("10_chwbs")
+quest_name = "Act 3"
+quest_descrip = "Go to your pc"
+reached_goal_text = "Go to office lobby"
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
+[node name="Act 3 quest2" type="Node2D" parent="."]
+script = ExtResource("10_chwbs")
+quest_name = "Act 3"
+quest_descrip = "Go to office lobby"
+reached_goal_text = "Go to pc"
 quest_statuss = 1
 metadata/_custom_type_script = "uid://6hy1frth2fjb"
 

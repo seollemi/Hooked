@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://biekxhsae4pgv"]
+[gd_scene load_steps=10 format=3 uid="uid://biekxhsae4pgv"]
 
 [ext_resource type="Script" uid="uid://dnwne3oyjp55q" path="res://MiniGameTscn/mini_menu.gd" id="1_rn7r8"]
 [ext_resource type="Script" uid="uid://dbaskwtioeicp" path="res://MiniGameTscn/canvas_layer.gd" id="2_c5l1v"]
 [ext_resource type="Texture2D" uid="uid://8rl6u5wr6vsy" path="res://MiniGameAssets/test.png" id="2_rn7r8"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="2_ushq0"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="3_c5l1v"]
 [ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_74buc"]
 [ext_resource type="Texture2D" uid="uid://drt28akcptlx0" path="res://MiniGameAssets/Button_stop.png" id="6_c5l1v"]
@@ -109,3 +110,11 @@ visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_p8l1m")
+
+[node name="Act 3 quest" type="Node2D" parent="."]
+script = ExtResource("2_ushq0")
+quest_name = "Act 3"
+quest_descrip = "Go to your pc"
+reached_goal_text = "Go to your pc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"

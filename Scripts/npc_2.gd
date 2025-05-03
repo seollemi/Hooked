@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var act_2_quest: Quest_hehe = $"Act 2 quest"
+@onready var act_2_quest_p2: Quest_hehe = $"Act 2 quest2"
 
 var talking: bool = false
 var dialog_started: bool = false
@@ -43,6 +45,8 @@ func _on_act_2_body_entered(body: Node2D) -> void:
 			dialog_was_interrupted = true
 			talking = false
 			Dialogic.end_timeline()
-
-		# Immediately change scene to Act 2
+		if act_2_quest_p2.quest_statuss == act_2_quest_p2.QuestStatus.started:
+			act_2_quest_p2.reach_goal()
+		if act_2_quest.should_show_quest_ui():
+			Qbox.get_node("Questbox").visible = true	
 		ChangeScene.change_scene_anim("res://Scenes/Act2_story.tscn")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://daewpfvru41wb"]
+[gd_scene load_steps=5 format=3 uid="uid://daewpfvru41wb"]
 
 [ext_resource type="Script" uid="uid://d2marb2uuiyyf" path="res://Scripts/scrambled_8.gd" id="1_s4h3f"]
 [ext_resource type="Texture2D" uid="uid://dg8et5c0cxylc" path="res://MiniGameAssets/scrambled.webp" id="2_vo6xq"]
 [ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="4_conhy"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="4_s4h3f"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -157,5 +158,9 @@ offset_top = 528.0
 offset_right = 215.0
 offset_bottom = 579.0
 text = "Shuffle"
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+script = ExtResource("4_s4h3f")
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
 
 [connection signal="confirmed" from="ExitConfirmDialog" to="." method="_on_exit_confirm_dialog_confirmed"]

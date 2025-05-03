@@ -4,10 +4,12 @@ extends Control
 @onready var hints: TextureButton = $CanvasLayer/Hints
 @onready var quit: TextureButton = $CanvasLayer/Quit
 @onready var objective: TextureButton = $CanvasLayer/objective
-
+@onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 var music_node_path: NodePath = "/root/MusicPlayer"  # 🛠 Global path for music
 
 func _ready() -> void:
+	if act_3_quest.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
 	MusicManager.music.stop()
 	start.pressed.connect(_on_start_pressed)
 	hints.pressed.connect(_on_hints_pressed)
@@ -37,6 +39,8 @@ func _on_quit_pressed() -> void:
 		var music = get_tree().root.get_node("MusicPlayer")
 		music.stop()
 		music.queue_free()
+	if act_3_quest.quest_statuss == act_3_quest.QuestStatus.started:
+			act_3_quest.reach_goal()
 	get_tree().change_scene_to_file("res://Scenes/Office.tscn")
 	MusicManager.music.play()
 func _on_objective_pressed() -> void:

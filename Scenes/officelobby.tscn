@@ -14071,6 +14071,21 @@ quest_descrip = "Go to the office"
 reached_goal_text = "Go talk to Jordan"
 metadata/_custom_type_script = "uid://6hy1frth2fjb"
 
+[node name="Act 3 quest" type="Node2D" parent="."]
+script = ExtResource("15_tryux")
+quest_name = "Act 3"
+quest_descrip = "Go to pc"
+reached_goal_text = "Go to Ronnie"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
+[node name="Final quest" type="Node2D" parent="."]
+script = ExtResource("15_tryux")
+quest_name = "Final"
+quest_descrip = "Go to home"
+reached_goal_text = "Sleep"
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
 [node name="password" type="Area2D" parent="."]
 position = Vector2(784, 345)
 
@@ -14079,6 +14094,7 @@ position = Vector2(6, -16)
 shape = SubResource("CircleShape2D_tryux")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("16_3y2kf")]
 visible = true

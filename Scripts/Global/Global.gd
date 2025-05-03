@@ -63,9 +63,9 @@ var act_3_done:bool = false
 var act2_cutscene_done := false
 var minigame_done:bool = false
 var act3minigame_done:bool =false
-var act_1_seen = false
-var act_2_seen = false
-var act_3_seen = false
+var act_1_seen: bool
+var act_2_seen: bool
+var act_3_seen: bool
 var act_2_cut_done:bool = false
 #Quest Global progression 
 var quest_stage_index = 0

@@ -12,15 +12,22 @@ extends Node2D
 var global_alex = false
 var triggered= false
 var awaiting_act3_done := false
+@onready var act_3_quest: Quest_hehe = $"Act 3 quest"
+@onready var final_quest: Quest_hehe = $"Final quest"
 
 
 func _ready() -> void:
-	if Global.act_1_done == true or Global.act_1_seen == false: 
+	print(Global.act_1_done)
+	print(Global.act_1_seen)
+	if Global.act_1_done == true and Global.act_1_seen == false:
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
 		act_2_quest.start_quest()
-
+		Global.act_1_seen = true
+		
 	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
+	if act_3_quest.should_show_quest_ui():
 		Qbox.get_node("Questbox").visible = true
 	Dialogic.timeline_ended.connect(_on_timeline_ended)  # Add this line
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -84,6 +91,7 @@ func _on_timeline_ended():
 
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
+		final_quest.start_quest()
 	else:
 		# Existing timeline logic (like for password dialog)
 		$move/CollisionShape2D.disabled = false
@@ -142,14 +150,16 @@ func _on_dialog_ended() -> void:
 	player.set_can_move(true)
 
 func _on_interact2() -> void:
-	if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
-			quest_hehe.reach_goal()
-			quest_hehe.QuestStatus.reach_goal
-			quest_hehe.finish_quest()
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = false
 	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled_instruction.tscn")
 		
 func _on_interact():
 	if Global.act_3_done:
+		if act_3_quest.quest_statuss == act_3_quest.QuestStatus.started:
+			act_3_quest.reach_goal()
+		if quest_hehe.should_show_quest_ui():
+			Qbox.get_node("Questbox").visible = false
 		Global.set_previous_scene("res://Scenes/officelobby.tscn", $Player.global_position)
 		Global.next_scene = "computer"
 		Global.transition_scene = true
@@ -163,6 +173,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 func _on_interactable_body_entered(body: Node2D) -> void:
 	if Global.act_3_done == true :
+	
 		Global.previous_scene_path = get_tree().current_scene.scene_file_path
 		get_tree().change_scene_to_file("res://Scenes/pc_game_password.tscn")
 		
@@ -184,11 +195,16 @@ func _on_move_body_entered(body: Node2D) -> void:
 
 func _on_minigame_done_body_entered(body: Node2D) -> void:
 	if body is Player and Global.minigame_done and not Global.act3minigame_done:
+		if act_3_quest.quest_statuss == act_3_quest.QuestStatus.started:
+			act_3_quest.finish_quest()
 		MusicManager.music.play()
 		Dialogic.start("ronnie_thanks")
 		awaiting_act3_done = true
 		var player = get_node("Player")
 		player.set_can_move(false)
+		
+		
+		
 		
 
 	

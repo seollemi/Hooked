@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var hack_time_label: RichTextLabel = $HackTimeEstimate
 @onready var current_password_label: RichTextLabel = $CurrentPassword
 @onready var continue_button: TextureButton = $ContinueButton
+@onready var act_3_quest: Quest_hehe = $"../Act 3 quest"
 
 func _ready() -> void:
 	_update_password_display()
@@ -176,4 +177,6 @@ func _on_continue_pressed() -> void:
 		music.queue_free()
 	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
 	MusicManager.music.play()
+	if act_3_quest.quest_statuss == act_3_quest.QuestStatus.started:
+			act_3_quest.reach_goal()
 	get_tree().change_scene_to_file("res://Scenes/Office.tscn")

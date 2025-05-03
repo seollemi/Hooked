@@ -9,6 +9,7 @@ var pressed_buttons: Array[Button] = []
 var letter_buttons: Array[Button] = []
 @onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 @onready var exit_confirm_dialog = $ExitConfirmDialog  # Adjust the path as needed
+@onready var quest_hehe: Quest_hehe = $Quest_hehe
 
 var button_1: Button
 var button_2: Button
@@ -32,6 +33,8 @@ var music_player: AudioStreamPlayer  # Declare the music player
 
 
 func _ready():
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = false
 	# Shuffle both groups independently
 	change_letters.shuffle()
 	management_letters.shuffle()
@@ -116,6 +119,10 @@ func _on_SubmitButton_pressed():
 	if Global.act_1_done == true and Global.act_1_seen == false: 
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
+	if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe.reach_goal()
+			quest_hehe.QuestStatus.reach_goal
+			quest_hehe.finish_quest()
 	else:
 		output_label.text = "Incorrect. Try again!"
 		_reset_and_shuffle()
@@ -153,6 +160,7 @@ func _unhandled_input(event):
 			last_button.disabled = false
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
+
 
 func _on_exit_confirm_dialog_confirmed() -> void:
 	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c30ahwsiaqioh"]
+[gd_scene load_steps=9 format=3 uid="uid://c30ahwsiaqioh"]
 
 [ext_resource type="Script" uid="uid://ct3suhsf0l2fu" path="res://Scripts/MiniGameScripts/canvas_layer.gd" id="1_m8psw"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_m8psw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bb3gwc27s1vku" path="res://MiniGameAssets/smallredbutton.png" id="5_0er1l"]
 [ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="5_0pri5"]
 [ext_resource type="Texture2D" uid="uid://8rl6u5wr6vsy" path="res://MiniGameAssets/test.png" id="6_0er1l"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="7_dc0ht"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0er1l"]
 draw_center = false
@@ -204,3 +205,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m8psw")
 theme_override_font_sizes/font_size = 150
 text = "Continue"
+
+[node name="Act 3 quest" type="Node2D" parent="."]
+script = ExtResource("7_dc0ht")
+quest_name = "Act 3"
+quest_descrip = "Go to your pc"
+reached_goal_text = "Go to office lobby"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
