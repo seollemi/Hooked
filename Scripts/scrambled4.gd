@@ -58,10 +58,7 @@ func _ready():
 	if submit_button:
 		submit_button.pressed.connect(_on_SubmitButton_pressed)
 
-	# Play the background music (if it’s not already playing)
-	if music_player:
-		music_player.play()
-		
+
 	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
 	
 	if shuffle_button:
@@ -111,10 +108,8 @@ func _unhandled_input(event):
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
 
-
-
-
 func _on_exit_confirm_dialog_confirmed() -> void:
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
 	MusicManager.music.play()
 	var scene = load("res://Scenes/training.tscn")
 	var new_scene = scene.instantiate()

@@ -14,7 +14,7 @@ func _ready() -> void:
 	if Global.act_1_done and not Global.act_1_seen:
 		full_text = "ACT 1 DONE....."
 		Global.act_1_seen = true
-	elif Global.act_2_done and not Global.act_2_seen:
+	elif Global.act_2_cut_done and not Global.act_2_seen:
 		full_text = "ACT 2 DONE....."
 		Global.act_2_seen = true
 	elif Global.act3minigame_done == true and not Global.act_3_seen:

@@ -61,7 +61,6 @@ func _ready():
 
 	submit_button = $SubmitButton
 	output_label = $OutputLabel
-	music_player = $MusicPlayer
 
 	# Assign CHANGE letters to first 6 buttons
 	var change_buttons = [button_1, button_2, button_3, button_4, button_5, button_6]
@@ -83,9 +82,6 @@ func _ready():
 	if submit_button:
 		submit_button.pressed.connect(_on_SubmitButton_pressed)
 
-	# Play background music
-	if music_player:
-		music_player.play()
 
 	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
 	
@@ -152,8 +148,6 @@ func _unhandled_input(event):
 		if pressed_buttons.size() > 0:
 			var last_button = pressed_buttons.pop_back()
 			last_button.disabled = false
-			MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
-			MusicManager.music.play()
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
 

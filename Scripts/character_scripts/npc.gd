@@ -57,7 +57,7 @@ func start_dialog():
 	dialog_started = true  # Set that dialog already happened
 	print("🕒 Waiting before starting conversation...")
 
-	await get_tree().create_timer(1).timeout  # ✅ Wait 1.5 seconds
+	await get_tree().create_timer(0.5).timeout  # ✅ Wait 1.5 seconds
 	
 	print("🗣️ NPC: Starting conversation...")
 	Dialogic.start("NPC_TALK_ACT1")

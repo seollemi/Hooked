@@ -25,7 +25,6 @@ var output_label: Label
 var music_player: AudioStreamPlayer 
 
 func _ready():
-	MusicManager.music.stop()
 	scrambled_letters.shuffle()
 	$Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$Label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -47,7 +46,6 @@ func _ready():
 	button_13 = $HBoxContainer/Button13
 	submit_button = $SubmitButton
 	output_label = $OutputLabel
-	music_player = $MusicPlayer  # Assign the music player node
 	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
 	
 	if shuffle_button:
@@ -70,9 +68,6 @@ func _ready():
 	if submit_button:
 		submit_button.pressed.connect(_on_SubmitButton_pressed)
 
-	# Play the background music (if it’s not already playing)
-	if music_player:
-		music_player.play()
 
 func _on_LetterButton_pressed(button: Button):
 	if button:  # Check if button is not null
@@ -123,8 +118,9 @@ func _unhandled_input(event):
 
 
 func _on_exit_confirm_dialog_confirmed() -> void:
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
 	MusicManager.music.play()
-	var scene = load("res://Scenes/training.tscn")
+	var scene = load("res://Scenes/officelobby.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.queue_free()
@@ -134,10 +130,6 @@ func _on_exit_confirm_dialog_confirmed() -> void:
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
 		player.position = Vector2(471, 252)
-
-
-
-
 
 func _on_ShuffleButton_pressed() -> void:
 	shuffle_button.disabled = true

@@ -1,7 +1,7 @@
 extends Node2D
 @onready var interactable: Area2D = $interactable
 @onready var player: Player = $Player
-
+@onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 
 func _ready() -> void:
 	interactable.interact = _on_interact
@@ -11,7 +11,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	change_scene()
-
+	
+	
 func _on_interact():
 	Global.next_scene = "computer"
 	Global.transition_scene = true
@@ -30,7 +31,7 @@ func change_scene():
 # ✅ Trigger dialog when player enters
 func _on_act_2_intro_body_entered(body: Node2D) -> void:
 	if not Global.act_2_done:
-		player.can_move = false  # Freeze player during dialog
+		player.can_move = false  
 		Dialogic.start("Malware_discussion")
 
 func _on_dialogic_signal(event_name: String) -> void:
@@ -42,7 +43,7 @@ func _on_dialogic_signal(event_name: String) -> void:
 
 	if event_name == "act2_intro_done" and not Global.act_2_done:
 		print("🎬 act2_intro_done signal received — starting cutscene movement.")
-
+	
 		$act2_cutscene/CollisionShape2D.disabled = false
 		player.can_move = false
 		player.cutscene_move([
@@ -51,7 +52,14 @@ func _on_dialogic_signal(event_name: String) -> void:
 			Vector2(375, 22),
 			Vector2(451, 22)
 		] as Array[Vector2])
-		
+		await get_tree().create_timer(4.0).timeout
+	if event_name == "act_1_done":
+		Global.act_2_done = true
+		Global.act_2_cut_done = true
+	if Global.act_2_cut_done == true and Global.act_2_seen == false:
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
+
 
 	else:
 				print("🛑 Skipping cutscene move — Act 2 is already done.")

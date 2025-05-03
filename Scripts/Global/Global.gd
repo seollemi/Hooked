@@ -51,16 +51,16 @@ var bridge_cutscene_done: bool = false
 var mini_game_enable: bool = false
 var collected_questions: Array = []
 var introduction_1: bool = false
-var act_1_done: bool = false
-var act_2_done: bool = false
-var act_3_done:bool = false
+var act_1_done: bool = true
+var act_2_done: bool = true
+var act_3_done:bool = true
 var act2_cutscene_done := false
 var minigame_done:bool = false
 var act3minigame_done:bool =false
-var act_1_seen = false
-var act_2_seen = false
+var act_1_seen = true
+var act_2_seen = true
 var act_3_seen = false
-
+var act_2_cut_done:bool = false
 #Quest Global progression 
 var quest_stage_index = 0
 var quest_status = 0  # Use QuestManager.QuestStatus enum values
@@ -77,11 +77,11 @@ var dialogue_played: bool = false
 
 #MINI GAME_Password_Global
 var collected_hint_ids: Array = []
-var collected_hints: int = 0 # Start at zero
-var hints_read: int = 0  # counts how many hints have been opened
+var collected_hints: int = 9 # Start at zero
+var hints_read: int = 9  # counts how many hints have been opened
 var scrolling_background: Node2D = null
 var player_points: int = 0
-var chosen_password_number: int = 1  # default 1 = Andrew
+var chosen_password_number: int = 4  # default 1 = Andrew
 var has_faded_in: bool = true
 var mini_level_1: bool = false
 var mini_level_2: bool = false

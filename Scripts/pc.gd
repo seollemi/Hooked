@@ -5,8 +5,6 @@ extends Control
 @onready var canvas_layer: CanvasLayer = $".."
 @onready var node_2d: Node2D = $"../.."
 
-\
-
 
 func _ready():
 	email_button.pressed.connect(_on_email_notif_button_pressed)

@@ -14,7 +14,6 @@ var button_3: Button
 var button_4: Button
 var submit_button: Button
 var output_label: Label
-var music_player: AudioStreamPlayer  # Declare the music player
 
 func _ready():
 	
@@ -33,7 +32,6 @@ func _ready():
 
 	submit_button = $SubmitButton
 	output_label = $OutputLabel
-	music_player = $MusicPlayer  # Assign the music player node
 
 	# Ensure all buttons exist and are properly assigned
 	var buttons = [button_1, button_2, button_3, button_4]
@@ -51,10 +49,6 @@ func _ready():
 	if submit_button:
 		submit_button.pressed.connect(_on_SubmitButton_pressed)
 
-	# Play the background music (if it’s not already playing)
-	if music_player:
-		music_player.play()
-		
 	shuffle_button = $ShuffleButton  # Adjust the path if it's inside a container
 	
 	if shuffle_button:
@@ -88,10 +82,8 @@ func _reset_and_shuffle():
 		if btn:
 			btn.text = scrambled_letters[i]
 			btn.disabled = false
-
 	output_label.text = ""
 func _unhandled_input(event):
-	MusicManager.music.play()
 	if event.is_action_pressed("BACK") and selected_word.length() > 0:
 		selected_word = selected_word.substr(0, selected_word.length() - 1)
 		output_label.text = selected_word
@@ -102,8 +94,9 @@ func _unhandled_input(event):
 	if event.is_action_pressed("exitscrambled"):
 		exit_confirm_dialog.popup_centered()
 func _on_exit_confirm_dialog_confirmed() -> void:
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
 	MusicManager.music.play()
-	var scene = load("res://Scenes/training.tscn")
+	var scene = load("res://Scenes/officelobby.tscn")
 	var new_scene = scene.instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.queue_free()

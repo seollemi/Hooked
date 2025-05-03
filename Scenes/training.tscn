@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://cl4ehyo1tg4qn"]
+[gd_scene load_steps=22 format=4 uid="uid://cl4ehyo1tg4qn"]
 
 [ext_resource type="Script" uid="uid://cct7igckji1c0" path="res://Scenes/training.gd" id="1_61lvs"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_mpd5x"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="7_hjy04"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="7_tcugj"]
 [ext_resource type="PackedScene" uid="uid://co3u003u4qd06" path="res://Scenes/Star_marker.tscn" id="8_tcugj"]
+[ext_resource type="PackedScene" uid="uid://colgwu8bb7da6" path="res://Scenes/pause_menu.tscn" id="9_1u3a2"]
+[ext_resource type="PackedScene" uid="uid://pbtd21tkdv7q" path="res://MiniGameTscn/pause_volume.tscn" id="10_6obgr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl8xy"]
 size = Vector2(17, 12.5)
@@ -2366,5 +2368,11 @@ quest_stages = Array[String](["Go talk to the marked npc", "Go to the marked pc"
 
 [node name="StarMarker" parent="." instance=ExtResource("8_tcugj")]
 position = Vector2(724, 430)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("9_1u3a2")]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("10_6obgr")]
 
 [connection signal="body_entered" from="Scene_to_office" to="." method="_on_scene_to_office_body_entered"]

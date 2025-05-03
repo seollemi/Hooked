@@ -10,3 +10,7 @@ func _on_quit_to_main_menu_pressed() -> void:
 	if pause_menu_ref:
 		pause_menu_ref.visible = true  # 🔁 Show PauseMenu again
 	queue_free()  # ✅ Remove PauseVolume
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if visible and event.is_action_pressed("pause") and not event.is_echo():
+		get_viewport().set_input_as_handled()  # 🔒 Prevent pause/escape while open

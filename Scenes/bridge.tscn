@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://nna3j176mn66"]
+[gd_scene load_steps=45 format=4 uid="uid://nna3j176mn66"]
 
 [ext_resource type="Texture2D" uid="uid://dntkub8i7o5in" path="res://world/bridge/1_Terrains_and_Fences_16x16.png" id="1_aa2wk"]
 [ext_resource type="Script" uid="uid://dep7r3rhfspsg" path="res://Scripts/outside.gd" id="1_dgpy2"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://s0pm27nivbtg" path="res://Scenes/door.tscn" id="14_vld22"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="15_dcb0v"]
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="17_dxtfm"]
+[ext_resource type="PackedScene" uid="uid://pbtd21tkdv7q" path="res://MiniGameTscn/pause_volume.tscn" id="17_j8e8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8fgab"]
 texture = ExtResource("1_aa2wk")
@@ -31970,6 +31971,8 @@ layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("13_to4tw")]
 visible = false
+
+[node name="Volume" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(295, 155)

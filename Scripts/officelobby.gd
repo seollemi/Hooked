@@ -8,7 +8,6 @@ extends Node2D
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var act_2_quest: Quest_hehe = $"Act 2 quest"
 @onready var move: Area2D = $move
-
 @onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 var global_alex = false
 var triggered= false
@@ -16,6 +15,7 @@ var awaiting_act3_done := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
 	Dialogic.timeline_ended.connect(_on_timeline_ended)  # Add this line
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	interactable.interact = _on_interact
@@ -69,9 +69,9 @@ func _ready() -> void:
 
 
 func start_dialog():
-	
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	Dialogic.start("password")
+	MusicManager.music.stream_paused = true
 	player.can_move = false	
 
 func _on_timeline_ended():
@@ -190,7 +190,11 @@ func _on_minigame_done_body_entered(body: Node2D) -> void:
 		MusicManager.music.play()
 		Dialogic.start("ronnie_thanks")
 		awaiting_act3_done = true
+		var player = get_node("Player")
+		player.set_can_move(false)
+		
 
+	
 func _on_password_body_entered(body: Node2D) -> void:
 	if body is Player and Global.act_3_done:
 		body.cutscene_move([
