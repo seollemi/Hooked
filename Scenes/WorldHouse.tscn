@@ -3333,5 +3333,13 @@ interact_name = "E to interact"
 position = Vector2(30, 18)
 shape = SubResource("RectangleShape2D_ibgkm")
 
+[node name="Final quest" type="Node2D" parent="."]
+script = ExtResource("18_ibgkm")
+quest_name = "Final"
+quest_descrip = "Go to home"
+reached_goal_text = "Sleep"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"
+
 [connection signal="body_entered" from="Door_outside" to="." method="_on_door_outside_body_entered"]
 [connection signal="body_entered" from="interactable_End\'" to="." method="_on_interactable_end_body_entered"]

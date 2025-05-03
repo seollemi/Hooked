@@ -94,7 +94,7 @@ func _on_timeline_ended():
 
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
-		final_quest.start_quest()
+		
 	else:
 		# Existing timeline logic (like for password dialog)
 		$move/CollisionShape2D.disabled = false
@@ -205,6 +205,7 @@ func _on_minigame_done_body_entered(body: Node2D) -> void:
 		awaiting_act3_done = true
 		var player = get_node("Player")
 		player.set_can_move(false)
+		final_quest.start_quest()
 		
 		
 		

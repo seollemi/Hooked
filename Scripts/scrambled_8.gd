@@ -34,7 +34,7 @@ var music_player: AudioStreamPlayer  # Declare the music player
 
 func _ready():
 	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = false
+		Qbox.get_node("Questbox").visible = true
 	# Shuffle both groups independently
 	change_letters.shuffle()
 	management_letters.shuffle()

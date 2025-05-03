@@ -1,6 +1,6 @@
 [music path="res://sounds/4_Dramatic_1_Master.mp3" fade="0.0" volume="0.0"]
 James (James_talking): Hey Alex! You look serious—everything okay?
-alex: Yeah, just wanted to warn you. I got a phishing email this morning. It almost fooled me.
+alex (alex_talking): Yeah, just wanted to warn you. I got a phishing email this morning. It almost fooled me.
 James (James_talking): What? What kind of email?
 alex (alex_no): It claimed to be from my bank, saying there was suspicious activity on my account. It asked me to click a link and log in.
 James (James_talking): Did you click it?

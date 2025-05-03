@@ -51,6 +51,7 @@ class_name SceneData
 @export var npc_event_done: bool = false
 @export var npc_evnt2_done: bool = false
 @export var npc_mark:bool = false
+@export var introduction_mark: bool = false
 
 # Quest-related data
 @export var quest_statuss: int

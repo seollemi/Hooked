@@ -46,24 +46,24 @@ label Dialog_Choice
 	[signal arg="Q_3"]
 	jump Dialog_Choice
 - ask about how to protect information
-	James: So if I just hide important files in a deep folder, hackers won't find them, right?
-	It’s not that simple, James. Hiding files doesn’t actually protect them. Hackers can scan your whole system and find hidden files easily.
-	James: Then... what really protects information?
-	We use something called encryption. It's like turning your information into secret code that only the right person can unlock.
-	James: Secret code? How does that work?
-	When you encrypt a file, the real information gets scrambled into unreadable data. Unless you have the right 'key,' you can't turn it back into something understandable.
-	James: So it’s like locking a treasure chest, and only someone with the right key can open it?
-	Exactly. Even if a hacker steals the chest, without the key, it's useless to them.
-	James: What about sending messages? How do you know they aren’t changed on the way?
-	That's where digital signatures come in. A digital signature is like an official stamp that proves the message came from the real sender and wasn't tampered with.
-	James: So if someone fakes a message, the missing signature would expose it?
-	Right. Digital signatures protect both authenticity and integrity — meaning the message is real and unchanged.
-	James: What about certificates?
-	Certificates are like digital IDs. They prove a website or a person is trustworthy.
-	James: So encryption protects privacy, signatures protect trust, and certificates prove identity
-	Exactly. That’s why secure websites use HTTPS — the 'S' means the site is encrypted and certified.
-	James: Wow. It’s more complex than just 'hiding' things.
-	Exactly. Real protection needs real tools — and real understanding.
+	James (James_talking): So if I just hide important files in a deep folder, hackers won't find them, right?
+	npc: It’s not that simple, James. Hiding files doesn’t actually protect them. Hackers can scan your whole system and find hidden files easily.
+	James (James_talking): Then... what really protects information?
+	npc: We use something called encryption. It's like turning your information into secret code that only the right person can unlock.
+	James (James_talking): Secret code? How does that work?
+	npc: When you encrypt a file, the real information gets scrambled into unreadable data. Unless you have the right 'key,' you can't turn it back into something understandable.
+	James (James_talking): So it’s like locking a treasure chest, and only someone with the right key can open it?
+	npc: Exactly. Even if a hacker steals the chest, without the key, it's useless to them.
+	James (James_talking): What about sending messages? How do you know they aren’t changed on the way?
+	npc: That's where digital signatures come in. A digital signature is like an official stamp that proves the message came from the real sender and wasn't tampered with.
+	James (James_talking): So if someone fakes a message, the missing signature would expose it?
+	npc: Right. Digital signatures protect both authenticity and integrity — meaning the message is real and unchanged.
+	James (James_talking): What about certificates?
+	npc: Certificates are like digital IDs. They prove a website or a person is trustworthy.
+	James (James_talking): So encryption protects privacy, signatures protect trust, and certificates prove identity
+	npc: Exactly. That’s why secure websites use HTTPS — the 'S' means the site is encrypted and certified.
+	James (James_talking): Wow. It’s more complex than just 'hiding' things.
+	npc: Exactly. Real protection needs real tools — and real understanding.
 	[signal arg="Q_4"]
 	jump Dialog_Choice
 - Exit

@@ -32136,7 +32136,6 @@ polygon = PackedVector2Array(1279, -303, 1280, 592, 27, 593, 46, 575, 46, 174, 6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("13_to4tw")]
 

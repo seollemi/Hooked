@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://l874jltt1xlj"]
+
+[ext_resource type="Script" uid="uid://d1atsf25f3w8" path="res://Scripts/Global/ui_manager.gd" id="1_cjn2t"]
+
+[node name="UiManager" type="CanvasLayer"]
+script = ExtResource("1_cjn2t")
+
+[node name="SaveConfirmDialog" type="AcceptDialog" parent="."]
+
+[node name="LoadErrorDialog" type="AcceptDialog" parent="."]
+auto_translate_mode = 1

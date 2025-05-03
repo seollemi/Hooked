@@ -4,6 +4,7 @@ extends Node2D
 @onready var interactable: Area2D = $interactable
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var interactable_end_: Area2D = $"interactable_End'"
+@onready var final_quest: Quest_hehe = $"Final quest"
 
 func _ready() -> void:
 	interactable_end_.interact = _on_interact1
@@ -69,7 +70,8 @@ func _on_interact1():
 
 func _on_dialogic_signal(End: String) -> void:
 	print("📨 Received signal:", End)
-
 	if Global.act_3_done == true:
+		if final_quest.quest_statuss == final_quest.QuestStatus.started:
+			final_quest.finish_quest()
 		get_tree().change_scene_to_file("res://Scenes/Ending_mini_game/Ending.tscn")
 		print("✅ Mini-game is now enabled!")

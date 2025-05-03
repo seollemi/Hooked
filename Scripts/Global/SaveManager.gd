@@ -53,7 +53,7 @@ func save_game():
 	data.npc_event_done = Global.npc_event_done
 	data.npc_evnt2_done = Global.npc_evnt2_done
 	data.npc_mark = Global.npc_mark
-
+	data.introduction_mark = Global.introduction_mark
 
 
 	data.quest_statuss = int(Global.quest_status)
@@ -63,6 +63,7 @@ func save_game():
 
 	
 	ResourceSaver.save(data, "user://Player_save.tres")
+	UiManager.show_save_confirmation()
 	print("Saved game!")
 
 func load_game():
@@ -109,6 +110,7 @@ func load_game():
 		Global.npc_event_done = data.npc_event_done
 		Global.npc_evnt2_done = data.npc_evnt2_done
 		Global.npc_mark = data.npc_mark
+		Global.introduction_mark  = data.introduction_mark
 
 		Global.quest_status = data.quest_statuss
 		Global.quest_stage_index = data.current_quest_stage
@@ -119,3 +121,4 @@ func load_game():
 		get_tree().change_scene_to_file(data.current_scene_path)
 	else:
 		print("No saved data found or failed to load!")
+		UiManager.show_load_error()
