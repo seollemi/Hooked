@@ -72,6 +72,7 @@ expand_mode = 1
 
 [node name="ExitConfirmDialog" type="ConfirmationDialog" parent="."]
 auto_translate_mode = 1
+dialog_text = "Confirm to exit?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -148,3 +149,5 @@ offset_top = 528.0
 offset_right = 215.0
 offset_bottom = 579.0
 text = "Shuffle"
+
+[connection signal="confirmed" from="ExitConfirmDialog" to="." method="_on_exit_confirm_dialog_confirmed"]

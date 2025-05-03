@@ -69,6 +69,7 @@ texture = ExtResource("4_b00yp")
 expand_mode = 1
 
 [node name="ExitConfirmDialog" type="ConfirmationDialog" parent="."]
+dialog_text = "Confirm to exit?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0

@@ -31974,7 +31974,7 @@ layer = 3
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Volume" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
+[node name="Volume2" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
 
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2(295, 155)
