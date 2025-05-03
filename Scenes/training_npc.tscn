@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhhwgipsak3bk"]
+[gd_scene load_steps=11 format=3 uid="uid://dhhwgipsak3bk"]
 
 [ext_resource type="Script" uid="uid://b4e3kqr0w8y86" path="res://Scripts/training_npc.gd" id="1_tqi88"]
 [ext_resource type="Texture2D" uid="uid://h70xl8snpdr1" path="res://Player/character sprites/Amelia_idle_anim_16x16.png" id="2_v7wi4"]
@@ -53,6 +53,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tqi88"]
+size = Vector2(5, 22)
+
 [node name="training_npc" type="CharacterBody2D"]
 script = ExtResource("1_tqi88")
 
@@ -61,3 +64,8 @@ position = Vector2(295, 148)
 sprite_frames = SubResource("SpriteFrames_tfhm3")
 animation = &"idle_right"
 frame_progress = 0.963307
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+process_physics_priority = 1
+position = Vector2(294.5, 153)
+shape = SubResource("RectangleShape2D_tqi88")
