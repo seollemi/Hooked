@@ -7,6 +7,7 @@ var cutscene_played := false
 
 
 func _ready() -> void:
+	$Area2D/CollisionShape2D.disabled = true
 	if quest_hehe.should_show_quest_ui():
 		Qbox.get_node("Questbox").visible = true
 	print("Loaded quest name: ", Global.current_quest_name)
@@ -21,7 +22,7 @@ func _ready() -> void:
 		
 	else:
 		$Area2D2/CollisionShape2D.disabled=false
-
+	Dialogic.connect("signal_event", Callable(self, "_on_dialogic_signal"))
 func _process(delta: float) -> void:
 	change_scene()
 
@@ -87,10 +88,26 @@ func _on_dialogue_ended(body: Player) -> void:
 # Ensure your global script is autoloaded as "Global"
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body is Player and not Global.npc_mark:
-		Global.npc_mark = true
+		
 		body.can_move = false   # Disable player movement
 		Dialogic.start("act1")
 		# Connect to Dialogic's signal to re-enable movement after dialogue
 		Dialogic.timeline_ended.connect(_on_dialogue_ended.bind(body))
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe_p_2.reach_goal()
+			
+func _on_dialogic_signal(event_name: String) -> void:
+	if event_name in ["Q1", "Q2", "Q3", "Q4"]:
+		_collect_question(event_name)
+
+func _collect_question(question_name: String) -> void:
+	if not question_name in Global.collected_questions:
+		Global.collected_questions.append(question_name)
+		print("✅ Collected:", question_name)
+
+	if "Q1" in Global.collected_questions and \
+	   "Q2" in Global.collected_questions and \
+	   "Q3" in Global.collected_questions and \
+	   "Q4" in Global.collected_questions:
+		Global.introduction_1 = true
+		$Area2D/CollisionShape2D.disabled = false  # ✅ Enable collision here

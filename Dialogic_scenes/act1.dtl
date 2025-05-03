@@ -4,12 +4,14 @@ mark (Mark_talking): Wanna ask about anything in particular? I've got time."
 	mark (Mark_talking): "Think of it like this\: we’re living in a world where almost everything’s connected—phones, hospitals, even traffic lights. Cybersecurity is what keeps all that safe from people who want to mess with it.
 	mark (Mark_talking): It’s not just about antivirus software anymore. It’s about building defenses around systems, protecting data, and making sure people don’t fall for scams or leaks.\
 Whether it's a huge corporation or just your personal account, if it’s online, someone out there probably wants access to it."
+	[signal arg="Q1"]
 	jump 
 - “Why do companies care so much about data?”
 	James (James_talking): “Why do companies care so much about data?”
 	mark (Mark_talking): "Because data is basically the heart of every modern company. It’s not just names and emails—it’s strategies, payments, health records, legal stuff. If that data gets stolen, it’s not just an inconvenience
 	mark (Mark_talking): it can destroy reputations, tank stock prices, and even shut a business down.\
 I mean, imagine if someone leaked your school’s entire student database online. That’s the kind of damage companies are trying to avoid every day."
+	[signal arg="Q2"]
 	jump 
 - “Who’s usually behind these cyber attacks?”
 	James: “Who’s usually behind these cyber attacks?”
@@ -19,12 +21,14 @@ Some are just bored teens trying to break stuff for fun. Others? Full-on crimina
 	mark (Mark_talking): Black hats break into systems illegally for personal gain — stealing data, spreading malware, or causing damage. They don't have permission, and their goal is usually profit, revenge, or just causing chaos.
 	mark (Mark_talking): White hats are the good guys. They’re ethical hackers who are hired to find vulnerabilities before black hats do. They work legally, often for companies, to help secure networks.
 	mark (Mark_talking): Gray hats are in between. They might hack without permission, but they usually don’t intend harm. They sometimes inform the organization about the flaw they found — but since they didn’t have permission, it’s still illegal.
+	[signal arg="Q3"]
 	jump 
 - “Is cyberwarfare actually real?”
 	James (James_talking): “Is cyberwarfare actually real?”
 	mark (Mark_talking): "More real than most people think.\
 Governments are launching cyber attacks like digital missiles—disabling infrastructure, stealing secrets, disrupting communication. It’s cheaper than actual war and leaves fewer traces.
 	mark (Mark_talking): There was a case where a power plant got shut down remotely—just from someone typing on a keyboard halfway across the world. That’s not science fiction. That’s right now."
+	[signal arg="Q4"]
 	jump 
 - Im done listening for now
 	mark (Mark_talking): Of course, James. Don’t hesitate to reach out if you need further assistance.
