@@ -37,7 +37,8 @@ func _on_quit_pressed() -> void:
 	is_paused = false
 	Qbox.get_node("Questbox").visible = false
 	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
-
+	MusicManager.music.stream = preload("res://sounds/1_Menu_Master.mp3")
+	MusicManager.music.play()
 func _on_save_pressed() -> void:
 	SaveManager.save_game()
 	

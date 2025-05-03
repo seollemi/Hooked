@@ -9,6 +9,7 @@ func _ready():
 func _on_quit_to_main_menu_pressed() -> void:
 	if pause_menu_ref:
 		pause_menu_ref.visible = true  # 🔁 Show PauseMenu again
+	
 	queue_free()  # ✅ Remove PauseVolume
 	
 func _unhandled_input(event: InputEvent) -> void:

@@ -18,3 +18,5 @@ func _on_quit_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	SaveManager.load_game()
+	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+	MusicManager.music.play()
