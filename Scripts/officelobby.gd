@@ -36,8 +36,7 @@ func _ready() -> void:
 	act_1.interact = _on_interact2
 	Dialogic.timeline_ended.connect(_on_dialog_ended)
 	
-	if Global.introduction_1 == true:
-		$StarMarker.position = Vector2(601,367)
+
 	if Global.player_PC_Location != null:
 		var player = $Player  # Update the path to your Player node
 		if player:
@@ -45,15 +44,19 @@ func _ready() -> void:
 			
 	$move/CollisionShape2D.disabled=true
 
+	if Global.introduction_mark==true:
+		$StarMarker.position = Vector2(752,523)
 		
 	if Global.introduction_1==true:
 		$act1/CollisionShape2D.disabled=false
-		$StarMarker.position = Vector2(840,322)
+		$StarMarker.position = Vector2(600,352)
 	else:
 		$act1/CollisionShape2D.disabled=true
 	
 	if Global.act_1_done == true: 
 		$act1/CollisionShape2D.disabled = true
+		$StarMarker.position = Vector2(840,318)
+		
 	else:
 		print("yello")
 	if Global.minigame_done==true:
