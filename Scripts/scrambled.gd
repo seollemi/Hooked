@@ -25,6 +25,7 @@ var output_label: Label
 var music_player: AudioStreamPlayer 
 
 func _ready():
+	exit_confirm_dialog.dialog_text = "Confirm to exit?"
 	scrambled_letters.shuffle()
 	$Label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	$Label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -129,7 +130,7 @@ func _on_exit_confirm_dialog_confirmed() -> void:
 	# Move the player or object to (471, 252)
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
-		player.position = Vector2(471, 252)
+		player.position = Vector2(315, 165)
 
 func _on_ShuffleButton_pressed() -> void:
 	shuffle_button.disabled = true
