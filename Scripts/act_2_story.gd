@@ -1,5 +1,5 @@
 extends Control
-
+@onready var act_2_quest: Quest_hehe = $"../../Act 2 quest"
 var dialog_started := false
 @onready var restoring_label = $TextureRect/black/anim_text
 @onready var bad_end = $TextureRect/red/bad_end
@@ -39,5 +39,9 @@ func _on_dialogic_end():
 	MusicManager.music.play()
 	Global.teleport_back = true
 	Global.player_PC_Location = Vector2(450, 22)
+	if act_2_quest.quest_statuss == act_2_quest.QuestStatus.started:
+			act_2_quest.visible = false
+			act_2_quest.reach_goal()
 	ChangeScene.change_scene_anim("res://Scenes/Office.tscn")
+	act_2_quest.visible = true
  

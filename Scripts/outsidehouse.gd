@@ -1,5 +1,6 @@
 extends Node2D
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
+@onready var player: Player = $Player
 
 func _ready() -> void:
 	
@@ -13,8 +14,14 @@ func _ready() -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(MusicManager.music, "volume_db", 0, 2.5)  # Fade in to normal volume in 2.5s
 	
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
+	if Global.quest_status != quest_hehe.QuestStatus.available:
+		$Quest_hehe.update_quest_ui()
+			
 func _process(delta: float) -> void:
 	change_scene()
+	
 
 func _on_door_inside_body_entered(body: Node2D) -> void:
 	if body is Player:

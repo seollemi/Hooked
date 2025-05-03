@@ -1,10 +1,16 @@
 extends Node
 
+
+var player: Node = null
+
+
 var current_scene = "WorldHouse"
 var next_scene = ""  # NEW: Store target scene name
 var transition_scene = false
 var last_player_position: Vector2 = Vector2.ZERO
 var outside_scene : PackedScene = null
+
+
 
 #passwordgame to officelobby
 var ronnie_password:bool = false
@@ -63,7 +69,10 @@ var act_3_seen = false
 var act_2_cut_done:bool = false
 #Quest Global progression 
 var quest_stage_index = 0
-var quest_status = 0  # Use QuestManager.QuestStatus enum values
+var quest_status = 0
+var quest_description : String = ""
+var current_quest_name: String = ""
+
 
 var Star_pos = Vector2(601, 367)
 

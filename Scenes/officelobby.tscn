@@ -14060,13 +14060,15 @@ position = Vector2(752, 523)
 position = Vector2(0, -1)
 script = ExtResource("15_tryux")
 quest_name = "Act 1 "
+quest_descrip = "Go to the training room"
+reached_goal_text = "Talk to the npc"
 quest_statuss = 1
-quest_stages = Array[String](["Go to the training room", "Go talk to the marked npc"])
 
 [node name="Act 2 quest" type="Node2D" parent="."]
 script = ExtResource("15_tryux")
 quest_name = "Act 2"
-quest_stages = Array[String](["Go to the office type shi"])
+quest_descrip = "Go to the office"
+reached_goal_text = "Go talk to Jordan"
 metadata/_custom_type_script = "uid://6hy1frth2fjb"
 
 [node name="password" type="Area2D" parent="."]
@@ -14083,6 +14085,12 @@ visible = false
 
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("17_8glwk")]
 visible = false
+layer = 3
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource("16_3y2kf")]
+
+[node name="Volume" parent="CanvasLayer" instance=ExtResource("17_8glwk")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

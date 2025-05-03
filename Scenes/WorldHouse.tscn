@@ -3317,11 +3317,13 @@ layer = 3
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("17_5i8lh")]
 
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("18_qc338")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Quest_hehe" type="Node2D" parent="."]
 script = ExtResource("18_ibgkm")
 quest_name = "Act 1 "
-quest_stages = Array[String](["Go outside", "Go to main city", "Go to the office"])
+quest_descrip = "Go outside"
+reached_goal_text = "Go to main city"
 
 [node name="interactable_End\'" parent="." instance=ExtResource("16_ft7ms")]
 position = Vector2(261, 66)

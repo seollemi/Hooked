@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://nx3r5ag26aix"]
+[gd_scene load_steps=22 format=3 uid="uid://nx3r5ag26aix"]
 
 [ext_resource type="Script" uid="uid://dk3ibh2v67gvj" path="res://Scripts/act_2_story.gd" id="1_5l0yw"]
 [ext_resource type="Texture2D" uid="uid://1a6ev7vvnn6w" path="res://Image for Pc/Email_notif.png" id="2_cvplc"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://c6dkpsnbo8egm" path="res://sounds/6_Stinger_Victory_1_Master.mp3" id="9_3qoqe"]
 [ext_resource type="Script" uid="uid://cehes4vs8sl2k" path="res://Scripts/bad_end.gd" id="9_ogogn"]
 [ext_resource type="AudioStream" uid="uid://brjfl7q8nowul" path="res://sounds/5_Dramatic_2_Master.mp3" id="10_3qoqe"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="14_mye4q"]
 
 [sub_resource type="Theme" id="Theme_avr8o"]
 
@@ -319,3 +320,11 @@ stream = ExtResource("9_3qoqe")
 unique_name_in_owner = true
 position = Vector2(160, 85)
 stream = ExtResource("10_3qoqe")
+
+[node name="Act 2 quest" type="Node2D" parent="."]
+script = ExtResource("14_mye4q")
+quest_name = "Act 2"
+quest_descrip = "Go talk to Jordan"
+reached_goal_text = "Go to your pc"
+quest_statuss = 1
+metadata/_custom_type_script = "uid://6hy1frth2fjb"

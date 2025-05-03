@@ -8,6 +8,7 @@ James (James_talking): Something’s wrong. I should double-check this before cl
 	Jordan (Jordan_talking): We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan (Jordan_talking): Hey, team! Be on alert. We detected a phishing attempt targeting employees. If you get any unusual login requests, report them ASAP.
 	Jordan (Jordan_talking): Good catch, James. I'll send this to the IT department and report it right away. The sooner they flag it, the less damage the attackers can do.
+	[signal arg="act_2_done"]
 	[signal arg="Dialog_IT"]
 	[signal arg="Game_enable"]
 	[signal arg="act_1_done"]
@@ -24,6 +25,7 @@ James (James_talking): Something’s wrong. I should double-check this before cl
 	Jordan (Jordan_talking): We've been seeing a lot of those lately — fake links pretending to be from the boss or IT
 	Jordan (Jordan_talking): I'll send this to the IT department and report it right away. The sooner they flag it, the less damage the attackers can do
 	[signal arg="Game_enable"]
+	[signal arg="act_2_done"]
 	[signal arg="Dialog_IT"]
 	[signal arg="act_1_done"]
 [music fade="0.0" volume="0.0"]

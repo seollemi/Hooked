@@ -8,7 +8,8 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_dialog_ended)
-	
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
 
 func _on_interact() -> void:
 	var player = get_node("Player")

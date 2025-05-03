@@ -8,6 +8,11 @@ extends Node2D
 func _ready() -> void:
 	interactable_end_.interact = _on_interact1
 	interactable.interact = _on_interact
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
+		
+	if Global.quest_status != quest_hehe.QuestStatus.available:
+		$Quest_hehe.update_quest_ui()
 	if not Dialogic.signal_event.is_connected(_on_dialogic_signal):
 		Dialogic.signal_event.connect(_on_dialogic_signal)
 	if Global.game_first_loadin == true:

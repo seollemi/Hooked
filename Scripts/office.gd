@@ -2,12 +2,19 @@ extends Node2D
 @onready var interactable: Area2D = $interactable
 @onready var player: Player = $Player
 @onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
+@onready var act_2_quest: Quest_hehe = $"Act 2 quest"
 
 func _ready() -> void:
 	interactable.interact = _on_interact
+	if act_2_quest.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
 	if not Dialogic.signal_event.is_connected(_on_dialogic_signal):
 		Dialogic.signal_event.connect(_on_dialogic_signal)
 		print("🔌 Dialogic signal_event connected!")
+	if Global.act_2_done == true and Global.act_2_seen == false:
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
+
 
 func _process(delta: float) -> void:
 	change_scene()
@@ -45,6 +52,7 @@ func _on_dialogic_signal(event_name: String) -> void:
 		print("🎬 act2_intro_done signal received — starting cutscene movement.")
 	
 		$act2_cutscene/CollisionShape2D.disabled = false
+
 		player.can_move = false
 		player.cutscene_move([
 			Vector2(416, 92),

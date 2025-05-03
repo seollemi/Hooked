@@ -31970,7 +31970,9 @@ polygon = PackedVector2Array(1279, -303, 1280, 592, 27, 593, 46, 575, 46, 174, 6
 layer = 3
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("13_to4tw")]
-visible = false
+
+[node name="Volume" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("17_j8e8u")]
 
@@ -31984,8 +31986,16 @@ shape = SubResource("RectangleShape2D_dcb0v")
 [node name="Quest_hehe" type="Node2D" parent="."]
 script = ExtResource("17_dxtfm")
 quest_name = "Act 1 "
+quest_descrip = "Go to the office"
+reached_goal_text = "Go to the training room"
 quest_statuss = 1
-quest_stages = Array[String](["Go to the office", "Go to the training room"])
+
+[node name="Quest_hehe_p2" type="Node2D" parent="."]
+script = ExtResource("17_dxtfm")
+quest_name = "Act 1 "
+quest_descrip = "Talk to mark near office"
+reached_goal_text = "Go to the office"
+quest_statuss = 1
 
 [connection signal="body_entered" from="Door_to_outsidehouse" to="." method="_on_door_to_outsidehouse_body_entered"]
 [connection signal="body_entered" from="Cutscene_trigger" to="." method="_on_cutscene_trigger_body_entered"]

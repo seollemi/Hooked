@@ -25,6 +25,7 @@ Qbox="*res://Scenes/quest.tscn"
 MusicManager="*res://Scripts/Global/music_manager.gd"
 Fullscreen="*res://Scripts/Global/fullscreen.gd"
 Passwordtracker="*res://Scripts/passwordtracker.gd"
+SaveManager="*res://Scripts/Global/SaveManager.gd"
 
 [dialogic]
 

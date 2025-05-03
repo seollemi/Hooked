@@ -15,11 +15,7 @@ enum QuestStatus{
 	available,
 	started,
 	reach_goal,
-	finished,
-	
+	finished,	
 }
 
 @export var quest_statuss: QuestStatus = QuestStatus.available
-
-@export var quest_stages: Array[String] = []
-var current_stage_index := 0

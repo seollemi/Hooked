@@ -79,9 +79,15 @@ func _on_cutscene_move_finished() -> void:
 
 
 func _ready() -> void:
+	Global.player = self
+	
 	if Global.teleport_back:
 		global_position = Global.player_PC_Location
 		Global.teleport_back = false
+		
+	if SaveManager.load_requested:
+		global_position = SaveManager.next_player_position
+		SaveManager.load_requested = false
 
 
 func _physics_process(delta: float) -> void:

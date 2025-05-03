@@ -54,7 +54,7 @@ func _physics_process(delta):
 
 func start_dialog():
 	talking = true
-	dialog_started = true  # Set that dialog already happened
+	dialog_started = false	  # Set that dialog already happened
 	print("🕒 Waiting before starting conversation...")
 
 	await get_tree().create_timer(0.5).timeout  # ✅ Wait 1.5 seconds

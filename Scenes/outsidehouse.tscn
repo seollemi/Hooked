@@ -4440,8 +4440,9 @@ layer = 3
 [node name="Quest_hehe" type="Node2D" parent="."]
 script = ExtResource("12_7fphf")
 quest_name = "Act 1 "
+quest_descrip = "Go to main city"
+reached_goal_text = "Talk to mark near office"
 quest_statuss = 1
-quest_stages = Array[String](["Go to main city", "Go to the office"])
 
 [node name="bird" parent="." instance=ExtResource("15_l6087")]
 position = Vector2(-217, 155)

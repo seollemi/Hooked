@@ -3,10 +3,14 @@ extends Node2D
 
 var cutscene_played := false
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
+@onready var quest_hehe_p_2: Quest_hehe = $Quest_hehe_p2
 
 
 func _ready() -> void:
-	print(Global.current_scene)
+	if quest_hehe.should_show_quest_ui():
+		Qbox.get_node("Questbox").visible = true
+	print("Loaded quest name: ", Global.current_quest_name)
+	print("Loaded quest status: ", Global.quest_status)
 	if Global.bridge_cutscene_done == true:
 		$Cutscene_trigger/CollisionShape2D.disabled = true
 	else:
@@ -86,6 +90,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 		Global.npc_mark = true
 		body.can_move = false   # Disable player movement
 		Dialogic.start("act1")
-		
 		# Connect to Dialogic's signal to re-enable movement after dialogue
 		Dialogic.timeline_ended.connect(_on_dialogue_ended.bind(body))
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe_p_2.reach_goal()
