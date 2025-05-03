@@ -67,4 +67,4 @@ func run_intro_sequence() -> void:
 	MusicManager.music.stop()
 
 	# ✅ Scene change to WorldHouse
-	get_tree().change_scene_to_file("res://Scenes/WorldHouse.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Intro_Controls.tscn")
