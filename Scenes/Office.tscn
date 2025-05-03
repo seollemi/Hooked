@@ -3707,6 +3707,7 @@ layer = 3
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("11_541ak")]
 
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("12_i4f5g")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]

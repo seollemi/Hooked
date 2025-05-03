@@ -11,9 +11,7 @@ var dialog_was_interrupted: bool = false
 func _ready():
 	if not Dialogic.signal_event.is_connected(_on_dialogic_signal_event):
 		Dialogic.signal_event.connect(_on_dialogic_signal_event)
-	if Global.act_1_done == true:
-		# Start the NPC talking automatically
-		start_dialog()
+
 
 func start_dialog():
 	talking = true

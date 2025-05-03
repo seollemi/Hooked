@@ -54,14 +54,14 @@ func _physics_process(delta):
 
 func start_dialog():
 	talking = true
-	dialog_started = false	  # Set that dialog already happened
+	dialog_started = true	  # Set that dialog already happened
 	print("🕒 Waiting before starting conversation...")
 
 	await get_tree().create_timer(0.5).timeout  # ✅ Wait 1.5 seconds
 	
 	print("🗣️ NPC: Starting conversation...")
 	Dialogic.start("NPC_TALK_ACT1")
-
+	
 func _on_dialogic_signal_event(event_name: String) -> void:
 	if event_name == "Finished_dialogic_1":
 		talking = false
