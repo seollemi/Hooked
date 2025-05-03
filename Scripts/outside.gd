@@ -93,8 +93,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 		Dialogic.start("act1")
 		# Connect to Dialogic's signal to re-enable movement after dialogue
 		Dialogic.timeline_ended.connect(_on_dialogue_ended.bind(body))
-		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
-			quest_hehe_p_2.reach_goal()
+
 			
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name in ["Q1", "Q2", "Q3", "Q4"]:
@@ -109,5 +108,7 @@ func _collect_question(question_name: String) -> void:
 	   "Q2" in Global.collected_questions and \
 	   "Q3" in Global.collected_questions and \
 	   "Q4" in Global.collected_questions:
-		Global.introduction_1 = true
+		Global.introduction_mark = true
 		$Area2D/CollisionShape2D.disabled = false  # ✅ Enable collision here
+		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
+			quest_hehe_p_2.reach_goal()

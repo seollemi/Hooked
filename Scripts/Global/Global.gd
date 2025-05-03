@@ -10,7 +10,8 @@ var transition_scene = false
 var last_player_position: Vector2 = Vector2.ZERO
 var outside_scene : PackedScene = null
 
-
+#brige
+var introduction_mark:bool =false
 
 #passwordgame to officelobby
 var ronnie_password:bool = false
