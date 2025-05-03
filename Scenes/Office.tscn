@@ -3693,15 +3693,6 @@ shape = SubResource("RectangleShape2D_541ak")
 position = Vector2(701.125, 289.313)
 shape = SubResource("RectangleShape2D_541ak")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Pause" parent="CanvasLayer" instance=ExtResource("10_3g47s")]
-
-[node name="Volume" parent="CanvasLayer" instance=ExtResource("11_541ak")]
-
-[node name="Act_done" parent="." instance=ExtResource("12_541ak")]
-visible = false
 [node name="Act 2 quest" type="Node2D" parent="."]
 script = ExtResource("10_chwbs")
 quest_name = "Act 2"
