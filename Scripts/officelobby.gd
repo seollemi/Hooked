@@ -13,9 +13,13 @@ var global_alex = false
 var triggered= false
 var awaiting_act3_done := false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	
+	if Global.act_1_done == true or Global.act_1_seen == false: 
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
+		act_2_quest.start_quest()
+
 	if quest_hehe.should_show_quest_ui():
 		Qbox.get_node("Questbox").visible = true
 	Dialogic.timeline_ended.connect(_on_timeline_ended)  # Add this line
@@ -41,11 +45,8 @@ func _ready() -> void:
 	else:
 		$act1/CollisionShape2D.disabled=true
 	
-	if Global.act_1_done == true:
+	if Global.act_1_done == true: 
 		$act1/CollisionShape2D.disabled = true
-		var act_done_instance = act_done_scene.instantiate()
-		add_child(act_done_instance)
-		act_2_quest.start_quest()
 	else:
 		print("yello")
 	if Global.minigame_done==true:
@@ -165,9 +166,6 @@ func _on_interactable_body_entered(body: Node2D) -> void:
 		Global.previous_scene_path = get_tree().current_scene.scene_file_path
 		get_tree().change_scene_to_file("res://Scenes/pc_game_password.tscn")
 		
-
-	
-
 
 func _on_scene_to_bridge_body_entered(body: Node2D) -> void:
 	if body is Player:

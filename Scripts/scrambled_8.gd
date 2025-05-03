@@ -7,7 +7,7 @@ var correct_word = "CHANGE MANAGEMENT"
 var selected_word = ""
 var pressed_buttons: Array[Button] = []
 var letter_buttons: Array[Button] = []
-
+@onready var act_done_scene = preload("res://Scenes/Act_done.tscn")
 @onready var exit_confirm_dialog = $ExitConfirmDialog  # Adjust the path as needed
 
 var button_1: Button
@@ -113,6 +113,9 @@ func _on_SubmitButton_pressed():
 		var player = new_scene.get_node("Player")  # Update path if needed
 		if player:
 			player.position = Vector2(315, 165)
+	if Global.act_1_done == true and Global.act_1_seen == false: 
+		var act_done_instance = act_done_scene.instantiate()
+		add_child(act_done_instance)
 	else:
 		output_label.text = "Incorrect. Try again!"
 		_reset_and_shuffle()
