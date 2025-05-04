@@ -25,7 +25,6 @@ func finish_quest() -> void:
 		Global.quest_status = quest_statuss
 		update_quest_ui()
 
-
 static func should_show_quest_ui() -> bool:
 	# Only show if quest is started or reach_goal (not available/finished)
 	return Global.quest_status in [QuestStatus.started, QuestStatus.reach_goal]

@@ -118,7 +118,7 @@ audio/max_channels=4.0
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [editor_plugins]

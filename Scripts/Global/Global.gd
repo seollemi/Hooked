@@ -28,8 +28,6 @@ var player_enter_house_posy = -21.0
 var player_start_posx = -16.0
 var player_start_posy = -120.0
 
-
-
 #player loction officelobby
 var player1_enter_house_posx = 346
 var player1_enter_house_posy = 135
@@ -55,14 +53,14 @@ var gate_cutscene_done: bool = false
 var bridge_cutscene_done: bool = false
 
 #EVENT SCENES TO SWITCH ACTS
-var mini_game_enable: bool = false
+var mini_game_enable: bool =  false
 var collected_questions: Array = []
-var introduction_1: bool = false
-var act_1_done: bool = false
-var act_2_done: bool = false
-var act_3_done:bool = false
-var act2_cutscene_done := false
-var minigame_done:bool = false
+var introduction_1: bool =  false
+var act_1_done: bool =  false
+var act_2_done: bool =  false
+var act_3_done:bool =  false
+var act2_cutscene_done :=  false
+var minigame_done:bool =  false
 var act3minigame_done:bool =false
 var act_1_seen: bool
 var act_2_seen: bool
@@ -121,3 +119,30 @@ func finish_changescenes():
 		transition_scene = false
 		current_scene = next_scene
 		next_scene = ""  # Reset after transition
+
+###### restart global when starting a new game
+func reset():
+	collected_hint_ids = []
+	collected_hints = 0
+	hints_read = 0
+	scrolling_background = null
+	player_points = 0
+	chosen_password_number = 1
+	has_faded_in = true
+	mini_level_1 = false
+	mini_level_2 = false
+	mini_level_3 = false
+	show_button_after_hint = false
+	last_hint_opened = 0
+	npc_event_done = false
+	npc_evnt2_done = false
+	npc_mark = false
+	game_first_loadin = true
+	game_outside_loadin = true
+	global_triggered = false
+	global_alex = false
+	quest_stage_index = 0
+	quest_status = 0
+	quest_description = ""
+	current_quest_name = ""
+	dialogue_played = false

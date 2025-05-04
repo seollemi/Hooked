@@ -69,9 +69,11 @@ func _on_interact1():
 	Dialogic.start("THE END")
 
 func _on_dialogic_signal(End: String) -> void:
+	final_quest.finish_quest()
 	print("📨 Received signal:", End)
 	if Global.act_3_done == true:
 		if final_quest.quest_statuss == final_quest.QuestStatus.started:
 			final_quest.finish_quest()
 		get_tree().change_scene_to_file("res://Scenes/Ending_mini_game/Ending.tscn")
 		print("✅ Mini-game is now enabled!")
+	final_quest.queue_free()

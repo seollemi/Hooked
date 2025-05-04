@@ -2452,7 +2452,7 @@ position = Vector2(724, 430)
 [node name="Pause2" parent="CanvasLayer" instance=ExtResource("9_1u3a2")]
 
 [node name="Volume" parent="CanvasLayer" instance=ExtResource("10_6obgr")]
-metadata/_edit_use_anchors_ = true
 visible = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Scene_to_office" to="." method="_on_scene_to_office_body_entered"]

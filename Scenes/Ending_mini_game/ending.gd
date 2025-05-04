@@ -29,6 +29,7 @@ func _ready():
 	galaxy_sprite.play("default")
 	star_sprite.play("default")
 	on_start.play()
+
 	for q in Q:
 		q.bbcode_enabled = true
 		q.set_size(Vector2(6540, 1550))

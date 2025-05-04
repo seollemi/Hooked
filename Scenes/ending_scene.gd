@@ -17,7 +17,7 @@ func _ready():
 	anim_sprite.play("default")
 	node_2d_2.play("default")
 	The_End.play()
-
+	
 
 func _process(delta: float) -> void:
 	# Adjust speed if Escape is held

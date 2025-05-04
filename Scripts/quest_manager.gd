@@ -9,7 +9,7 @@ class_name QuestManager extends Node2D
 @export var quest_name: String
 @export var quest_descrip: String
 @export var reached_goal_text: String
-
+var ui_enabled := true  # Default to true
 
 enum QuestStatus{
 	available,

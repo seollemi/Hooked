@@ -30,7 +30,9 @@ func _on_door_to_outsidehouse_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Global.next_scene = "outsidehouse"
 		Global.transition_scene = true
-		
+		Global.teleport_back = true
+		Global.player_PC_Location = Vector2(-253, 16)
+
 		
 func change_scene():
 	if Global.transition_scene:
