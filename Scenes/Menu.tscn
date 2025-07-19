@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dom5lhwd31uci"]
+[gd_scene load_steps=9 format=3 uid="uid://dom5lhwd31uci"]
 
 [ext_resource type="Script" uid="uid://df2xny172d82j" path="res://Scripts/menu.gd" id="1_uubjt"]
 [ext_resource type="FontFile" uid="uid://b4qpxl287je0" path="res://FONTS/GrapeSoda.ttf" id="2_5yleq"]
+[ext_resource type="Texture2D" uid="uid://dh4pswu6jpb3s" path="res://world/UI/BG2.png" id="2_s2c3o"]
 [ext_resource type="AudioStream" uid="uid://b0bwfbei4bss1" path="res://sounds/1_Menu_Master.mp3" id="3_syfuq"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
-bg_color = Color(0.168, 0.6, 0.456, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma218"]
+texture = ExtResource("2_s2c3o")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uubjt"]
 bg_color = Color(0.949803, 0.646664, 0.499066, 1)
@@ -45,7 +46,7 @@ offset_right = 638.0
 offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cx167")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ma218")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
