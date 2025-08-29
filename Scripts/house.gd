@@ -6,11 +6,12 @@ extends Node2D
 @onready var interactable_end_: Area2D = $"interactable_End'"
 @onready var final_quest: Quest_hehe = $"Final quest"
 
+@onready var toggle_button: TextureButton = $UI/ToggleQuestButton
 func _ready() -> void:
 	interactable_end_.interact = _on_interact1
 	interactable.interact = _on_interact
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 		
 	if Global.quest_status != quest_hehe.QuestStatus.available:
 		$Quest_hehe.update_quest_ui()
@@ -20,9 +21,6 @@ func _ready() -> void:
 		$Player.position.x = Global.player_start_posx
 		$Player.position.y = Global.player_start_posy
 		start_dialog()
-	else: 
-		$Player.position.x = Global.player_enter_house_posx
-		$Player.position.y = Global.player_enter_house_posy
 		
 func _process(delta: float) -> void:
 	change_scene()
@@ -77,3 +75,8 @@ func _on_dialogic_signal(End: String) -> void:
 		get_tree().change_scene_to_file("res://Scenes/Ending_mini_game/Ending.tscn")
 		print("✅ Mini-game is now enabled!")
 	final_quest.queue_free()
+
+
+func _on_toggle_quest_button_pressed() -> void:
+	var questbox_node = Qbox.get_node("Questbox")
+	questbox_node.visible = not questbox_node.visible

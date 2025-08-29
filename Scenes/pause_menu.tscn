@@ -1,18 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://colgwu8bb7da6"]
+[gd_scene load_steps=2 format=3 uid="uid://colgwu8bb7da6"]
 
-[ext_resource type="Script" uid="uid://cuf577qgr0mgg" path="res://Scripts/pause.gd" id="1_k0w1u"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_1och7"]
 
 [node name="Pause" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k0w1u")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

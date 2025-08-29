@@ -8,8 +8,8 @@ extends Control
 var music_node_path: NodePath = "/root/MusicPlayer"  # 🛠 Global path for music
 
 func _ready() -> void:
-	if act_3_quest.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if act_3_quest.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 	MusicManager.music.stop()
 	start.pressed.connect(_on_start_pressed)
 	hints.pressed.connect(_on_hints_pressed)

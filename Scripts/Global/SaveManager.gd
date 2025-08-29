@@ -94,6 +94,10 @@ func load_game():
 		Global.act_3_done = data.act_3_done
 		Global.act2_cutscene_done = data.act2_cutscene_done
 		Global.minigame_done = data.minigame_done
+		Global.act_1_seen = data.act_1_seen
+		Global.act_2_seen = data.act_2_seen
+		Global.act_3_seen = data.act_3_seen
+
 
 		Global.collected_hint_ids = data.collected_hint_ids
 		Global.collected_hints = data.collected_hints

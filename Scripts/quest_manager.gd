@@ -1,8 +1,9 @@
 class_name QuestManager extends Node2D
 
+
 @onready var QuestBox: CanvasLayer = Qbox.get_node('Questbox')
-@onready var quest_title: RichTextLabel = Qbox.get_node('Questbox').get_node('QuestTitle')
-@onready var quest_description: RichTextLabel = Qbox.get_node('Questbox').get_node('QuestDescription')
+@onready var quest_title: RichTextLabel = Qbox.get_node('Questbox').get_node('Quest_bg').get_node('Vbox').get_node('QuestTitle')
+@onready var quest_description: RichTextLabel = Qbox.get_node('Questbox').get_node('Quest_bg').get_node('Vbox').get_node('QuestDescription')
 
 
 @export_group("Quest Settings")

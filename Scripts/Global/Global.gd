@@ -25,25 +25,26 @@ func set_previous_scene(scene_path: String, player_location: Vector2):
 #player locations when entering world
 var player_enter_house_posx = -149.0
 var player_enter_house_posy = -21.0
-var player_start_posx = -16.0
-var player_start_posy = -120.0
+var player_start_posx = 271.0
+var player_start_posy = 106.0
 
 #player loction officelobby
 var player1_enter_house_posx = 346
 var player1_enter_house_posy = 135
-var player1_start_posx = 346
-var player1_start_posy = 135
+#var player1_start_posx = 346
+#var player1_start_posy = 135
 
 #player loc when entering bridge/main city
-var player_bridge_posx = 917.0
-var player_brigde_posy = -248.0
+#var player_bridge_posx = 917.0
+#var player_brigde_posy = -248.0
 
 var player_bridgecutscene_posx = 497.0
 var player_bridgecutscene_posy = -248.0
 
-
+var player_tp_to_outsidehouse_pos = Vector2(26,216)
+#var player_tp_to_outsidehouse_posy = 216
 #PLAYER EVENT MOVEMENT
-var player_PC_Location = Vector2(463.0, 76.0)
+var player_PC_Location = Vector2(195, 143)
 var teleport_back := false
 var dialog_pc_opened := false # ano to it only happen 1 time permanently even across scene reloads
 var pc_start_opened: bool = false  # interact once only happen 1 time permanently even across scene reloads
@@ -62,9 +63,9 @@ var act_3_done:bool =  false
 var act2_cutscene_done :=  false
 var minigame_done:bool =  false
 var act3minigame_done:bool =false
-var act_1_seen: bool
-var act_2_seen: bool
-var act_3_seen: bool
+var act_1_seen: bool = false
+var act_2_seen: bool = false
+var act_3_seen: bool = false
 var act_2_cut_done:bool = false
 #Quest Global progression 
 var quest_stage_index = 0

@@ -1,2 +1,4 @@
-“University of Crestwood – Class of 20XX”
+[voice path="res://sounds/Voice_act/Intro_1.wav" volume="0.0" bus="SFX"]
+“University of Crestwood – Class of 2025”
+[voice path="res://sounds/Voice_act/Intro_2.wav" volume="0.0" bus="SFX"]
 Everyone dreams of changing the world. Me? I just wanted to protect it.

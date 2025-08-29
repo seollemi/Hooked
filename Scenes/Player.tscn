@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://646eynxd38ta" path="res://interaction_component.tscn" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh050"]
-size = Vector2(29.4202, 7.7034)
+size = Vector2(29.397, 8.07421)
 
 [sub_resource type="Animation" id="Animation_u3lg7"]
 resource_name = "DOWN_RUNNING"
@@ -185,22 +185,20 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
 scale = Vector2(0.820347, 0.860752)
 collision_layer = 9
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-z_index = -1
-position = Vector2(348.023, 234.679)
+position = Vector2(3.8147e-06, -4.64711)
 rotation = 3.14159
-scale = Vector2(0.621512, -1.5081)
+scale = Vector2(0.622, -1.508)
 shape = SubResource("RectangleShape2D_dh050")
 debug_color = Color(0.977512, 0, 0.403538, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(348.023, 220.983)
+position = Vector2(0, -17.4266)
 scale = Vector2(1.14281, 1.1771)
 texture = ExtResource("2_gntrk")
 hframes = 24
@@ -212,17 +210,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_qe7eu")
 }
 
-[node name="Outside_camera" type="Camera2D" parent="."]
-position = Vector2(-71.9208, -40.6621)
-scale = Vector2(5, 5)
-offset = Vector2(350, 225)
-zoom = Vector2(2, 2)
-
-[node name="Inside_camera" type="Camera2D" parent="."]
-position = Vector2(-71.9208, -40.6621)
-scale = Vector2(5, 5)
-offset = Vector2(350, 225)
-zoom = Vector2(3.075, 3.075)
-
 [node name="InteractionComponent" parent="." instance=ExtResource("3_gntrk")]
-position = Vector2(348.633, 232.355)
+position = Vector2(0, -8.13243)

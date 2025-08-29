@@ -38,7 +38,7 @@ func _on_dialogic_signal(argument: String) -> void:
 func _on_dialogic_end():
 	MusicManager.music.play()
 	Global.teleport_back = true
-	Global.player_PC_Location = Vector2(450, 22)
+	Global.player_PC_Location = Vector2(733, 210)
 	if act_2_quest.quest_statuss == act_2_quest.QuestStatus.started:
 			act_2_quest.visible = false
 			act_2_quest.reach_goal()

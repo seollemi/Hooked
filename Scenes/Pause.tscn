@@ -1,0 +1,199 @@
+[gd_scene load_steps=6 format=3 uid="uid://b25qqfjn07ejo"]
+
+[ext_resource type="Script" uid="uid://cuf577qgr0mgg" path="res://Scripts/pause.gd" id="1_n136c"]
+[ext_resource type="Theme" uid="uid://1u0xrcs1q6qn" path="res://world/UI/quest_bt.tres" id="3_6v82q"]
+[ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="4_jv2ls"]
+[ext_resource type="Theme" uid="uid://b8m784p476wgw" path="res://Scenes/UI/Slider.tres" id="5_d4bqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idohh"]
+atlas = ExtResource("4_jv2ls")
+region = Rect2(275, 212, 90, 25)
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+script = ExtResource("1_n136c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.258824, 0.258824, 0.258824, 0.776471)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -253.0
+offset_right = 260.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.791999, 0.791999, 0.791999, 1)
+theme_override_font_sizes/font_size = 100
+text = "PAUSE MENU"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -141.0
+offset_right = 108.5
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main_buttons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="MarginContainer/Main_buttons"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("3_6v82q")
+text = "Resume"
+
+[node name="Save" type="Button" parent="MarginContainer/Main_buttons"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("3_6v82q")
+text = "Save"
+
+[node name="Options" type="Button" parent="MarginContainer/Main_buttons"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("3_6v82q")
+text = "Options"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/Main_buttons"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("3_6v82q")
+text = "Main Menu"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.5
+offset_top = -173.0
+offset_right = 136.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_idohh")
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 4
+patch_margin_bottom = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Settings" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = -157.5
+offset_right = 108.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="HSlider" parent="NinePatchRect/Settings"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("5_d4bqu")
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="NinePatchRect/Settings/Master"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -7.5
+offset_right = 215.5
+offset_bottom = 36.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "Main Volume"
+horizontal_alignment = 1
+
+[node name="MusicVolSlider" type="HSlider" parent="NinePatchRect/Settings"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("5_d4bqu")
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="NinePatchRect/Settings/MusicVolSlider"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -7.5
+offset_right = 215.5
+offset_bottom = 36.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="SFXVolSlider" type="HSlider" parent="NinePatchRect/Settings"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme = ExtResource("5_d4bqu")
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="NinePatchRect/Settings/SFXVolSlider"]
+layout_mode = 0
+offset_left = 0.5
+offset_top = -7.5
+offset_right = 215.5
+offset_bottom = 36.5
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 40
+text = "Sfx Volume"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="NinePatchRect/Settings"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme = ExtResource("3_6v82q")
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/Main_buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/Main_buttons/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/Main_buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Main_buttons/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="value_changed" from="NinePatchRect/Settings/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="NinePatchRect/Settings/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="value_changed" from="NinePatchRect/Settings/SFXVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="pressed" from="NinePatchRect/Settings/Back" to="." method="_on_back_pressed"]

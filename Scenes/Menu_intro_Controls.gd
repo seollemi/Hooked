@@ -4,7 +4,7 @@ extends Control
 
 func _ready() -> void:
 	continue_button.pressed.connect(_on_continue_pressed)
-	Global.scrolling_background.visible = false
+	#Global.scrolling_background.visible = false
 	continue_button.visible = false  # Start hidden
 	await get_tree().create_timer(4.0).timeout
 	continue_button.visible = true  # Show after 4 seconds

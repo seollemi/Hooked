@@ -33,8 +33,8 @@ var music_player: AudioStreamPlayer  # Declare the music player
 
 
 func _ready():
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 	# Shuffle both groups independently
 	change_letters.shuffle()
 	management_letters.shuffle()
@@ -115,7 +115,7 @@ func _on_SubmitButton_pressed():
 		# Move the player or object to (471, 252)
 		var player = new_scene.get_node("Player")  # Update path if needed
 		if player:
-			player.position = Vector2(315, 165)
+			player.position = Vector2(601, 391)
 	if Global.act_1_done == true and Global.act_1_seen == false: 
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
@@ -173,7 +173,7 @@ func _on_exit_confirm_dialog_confirmed() -> void:
 	
 	var player = new_scene.get_node("Player")  # Update path if needed
 	if player:
-		player.position = Vector2(315, 165)
+		player.position = Vector2(601, 391)
 func _on_ShuffleButton_pressed() -> void:
 	shuffle_button.disabled = true
 	_reset_and_shuffle()

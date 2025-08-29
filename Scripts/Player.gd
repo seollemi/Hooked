@@ -110,7 +110,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 
-	current_camera()
+	#current_camera()
 
 	var direction = Vector2.ZERO
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -154,8 +154,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func current_camera() -> void:
-	if Global.current_scene == "WorldHouse":
-		$Outside_camera.enabled = true
-	elif Global.current_scene == "outsidehouse":
-		$Outside_camera.enabled = true
+#func current_camera() -> void:
+	#if Global.current_scene == "WorldHouse":
+		#$Outside_camera.enabled = true
+	#elif Global.current_scene == "outsidehouse":
+		#$Outside_camera.enabled = true

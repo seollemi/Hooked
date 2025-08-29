@@ -32,4 +32,7 @@ static func should_show_quest_ui() -> bool:
 func update_quest_ui():
 	quest_title.text = Global.current_quest_name
 	quest_description.text = Global.quest_description
-	QuestBox.visible = should_show_quest_ui() 
+	
+	# If quest is not in a state where it should show, force hide
+	if not should_show_quest_ui():
+		QuestBox.visible = false

@@ -15,6 +15,7 @@ func _on_color_x_mouse_exited() -> void:
 	color_x.color = Color(0.71, 0, 0)
 
 func _ready():
+	Qbox.get_node("Questbox").visible = false
 	if Global.act_2_done == true and Global.act_2_seen == false:
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
@@ -30,7 +31,7 @@ func _on_dialogic_signal(event_name: String) -> void:
 		Global.mini_game_enable = true
 	if event_name == "return_to_office":
 		Global.teleport_back = true
-		Global.player_PC_Location = Vector2(464, 75)
+		Global.player_PC_Location = Vector2(733, 298)
 		get_tree().change_scene_to_file("res://Scenes/Office.tscn")
 	if event_name == "act_1_done":
 		Global.act_2_done = true

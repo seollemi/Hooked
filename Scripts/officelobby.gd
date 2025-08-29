@@ -25,10 +25,10 @@ func _ready() -> void:
 		act_2_quest.start_quest()
 		Global.act_1_seen = true
 		
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
-	if act_3_quest.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
+	#if act_3_quest.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 	Dialogic.timeline_ended.connect(_on_timeline_ended)  # Add this line
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	interactable.interact = _on_interact
@@ -37,10 +37,10 @@ func _ready() -> void:
 	Dialogic.timeline_ended.connect(_on_dialog_ended)
 	
 
-	if Global.player_PC_Location != null:
-		var player = $Player  # Update the path to your Player node
-		if player:
-			player.position = Global.player_PC_Location
+	#if Global.player_PC_Location != null:
+		#var player = $Player  # Update the path to your Player node
+		#if player:
+			#player.position = Global.player_PC_Location
 			
 	$move/CollisionShape2D.disabled=true
 
@@ -138,7 +138,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not Global.act_1_done and body is Player:
 		Dialogic.start("instruction_alex")
 		body.cutscene_move([
-			Vector2(477, 113),
+			Vector2(744, 338),
 		] as Array[Vector2])
 	else:
 		Global.global_alex = true
@@ -186,7 +186,7 @@ func _on_scene_to_bridge_body_entered(body: Node2D) -> void:
 		Global.next_scene = "bridge"
 		Global.transition_scene = true
 		Global.teleport_back = true
-		Global.player_PC_Location = Vector2(-69, -63)
+		Global.player_PC_Location = Vector2(194, 144)
 ####
 
 
@@ -215,9 +215,9 @@ func _on_minigame_done_body_entered(body: Node2D) -> void:
 func _on_password_body_entered(body: Node2D) -> void:
 	if body is Player and Global.act_3_done:
 		body.cutscene_move([
-			Vector2(496, 122),
-			Vector2(489, 207),
-			Vector2(346, 205)
+			Vector2(630, 450),
+			Vector2(631, 418),
+			Vector2(616, 394)
 		] as Array[Vector2])
 		start_dialog()
 		
@@ -230,3 +230,8 @@ func _on_dialogic_signal(event_name: String) -> void:
 			Vector2(319, 137),
 			Vector2(346, 135),
 		] as Array[Vector2])
+
+
+func _on_toggle_quest_button_pressed() -> void:
+	var questbox_node = Qbox.get_node("Questbox")
+	questbox_node.visible = not questbox_node.visible

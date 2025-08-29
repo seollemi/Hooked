@@ -1,0 +1,64 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://b8m784p476wgw"]
+
+[ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="1_1giq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfhf6"]
+atlas = ExtResource("1_1giq8")
+region = Rect2(455, 133, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jcrr"]
+atlas = SubResource("AtlasTexture_wfhf6")
+region = Rect2(0, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aobxe"]
+atlas = ExtResource("1_1giq8")
+region = Rect2(455, 101, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab40c"]
+atlas = SubResource("AtlasTexture_aobxe")
+region = Rect2(0, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjh0l"]
+atlas = ExtResource("1_1giq8")
+region = Rect2(455, 69, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qki4b"]
+atlas = SubResource("AtlasTexture_sjh0l")
+region = Rect2(0, 0, 18, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma218"]
+atlas = ExtResource("1_1giq8")
+region = Rect2(578, 137, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_idohh"]
+texture = SubResource("AtlasTexture_ma218")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfhf6"]
+texture = SubResource("AtlasTexture_ma218")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byewe"]
+atlas = ExtResource("1_1giq8")
+region = Rect2(578, 169, 28, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8aa6"]
+texture = SubResource("AtlasTexture_byewe")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[resource]
+HSlider/icons/grabber = SubResource("AtlasTexture_3jcrr")
+HSlider/icons/grabber_disabled = SubResource("AtlasTexture_ab40c")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_qki4b")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_idohh")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_wfhf6")
+HSlider/styles/slider = SubResource("StyleBoxTexture_a8aa6")

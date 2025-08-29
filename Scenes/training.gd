@@ -8,8 +8,8 @@ func _ready() -> void:
 	interactable.interact = _on_interact
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_dialog_ended)
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 
 func _on_interact() -> void:
 	var player = get_node("Player")
@@ -54,8 +54,15 @@ func change_scene():
 		
 func _on_scene_to_office_body_entered(body: Node2D) -> void:
 	if body is Player:
-		Global.player_PC_Location = Vector2(466, 311)
+		
+		Global.teleport_back = true
 		Global.next_scene = "officelobby"
 		Global.transition_scene = true
+		Global.player_PC_Location = Vector2(751, 507)
 			
 			
+
+
+func _on_toggle_quest_button_pressed() -> void:
+	var questbox_node = Qbox.get_node("Questbox")
+	questbox_node.visible = not questbox_node.visible

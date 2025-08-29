@@ -2,6 +2,7 @@ extends Node2D
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var player: Player = $Player
 
+
 func _ready() -> void:
 	
 	print(Global.current_scene)
@@ -14,8 +15,8 @@ func _ready() -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(MusicManager.music, "volume_db", 0, 2.5)  # Fade in to normal volume in 2.5s
 	
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 	if Global.quest_status != quest_hehe.QuestStatus.available:
 		$Quest_hehe.update_quest_ui()
 			
@@ -32,6 +33,7 @@ func _on_door_to_city_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Global.next_scene = "outside"
 		Global.transition_scene = true
+		
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe.reach_goal()
 
@@ -43,3 +45,8 @@ func change_scene():
 			"outside":
 				ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
 		Global.finish_changescenes()
+
+
+func _on_toggle_quest_button_pressed() -> void:
+	var questbox_node = Qbox.get_node("Questbox")
+	questbox_node.visible = not questbox_node.visible

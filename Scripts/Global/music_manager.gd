@@ -4,7 +4,7 @@ extends Node
 
 func _ready():
 	add_child(music)
-	music.bus = "Master"  # Optional: set this if you use audio buses
+	music.bus = "MUSIC"  # Optional: set this if you use audio buses
 	music.autoplay = false
 	
 func play_music(path: String, fade_time := 1.0) -> void:

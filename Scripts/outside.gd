@@ -8,8 +8,8 @@ var cutscene_played := false
 
 func _ready() -> void:
 	$Area2D/CollisionShape2D.disabled = false
-	if quest_hehe.should_show_quest_ui():
-		Qbox.get_node("Questbox").visible = true
+	#if quest_hehe.should_show_quest_ui():
+	Qbox.get_node("Questbox").visible = false
 	print("Loaded quest name: ", Global.current_quest_name)
 	print("Loaded quest status: ", Global.quest_status)
 	if Global.bridge_cutscene_done == true:
@@ -31,7 +31,10 @@ func _on_door_to_outsidehouse_body_entered(body: Node2D) -> void:
 		Global.next_scene = "outsidehouse"
 		Global.transition_scene = true
 		Global.teleport_back = true
-		Global.player_PC_Location = Vector2(-253, 16)
+		Global.player_PC_Location = Vector2(22, 216)
+		#var player_tp_to_outsidehouse_pos = Vector2(22,216)
+		#global_position = player_tp_to_outsidehouse_pos
+		
 
 		
 func change_scene():
@@ -63,7 +66,7 @@ func _on_audio_stream_player_2d_finished() -> void:
 	var phone_sequence_instance = phone_sequence_scene.instantiate()
 
 	# Get player camera position and offset
-	var player_camera = $Player.get_node("Outside_camera")
+	var player_camera = $Player/Camera2D
 	var camera_position = player_camera.global_position
 	var offset = Vector2(50, -50)  # Adjust this as needed
 	phone_sequence_instance.global_position = camera_position + offset
@@ -80,7 +83,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")
 		Global.teleport_back = true
-		Global.player_PC_Location = Vector2(117, 314)
+		Global.player_PC_Location = Vector2(402, 508)
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe.reach_goal()
 		
@@ -114,3 +117,8 @@ func _collect_question(question_name: String) -> void:
 		$Area2D/CollisionShape2D.disabled = false  # ✅ Enable collision here
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:
 			quest_hehe_p_2.reach_goal()
+
+
+func _on_toggle_quest_button_pressed() -> void:
+	var questbox_node = Qbox.get_node("Questbox")
+	questbox_node.visible = not questbox_node.visible
