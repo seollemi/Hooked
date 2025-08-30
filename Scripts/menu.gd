@@ -18,9 +18,15 @@ func _on_options_pressed() -> void:
 	$NinePatchRect.visible = true
 
 func _on_continue_pressed() -> void:
-	SaveManager.load_game()
-	MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
-	MusicManager.music.play()
+	var success = SaveManager.load_game()  # make this return true if load worked
+	
+	if success:
+		# Only play music if save data exists
+		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+		MusicManager.music.play()
+	else:
+		# Optional: give feedback if no save found
+		print("No save found, skipping music.")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

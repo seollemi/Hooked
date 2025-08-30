@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b6ofr4vb3vo1x"]
 
 [ext_resource type="Script" uid="uid://d3uc7wfv463o" path="res://opening INtro/intro_opening.gd" id="1_jm77e"]
-[ext_resource type="Texture2D" uid="uid://ctr8sem0few5w" path="res://opening INtro/colledge.png" id="2_4ary4"]
-[ext_resource type="Texture2D" uid="uid://dqu7qufar1aby" path="res://opening INtro/house.png" id="3_4ary4"]
-[ext_resource type="Texture2D" uid="uid://c6lywmd4y5clj" path="res://opening INtro/guard.png" id="4_dvhtm"]
+[ext_resource type="Texture2D" uid="uid://ckyn7vanm4k3u" path="res://opening INtro/house1.png" id="2_dvhtm"]
+[ext_resource type="Texture2D" uid="uid://dcuuo6wbunaby" path="res://opening INtro/colledge1.png" id="3_4yxea"]
+[ext_resource type="Texture2D" uid="uid://bqk5cbq0hxdjq" path="res://opening INtro/guard1.png" id="4_jpba4"]
 
 [sub_resource type="Animation" id="Animation_uirf5"]
 length = 0.001
@@ -65,17 +65,17 @@ script = ExtResource("1_jm77e")
 [node name="Sprite2D_College" type="Sprite2D" parent="."]
 position = Vector2(578, 324)
 scale = Vector2(0.758464, 0.676758)
-texture = ExtResource("2_4ary4")
+texture = ExtResource("3_4yxea")
 
 [node name="Sprite2D_House" type="Sprite2D" parent="."]
 position = Vector2(580.5, 326)
 scale = Vector2(0.757161, 0.673828)
-texture = ExtResource("3_4ary4")
+texture = ExtResource("2_dvhtm")
 
 [node name="Sprite2D_Guard" type="Sprite2D" parent="."]
 position = Vector2(580, -442)
 scale = Vector2(1.12891, 1.13477)
-texture = ExtResource("4_dvhtm")
+texture = ExtResource("4_jpba4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -198.0
