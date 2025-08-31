@@ -79,7 +79,7 @@ directories/dtl_directory={
 }
 glossary/default_case_sensitive=true
 variables={}
-layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres", "res://Dialogic_scenes/bubble.tres"]
+layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres", "res://Dialogic_scenes/bubble.tres", "res://New_File.tres"]
 layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

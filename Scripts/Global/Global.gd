@@ -3,7 +3,10 @@ extends Node
 
 var player: Node = null
 
+#First time talking to "NPCS DIalogic"
+var talked_npc1: bool = false
 
+#----
 var current_scene = "WorldHouse"
 var next_scene = ""  # NEW: Store target scene name
 var transition_scene = false
