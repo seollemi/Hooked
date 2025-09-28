@@ -1,10 +1,29 @@
 extends Control
 
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+			
 func _ready() -> void:
-	# Load and play menu music once
-	$NinePatchRect/Settings/Master.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
-	$NinePatchRect/Settings/MusicVolSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("MUSIC")))
-	$NinePatchRect/Settings/SFXVolSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+
+	$NinePatchRect/Settings/Master.value = Global.master_volume
+	$NinePatchRect/Settings/MusicVolSlider.value = Global.music_volume
+	$NinePatchRect/Settings/SFXVolSlider.value = Global.sfx_volume
+	
+	Global.apply_audio_settings()
 	if not MusicManager.music.playing:
 		MusicManager.music.stream = preload("res://sounds/1_Menu_Master.mp3")  # Replace with your file
 		MusicManager.music.play()
@@ -27,6 +46,9 @@ func _on_continue_pressed() -> void:
 	else:
 		# Optional: give feedback if no save found
 		print("No save found, skipping music.")
+	SaveManager.load_game()
+	#MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
+	#MusicManager.music.play()
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
@@ -38,12 +60,15 @@ func _on_back_pressed() -> void:
 
 
 func _on_master_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"),value)
+	Global.master_volume = value
+	Global.apply_audio_settings()
 
 
 func _on_music_vol_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("MUSIC"),value)
+	Global.music_volume = value
+	Global.apply_audio_settings()
 
 
 func _on_sfx_vol_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"),value)
+	Global.sfx_volume = value
+	Global.apply_audio_settings()

@@ -47,6 +47,6 @@ func _on_act_2_body_entered(body: Node2D) -> void:
 			Dialogic.end_timeline()
 		if act_2_quest_p2.quest_statuss == act_2_quest_p2.QuestStatus.started:
 			act_2_quest_p2.reach_goal()
-		if act_2_quest.should_show_quest_ui():
-			Qbox.get_node("Questbox").visible = true	
+		#if act_2_quest.should_show_quest_ui():
+			Qbox.get_node("Questbox").visible = false
 		ChangeScene.change_scene_anim("res://Scenes/Act2_story.tscn")

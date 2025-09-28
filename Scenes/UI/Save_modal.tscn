@@ -1,0 +1,158 @@
+[gd_scene load_steps=20 format=3 uid="uid://bbbt8gg1tidnb"]
+
+[ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="1_dcsa3"]
+[ext_resource type="Script" uid="uid://clf1j48yn30w4" path="res://Scripts/save_modal.gd" id="1_jsnp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsnp8"]
+atlas = ExtResource("1_dcsa3")
+region = Rect2(275, 212, 90, 25)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcsa3"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_848h4"]
+atlas = SubResource("CompressedTexture2D_dcsa3")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_32knf"]
+texture = SubResource("AtlasTexture_848h4")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7msux"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeyux"]
+atlas = SubResource("CompressedTexture2D_7msux")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3v5k2"]
+texture = SubResource("AtlasTexture_oeyux")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_slmj2"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2as78"]
+atlas = SubResource("CompressedTexture2D_slmj2")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wrlac"]
+texture = SubResource("AtlasTexture_2as78")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_buw1g"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pspuy"]
+atlas = SubResource("CompressedTexture2D_buw1g")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uihok"]
+texture = SubResource("AtlasTexture_pspuy")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d86l0"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umilu"]
+atlas = SubResource("CompressedTexture2D_d86l0")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhe3r"]
+texture = SubResource("AtlasTexture_umilu")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="Theme_mf7ah"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 20
+Button/styles/disabled = SubResource("StyleBoxTexture_32knf")
+Button/styles/focus = SubResource("StyleBoxTexture_3v5k2")
+Button/styles/hover = SubResource("StyleBoxTexture_wrlac")
+Button/styles/normal = SubResource("StyleBoxTexture_uihok")
+Button/styles/pressed = SubResource("StyleBoxTexture_uhe3r")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 30
+
+[node name="SaveModal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jsnp8")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.5
+offset_top = -61.5
+offset_right = 180.5
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_jsnp8")
+region_rect = Rect2(0, 0, 90, 25)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -53.5
+offset_right = 166.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = SubResource("Theme_mf7ah")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game saved Successfully"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ok" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OK"

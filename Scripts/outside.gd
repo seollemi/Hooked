@@ -6,16 +6,34 @@ var cutscene_played := false
 @onready var quest_hehe_p_2: Quest_hehe = $Quest_hehe_p2
 
 
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+		
+
 func _ready() -> void:
+	
+	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 	$Area2D/CollisionShape2D.disabled = false
 	#if quest_hehe.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false
 	print("Loaded quest name: ", Global.current_quest_name)
 	print("Loaded quest status: ", Global.quest_status)
-	if Global.bridge_cutscene_done == true:
-		$Cutscene_trigger/CollisionShape2D.disabled = true
-	else:
-		$Cutscene_trigger/CollisionShape2D.disabled = false
+	#if Global.bridge_cutscene_done == true:
+		#$Cutscene_trigger/CollisionShape2D.disabled = true
+	#else:
+		#$Cutscene_trigger/CollisionShape2D.disabled = false
 		
 	if Global.act_1_done==true:
 		$Area2D2/CollisionShape2D.disabled=true
@@ -82,6 +100,7 @@ func _on_phone_sequence_finished():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		ChangeScene.change_scene_anim("res://Scenes/officelobby.tscn")
+		
 		Global.teleport_back = true
 		Global.player_PC_Location = Vector2(402, 508)
 		if quest_hehe.quest_statuss == quest_hehe.QuestStatus.started:

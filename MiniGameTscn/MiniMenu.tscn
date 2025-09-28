@@ -110,6 +110,7 @@ visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_p8l1m")
+bus = &"MUSIC"
 
 [node name="Act 3 quest" type="Node2D" parent="."]
 script = ExtResource("2_ushq0")

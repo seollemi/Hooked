@@ -7,6 +7,22 @@ extends Node2D
 @onready var final_quest: Quest_hehe = $"Final quest"
 
 @onready var toggle_button: TextureButton = $UI/ToggleQuestButton
+
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+		
 func _ready() -> void:
 	interactable_end_.interact = _on_interact1
 	interactable.interact = _on_interact
@@ -21,7 +37,7 @@ func _ready() -> void:
 		$Player.position.x = Global.player_start_posx
 		$Player.position.y = Global.player_start_posy
 		start_dialog()
-		
+
 func _process(delta: float) -> void:
 	change_scene()
  
@@ -29,6 +45,8 @@ func _process(delta: float) -> void:
 		$"interactable_End'"/CollisionShape2D.disabled=false
 	else:
 		$"interactable_End'"/CollisionShape2D.disabled=true
+
+
 
 func start_dialog():
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

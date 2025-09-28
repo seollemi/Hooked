@@ -190,6 +190,7 @@ shape = SubResource("RectangleShape2D_8ybe1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_qaprl")
+bus = &"MUSIC"
 
 [connection signal="body_entered" from="LevelFinish" to="." method="_on_level_finish_body_entered"]
 [connection signal="body_entered" from="obstacle" to="." method="_on_obstacle_body_entered"]

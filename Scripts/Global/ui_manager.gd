@@ -1,13 +1,26 @@
 extends CanvasLayer
 
-func show_save_confirmation():
-	$SaveConfirmDialog.dialog_text = "Game saved successfully!"
-	$SaveConfirmDialog.popup_centered()
+@onready var save_modal: SaveModal = $SaveModal
 
-func show_load_error():
-	$LoadErrorDialog.dialog_text = "Failed to load game! No save file found."
-	$LoadErrorDialog.popup_centered()
+func show_save_confirmation(message: String = "Game saved successfully!", duration: float = 3.0) -> void:
+	save_modal.get_node("NinePatchRect/MarginContainer/VBoxContainer/Label").text = message
+	save_modal.show()
+	if duration > 0:
+		await get_tree().create_timer(duration).timeout
+		if save_modal.visible:
+			save_modal.hide()
 
 
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
+func show_load_error(message: String = "No save file found.", duration: float = 3.0) -> void:
+	save_modal.get_node("NinePatchRect/MarginContainer/VBoxContainer/Label").text = message
+	save_modal.show()
+
+	if duration > 0:
+		await get_tree().create_timer(duration).timeout
+		if save_modal.visible:
+			save_modal.hide()
+
+
+
+func _on_save_modal_ok_pressed() -> void:
+	save_modal.hide()

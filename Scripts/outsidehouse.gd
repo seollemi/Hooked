@@ -2,18 +2,27 @@ extends Node2D
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
 @onready var player: Player = $Player
 
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+		
 
 func _ready() -> void:
 	
 	print(Global.current_scene)
 	
-	if not MusicManager.music.playing:
-		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")  # Replace with your file
-		MusicManager.music.volume_db = -40  # Start quiet (mute is around -80 dB)
-		MusicManager.music.play()
-
-		var tween = get_tree().create_tween()
-		tween.tween_property(MusicManager.music, "volume_db", 0, 2.5)  # Fade in to normal volume in 2.5s
+	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 	
 	#if quest_hehe.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false

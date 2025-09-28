@@ -4,6 +4,12 @@ extends Node
 var next_player_position: Vector2
 var load_requested := false
 
+
+func _ready() -> void:
+	load_settings()
+
+
+# GAME SAVE / LOAD
 func save_game():
 	var data = SceneData.new()
 	data.player_position = Global.player.global_position
@@ -67,62 +73,107 @@ func save_game():
 	print("Saved game!")
 
 func load_game():
-	var data = ResourceLoader.load("user://Player_save.tres") as SceneData
-	if data:
-		next_player_position = data.player_position
-		load_requested = true
-		Global.game_first_loadin = data.game_first_loadin
-		Global.current_scene = data.current_scene
-		Global.game_outside_loadin = data.game_outside_loadin
-		
-		#Global.teleport_back = data.teleport_back
-		Global.dialog_pc_opened = data.dialog_pc_opened
-		Global.pc_start_opened = data.pc_start_opened
-		Global.mail_open_opened = data.mail_open_opened
-		Global.fakelogin_open_opened = data.fakelogin_open_opened
-		Global.gate_cutscene_done = data.gate_cutscene_done
-		Global.bridge_cutscene_done = data.bridge_cutscene_done
-		
-		Global.previous_scene_path = data.previous_scene_path
-		Global.info_desk = data.info_desk
+	var path = "user://Player_save.tres"
 
-		Global.mini_game_enable = data.mini_game_enable
-		Global.collected_questions = data.collected_questions
-		Global.introduction_1 = data.introduction_1
-		Global.act_1_done = data.act_1_done
-		Global.act_2_done = data.act_2_done
-		Global.act_3_done = data.act_3_done
-		Global.act2_cutscene_done = data.act2_cutscene_done
-		Global.minigame_done = data.minigame_done
-		Global.act_1_seen = data.act_1_seen
-		Global.act_2_seen = data.act_2_seen
-		Global.act_3_seen = data.act_3_seen
-
-
-		Global.collected_hint_ids = data.collected_hint_ids
-		Global.collected_hints = data.collected_hints
-		Global.hints_read = data.hints_read
-		Global.player_points = data.player_points
-		Global.chosen_password_number = data.chosen_password_number
-		Global.has_faded_in = data.has_faded_in
-		Global.mini_level_1 = data.mini_level_1
-		Global.mini_level_2 = data.mini_level_2
-		Global.mini_level_3 = data.mini_level_3
-		Global.show_button_after_hint = data.show_button_after_hint
-		Global.last_hint_opened = data.last_hint_opened
-
-		Global.npc_event_done = data.npc_event_done
-		Global.npc_evnt2_done = data.npc_evnt2_done
-		Global.npc_mark = data.npc_mark
-		Global.introduction_mark  = data.introduction_mark
-
-		Global.quest_status = data.quest_statuss
-		Global.quest_stage_index = data.current_quest_stage
-		Global.quest_description = data.current_quest_name
-		Global.current_quest_name = data.current_quest_title
-		
-		
-		get_tree().change_scene_to_file(data.current_scene_path)
-	else:
-		print("No saved data found or failed to load!")
+	# 1. Check if file exists
+	if not FileAccess.file_exists(path):
+		print("⚠️ No save file found!")
 		UiManager.show_load_error()
+		return
+
+	# 2. Attempt to load resource
+	var data := ResourceLoader.load(path) as SceneData
+	if data == null:
+		print("⚠️ Failed to load save file (might be corrupted).")
+		UiManager.show_load_error()
+		return
+		
+	next_player_position = data.player_position
+	load_requested = true
+	Global.game_first_loadin = data.game_first_loadin
+	Global.current_scene = data.current_scene
+	Global.game_outside_loadin = data.game_outside_loadin
+	
+	#Global.teleport_back = data.teleport_back
+	Global.dialog_pc_opened = data.dialog_pc_opened
+	Global.pc_start_opened = data.pc_start_opened
+	Global.mail_open_opened = data.mail_open_opened
+	Global.fakelogin_open_opened = data.fakelogin_open_opened
+	Global.gate_cutscene_done = data.gate_cutscene_done
+	Global.bridge_cutscene_done = data.bridge_cutscene_done
+	
+	Global.previous_scene_path = data.previous_scene_path
+	Global.info_desk = data.info_desk
+
+	Global.mini_game_enable = data.mini_game_enable
+	Global.collected_questions = data.collected_questions
+	Global.introduction_1 = data.introduction_1
+	Global.act_1_done = data.act_1_done
+	Global.act_2_done = data.act_2_done
+	Global.act_3_done = data.act_3_done
+	Global.act2_cutscene_done = data.act2_cutscene_done
+	Global.minigame_done = data.minigame_done
+	Global.act_1_seen = data.act_1_seen
+	Global.act_2_seen = data.act_2_seen
+	Global.act_3_seen = data.act_3_seen
+
+
+	Global.collected_hint_ids = data.collected_hint_ids
+	Global.collected_hints = data.collected_hints
+	Global.hints_read = data.hints_read
+	Global.player_points = data.player_points
+	Global.chosen_password_number = data.chosen_password_number
+	Global.has_faded_in = data.has_faded_in
+	Global.mini_level_1 = data.mini_level_1
+	Global.mini_level_2 = data.mini_level_2
+	Global.mini_level_3 = data.mini_level_3
+	Global.show_button_after_hint = data.show_button_after_hint
+	Global.last_hint_opened = data.last_hint_opened
+
+	Global.npc_event_done = data.npc_event_done
+	Global.npc_evnt2_done = data.npc_evnt2_done
+	Global.npc_mark = data.npc_mark
+	Global.introduction_mark  = data.introduction_mark
+
+	Global.quest_status = data.quest_statuss
+	Global.quest_stage_index = data.current_quest_stage
+	Global.quest_description = data.current_quest_name
+	Global.current_quest_name = data.current_quest_title
+	
+	
+	get_tree().change_scene_to_file(data.current_scene_path)
+		
+
+# SETTINGS SAVE / LOAD
+
+func save_settings():
+	var data = {
+		"master_volume": Global.master_volume,
+		"music_volume": Global.music_volume,
+		"sfx_volume": Global.sfx_volume,
+		#"resolution": Global.resolution
+	}
+	var file = FileAccess.open("user://settings.save", FileAccess.WRITE)
+	file.store_var(data)
+	file.close()
+	print("✅ Settings saved!")
+
+
+func load_settings():
+	if not FileAccess.file_exists("user://settings.save"):
+		print("⚠️ No settings file found, using defaults.")
+		return
+	
+	var file = FileAccess.open("user://settings.save", FileAccess.READ)
+	var data = file.get_var()
+	file.close()
+
+	Global.master_volume = data.get("master_volume", 1.0)
+	Global.music_volume = data.get("music_volume", 1.0)
+	Global.sfx_volume = data.get("sfx_volume", 1.0)
+	#Global.resolution = data.get("resolution", Vector2i(1280, 720))
+
+	Global.apply_audio_settings()
+	#DisplayServer.window_set_size(Global.resolution)
+
+	print("✅ Settings loaded!")

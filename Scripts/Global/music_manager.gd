@@ -1,6 +1,7 @@
 extends Node
 
 @onready var music: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+var current_track_path: String = ""
 
 func _ready():
 	add_child(music)

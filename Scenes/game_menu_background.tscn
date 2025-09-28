@@ -32070,6 +32070,9 @@ tile_set = SubResource("TileSet_2jsyh")
 
 [node name="Player" parent="." instance=ExtResource("13_2l2ks")]
 position = Vector2(599, 62)
+script = null
 
 [node name="office_door" parent="." instance=ExtResource("15_oeaor")]
 position = Vector2(216, 111)
+
+[editable path="Player"]

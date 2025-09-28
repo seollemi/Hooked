@@ -6,8 +6,27 @@ extends Node2D
 @onready var act_2_quest_p2: Quest_hehe = $"Act 2 quest2"
 @onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 
+
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+		
 func _ready() -> void:
+	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 	$act_2/CollisionShape2D.disabled = true
+	$act2_cutscene/CollisionShape2D.disabled = true
+	$act2_intro/CollisionShape2D.disabled = true
 	interactable.interact = _on_interact
 	#if act_2_quest.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false
@@ -49,8 +68,8 @@ func _on_act_2_intro_body_entered(body: Node2D) -> void:
 	if body is Player and not Global.act_2_done:
 		player.can_move = false  
 		Dialogic.start("Malware_discussion")
-		$act2_intro/CollisionShape2D.disabled = true
-		$act2_cutscene/CollisionShape2D.disabled = true
+		$act2_intro/CollisionShape2D.disabled = false
+		$act2_cutscene/CollisionShape2D.disabled = false
 		
 		
 func _on_dialogic_signal(event_name: String) -> void:
@@ -63,6 +82,7 @@ func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "act2_intro_done" and not Global.act_2_done:
 		print("🎬 act2_intro_done signal received — starting cutscene movement.")
 		$act_2/CollisionShape2D.disabled = false
+		
 
 		player.can_move = false
 		player.cutscene_move([
@@ -86,6 +106,7 @@ func _on_dialogic_signal(event_name: String) -> void:
 
 	else:
 		print("🛑 Skipping cutscene move — Act 2 is already done.")
+		$act2_intro/CollisionShape2D.disabled = false
 
 
 # ✅ Scene transitions
@@ -105,6 +126,7 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 			Vector2(532, 300),
 			Vector2(645, 297)
 		]as Array[Vector2])
+		
 
 func _run_cutscene(path: Array[Vector2]) -> void:
 	print("🎬 Cutscene moving through points:", path)

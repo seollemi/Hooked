@@ -8,6 +8,13 @@ extends Control
 		get_tree().paused = value
 		visible = value
 
+
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+#func _notification(what):
+	#if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		
+			#SaveManager.save_settings()
+
 func _ready() -> void:
 	
 	visible = false
@@ -37,16 +44,29 @@ func _on_options_pressed() -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	is_paused = false
-	Qbox.get_node("Questbox").visible = false
-	get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
-	MusicManager.music.stream = preload("res://sounds/1_Menu_Master.mp3")
-	MusicManager.music.play()
+	conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+	var is_confirmed = await conf.prompt(true)
+	if is_confirmed:
+			is_paused = false
+			Qbox.get_node("Questbox").visible = false
+			if Dialogic.current_timeline != null:
+				Dialogic.end_timeline()
+				
+			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+			MusicManager.music.stream = preload("res://sounds/1_Menu_Master.mp3")
+			
+			MusicManager.music.play()
 	
 	
 func _on_back_pressed() -> void:
 	$MarginContainer/Main_buttons.visible = true
 	$NinePatchRect.visible = false
+	
 
 
 func _on_master_value_changed(value: float) -> void:

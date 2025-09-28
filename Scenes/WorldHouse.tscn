@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://cpvo61vok166c"]
+[gd_scene load_steps=40 format=4 uid="uid://cpvo61vok166c"]
 
 [ext_resource type="Script" uid="uid://dqfbt036jofoq" path="res://Scripts/house.gd" id="1_eytsq"]
 [ext_resource type="Texture2D" uid="uid://cle5s3xa1fi1" path="res://world/house/Floor.png" id="3_2piwp"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="18_ibgkm"]
 [ext_resource type="PackedScene" uid="uid://b25qqfjn07ejo" path="res://Scenes/Pause.tscn" id="19_qc338"]
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="20_5rf4v"]
+[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="20_fyvr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ieno"]
 texture = ExtResource("3_2piwp")
@@ -3372,8 +3373,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Pause_menu" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="Pause" parent="Pause_menu" instance=ExtResource("19_qc338")]
+
+[node name="Confirmation" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("20_fyvr2")]
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_outside" to="." method="_on_door_outside_body_entered"]
 [connection signal="body_entered" from="interactable_End\'" to="." method="_on_interactable_end_body_entered"]

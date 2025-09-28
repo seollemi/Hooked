@@ -5,6 +5,15 @@ var player: Node = null
 
 #First time talking to "NPCS DIalogic"
 var talked_npc1: bool = false
+# Settings values:
+var master_volume: float = 1.0
+var music_volume: float = 1.0
+var sfx_volume: float = 1.0
+
+func apply_audio_settings():
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Master"), master_volume)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("MUSIC"), music_volume)
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), sfx_volume)
 
 #----
 var current_scene = "WorldHouse"

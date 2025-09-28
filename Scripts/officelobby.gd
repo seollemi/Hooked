@@ -15,9 +15,28 @@ var awaiting_act3_done := false
 @onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 @onready var final_quest: Quest_hehe = $"Final quest"
 
+@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		conf.customize(
+		"Are you sure?",
+		"Any unsaved progress will be lost.",
+		"Confirm",
+		"Cancel"
+	)
+		var is_confirmed = await conf.prompt(true)
+	
+		if is_confirmed:
+			get_tree().quit()
+			SaveManager.save_settings()
+		
+
+
 
 func _ready() -> void:
+	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 	print(Global.act_1_done)
+	
 	print(Global.act_1_seen)
 	if Global.act_1_done == true and Global.act_1_seen == false:
 		var act_done_instance = act_done_scene.instantiate()
@@ -109,7 +128,7 @@ func change_scene():
 			"outside":		
 				ChangeScene.change_scene_anim("res://Scenes/bridge.tscn")
 			"office":
-				ChangeScene.change_scene_anim("res://Scenes/office.tscn")
+				ChangeScene.change_scene_anim("res://Scenes/Office.tscn")
 			"computer":
 				ChangeScene.change_scene_anim("res://Scenes/pc_game_password.tscn")
 			"training":
@@ -223,8 +242,7 @@ func _on_password_body_entered(body: Node2D) -> void:
 		
 func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "done":
-		MusicManager.music.stream = preload("res://sounds/2_Day_1_Master.mp3")
-		MusicManager.music.play()
+		MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 		player.cutscene_move([
 			Vector2(317, 208),
 			Vector2(319, 137),
