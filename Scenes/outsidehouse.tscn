@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://djle87uke85p4"]
+[gd_scene load_steps=35 format=4 uid="uid://djle87uke85p4"]
 
 [ext_resource type="Script" uid="uid://cdoabcgee1150" path="res://Scripts/outsidehouse.gd" id="1_2bdwf"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="1_3t8au"]
@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="12_7fphf"]
 [ext_resource type="Texture2D" uid="uid://4ukds66ly74t" path="res://world/exterior/Modern_Exteriors_16x16/Animated_16x16/Animated_sheets_16x16/Beach_Seagull_Idle_Right_16x16.png" id="12_wvmft"]
 [ext_resource type="PackedScene" uid="uid://b25qqfjn07ejo" path="res://Scenes/Pause.tscn" id="16_wvmft"]
-[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="17_4ytjn"]
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="17_l6087"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xdc22"]
@@ -4639,12 +4638,6 @@ metadata/_edit_use_anchors_ = true
 layer = 3
 
 [node name="Pause" parent="Pause_menu" instance=ExtResource("16_wvmft")]
-
-[node name="Confirmation" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("17_4ytjn")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_inside" to="." method="_on_door_inside_body_entered"]
 [connection signal="body_entered" from="Door_to_city" to="." method="_on_door_to_city_body_entered"]

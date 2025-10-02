@@ -19198,7 +19198,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Pause_menu" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="Pause" parent="Pause_menu" instance=ExtResource("18_8glwk")]
 
