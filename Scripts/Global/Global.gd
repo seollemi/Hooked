@@ -21,6 +21,8 @@ var ronnie_password:bool = false
 var previous_scene_path: String = ""
 var info_desk= false
 var player_PC1_Location = Vector2(230.0, -78.0)
+
+
 func set_previous_scene(scene_path: String, player_location: Vector2):
 	previous_scene_path = scene_path
 	player_PC1_Location = player_location
@@ -70,6 +72,7 @@ var act_1_seen: bool = false
 var act_2_seen: bool = false
 var act_3_seen: bool = false
 var act_2_cut_done:bool = false
+
 #Quest Global progression 
 var quest_stage_index = 0
 var quest_status = 0

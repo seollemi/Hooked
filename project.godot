@@ -37,6 +37,7 @@ directories/dch_directory={
 "Jordan": "res://Dialogic_scenes/Characters/Jordan.dch",
 "Narrator": "res://Dialogic_scenes/Characters/Narrator.dch",
 "alex": "res://npc/alex.dch",
+"andrew": "res://Dialogic_scenes/Characters/andrew.dch",
 "character": "res://npc/character.dch",
 "jamie": "res://Dialogic_scenes/Characters/jamie.dch",
 "mark": "res://Dialogic_scenes/Characters/mark.dch",

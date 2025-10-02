@@ -72,7 +72,7 @@ func _on_dialogic_signal(End: String) -> void:
 	if Global.act_3_done == true:
 		if final_quest.quest_statuss == final_quest.QuestStatus.started:
 			final_quest.finish_quest()
-		get_tree().change_scene_to_file("res://Scenes/Ending_mini_game/Ending.tscn")
+		get_tree().change_scene_to_file("res://Scenes/TobeContinue.tscn")
 		print("✅ Mini-game is now enabled!")
 	final_quest.queue_free()
 
