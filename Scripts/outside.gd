@@ -3,24 +3,7 @@ extends Node2D
 
 var cutscene_played := false
 @onready var quest_hehe: Quest_hehe = $Quest_hehe
-@onready var quest_hehe_p_2: Quest_hehe = $Quest_hehe_p2
-
-
-@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		conf.customize(
-		"Are you sure?",
-		"Any unsaved progress will be lost.",
-		"Confirm",
-		"Cancel"
-	)
-		var is_confirmed = await conf.prompt(true)
-	
-		if is_confirmed:
-			get_tree().quit()
-			SaveManager.save_settings()
-		
+@onready var quest_hehe_p_2: Quest_hehe = $Quest_hehe_p2	
 
 func _ready() -> void:
 	

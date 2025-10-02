@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dom5lhwd31uci"]
+[gd_scene load_steps=8 format=3 uid="uid://dom5lhwd31uci"]
 
 [ext_resource type="Script" uid="uid://df2xny172d82j" path="res://Scripts/menu.gd" id="1_uubjt"]
 [ext_resource type="PackedScene" uid="uid://7ulmwdv0rrkn" path="res://Scenes/game_menu_background.tscn" id="2_idohh"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="3_ma218"]
 [ext_resource type="AudioStream" uid="uid://b0bwfbei4bss1" path="res://sounds/1_Menu_Master.mp3" id="3_syfuq"]
 [ext_resource type="Theme" uid="uid://b8m784p476wgw" path="res://Scenes/UI/Slider.tres" id="4_ma218"]
-[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="7_wfhf6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idohh"]
 atlas = ExtResource("3_ma218")
@@ -195,12 +194,6 @@ horizontal_alignment = 1
 [node name="Menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_syfuq")
 bus = &"MUSIC"
-
-[node name="Confirmation" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("7_wfhf6")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MarginContainer/Main_buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/Main_buttons/Continue" to="." method="_on_continue_pressed"]

@@ -7,17 +7,30 @@ signal confirmed (is_confirmed: bool)
 @onready var message_label: Label = %MessageLabel
 @onready var confirm_button: Button = %Confirm
 @onready var cancel_button: Button = %Cancel
+@onready var canvas_layer: CanvasLayer = $CanvasLayer
 
 
 var is_open: bool = false
 
 var _should_unpause: bool = false
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		canvas_layer.visible = true
+		customize("Quit Game", "Any unsaved progress will be lost.", "Quit", "Cancel")
+		var result = await prompt(true)
+		if result:
+			get_tree().quit()
+			SaveManager.save_settings()
+		else:
+			canvas_layer.visible = false
+
+
 func _ready() -> void:
 	set_process_unhandled_key_input(false)
 	
 	hide()
-	
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		cancel()

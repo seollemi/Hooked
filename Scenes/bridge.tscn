@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://nna3j176mn66"]
+[gd_scene load_steps=43 format=4 uid="uid://nna3j176mn66"]
 
 [ext_resource type="Texture2D" uid="uid://dntkub8i7o5in" path="res://world/bridge/1_Terrains_and_Fences_16x16.png" id="1_aa2wk"]
 [ext_resource type="Script" uid="uid://dep7r3rhfspsg" path="res://Scripts/outside.gd" id="1_dgpy2"]
@@ -15,10 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://hn4sya8mttbw" path="res://world/Phone_cutscene/Notification Sound Effects Copyright Free  1.mp3" id="12_kt5em"]
 [ext_resource type="PackedScene" uid="uid://s0pm27nivbtg" path="res://Scenes/door.tscn" id="14_vld22"]
 [ext_resource type="PackedScene" uid="uid://dto8gg73ckj6f" path="res://Scenes/Player.tscn" id="15_dcb0v"]
-[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="17_dxtfm"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="16_j8e8u"]
 [ext_resource type="PackedScene" uid="uid://b25qqfjn07ejo" path="res://Scenes/Pause.tscn" id="18_j8e8u"]
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="19_p3qdc"]
-[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="19_xyhg5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_048ht"]
 texture = ExtResource("2_o6a5g")
@@ -31345,7 +31344,7 @@ tile_map_data = PackedByteArray("AABPAAIAAAAlAA8AAABOAAIAAAAlAA8AAABNAAIAAAAlAA8
 tile_set = SubResource("TileSet_wsor3")
 
 [node name="Player" parent="." instance=ExtResource("15_dcb0v")]
-position = Vector2(216, 149)
+position = Vector2(1223, -44)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.5, 2.5)
@@ -31398,14 +31397,14 @@ position = Vector2(1, 5)
 shape = SubResource("RectangleShape2D_dcb0v")
 
 [node name="Quest_hehe" type="Node2D" parent="."]
-script = ExtResource("17_dxtfm")
+script = ExtResource("16_j8e8u")
 quest_name = "Act 1 "
 quest_descrip = "Go to the office"
 reached_goal_text = "Go to the training room"
 quest_statuss = 1
 
 [node name="Quest_hehe_p2" type="Node2D" parent="."]
-script = ExtResource("17_dxtfm")
+script = ExtResource("16_j8e8u")
 quest_name = "Act 1 "
 quest_descrip = "Talk to mark near office"
 reached_goal_text = "Go to the office"
@@ -31425,12 +31424,6 @@ metadata/_edit_use_anchors_ = true
 layer = 3
 
 [node name="Pause" parent="Pause_menu" instance=ExtResource("18_j8e8u")]
-
-[node name="Confirmation" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("19_xyhg5")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_to_outsidehouse" to="." method="_on_door_to_outsidehouse_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

@@ -21,13 +21,14 @@ config/icon="res://icon.svg"
 ChangeScene="*res://Scenes/change_scene.tscn"
 Global="*res://Scripts/Global/Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-Background_scroll="*res://MiniGameTscn/Backgrond_scroll.tscn"
 Qbox="*res://Scenes/quest.tscn"
+Background_scroll="*res://MiniGameTscn/Backgrond_scroll.tscn"
 MusicManager="*res://Scripts/Global/music_manager.gd"
 Fullscreen="*res://Scripts/Global/fullscreen.gd"
 Passwordtracker="*res://Scripts/passwordtracker.gd"
 SaveManager="*res://Scripts/Global/SaveManager.gd"
 UiManager="*res://Scenes/UIManager.tscn"
+quit_dialog_automatic="*res://Scenes/confirmation_modal.tscn"
 
 [dialogic]
 
@@ -84,10 +85,10 @@ variables={}
 layout/style_list=["res://Dialogic_scenes/Default.tres", "res://Dialogic_scenes/Textbox_style.tres", "res://Dialogic_scenes/bubble.tres", "res://New_File.tres"]
 layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
-text/initial_text_reveal_skippable=true
-text/text_reveal_skip_delay=0.1
-text/advance_delay=0.1
+text/letter_speed=0.017
+text/initial_text_reveal_skippable=false
+text/text_reveal_skip_delay=0.5
+text/advance_delay=0.5
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
 animations/join_default_length=0.5
@@ -95,7 +96,7 @@ animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
 animations/cross_fade_default_length=0.5
-choices/autofocus_first=true
+choices/autofocus_first=false
 choices/delay=0.2
 choices/reveal_delay=0
 choices/reveal_by_input=false
@@ -118,6 +119,10 @@ audio/channel_defaults={
 }
 audio/max_channels=4.0
 audio/type_sound_bus="SFX"
+text/split_at_new_lines=false
+text/autocolor_names=false
+text/autoadvance_enabled=true
+text/autoadvance_fixed_delay=2.0
 
 [display]
 

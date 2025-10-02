@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nfwgqgsh4txn"
+path="res://.godot/imported/2025-10-02 13-28-10.mp3-37c74598737bc06914fa0a076f24f4a2.mp3str"
+
+[deps]
+
+source_file="res://sounds/Voice_act/2025-10-02 13-28-10.mp3"
+dest_files=["res://.godot/imported/2025-10-02 13-28-10.mp3-37c74598737bc06914fa0a076f24f4a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

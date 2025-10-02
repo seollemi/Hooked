@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b25qqfjn07ejo"]
+[gd_scene load_steps=6 format=3 uid="uid://b25qqfjn07ejo"]
 
 [ext_resource type="Script" uid="uid://cuf577qgr0mgg" path="res://Scripts/pause.gd" id="1_n136c"]
 [ext_resource type="Theme" uid="uid://1u0xrcs1q6qn" path="res://world/UI/quest_bt.tres" id="3_6v82q"]
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="4_jv2ls"]
-[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="5_5o7im"]
 [ext_resource type="Theme" uid="uid://b8m784p476wgw" path="res://Scenes/UI/Slider.tres" id="5_d4bqu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idohh"]
@@ -189,12 +188,6 @@ custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme = ExtResource("3_6v82q")
 text = "Back"
-
-[node name="Confirmation" type="CanvasLayer" parent="."]
-layer = 4
-
-[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("5_5o7im")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MarginContainer/Main_buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/Main_buttons/Save" to="." method="_on_save_pressed"]

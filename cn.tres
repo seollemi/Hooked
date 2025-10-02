@@ -1,0 +1,102 @@
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://l2ea04nmyrny"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_717oc"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pngec"]
+atlas = SubResource("CompressedTexture2D_717oc")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2vff7"]
+texture = SubResource("AtlasTexture_pngec")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l4bp0"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhvwu"]
+atlas = SubResource("CompressedTexture2D_l4bp0")
+region = Rect2(11, 11, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d874g"]
+texture = SubResource("AtlasTexture_hhvwu")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7v6ue"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh1x3"]
+atlas = SubResource("CompressedTexture2D_7v6ue")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfmfd"]
+texture = SubResource("AtlasTexture_lh1x3")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2dpsu"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mft4p"]
+atlas = SubResource("CompressedTexture2D_2dpsu")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftrnq"]
+texture = SubResource("AtlasTexture_mft4p")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8wjtf"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmebh"]
+atlas = SubResource("CompressedTexture2D_8wjtf")
+region = Rect2(11, 155, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pblvf"]
+texture = SubResource("AtlasTexture_tmebh")
+texture_margin_left = 22.0
+texture_margin_top = 4.0
+texture_margin_right = 22.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6l7ux"]
+load_path = "res://.godot/imported/Sprite sheet for Basic Pack.png-6527c3c2c21ec7d8b69fce74290665da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgq38"]
+atlas = SubResource("CompressedTexture2D_6l7ux")
+region = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_efyn3"]
+texture = SubResource("AtlasTexture_wgq38")
+texture_margin_left = 6.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 7.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 50
+Button/styles/disabled = SubResource("StyleBoxTexture_2vff7")
+Button/styles/focus = SubResource("StyleBoxTexture_d874g")
+Button/styles/hover = SubResource("StyleBoxTexture_jfmfd")
+Button/styles/normal = SubResource("StyleBoxTexture_ftrnq")
+Button/styles/pressed = SubResource("StyleBoxTexture_pblvf")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/constants/shadow_offset_x = 0
+Label/font_sizes/font_size = 25
+Label/styles/normal = SubResource("StyleBoxTexture_efyn3")

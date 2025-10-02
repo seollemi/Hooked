@@ -8,20 +8,6 @@ extends Node2D
 
 @onready var toggle_button: TextureButton = $UI/ToggleQuestButton
 
-@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		conf.customize(
-		"Are you sure?",
-		"Any unsaved progress will be lost.",
-		"Confirm",
-		"Cancel"
-	)
-		var is_confirmed = await conf.prompt(true)
-	
-		if is_confirmed:
-			get_tree().quit()
-			SaveManager.save_settings()
 		
 func _ready() -> void:
 	interactable_end_.interact = _on_interact1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck4ofuxag035e" path="res://Scenes/Menu_intro_Controls.gd" id="1_80qsh"]
 [ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="2_ihe4q"]
-[ext_resource type="Texture2D" uid="uid://8rl6u5wr6vsy" path="res://MiniGameAssets/test.png" id="3_dlehq"]
+[ext_resource type="Theme" uid="uid://l2ea04nmyrny" path="res://cn.tres" id="3_80qsh"]
 [ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="4_ao86l"]
 
 [node name="Control" type="Control"]
@@ -106,27 +106,14 @@ theme_override_font_sizes/normal_font_size = 500
 bbcode_enabled = true
 text = "F4 to Full Screen"
 
-[node name="ContinueButton" type="TextureButton" parent="."]
+[node name="ContinueButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 897.0
-offset_top = 530.0
-offset_right = 1128.0
-offset_bottom = 634.0
-texture_normal = ExtResource("3_dlehq")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="ContinueButton"]
-layout_mode = 0
-offset_left = 65.0
-offset_top = 35.0
-offset_right = 11825.0
-offset_bottom = 3285.0
-scale = Vector2(0.01, 0.01)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_ihe4q")
-theme_override_font_sizes/font_size = 3000
-text = "Continue?"
+offset_left = 827.0
+offset_top = 544.0
+offset_right = 1127.0
+offset_bottom = 624.0
+theme = ExtResource("3_80qsh")
+text = "Continue"
 
 [node name="TransitionScreen3" parent="." instance=ExtResource("4_ao86l")]
 visible = false

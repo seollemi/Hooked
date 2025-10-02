@@ -1,34 +1,66 @@
+[voice path="res://sounds/Voice_act/1.mp3" volume="0.4" bus="SFX"]
 mark (Mark_talking): Wanna ask about anything in particular? I've got time."
 - “What even is cybersecurity?”
-	James (James_talking): “What even is cybersecurity?”
+	James (James_talking): “What even is [b][color=#00B4FF]cybersecurity[/color][/b]?”
+	[voice path="res://sounds/Voice_act/2.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): "Think of it like this\: we’re living in a world where almost everything’s connected—phones, hospitals, even traffic lights. Cybersecurity is what keeps all that safe from people who want to mess with it.
+	[voice path="res://sounds/Voice_act/3.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): It’s not just about antivirus software anymore. It’s about building defenses around systems, protecting data, and making sure people don’t fall for scams or leaks.\
 Whether it's a huge corporation or just your personal account, if it’s online, someone out there probably wants access to it."
 	[signal arg="Q1"]
 	jump 
 - “Why do companies care so much about data?”
-	James (James_talking): “Why do companies care so much about data?”
+	James (James_talking): “Why do companies care so much about [b][color=#00B4FF]data[/color][/b]?”
+	[voice path="res://sounds/Voice_act/2025-10-02 13-28-10.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): "Because data is basically the heart of every modern company. It’s not just names and emails—it’s strategies, payments, health records, legal stuff. If that data gets stolen, it’s not just an inconvenience
+	[voice path="res://sounds/Voice_act/4.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): it can destroy reputations, tank stock prices, and even shut a business down.\
 I mean, imagine if someone leaked your school’s entire student database online. That’s the kind of damage companies are trying to avoid every day."
+	James (James_talking): Okay, but when you say ‘data,’ what kinds are we talking about? Like, is it all the same?
+	[voice path="res://sounds/Voice_act/6.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): Not really. There are different types of data companies handle.
+	[voice path="res://sounds/Voice_act/7.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): For example [b][color=#00B4FF]personal data[/color][/b], things like names, addresses, phone numbers.
+	[voice path="res://sounds/Voice_act/8.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Financial data[/color][/b], credit card details, payroll info, budgets.
+	[voice path="res://sounds/Voice_act/9.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Health data[/color][/b], medical records, prescriptions, insurance details.
+	[voice path="res://sounds/Voice_act/10.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Intellectual property data[/color][/b], designs, source code, trade secrets.
+	[voice path="res://sounds/Voice_act/11.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Operational data[/color][/b], schedules, supply chain records, system logs."
+	James (James_talking): Wow, so it’s not just passwords or credit cards—it’s literally everything a company runs on.
+	[voice path="res://sounds/Voice_act/12.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): Exactly. And because all of these data types are valuable in different ways, hackers use different attacks to steal or disrupt them. That’s why cybersecurity isn’t one-size-fits-all.
+	James (James_talking): So if someone steals financial data, it’s money loss. If they steal intellectual property, it’s like giving away the company’s secrets?
+	[voice path="res://sounds/Voice_act/13.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): Right. And if health data gets leaked, it’s a privacy nightmare. Each type of data needs its own protection
 	[signal arg="Q2"]
 	jump 
 - “Who’s usually behind these cyber attacks?”
 	James (James_talking): “Who’s usually behind these cyber attacks?”
+	[voice path="res://sounds/Voice_act/14.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): "Funny thing—there isn’t just one type of attacker.\
-Some are just bored teens trying to break stuff for fun. Others? Full-on criminal groups, insiders who got fired, or activists trying to make a statement. A phisher tries to trick people into revealing sensitive information—like usernames, passwords, or credit card numbers—by pretending to be a trustworthy entity, often through fake emails or websites. And then there are state-sponsored ones—basically hackers working for governments.
+Some are just bored teens trying to break stuff for fun. Others? Full-on criminal groups, insiders who got fired, or activists trying to make a statement. A [b][color=#00B4FF]phisher[/color][/b] tries to trick people into revealing sensitive information—like usernames, passwords, or credit card numbers—by pretending to be a trustworthy entity, often through fake emails or websites. And then there are state-sponsored ones—basically hackers working for governments.
+	[voice path="res://sounds/Voice_act/15.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): Each one has different motives, different targets. That’s what makes it tricky—you’re not always defending against the same type of threat."
-	mark (Mark_talking): Black hats break into systems illegally for personal gain — stealing data, spreading malware, or causing damage. They don't have permission, and their goal is usually profit, revenge, or just causing chaos.
-	mark (Mark_talking): White hats are the good guys. They’re ethical hackers who are hired to find vulnerabilities before black hats do. They work legally, often for companies, to help secure networks.
-	mark (Mark_talking): Gray hats are in between. They might hack without permission, but they usually don’t intend harm. They sometimes inform the organization about the flaw they found — but since they didn’t have permission, it’s still illegal.
+	[voice path="res://sounds/Voice_act/16.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Black hats[/color][/b] break into systems illegally for personal gain — stealing data, spreading malware, or causing damage. They don't have permission, and their goal is usually profit, revenge, or just causing chaos.
+	[voice path="res://sounds/Voice_act/17.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]White hats[/color][/b] are the good guys. They’re ethical hackers who are hired to find vulnerabilities before black hats do. They work legally, often for companies, to help secure networks.
+	[voice path="res://sounds/Voice_act/18.mp3" volume="0.0" bus="SFX"]
+	mark (Mark_talking): [b][color=#00B4FF]Gray hats[/color][/b] are in between. They might hack without permission, but they usually don’t intend harm. They sometimes inform the organization about the flaw they found — but since they didn’t have permission, it’s still illegal.
 	[signal arg="Q3"]
 	jump 
 - “Is cyberwarfare actually real?”
-	James (James_talking): “Is cyberwarfare actually real?”
+	James (James_talking): “Is [b][color=#00B4FF]cyberwarfare[/color][/b] actually real?”
+	[voice path="res://sounds/Voice_act/19.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): "More real than most people think.\
 Governments are launching cyber attacks like digital missiles—disabling infrastructure, stealing secrets, disrupting communication. It’s cheaper than actual war and leaves fewer traces.
+	[voice path="res://sounds/Voice_act/20.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): There was a case where a power plant got shut down remotely—just from someone typing on a keyboard halfway across the world. That’s not science fiction. That’s right now."
 	[signal arg="Q4"]
 	jump 
 - Im done listening for now
+	[voice path="res://sounds/Voice_act/21.mp3" volume="0.0" bus="SFX"]
 	mark (Mark_talking): Of course, James. Don’t hesitate to reach out if you need further assistance.

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqiro235wso6a"]
+
+[ext_resource type="Texture2D" uid="uid://dg8et5c0cxylc" path="res://MiniGameAssets/scrambled.webp" id="1_5x2it"]
+[ext_resource type="Script" uid="uid://hgkeyritnc27" path="res://MiniGameTscn/multiplechoice.gd" id="1_x3r0o"]
+[ext_resource type="Texture2D" uid="uid://cvr5onr70hr2y" path="res://MiniGameAssets/Hint.png" id="2_x3r0o"]
+[ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="4_r8uo7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -287.0
+offset_right = -99.0
+offset_bottom = -287.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3r0o")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 0
+offset_left = -234.0
+offset_top = 105.0
+offset_right = 1610.0
+offset_bottom = 1219.0
+mouse_filter = 2
+texture = ExtResource("1_5x2it")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 0
+offset_left = 145.0
+offset_top = 374.0
+offset_right = 1207.0
+offset_bottom = 578.0
+mouse_filter = 2
+texture = ExtResource("2_x3r0o")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 420.0
+offset_right = 1101.0
+offset_bottom = 528.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.034
+offset_left = 285.0
+offset_top = 585.0
+offset_right = 1042.42
+offset_bottom = 811.968
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+
+[node name="Quest_hehe" type="Node2D" parent="."]
+script = ExtResource("4_r8uo7")
+quest_name = "Act 1 "
+quest_descrip = "Go to the marked pc"
+reached_goal_text = "Go to the marked pc"
+quest_statuss = 1

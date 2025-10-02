@@ -7,6 +7,15 @@ extends Node2D
 @onready var anim = $AnimationPlayer
 @onready var cam = $Camera2D
 
+
+func fade_out_voice(duration: float = 1.5):
+	if Dialogic.Voice.is_running():
+		var tween = get_tree().create_tween()
+		tween.tween_method(Dialogic.Voice.set_volume, 0.0, -80.0, duration)
+		await tween.finished
+		Dialogic.Voice.stop_audio()
+
+			
 func _ready():
 	await run_intro_sequence()
 
@@ -24,20 +33,22 @@ func run_intro_sequence() -> void:
 
 	Dialogic.start("CollegeDialogue")
 	await Dialogic.timeline_ended
-
+	
+	await fade_out_voice(0.5)
 	anim.play("fade_out")
 	await anim.animation_finished
 
 	### HOUSE
 	college_sprite.visible = false
 	house_sprite.visible = true
-
+	
 	anim.play("fade_in")
 	await anim.animation_finished
 
 	Dialogic.start("HouseDialogue")
 	await Dialogic.timeline_ended
-
+	
+	await fade_out_voice(0.5)
 	anim.play("fade_out")
 	await anim.animation_finished
 
@@ -58,6 +69,7 @@ func run_intro_sequence() -> void:
 	await Dialogic.timeline_ended
 
 	# ✅ Final fade out
+	await fade_out_voice(0.5)
 	anim.play("fade_out")
 	await anim.animation_finished
 	

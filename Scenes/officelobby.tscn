@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://badoc07mii0ks"]
+[gd_scene load_steps=51 format=4 uid="uid://badoc07mii0ks"]
 
 [ext_resource type="Script" uid="uid://cqmkcrhjt3h2o" path="res://Scripts/officelobby.gd" id="1_6d4fe"]
 [ext_resource type="Texture2D" uid="uid://bslqmoavu0d00" path="res://world/office/Modern_Office_Black_Shadow.png" id="1_7ovcx"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" uid="uid://6hy1frth2fjb" path="res://Scripts/quest.gd" id="15_tryux"]
 [ext_resource type="PackedScene" uid="uid://b25qqfjn07ejo" path="res://Scenes/Pause.tscn" id="18_8glwk"]
 [ext_resource type="Texture2D" uid="uid://dj8ooewn83u0g" path="res://world/UI/Sprite sheet for Basic Pack.png" id="19_0gwg4"]
-[ext_resource type="PackedScene" uid="uid://f1uu3g402k0a" path="res://Scenes/confirmation_modal.tscn" id="19_8mlqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibiix"]
 texture = ExtResource("1_7ovcx")
@@ -19201,12 +19200,6 @@ metadata/_edit_use_anchors_ = true
 layer = 3
 
 [node name="Pause" parent="Pause_menu" instance=ExtResource("18_8glwk")]
-
-[node name="Confirmation" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="ConfirmationModal" parent="Confirmation" instance=ExtResource("19_8mlqc")]
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="Door_to_office" to="." method="_on_door_to_office_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

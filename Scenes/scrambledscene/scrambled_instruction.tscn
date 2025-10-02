@@ -20,9 +20,11 @@ offset_right = 1185.0
 offset_bottom = 349.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
-text = "Answer the given question by clicking the button that shows the 
-correct word formed from the scrambled letters. Make sure the 
-word you choose makes sense based on the question."
+text = "“Read the question above. Unscramble the letters with your keyboard. 
+Press the button \"shuffle\" or Spacebar to shuffle the letters
+Press Enter to submit.”
+
+"
 
 [node name="SubmitButton" type="Button" parent="."]
 layout_mode = 0
@@ -44,5 +46,16 @@ texture = ExtResource("1_qmdyy")
 
 [node name="ExitConfirmDialog" type="ConfirmationDialog" parent="."]
 auto_translate_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 394.0
+offset_right = 1470.0
+offset_bottom = 576.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "NOTE: DONT USE SPACE FOR TWO WORDED ANSWERS
+Press ESC to exit"
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]

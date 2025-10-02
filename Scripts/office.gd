@@ -7,20 +7,7 @@ extends Node2D
 @onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 
 
-@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		conf.customize(
-		"Are you sure?",
-		"Any unsaved progress will be lost.",
-		"Confirm",
-		"Cancel"
-	)
-		var is_confirmed = await conf.prompt(true)
-	
-		if is_confirmed:
-			get_tree().quit()
-			SaveManager.save_settings()
+
 		
 func _ready() -> void:
 	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)

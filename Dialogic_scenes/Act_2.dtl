@@ -1,24 +1,35 @@
 James (James_talking): We're locked out. Every shared file’s inaccessible… wait—
 [signal arg="wna"]
+[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.1.wav" volume="-1.0" bus="SFX"]
 Jordan (Jordan_talking): (leans in, reading)\
 “Your data has been encrypted. Pay 10 BTC within 3 hours or it’s gone forever.”
 James (James_talking): It’s ransomware. No doubt.
+[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.2.wav" volume="-1.0" bus="SFX"]
 Jordan (Jordan_talking): Then we’re on the clock. First step\: isolation. Before it spreads further.
+[voice path="res://sounds/Voice_act/Dana/dana1.wav" volume="2.0" bus="SFX"]
 Dana (Dana_talking): What’s happening? Legal just called. They’re locked out of everything.
+[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.3.wav" volume="-1.0" bus="SFX"]
 Jordan (Jordan_talking): We’ve been hit by ransomware. They’re demanding payment in Bitcoin.
+[voice path="res://sounds/Voice_act/Dana/Dana2.wav" volume="2.0" bus="SFX"]
 Dana (Dana_talking): Can we just pay and be done with it? We can't afford downtime today.
+[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.4.wav" volume="-1.0" bus="SFX"]
 Jordan (Jordan_talking): There’s no guarantee they’ll return the files, ma’am. Paying might make us a future target. But isolation takes time.
 Narrator: What should Jordan do?
 - 🔌 [Isolate affected systems immediately]
 	James (James_no): I think we should not pay them
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.5.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): We isolate now. Cut off infected systems, trace the spread, and start restoring from last night’s backup.
+	[voice path="res://sounds/Voice_act/Dana/Dana3.wav" volume="2.0" bus="SFX"]
 	Dana (Dana_no): (sighs)\
 Fine. Just fix this. And keep me updated every step of the way.
 	James (James_talking): I’m unplugging the affected machines. Starting with the east wing.
 	[signal arg="shut"]
-	Jordan (Jordan_talking): I’ll alert the rest of IT and lock down network access. We’ll identify the ransomware variant and kill it.
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.6.wav" volume="-1.0" bus="SFX"]
+	Jordan (Jordan_talking): I’ll alert the rest of IT and lock down network access. We’ll identify the ransomware variant
+	[voice path="res://sounds/Voice_act/Dana/Dana4.wav" volume="2.0" bus="SFX"]
 	Dana (Dana_talking): This better never happen again. Understood?
-	James (James_talking): Understood, ma’am.
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.7.wav" volume="-1.0" bus="SFX"]
+	Jordan (Jordan_talking): Understood, ma’am.
 	[signal arg="right_choice"]
 	[signal arg="Game_enable"]
 	[signal arg="act_2_done"]
@@ -28,19 +39,26 @@ Fine. Just fix this. And keep me updated every step of the way.
 📉 Downtime was minimized. Future incidents now have a playbook.
 - 💸 [Attempt to pay the ransom]
 	James (James_talking): I'll go get the bitcoin!
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.8.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): (hesitant)\
 It’s risky… but maybe we can get the files back quickly if we just pay.
+	[voice path="res://sounds/Voice_act/Dana/Dana5.wav" volume="2.0" bus="SFX"]
 	Dana (Dana_talking): Do it. We can't afford to lose hours — not today.
 	James (James_talking): (worried)\
 What if they vanish after we send it?
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.9.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): We’ve made the call. Let’s prepare the wallet.
 	James (James_no): Still nothing. No decryption key. More systems are crashing.
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.10.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): (checks logs)\
 It’s spreading again. They lied.
+	[voice path="res://sounds/Voice_act/Dana/dana6.wav" volume="2.0" bus="SFX"]
 	Dana (Dana_no): (furious)\
 We paid — and things are worse! You said this would fix it!
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.11.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): I should’ve isolated the systems first… They’ve taken our money and escalated the attack.
 	James (James_no): Backups are clean, but now we’ll need more time to rebuild everything.
+	[voice path="res://sounds/Voice_act/Act_2_vn/Jordan_act2.13.wav" volume="-1.0" bus="SFX"]
 	Jordan (Jordan_talking): We just bought ourselves more downtime. And painted a target on our backs.
 	[signal arg="wrong_choice"]
 	Narrator: ❌ You chose to pay the ransom.\

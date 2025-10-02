@@ -15,26 +15,13 @@ var awaiting_act3_done := false
 @onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 @onready var final_quest: Quest_hehe = $"Final quest"
 
-@onready var conf: ConfirmationModal = $Confirmation/ConfirmationModal
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		conf.customize(
-		"Are you sure?",
-		"Any unsaved progress will be lost.",
-		"Confirm",
-		"Cancel"
-	)
-		var is_confirmed = await conf.prompt(true)
-	
-		if is_confirmed:
-			get_tree().quit()
-			SaveManager.save_settings()
-		
-
-
 
 func _ready() -> void:
 	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
+
+	# Restore quest UI if quest is active
+	Qbox.get_node("Questbox").visible = false
+		
 	print(Global.act_1_done)
 	
 	print(Global.act_1_seen)
@@ -173,8 +160,11 @@ func _on_dialog_ended() -> void:
 
 func _on_interact2() -> void:
 	if quest_hehe.should_show_quest_ui():
+		Global.quest_status = quest_hehe.quest_statuss
+		Global.current_quest_name = quest_hehe.quest_name
+		Global.quest_description = quest_hehe.quest_descrip
 		Qbox.get_node("Questbox").visible = false
-	get_tree().change_scene_to_file("res://Scenes/scrambledscene/scrambled_instruction.tscn")
+	get_tree().change_scene_to_file("res://MiniGameTscn/multiplechoiceinstruction.tscn")
 		
 func _on_interact():
 	if Global.act_3_done:
