@@ -15,6 +15,10 @@ func _ready() -> void:
 	$act2_cutscene/CollisionShape2D.disabled = true
 	$act2_intro/CollisionShape2D.disabled = true
 	interactable.interact = _on_interact
+	
+	if not Global.act_2_done:
+		$interactable/CollisionShape2D.disabled = true
+		
 	#if act_2_quest.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false
 	#if act_3_quest.should_show_quest_ui():
@@ -25,6 +29,7 @@ func _ready() -> void:
 	if Global.act_2_done == true and Global.act_2_seen == false:
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
+		$interactable/CollisionShape2D.disabled = false
 
 
 func _process(delta: float) -> void:
@@ -57,6 +62,8 @@ func _on_act_2_intro_body_entered(body: Node2D) -> void:
 		Dialogic.start("Malware_discussion")
 		$act2_intro/CollisionShape2D.disabled = false
 		$act2_cutscene/CollisionShape2D.disabled = false
+		$interactable/CollisionShape2D.disabled = false
+		
 		
 		
 func _on_dialogic_signal(event_name: String) -> void:
@@ -69,6 +76,8 @@ func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "act2_intro_done" and not Global.act_2_done:
 		print("🎬 act2_intro_done signal received — starting cutscene movement.")
 		$act_2/CollisionShape2D.disabled = false
+		$interactable/CollisionShape2D.disabled = false
+		
 		
 
 		player.can_move = false
@@ -79,6 +88,8 @@ func _on_dialogic_signal(event_name: String) -> void:
 			Vector2(682, 207),
 			Vector2(733, 207)
 		] as Array[Vector2])
+		
+		
 	
 		await get_tree().create_timer(4.0).timeout
 	if event_name == "act_1_done":
@@ -89,11 +100,13 @@ func _on_dialogic_signal(event_name: String) -> void:
 		var act_done_instance = act_done_scene.instantiate()
 		add_child(act_done_instance)
 		act_3_quest.start_quest()
+		
 
 
 	else:
 		print("🛑 Skipping cutscene move — Act 2 is already done.")
 		$act2_intro/CollisionShape2D.disabled = false
+		player.can_move = true
 
 
 # ✅ Scene transitions
@@ -107,12 +120,16 @@ func _on_door_to_office_body_entered(body: Node2D) -> void:
 # ✅ Another area-triggered cutscene
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body is Player and not Global.gate_cutscene_done:
-		Global.gate_cutscene_done = true
+		Global.gate_cutscene_done = true 
+		player.can_move = false
 		body.cutscene_move([
 			Vector2(532, 269),
 			Vector2(532, 300),
 			Vector2(645, 297)
 		]as Array[Vector2])
+		
+		
+		
 		
 
 func _run_cutscene(path: Array[Vector2]) -> void:

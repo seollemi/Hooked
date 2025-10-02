@@ -105,7 +105,7 @@ func _on_retry_button_pressed():
 
 func _on_exit_button_pressed() -> void:
 	Global.teleport_back = true
-	Global.player_PC_Location = Vector2(345, 135)
+	Global.player_PC_Location = Vector2(631, 363)
 
 	MusicManager.music.play()
 	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")
@@ -113,6 +113,6 @@ func _on_exit_button_pressed() -> void:
 	
 func _on_win_timer_timeout() -> void:
 	Global.teleport_back = true
-	Global.player_PC_Location = Vector2(345, 135)
+	Global.player_PC_Location = Vector2(631, 363)
 	get_tree().change_scene_to_file("res://Scenes/officelobby.tscn")
 	MusicManager.music.play()

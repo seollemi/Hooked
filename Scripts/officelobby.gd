@@ -70,8 +70,7 @@ func _ready() -> void:
 	else:
 		$minigame_done/CollisionShape2D.disabled=true
 		
-
-	if Global.act_3_done== true:
+	if Global.act_3_done == true:
 		
 		$move/CollisionShape2D.disabled =false
 		$interactable/CollisionShape2D.disabled=false
@@ -185,7 +184,6 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 func _on_interactable_body_entered(body: Node2D) -> void:
 	if Global.act_3_done == true :
-	
 		Global.previous_scene_path = get_tree().current_scene.scene_file_path
 		get_tree().change_scene_to_file("res://Scenes/pc_game_password.tscn")
 		
@@ -202,8 +200,6 @@ func _on_scene_to_bridge_body_entered(body: Node2D) -> void:
 func _on_move_body_entered(body: Node2D) -> void:
 	pass
 
-	
-
 
 func _on_minigame_done_body_entered(body: Node2D) -> void:
 	if body is Player and Global.minigame_done and not Global.act3minigame_done:
@@ -212,15 +208,12 @@ func _on_minigame_done_body_entered(body: Node2D) -> void:
 		MusicManager.music.play()
 		Dialogic.start("ronnie_thanks")
 		awaiting_act3_done = true
+		
 		var player = get_node("Player")
 		player.set_can_move(false)
 		final_quest.start_quest()
-		
-		
-		
-		
 
-	
+
 func _on_password_body_entered(body: Node2D) -> void:
 	if body is Player and Global.act_3_done:
 		body.cutscene_move([
@@ -234,9 +227,9 @@ func _on_dialogic_signal(event_name: String) -> void:
 	if event_name == "done":
 		MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
 		player.cutscene_move([
-			Vector2(317, 208),
-			Vector2(319, 137),
-			Vector2(346, 135),
+			Vector2(616, 394),
+			Vector2(617, 359),
+			Vector2(632, 356),
 		] as Array[Vector2])
 
 

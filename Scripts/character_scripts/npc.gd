@@ -23,7 +23,8 @@ func _on_detection_area_entered(body):
 		print("👀 Player detected! NPC starting event.")
 		Global.npc_event_done = true
 		moving_to_target = true
-		detection_area.set_deferred("monitoring", false)  
+		detection_area.set_deferred("monitoring", false)
+		
 
 func _physics_process(delta):
 	if moving_to_target and not talking:

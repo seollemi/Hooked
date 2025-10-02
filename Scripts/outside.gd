@@ -8,7 +8,7 @@ var cutscene_played := false
 func _ready() -> void:
 	
 	MusicManager.play_music("res://sounds/2_Day_1_Master.mp3", 2.5)
-	$Area2D/CollisionShape2D.disabled = false
+	$Area2D/CollisionShape2D.disabled = true
 	#if quest_hehe.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false
 	print("Loaded quest name: ", Global.current_quest_name)

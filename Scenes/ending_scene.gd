@@ -32,4 +32,7 @@ func _process(delta: float) -> void:
 	# Check camera position and switch scene if needed
 	if not scene_switched and camera_2d.position.x >= 3387:
 		scene_switched = true
-		transition_screen.transition_to_scene("res://Scenes/Menu.tscn")  # ✅ CORRECT
+		
+		transition_screen.transition_to_scene("res://Scenes/Menu.tscn")
+		MusicManager.music.stream = preload("res://sounds/1_Menu_Master.mp3")
+		MusicManager.music.play()

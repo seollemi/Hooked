@@ -310,16 +310,19 @@ libraries = {
 unique_name_in_owner = true
 position = Vector2(160, 85)
 stream = ExtResource("8_ihuoq")
+bus = &"MUSIC"
 
 [node name="good_end" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(160, 85)
 stream = ExtResource("9_3qoqe")
+bus = &"MUSIC"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(160, 85)
 stream = ExtResource("10_3qoqe")
+bus = &"MUSIC"
 
 [node name="Act 2 quest" type="Node2D" parent="."]
 script = ExtResource("14_mye4q")

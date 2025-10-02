@@ -179,4 +179,6 @@ func _on_continue_pressed() -> void:
 	MusicManager.music.play()
 	if act_3_quest.quest_statuss == act_3_quest.QuestStatus.started:
 			act_3_quest.reach_goal()
+	Global.teleport_back = true
+	Global.player_PC_Location = Vector2(753, 297)
 	get_tree().change_scene_to_file("res://Scenes/Office.tscn")

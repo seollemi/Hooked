@@ -190,6 +190,11 @@ theme_override_font_sizes/font_size = 40
 text = "Spcial Thanks for:
 Dialogic
 
+Voice Acting:
+Jordan - KC
+Andrew - Mark Andrew
+Mark - Miguel Jason
+Dana - KC
 "
 
 [node name="TransitionScreen" parent="." instance=ExtResource("14_2spg8")]
