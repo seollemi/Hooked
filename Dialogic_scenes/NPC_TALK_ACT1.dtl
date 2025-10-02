@@ -2,6 +2,7 @@
 Jordan (Jordan_talking): Hey there! You must be the new guy. James, right?
 James (James_talking): Yeah, uh, First day nerves, you know?
 James (James_talking): Good to meet you, Jordan. Honestly, I have no idea where to even start.
+[voice path="res://sounds/Voice_act/NPC_TALK_ACT1/npc_talk_act1.1.wav" volume="0.0" bus="SFX"]
 Jordan (Jordan_talking): That’s normal. First rule around here — ask questions. No one expects you to know everything on Day One.
 James (James_talking): Good to hear. I was worried I'd mess something up
 [voice path="res://sounds/Voice_act/NPC_TALK_ACT1/npc_talk_act1.2.wav" volume="0.0" bus="SFX"]

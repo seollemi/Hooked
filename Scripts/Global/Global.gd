@@ -138,7 +138,58 @@ func finish_changescenes():
 
 ###### restart global when starting a new game
 func reset():
-	collected_hint_ids = []
+	# --- Scene control ---
+	current_scene = "WorldHouse"
+	next_scene = ""
+	transition_scene = false
+	last_player_position = Vector2.ZERO
+	previous_scene_path = ""
+	outside_scene = null
+	
+	# --- NPC/interaction state ---
+	player = null
+	talked_npc1 = false
+	introduction_mark = false
+	ronnie_password = false
+	info_desk = false
+	
+	# --- Player progression ---
+	teleport_back = false
+	dialog_pc_opened = false
+	pc_start_opened = false
+	mail_open_opened = false
+	fakelogin_open_opened = false
+	gate_cutscene_done = false
+	bridge_cutscene_done = false
+	
+	# --- Acts / story progression ---
+	mini_game_enable = false
+	collected_questions.clear()
+	introduction_1 = false
+	act_1_done = false
+	act_2_done = false
+	act_3_done = false
+	act2_cutscene_done = false
+	minigame_done = false
+	act3minigame_done = false
+	act_1_seen = false
+	act_2_seen = false
+	act_3_seen = false
+	act_2_cut_done = false
+	
+	# --- Quest progression ---
+	quest_stage_index = 0
+	quest_status = 0
+	quest_description = ""
+	current_quest_name = ""
+	
+	# --- Global triggers ---
+	global_triggered = false
+	global_alex = false
+	dialogue_played = false
+	
+	# --- Minigame state ---
+	collected_hint_ids.clear()
 	collected_hints = 0
 	hints_read = 0
 	scrolling_background = null
@@ -150,15 +201,12 @@ func reset():
 	mini_level_3 = false
 	show_button_after_hint = false
 	last_hint_opened = 0
+	
+	# --- NPC one-time events ---
 	npc_event_done = false
 	npc_evnt2_done = false
 	npc_mark = false
+	
+	# --- Load-in state ---
 	game_first_loadin = true
 	game_outside_loadin = true
-	global_triggered = false
-	global_alex = false
-	quest_stage_index = 0
-	quest_status = 0
-	quest_description = ""
-	current_quest_name = ""
-	dialogue_played = false

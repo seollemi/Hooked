@@ -14,7 +14,7 @@ config/name="Hooked"
 run/main_scene="uid://j1srsn7jmb1u"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bdm7wrbjpw8ny"
 
 [autoload]
 
