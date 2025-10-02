@@ -27,6 +27,7 @@ func _ready() -> void:
 	#if quest_hehe.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false
 
+
 func _on_interact() -> void:
 	var player = get_node("Player")
 	player.set_can_move(false)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxgxq87cvv7dv"]
+
+[ext_resource type="FontFile" uid="uid://duf2yfwdtohl8" path="res://FONTS/retropix.ttf/retropix.ttf" id="1_vjmmm"]
+[ext_resource type="Script" uid="uid://dtiv185m72lsx" path="res://Scenes/tobe_continue.gd" id="1_ysv15"]
+[ext_resource type="PackedScene" uid="uid://ct85fwevut7jl" path="res://MiniGameTscn/transition_screen.tscn" id="2_ysv15"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ysv15")
+
+[node name="To be continue" type="RichTextLabel" parent="."]
+offset_left = 419.0
+offset_top = 286.0
+offset_right = 4039.0
+offset_bottom = 886.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("1_vjmmm")
+theme_override_font_sizes/normal_font_size = 500
+bbcode_enabled = true
+text = "[wave amp=250
+ fr]To be Continue. . . .[/wave]"
+
+[node name="TransitionScreen3" parent="." instance=ExtResource("2_ysv15")]
+visible = false

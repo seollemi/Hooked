@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_wpaqk")
 
 [node name="HackTimeEstimate4" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 460.0
 offset_top = 222.0
 offset_right = 3300.0
@@ -28,6 +29,7 @@ text = "[wave amp=250
  fr] Controls[/wave]"
 
 [node name="w3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 524.0
 offset_top = 278.0
 offset_right = 1134.0
@@ -40,6 +42,7 @@ bbcode_enabled = true
 text = "W ↑"
 
 [node name="a3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 342.0
 offset_right = 1261.0
@@ -52,6 +55,7 @@ bbcode_enabled = true
 text = "A ←"
 
 [node name="s3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 523.0
 offset_top = 342.0
 offset_right = 1133.0
@@ -64,6 +68,7 @@ bbcode_enabled = true
 text = "S ↓"
 
 [node name="d5" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 620.0
 offset_top = 343.0
 offset_right = 1560.0
@@ -76,6 +81,7 @@ bbcode_enabled = true
 text = "D →"
 
 [node name="d6" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 772.0
 offset_top = 354.0
 offset_right = 3832.0
@@ -88,6 +94,7 @@ bbcode_enabled = true
 text = "E  to interact"
 
 [node name="d7" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 772.0
 offset_top = 222.0
 offset_right = 4262.0
@@ -100,6 +107,7 @@ bbcode_enabled = true
 text = "F4 to Full Screen"
 
 [node name="ContinueButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 897.0
 offset_top = 530.0
 offset_right = 1128.0
