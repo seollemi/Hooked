@@ -8,21 +8,35 @@ var word_list: Array = ["CYBERSECURITY", "DATA", "ENCRYPTION", "PASSWORD","PHISH
 var question_list: Array = [
 	"What is the practice of protecting systems and networks?",
 	"Smallest unit of information in computing?",
-	"Turning your information into secret code that only the right person can unlock",
+	"Turning your information into secret 
+	code that only the right person can unlock",
 	"A secret string used to access accounts?",
-	"Tricks people into revealing sensitive info by posing as a trustworthy source, often via fake emails or websites.",
-	"Governments use cyberattacks to disable infrastructure, steal secrets, and disrupt communication—cheaper than war and harder to trace.",
-	"Means keeping information private, ensuring messages can’t be read by strangers.",
-	"Ensures data isn’t altered without permission—so information remains trustworthy.",
-	"Ensures you can access data when needed—ransomware makes it unavailable.",
-	"It’s a careful process to handle updates and changes safely",
-	"If a change fails, we can roll everything back to the way it was",
-	"Official stamp that proves the message came from the real sender and wasn't tampered with.",
+	"Tricks people into revealing sensitive 
+	info by posing as a trustworthy source, 
+	often via fake emails or websites.",
+	"Governments use cyberattacks to 
+	disable infrastructure, steal secrets, 
+	and disrupt communication—cheaper than war and harder to trace.",
+	"Means keeping information private, 
+	ensuring messages can’t be read by strangers.",
+	"Ensures data isn’t altered without 
+	permission—so information remains trustworthy.",
+	"Ensures you can access data when needed—
+	ransomware makes it unavailable.",
+	"It’s a careful process to handle updates 
+	and changes safely",
+	"If a change fails, we can roll everything 
+	back to the way it was",
+	"Official stamp that proves the message came 
+	from the real sender and wasn't tampered with.",
 	"They prove a website or a person is trustworthy.",
 	"Stands for Confidentiality, Integrity, and Availability",
-	"Break into systems illegally for personal gain — stealing data, spreading malware, or causing damage.",
-	"They’re ethical hackers who are hired to find vulnerabilities before black hats do.",
-	"They might hack without permission, but they usually don’t intend harm.",
+	"Break into systems illegally for personal 
+	gain — stealing data, spreading malware, or causing damage.",
+	"They’re ethical hackers who are hired to 
+	find vulnerabilities before black hats do.",
+	"They might hack without permission, 
+	but they usually don’t intend harm.",
 	"Type of data that are names, addresses, phone numbers",
 	"Type of data that are credit card details, payroll info, budgets.",
 	"Type of data that are medical records, prescriptions, insurance details.",
@@ -161,7 +175,7 @@ func _on_SubmitButton_pressed() -> void:
 
 	if selected_word == correct_word:
 		score += 1
-		output_label.text = "✅ Correct! Word: " + selected_word
+		output_label.text = "✅ Correct!"
 		incorrect_label.visible = false
 		current_index += 1
 		await get_tree().create_timer(1.0).timeout
