@@ -12,6 +12,7 @@ var typing_speed: float = 0.05
 func _ready() -> void:
 	_continue_typing_sequence()
 	Global.chosen_password_number += 1
+	Global.scrolling_background.visible = false
 func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	char_fx.offset.y = sin((char_fx.absolute_index * frequency + Time.get_ticks_msec() / 100.0 * speed)) * amplitude
 	return true

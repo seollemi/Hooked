@@ -7,6 +7,7 @@ extends Control
 @onready var act_3_quest: Quest_hehe = $"Act 3 quest"
 var music_node_path: NodePath = "/root/MusicPlayer"  # 🛠 Global path for music
 
+
 func _ready() -> void:
 	#if act_3_quest.should_show_quest_ui():
 	Qbox.get_node("Questbox").visible = false

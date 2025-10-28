@@ -45,12 +45,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0er1l")
 layout_mode = 0
 offset_left = 347.0
 offset_top = 64.0
-offset_right = 22958.0
-offset_bottom = 4397.0
-scale = Vector2(0.01, 0.01)
+offset_right = 912.0
+offset_bottom = 173.0
+scale = Vector2(0.42, 0.42)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_m8psw")
-theme_override_font_sizes/font_size = 4000
+theme_override_font_sizes/font_size = 100
 text = "Hints obtained"
 
 [node name="Label" type="Label" parent="CanvasLayer"]

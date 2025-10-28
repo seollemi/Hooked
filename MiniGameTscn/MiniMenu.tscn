@@ -74,15 +74,16 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Label2" type="Label" parent="CanvasLayer/objective"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 63.0
-offset_top = 34.0
-offset_right = 12322.0
-offset_bottom = 3284.0
-scale = Vector2(0.01, 0.01)
+offset_left = 62.0
+offset_top = 33.0
+offset_right = 226.355
+offset_bottom = 81.635
+scale = Vector2(0.72, 0.72)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_c5l1v")
-theme_override_font_sizes/font_size = 3000
+theme_override_font_sizes/font_size = 40
 text = "Objective"
 
 [node name="Quit" type="TextureButton" parent="CanvasLayer"]
